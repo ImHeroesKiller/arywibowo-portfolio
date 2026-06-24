@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -56,6 +57,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-8">
+        <Logo showName />
+
         <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -74,7 +77,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="ml-auto flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <div className="hidden md:block">
             <Button render={<Link href="/contact" />} size="sm">
               Get in Touch

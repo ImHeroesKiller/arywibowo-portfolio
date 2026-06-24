@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 
+import Logo from "@/components/Logo";
 import { Separator } from "@/components/ui/separator";
 import { navLinks, siteConfig } from "@/lib/constants";
 
@@ -12,7 +13,8 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <p className="max-w-xs text-sm text-muted-foreground">
+            <Logo imageClassName="h-9 sm:h-10" />
+            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               {siteConfig.description}
             </p>
           </div>

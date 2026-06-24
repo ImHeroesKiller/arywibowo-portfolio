@@ -10,7 +10,7 @@ import {
 
 export const siteConfig = {
   name: "Ary Wibowo",
-  logo: "/images/awi-logo.png",
+  logo: "/logo/awi-logo-new.png",
   title: "Profesional Consultant",
   headline: "Profesional Consultant",
   tagline:
