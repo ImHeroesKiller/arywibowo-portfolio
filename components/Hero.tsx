@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -39,12 +40,14 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[440px]">
           <div className="relative order-1 flex justify-center px-4 pt-8 lg:order-2 lg:justify-end lg:px-0 lg:pt-0 lg:pr-8">
             <div className="relative aspect-[32/44] w-full max-w-[240px] overflow-hidden sm:max-w-[280px] lg:max-w-[320px]">
-              <img
+              <Image
                 src="/images/profile.png"
                 alt={t("name")}
                 width={320}
                 height={440}
-                decoding="async"
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 320px"
                 className="size-full object-cover object-top"
               />
 

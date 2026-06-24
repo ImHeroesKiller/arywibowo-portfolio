@@ -182,6 +182,12 @@
     "contact": "联系",
     "rights": "版权所有。"
   },
+  "pwa": {
+    "installTitle": "安装应用",
+    "installDescription": "添加到主屏幕，更快访问此作品集。",
+    "installButton": "安装",
+    "dismiss": "稍后"
+  },
   "languageSwitcher": {
     "label": "语言",
     "locales": {

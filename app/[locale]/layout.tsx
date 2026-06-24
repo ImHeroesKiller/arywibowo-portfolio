@@ -10,9 +10,13 @@ import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { PwaInstallPrompt } from "@/components/pwa-install-prompt";
+import { ServiceWorkerRegister } from "@/components/service-worker-register";
+import { StructuredData } from "@/components/structured-data";
+import { getLocalizedUrl } from "@/lib/i18n-paths";
 import { routing, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/lib/constants";
-import { defaultOgImage, siteKeywords } from "@/lib/seo";
+import { defaultOgImage, defaultRobots, siteKeywords } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 import "../globals.css";
@@ -20,11 +24,16 @@ import "../globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  display: "swap",
+  preload: false,
 });
 
 export const viewport: Viewport = {
@@ -52,6 +61,7 @@ export async function generateMetadata({
   });
 
   const defaultTitle = `${siteConfig.name} | ${t("title")}`;
+  const canonicalUrl = getLocalizedUrl("/", locale, siteConfig.url);
 
   return {
     title: {
@@ -79,10 +89,19 @@ export async function generateMetadata({
       ],
       apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
     },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: Object.fromEntries(
+        routing.locales.map((loc) => [
+          loc,
+          getLocalizedUrl("/", loc, siteConfig.url),
+        ])
+      ),
+    },
     openGraph: {
       title: defaultTitle,
       description: t("description"),
-      url: siteConfig.url,
+      url: canonicalUrl,
       siteName: siteConfig.name,
       locale: locale === "zh" ? "zh_CN" : locale === "en" ? "en_US" : "id_ID",
       type: "website",
@@ -94,17 +113,7 @@ export async function generateMetadata({
       description: t("description"),
       images: [defaultOgImage.url],
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-        "max-video-preview": -1,
-      },
-    },
+    robots: defaultRobots,
     verification: {
       ...(process.env.GOOGLE_SITE_VERIFICATION && {
         google: process.env.GOOGLE_SITE_VERIFICATION,
@@ -142,12 +151,15 @@ export default async function LocaleLayout({
           jetbrainsMono.variable
         )}
       >
+        <StructuredData locale={locale as Locale} />
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
+          <PwaInstallPrompt />
+          <ServiceWorkerRegister />
         </NextIntlClientProvider>
       </body>
     </html>

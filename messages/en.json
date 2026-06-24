@@ -182,6 +182,12 @@
     "contact": "Contact",
     "rights": "All rights reserved."
   },
+  "pwa": {
+    "installTitle": "Install App",
+    "installDescription": "Add to your home screen for quicker access to this portfolio.",
+    "installButton": "Install",
+    "dismiss": "Not now"
+  },
   "languageSwitcher": {
     "label": "Language",
     "locales": {

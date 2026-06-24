@@ -182,6 +182,12 @@
     "contact": "Kontak",
     "rights": "Hak cipta dilindungi."
   },
+  "pwa": {
+    "installTitle": "Instal Aplikasi",
+    "installDescription": "Tambahkan ke layar utama untuk akses lebih cepat ke portfolio ini.",
+    "installButton": "Instal",
+    "dismiss": "Nanti saja"
+  },
   "languageSwitcher": {
     "label": "Bahasa",
     "locales": {

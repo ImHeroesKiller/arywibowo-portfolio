@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { getLocalizedUrl } from "@/lib/i18n-paths";
 import { routing, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/lib/constants";
 
@@ -32,13 +33,19 @@ const ogLocaleMap: Record<Locale, string> = {
   zh: "zh_CN",
 };
 
-function getLocalizedPath(path: `/${string}` | "/", locale: Locale) {
-  if (locale === routing.defaultLocale) {
-    return path === "/" ? "" : path;
-  }
-
-  return path === "/" ? `/${locale}` : `/${locale}${path}`;
-}
+export const defaultRobots: Metadata["robots"] = {
+  index: true,
+  follow: true,
+  nocache: false,
+  googleBot: {
+    index: true,
+    follow: true,
+    noimageindex: false,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+  },
+};
 
 type PageMetadataOptions = {
   title: string;
@@ -53,8 +60,7 @@ export function createPageMetadata({
   path,
   locale,
 }: PageMetadataOptions): Metadata {
-  const localizedPath = getLocalizedPath(path, locale);
-  const canonicalUrl = `${siteConfig.url}${localizedPath}`;
+  const canonicalUrl = getLocalizedUrl(path, locale, siteConfig.url);
 
   return {
     title,
@@ -68,7 +74,7 @@ export function createPageMetadata({
       languages: Object.fromEntries(
         routing.locales.map((loc) => [
           loc,
-          `${siteConfig.url}${getLocalizedPath(path, loc)}`,
+          getLocalizedUrl(path, loc, siteConfig.url),
         ])
       ),
     },
@@ -87,5 +93,6 @@ export function createPageMetadata({
       description,
       images: [defaultOgImage.url],
     },
+    robots: defaultRobots,
   };
 }
