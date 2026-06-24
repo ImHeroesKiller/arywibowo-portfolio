@@ -4,6 +4,7 @@ import { Loader2, MessageCircle, Send, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
+import { ChatMessage } from "@/components/chat-message";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -157,16 +158,10 @@ export function IdaChatbot() {
                   message.role === "user" ? "justify-end" : "justify-start"
                 )}
               >
-                <div
-                  className={cn(
-                    "max-w-[88%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
-                    message.role === "user"
-                      ? "rounded-br-md bg-primary text-primary-foreground"
-                      : "rounded-bl-md border border-border/60 bg-muted/50 text-foreground"
-                  )}
-                >
-                  {message.content}
-                </div>
+                <ChatMessage
+                  role={message.role}
+                  content={message.content}
+                />
               </div>
             ))}
 

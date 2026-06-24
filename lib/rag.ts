@@ -21,15 +21,22 @@ function tokenize(text: string) {
     .filter((token) => token.length > 2);
 }
 
+function extractKeywordLine(markdown: string) {
+  const match = markdown.match(/\*\*Keywords:\*\*\s*(.+)/i);
+  return match?.[1]?.split(",").map((keyword) => keyword.trim().toLowerCase()) ?? [];
+}
+
 function splitMarkdownSections(
   markdown: string,
   source: string
 ): KnowledgeChunk[] {
+  const fileKeywords = extractKeywordLine(markdown);
   const sections = markdown.split(/(?=^##\s)/m).filter(Boolean);
   const chunks: KnowledgeChunk[] = [];
 
   sections.forEach((section, index) => {
-    const titleMatch = section.match(/^#\s+(.+)$/m) ?? section.match(/^##\s+(.+)$/m);
+    const titleMatch =
+      section.match(/^#\s+(.+)$/m) ?? section.match(/^##\s+(.+)$/m);
     const title = titleMatch?.[1]?.trim() ?? `Section ${index + 1}`;
     const content = section.trim();
 
@@ -40,7 +47,11 @@ function splitMarkdownSections(
       source,
       title,
       content,
-      keywords: tokenize(`${title} ${content}`),
+      keywords: [
+        ...fileKeywords,
+        ...tokenize(`${title} ${content}`),
+        ...tokenize(source.replace(/\.md$/, "").replace(/-/g, " ")),
+      ],
     });
   });
 
@@ -55,52 +66,20 @@ function loadMarkdownFile(filename: string): KnowledgeChunk[] {
   return splitMarkdownSections(markdown, filename);
 }
 
-function loadServicesJson(): KnowledgeChunk[] {
-  const filePath = path.join(KNOWLEDGE_DIR, "services.json");
-  if (!fs.existsSync(filePath)) return [];
+function loadAllMarkdownFiles(): KnowledgeChunk[] {
+  if (!fs.existsSync(KNOWLEDGE_DIR)) return [];
 
-  const raw = JSON.parse(fs.readFileSync(filePath, "utf-8")) as {
-    services: Array<{
-      id: string;
-      title: string;
-      keywords: string[];
-      summary: string;
-      features: string[];
-    }>;
-  };
-
-  return raw.services.map((service) => {
-    const content = [
-      `Layanan: ${service.title}`,
-      service.summary,
-      "Fitur:",
-      ...service.features.map((feature) => `- ${feature}`),
-    ].join("\n");
-
-    return {
-      id: `services-${service.id}`,
-      source: "services.json",
-      title: service.title,
-      content,
-      keywords: [
-        ...service.keywords.map((keyword) => keyword.toLowerCase()),
-        ...tokenize(content),
-      ],
-    };
-  });
+  return fs
+    .readdirSync(KNOWLEDGE_DIR)
+    .filter((filename) => filename.endsWith(".md"))
+    .flatMap((filename) => loadMarkdownFile(filename));
 }
 
 export function loadKnowledgeBase(): KnowledgeChunk[] {
   if (cachedChunks) return cachedChunks;
 
-  const chunks = [
-    ...loadMarkdownFile("about.md"),
-    ...loadMarkdownFile("faq.md"),
-    ...loadServicesJson(),
-  ];
-
-  cachedChunks = chunks;
-  return chunks;
+  cachedChunks = loadAllMarkdownFiles();
+  return cachedChunks;
 }
 
 function scoreChunk(chunk: KnowledgeChunk, queryTokens: string[]) {
@@ -111,9 +90,9 @@ function scoreChunk(chunk: KnowledgeChunk, queryTokens: string[]) {
 
   for (const token of queryTokens) {
     if (keywordSet.has(token)) score += 2;
-
     if (chunk.content.toLowerCase().includes(token)) score += 1;
     if (chunk.title.toLowerCase().includes(token)) score += 3;
+    if (chunk.source.toLowerCase().includes(token)) score += 2;
   }
 
   return score;
@@ -121,17 +100,25 @@ function scoreChunk(chunk: KnowledgeChunk, queryTokens: string[]) {
 
 export function retrieveRelevantChunks(
   query: string,
-  limit = 5
+  limit = 4
 ): KnowledgeChunk[] {
   const chunks = loadKnowledgeBase();
   const queryTokens = tokenize(query);
 
-  return chunks
+  const ranked = chunks
     .map((chunk) => ({ chunk, score: scoreChunk(chunk, queryTokens) }))
     .filter((item) => item.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map((item) => item.chunk);
+
+  if (ranked.length > 0) return ranked;
+
+  return chunks
+    .filter((chunk) =>
+      ["about.md", "faq.md"].includes(chunk.source)
+    )
+    .slice(0, 2);
 }
 
 export function buildRetrievalContext(query: string) {

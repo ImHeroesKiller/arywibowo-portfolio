@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 
-import { IDA_MODEL, buildIdaPrompt } from "@/lib/ida-prompt";
+import {
+  IDA_MAX_OUTPUT_TOKENS,
+  IDA_MODEL,
+  buildIdaPrompt,
+} from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
 
 export const dynamic = "force-dynamic";
@@ -50,8 +54,8 @@ async function callGemini(
         },
         contents: toGeminiHistory(messages),
         generationConfig: {
-          temperature: 0.4,
-          maxOutputTokens: 1024,
+          temperature: 0.35,
+          maxOutputTokens: IDA_MAX_OUTPUT_TOKENS,
         },
       }),
     }
