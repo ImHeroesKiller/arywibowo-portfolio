@@ -4,9 +4,10 @@ import { siteConfig } from "@/lib/constants";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Ary Wibowo | Profesional Consultant",
-    short_name: "Ary Wibowo",
-    description: siteConfig.tagline,
+    name: `${siteConfig.name} | Profesional Consultant`,
+    short_name: siteConfig.name,
+    description:
+      "Mendampingi bisnis tumbuh melalui konsultasi strategis — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, hingga financial solutions.",
     start_url: "/",
     scope: "/",
     display: "standalone",

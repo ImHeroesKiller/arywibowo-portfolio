@@ -1,28 +1,50 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Mail, MapPin } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
+import { type Locale, routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Hubungi Saya",
-  description:
-    "Hubungi Ary Wibowo untuk konsultasi bisnis, kolaborasi proyek, atau diskusi strategi. Kirim pesan melalui form atau email aku@arywibowo.co.id — Jakarta, Indonesia.",
-  path: "/contact",
-});
+type PageProps = {
+  params: { locale: string };
+};
 
-export default function ContactPage() {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: PageProps): Promise<Metadata> {
+  const t = await getTranslations({
+    locale,
+    namespace: "metadata.contact",
+  });
+
+  return createPageMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: "/contact",
+    locale: locale as Locale,
+  });
+}
+
+export default async function ContactPage({ params: { locale } }: PageProps) {
+  setRequestLocale(locale);
+  const t = await getTranslations("contact");
+
   return (
     <PageTransition>
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionHeader
-            eyebrow="Contact"
-            title="Mari berkolaborasi"
-            description="Punya proyek atau ingin diskusi peluang bisnis? Kirim pesan dan saya akan merespons secepatnya."
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+            description={t("description")}
             align="center"
             className="mx-auto"
           />
@@ -36,7 +58,7 @@ export default function ContactPage() {
                   <Mail className="size-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Email</h3>
+                  <h3 className="font-semibold">{t("email")}</h3>
                   <a
                     href={`mailto:${siteConfig.email}`}
                     className="mt-1 text-muted-foreground transition-colors hover:text-primary"
@@ -51,7 +73,7 @@ export default function ContactPage() {
                   <MapPin className="size-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Location</h3>
+                  <h3 className="font-semibold">{t("location")}</h3>
                   <p className="mt-1 text-muted-foreground">
                     {siteConfig.location}
                   </p>
@@ -60,8 +82,7 @@ export default function ContactPage() {
 
               <div className="rounded-xl border border-border/60 bg-card/50 p-6">
                 <p className="text-sm text-muted-foreground">
-                  Saya biasanya merespons dalam 24–48 jam. Untuk pertanyaan
-                  mendesak, sebutkan di subject pesan Anda.
+                  {t("responseNote")}
                 </p>
               </div>
             </div>

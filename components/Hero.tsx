@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/constants";
 
 const fade = (delay = 0) => ({
@@ -20,6 +21,8 @@ const PHOTO_WIDTH = 320;
 const PHOTO_HEIGHT = 440;
 
 export default function Hero() {
+  const t = useTranslations("hero");
+
   return (
     <section className="relative overflow-hidden bg-background px-3 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
       <div className="pointer-events-none absolute -left-20 top-1/4 size-72 rounded-full bg-primary/10 blur-3xl" />
@@ -86,7 +89,7 @@ export default function Hero() {
               {...fade(0.2)}
               className="mt-2 text-lg font-semibold text-primary sm:mt-3 sm:text-xl md:text-2xl"
             >
-              {siteConfig.title}
+              {t("title")}
             </motion.p>
 
             <motion.div
@@ -102,7 +105,7 @@ export default function Hero() {
               {...fade(0.35)}
               className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg"
             >
-              {siteConfig.tagline}
+              {t("tagline")}
             </motion.p>
 
             <motion.div
@@ -114,7 +117,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                Contact
+                {t("contact")}
                 <ArrowRight />
               </Button>
               <Button
@@ -123,7 +126,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full border-primary/30 bg-primary/5 hover:bg-primary/10 sm:w-auto"
               >
-                Services
+                {t("services")}
               </Button>
             </motion.div>
           </div>

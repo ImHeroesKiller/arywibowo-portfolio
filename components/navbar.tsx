@@ -1,14 +1,15 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import Logo from "@/components/Logo";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
-import { navLinks } from "@/lib/constants";
+import { Link, usePathname } from "@/i18n/navigation";
+import { navPaths } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 const menuVariants = {
@@ -41,6 +42,7 @@ const itemVariants = {
 
 export function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -60,7 +62,7 @@ export function Navbar() {
         <Logo />
 
         <ul className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
+          {navPaths.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
@@ -71,16 +73,18 @@ export function Navbar() {
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             </li>
           ))}
         </ul>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+
           <div className="hidden md:block">
             <Button render={<Link href="/contact" />} size="sm">
-              Get in Touch
+              {t("getInTouch")}
             </Button>
           </div>
 
@@ -89,7 +93,7 @@ export function Navbar() {
             size="icon"
             className="md:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={mobileOpen}
           >
             <motion.span
@@ -115,7 +119,7 @@ export function Navbar() {
             className="overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-md md:hidden"
           >
             <ul className="flex flex-col gap-1 px-4 py-4">
-              {navLinks.map((link) => (
+              {navPaths.map((link) => (
                 <motion.li key={link.href} variants={itemVariants}>
                   <Link
                     href={link.href}
@@ -127,7 +131,7 @@ export function Navbar() {
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
                     )}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 </motion.li>
               ))}
@@ -137,7 +141,7 @@ export function Navbar() {
                   className="w-full"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Get in Touch
+                  {t("getInTouch")}
                 </Button>
               </motion.li>
             </ul>

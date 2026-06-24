@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Loader2, Send } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 export function ContactForm() {
+  const t = useTranslations("contactForm");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -35,7 +37,7 @@ export function ContactForm() {
       const data = (await response.json()) as { error?: string };
 
       if (!response.ok) {
-        throw new Error(data.error ?? "Failed to send message.");
+        throw new Error(data.error ?? t("errorFailed"));
       }
 
       setStatus("success");
@@ -43,9 +45,7 @@ export function ContactForm() {
     } catch (error) {
       setStatus("error");
       setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again."
+        error instanceof Error ? error.message : t("errorDefault")
       );
     }
   }
@@ -53,9 +53,11 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-xl border border-primary/30 bg-primary/5 p-8 text-center">
-        <h3 className="text-lg font-semibold text-primary">Message sent!</h3>
+        <h3 className="text-lg font-semibold text-primary">
+          {t("successTitle")}
+        </h3>
         <p className="mt-2 text-sm text-muted-foreground">
-          Thank you for reaching out. I&apos;ll get back to you soon.
+          {t("successDescription")}
         </p>
         <Button
           variant="outline"
@@ -63,7 +65,7 @@ export function ContactForm() {
           className="mt-6"
           onClick={() => setStatus("idle")}
         >
-          Send another message
+          {t("sendAnother")}
         </Button>
       </div>
     );
@@ -76,12 +78,12 @@ export function ContactForm() {
     >
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium">
-          Name
+          {t("name")}
         </label>
         <Input
           id="name"
           name="name"
-          placeholder="Your name"
+          placeholder={t("namePlaceholder")}
           required
           disabled={status === "loading"}
         />
@@ -89,13 +91,13 @@ export function ContactForm() {
 
       <div className="space-y-2">
         <label htmlFor="email" className="text-sm font-medium">
-          Email
+          {t("email")}
         </label>
         <Input
           id="email"
           name="email"
           type="email"
-          placeholder="you@example.com"
+          placeholder={t("emailPlaceholder")}
           required
           disabled={status === "loading"}
         />
@@ -103,12 +105,12 @@ export function ContactForm() {
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
-          Message
+          {t("message")}
         </label>
         <Textarea
           id="message"
           name="message"
-          placeholder="Tell me about your project..."
+          placeholder={t("messagePlaceholder")}
           rows={5}
           required
           disabled={status === "loading"}
@@ -129,12 +131,12 @@ export function ContactForm() {
       >
         {status === "loading" ? (
           <>
-            Sending...
+            {t("sending")}
             <Loader2 className="animate-spin" />
           </>
         ) : (
           <>
-            Send Message
+            {t("send")}
             <Send />
           </>
         )}

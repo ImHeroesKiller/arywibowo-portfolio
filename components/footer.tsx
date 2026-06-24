@@ -1,11 +1,16 @@
-import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 import Logo from "@/components/Logo";
 import { Separator } from "@/components/ui/separator";
-import { navLinks, siteConfig } from "@/lib/constants";
+import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/lib/constants";
+import { navPaths } from "@/lib/navigation";
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
+  const tMeta = await getTranslations("metadata.site");
   const year = new Date().getFullYear();
 
   return (
@@ -15,20 +20,20 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              {siteConfig.description}
+              {tMeta("description")}
             </p>
           </div>
 
           <div>
-            <p className="text-sm font-medium">Navigation</p>
+            <p className="text-sm font-medium">{t("navigation")}</p>
             <ul className="mt-3 space-y-2">
-              {navLinks.map((link) => (
+              {navPaths.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
-                    {link.label}
+                    {tNav(link.key)}
                   </Link>
                 </li>
               ))}
@@ -36,7 +41,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-medium">Contact</p>
+            <p className="text-sm font-medium">{t("contact")}</p>
             <ul className="mt-3 space-y-3">
               <li>
                 <a
@@ -60,7 +65,7 @@ export function Footer() {
         <Separator className="my-8" />
 
         <p className="text-center text-sm text-muted-foreground">
-          © {year} {siteConfig.name}. All rights reserved.
+          © {year} {siteConfig.name}. {t("rights")}
         </p>
       </div>
     </footer>

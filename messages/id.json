@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "site": {
+      "title": "Profesional Consultant",
+      "description": "Konsultan profesional berpengalaman 7+ tahun di energi terbarukan, pengembangan bisnis, transformasi digital, SDM, penjualan, manajemen proyek, dan solusi keuangan — berbasis di Jakarta."
+    },
+    "home": {
+      "title": "Ary Wibowo | Profesional Consultant",
+      "description": "Mendampingi bisnis tumbuh melalui konsultasi strategis — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, hingga financial solutions."
+    },
+    "about": {
+      "title": "Tentang Saya",
+      "description": "Kenali Ary Wibowo — konsultan profesional 7+ tahun di business development, hubungan klien, energi terbarukan, dan transformasi digital. Berbasis di Jakarta, Indonesia."
+    },
+    "services": {
+      "title": "Layanan Konsultasi",
+      "description": "Enam layanan konsultasi terintegrasi: Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, dan Financial Solutions — dari strategi hingga eksekusi."
+    },
+    "contact": {
+      "title": "Hubungi Saya",
+      "description": "Hubungi Ary Wibowo untuk konsultasi bisnis, kolaborasi proyek, atau diskusi strategi. Kirim pesan melalui form atau email aku@arywibowo.co.id — Jakarta, Indonesia."
+    },
+    "projects": {
+      "title": "Proyek & Portfolio",
+      "description": "Portfolio proyek dan studi kasus Ary Wibowo di business development, energi terbarukan, transformasi digital, dan manajemen proyek lintas industri."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "getInTouch": "Get in Touch",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu"
+  },
+  "hero": {
+    "title": "Profesional Consultant",
+    "tagline": "Mendampingi bisnis tumbuh melalui konsultasi strategis — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, hingga financial solutions.",
+    "contact": "Contact",
+    "services": "Services"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Profil profesional",
+    "summary": "Kombinasi pengalaman business development, hubungan klien, dan keahlian teknologi untuk solusi bisnis yang berdampak.",
+    "bio": [
+      "Profesional konsultan dengan pengalaman lebih dari 7 tahun di business development, hubungan klien, energi terbarukan, dan transformasi digital. Latar belakang teknik komputer memperkuat pendekatan analitis dalam merancang solusi bisnis terukur — dari strategi pertumbuhan pasar hingga implementasi sistem digital.",
+      "Berpengalaman memimpin proyek lintas industri telekomunikasi dan energi, mengkoordinasikan tim multidisiplin, serta mengembangkan platform digital untuk otomasi operasi bisnis. Menggabungkan keahlian di pengembangan bisnis, SDM, penjualan, manajemen proyek, IT, dan keuangan untuk menghadirkan konsultasi terintegrasi yang memberikan dampak nyata bagi organisasi."
+    ],
+    "coreStrengthsTitle": "Core Strengths",
+    "coreStrengthsDescription": "Enam area keahlian utama yang mendukung konsultasi terintegrasi.",
+    "coreStrengths": [
+      "Business Development & Hubungan Klien",
+      "Konsultasi Energi Terbarukan",
+      "Transformasi IT & Digital",
+      "Konsultasi SDM & Organisasi",
+      "Sales & Project Management",
+      "Solusi Keuangan Bisnis"
+    ],
+    "readMore": "Selengkapnya"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Solusi konsultasi terintegrasi",
+    "description": "Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, dan Financial Solutions — solusi terintegrasi dari strategi hingga eksekusi.",
+    "descriptionFull": "Layanan konsultasi profesional yang dirancang untuk mendukung pertumbuhan bisnis Anda di berbagai sektor.",
+    "seeMore": "Lihat detail lengkap di halaman",
+    "seeMoreLink": "Services",
+    "pageTitle": "Layanan konsultasi lengkap",
+    "pageDescription": "Solusi terintegrasi untuk mendukung transformasi bisnis Anda — dari strategi hingga eksekusi.",
+    "items": {
+      "renewableEnergy": {
+        "title": "Renewable Energy",
+        "usp": "Strategi transisi energi hijau yang berkelanjutan dan terukur.",
+        "description": "Konsultasi perencanaan dan implementasi solusi energi terbarukan untuk bisnis yang ingin meningkatkan efisiensi operasional sekaligus berkomitmen pada keberlanjutan lingkungan.",
+        "features": [
+          "Analisis kebutuhan energi & efisiensi operasional",
+          "Roadmap transisi energi hijau bertahap",
+          "Evaluasi ROI dan kelayakan proyek energi",
+          "Koordinasi pemangku kepentingan internal & eksternal"
+        ]
+      },
+      "businessDevelopment": {
+        "title": "Business Development",
+        "usp": "Membuka peluang pasar baru dan memperkuat pertumbuhan bisnis.",
+        "description": "Pendampingan strategi ekspansi bisnis, identifikasi peluang pasar, dan penyusunan model pertumbuhan yang scalable — dari UMKM hingga operasi skala enterprise.",
+        "features": [
+          "Market research & analisis kompetitif",
+          "Strategi penetrasi dan ekspansi pasar",
+          "Partnership & alliance building",
+          "Pengembangan model bisnis berkelanjutan"
+        ]
+      },
+      "itDigital": {
+        "title": "IT & Digital",
+        "usp": "Transformasi digital yang meningkatkan efisiensi operasional.",
+        "description": "Solusi teknologi informasi dan digitalisasi proses bisnis — dari otomasi workflow, integrasi sistem, hingga pengembangan platform web dan advisory implementasi AI.",
+        "features": [
+          "Digital transformation strategy",
+          "System integration & API development",
+          "Web platform & workflow automation",
+          "AI implementation advisory"
+        ]
+      },
+      "hrConsulting": {
+        "title": "HR Consulting",
+        "usp": "Optimalisasi SDM dan hubungan industrial yang produktif.",
+        "description": "Layanan konsultasi SDM menyeluruh — mulai dari rekrutmen dan talent acquisition, struktur remunerasi, pengembangan organisasi, hingga kepatuhan regulasi ketenagakerjaan.",
+        "features": [
+          "Rekrutmen & talent acquisition",
+          "Struktur remunerasi & benefit",
+          "Employee engagement & retensi",
+          "Industrial relations & compliance"
+        ]
+      },
+      "salesProjectManagement": {
+        "title": "Sales & Project Management",
+        "usp": "Eksekusi proyek tepat waktu dengan target penjualan tercapai.",
+        "description": "Manajemen proyek end-to-end dengan fokus pada pencapaian target penjualan, koordinasi tim lapangan, pelaporan real-time, dan manajemen pemangku kepentingan.",
+        "features": [
+          "Project planning & execution",
+          "Sales monitoring & performance reporting",
+          "Koordinasi tim multidisiplin",
+          "Stakeholder & risk management"
+        ]
+      },
+      "financialSolutions": {
+        "title": "Financial Solutions",
+        "usp": "Perencanaan keuangan bisnis yang transparan dan terstruktur.",
+        "description": "Konsultasi keuangan dan akuntansi untuk membantu bisnis mengelola arus kas, perencanaan anggaran, analisis profitabilitas, dan proses akuntansi yang lebih efisien.",
+        "features": [
+          "Financial planning & budgeting",
+          "Cash flow analysis & forecasting",
+          "Profitability & performance reporting",
+          "Accounting process advisory"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Mari berkolaborasi",
+    "description": "Punya proyek atau ingin diskusi peluang bisnis? Kirim pesan dan saya akan merespons secepatnya.",
+    "email": "Email",
+    "location": "Location",
+    "responseNote": "Saya biasanya merespons dalam 24–48 jam. Untuk pertanyaan mendesak, sebutkan di pesan Anda."
+  },
+  "contactForm": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successDescription": "Thank you for reaching out. I'll get back to you soon.",
+    "sendAnother": "Send another message",
+    "errorDefault": "Something went wrong. Please try again.",
+    "errorFailed": "Failed to send message."
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "languageSwitcher": {
+    "label": "Bahasa"
+  }
+}
