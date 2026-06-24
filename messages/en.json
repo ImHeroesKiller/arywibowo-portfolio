@@ -180,7 +180,8 @@
   "footer": {
     "navigation": "Navigation",
     "contact": "Contact",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "creatorCredit": "Created & Designed by AWI"
   },
   "pwa": {
     "installTitle": "Install App",

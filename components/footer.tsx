@@ -68,9 +68,21 @@ export function Footer() {
 
         <Separator className="my-8" />
 
-        <p className="text-center text-sm text-muted-foreground">
-          © {year} {tHero("name")}. {t("rights")}
-        </p>
+        <div className="space-y-2 text-center">
+          <p className="text-sm text-muted-foreground">
+            © {year} {tHero("name")}. {t("rights")}
+          </p>
+          <p>
+            <a
+              href="https://arywibowo.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-muted-foreground/60 transition-colors hover:text-muted-foreground"
+            >
+              {t("creatorCredit")}
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

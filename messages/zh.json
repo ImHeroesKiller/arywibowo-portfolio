@@ -180,7 +180,8 @@
   "footer": {
     "navigation": "导航",
     "contact": "联系",
-    "rights": "版权所有。"
+    "rights": "版权所有。",
+    "creatorCredit": "由 AWI 创建和设计"
   },
   "pwa": {
     "installTitle": "安装应用",

@@ -180,7 +180,8 @@
   "footer": {
     "navigation": "Navigasi",
     "contact": "Kontak",
-    "rights": "Hak cipta dilindungi."
+    "rights": "Hak cipta dilindungi.",
+    "creatorCredit": "Dibuat & Dirancang oleh AWI"
   },
   "pwa": {
     "installTitle": "Instal Aplikasi",
