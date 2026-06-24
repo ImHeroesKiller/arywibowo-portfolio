@@ -195,7 +195,9 @@
     "lastChecked": "Last checked: {date}",
     "viewReport": "View on PageSpeed Insights",
     "loading": "Loading scores...",
-    "unavailable": "Scores temporarily unavailable",
+    "unavailable": "PageSpeed API unavailable — showing fallback scores.",
+    "fallbackNote": "Fallback scores (PageSpeed API temporarily unavailable).",
+    "refresh": "Refresh",
     "categories": {
       "performance": "Performance",
       "accessibility": "Accessibility",

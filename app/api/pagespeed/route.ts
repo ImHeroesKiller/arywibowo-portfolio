@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
 
 import {
+  FALLBACK_PAGE_SPEED_SCORES,
+  PAGESPEED_API_URL,
   PAGESPEED_TARGET_URL,
+  isPageSpeedScores,
+  type PageSpeedApiResponse,
   type PageSpeedScores,
 } from "@/lib/pagespeed";
 
-const PAGESPEED_API =
-  "https://www.googleapis.com/pagespeedonline/v5/runPagespeed";
 const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
 
 export const dynamic = "force-dynamic";
@@ -48,7 +50,7 @@ function parseScores(payload: unknown): PageSpeedScores | null {
     return null;
   }
 
-  return {
+  const scores: PageSpeedScores = {
     performance,
     accessibility,
     seo,
@@ -56,12 +58,14 @@ function parseScores(payload: unknown): PageSpeedScores | null {
     checkedAt: new Date().toISOString(),
     url: PAGESPEED_TARGET_URL,
   };
+
+  return isPageSpeedScores(scores) ? scores : null;
 }
 
-async function fetchPageSpeedScores(): Promise<PageSpeedScores> {
+function buildApiUrl() {
   const params = new URLSearchParams({
     url: PAGESPEED_TARGET_URL,
-    strategy: "mobile",
+    strategy: "desktop",
   });
 
   for (const category of [
@@ -73,22 +77,29 @@ async function fetchPageSpeedScores(): Promise<PageSpeedScores> {
     params.append("category", category);
   }
 
-  const apiKey = process.env.PAGESPEED_API_KEY;
+  const apiKey = process.env.PAGESPEED_API_KEY?.trim();
   if (apiKey) {
     params.set("key", apiKey);
   }
 
+  return `${PAGESPEED_API_URL}?${params.toString()}`;
+}
+
+async function fetchPageSpeedScores(): Promise<PageSpeedScores> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 60_000);
 
   try {
-    const response = await fetch(`${PAGESPEED_API}?${params.toString()}`, {
+    const response = await fetch(buildApiUrl(), {
       signal: controller.signal,
-      next: { revalidate: CACHE_TTL_MS / 1000 },
+      cache: "no-store",
     });
 
     if (!response.ok) {
-      throw new Error(`PageSpeed API responded with ${response.status}`);
+      const body = await response.text();
+      throw new Error(
+        `PageSpeed API responded with ${response.status}: ${body.slice(0, 300)}`
+      );
     }
 
     const payload = await response.json();
@@ -104,22 +115,31 @@ async function fetchPageSpeedScores(): Promise<PageSpeedScores> {
   }
 }
 
-function jsonResponse(data: PageSpeedScores, cacheHit: boolean) {
-  return NextResponse.json(
-    { ...data, cacheHit },
-    {
-      headers: {
-        "Cache-Control": "public, s-maxage=21600, stale-while-revalidate=3600",
-      },
-    }
-  );
+function jsonResponse(data: PageSpeedApiResponse) {
+  return NextResponse.json(data, {
+    headers: {
+      "Cache-Control": "public, s-maxage=21600, stale-while-revalidate=3600",
+    },
+  });
+}
+
+function fallbackResponse(source: "stale-cache" | "static") {
+  const data: PageSpeedApiResponse = {
+    ...(source === "stale-cache" && memoryCache
+      ? memoryCache.data
+      : FALLBACK_PAGE_SPEED_SCORES),
+    fallback: true,
+    cacheHit: source === "stale-cache",
+  };
+
+  return jsonResponse(data);
 }
 
 export async function GET() {
   const now = Date.now();
 
   if (memoryCache && memoryCache.expiresAt > now) {
-    return jsonResponse(memoryCache.data, true);
+    return jsonResponse({ ...memoryCache.data, cacheHit: true });
   }
 
   try {
@@ -128,17 +148,14 @@ export async function GET() {
       data: scores,
       expiresAt: now + CACHE_TTL_MS,
     };
-    return jsonResponse(scores, false);
+    return jsonResponse({ ...scores, cacheHit: false, fallback: false });
   } catch (error) {
     console.error("PageSpeed API error:", error);
 
     if (memoryCache) {
-      return jsonResponse(memoryCache.data, true);
+      return fallbackResponse("stale-cache");
     }
 
-    return NextResponse.json(
-      { error: "PAGESPEED_UNAVAILABLE" },
-      { status: 503 }
-    );
+    return fallbackResponse("static");
   }
 }

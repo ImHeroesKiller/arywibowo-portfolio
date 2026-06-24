@@ -195,7 +195,9 @@
     "lastChecked": "Terakhir diperiksa: {date}",
     "viewReport": "Lihat di PageSpeed Insights",
     "loading": "Memuat skor...",
-    "unavailable": "Skor sementara tidak tersedia",
+    "unavailable": "API PageSpeed tidak tersedia — menampilkan skor cadangan.",
+    "fallbackNote": "Skor cadangan (API PageSpeed sementara tidak dapat diakses).",
+    "refresh": "Perbarui",
     "categories": {
       "performance": "Performa",
       "accessibility": "Aksesibilitas",
