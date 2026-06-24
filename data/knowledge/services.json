@@ -1,0 +1,76 @@
+{
+  "services": [
+    {
+      "id": "renewable-energy",
+      "title": "Renewable Energy Solutions",
+      "keywords": ["energi", "renewable", "hijau", "sustainability", "efisiensi energi", "transisi energi"],
+      "summary": "Konsultasi perencanaan dan implementasi solusi energi terbarukan untuk bisnis yang ingin meningkatkan efisiensi operasional sekaligus berkomitmen pada keberlanjutan lingkungan.",
+      "features": [
+        "Analisis kebutuhan energi & efisiensi operasional",
+        "Roadmap transisi energi hijau bertahap",
+        "Evaluasi ROI dan kelayakan proyek energi",
+        "Koordinasi pemangku kepentingan internal & eksternal"
+      ]
+    },
+    {
+      "id": "business-development",
+      "title": "Business Development Solutions",
+      "keywords": ["bisnis", "business", "ekspansi", "pasar", "growth", "partnership", "UMKM"],
+      "summary": "Pendampingan strategi ekspansi bisnis, identifikasi peluang pasar, dan penyusunan model pertumbuhan yang scalable — dari UMKM hingga operasi skala enterprise.",
+      "features": [
+        "Market research & analisis kompetitif",
+        "Strategi penetrasi dan ekspansi pasar",
+        "Partnership & alliance building",
+        "Pengembangan model bisnis berkelanjutan"
+      ]
+    },
+    {
+      "id": "it-digital",
+      "title": "IT & Digital Solutions",
+      "keywords": ["IT", "digital", "transformasi", "teknologi", "automasi", "AI", "sistem", "web"],
+      "summary": "Solusi teknologi informasi dan digitalisasi proses bisnis — dari otomasi workflow, integrasi sistem, hingga pengembangan platform web dan advisory implementasi AI.",
+      "features": [
+        "Digital transformation strategy",
+        "System integration & API development",
+        "Web platform & workflow automation",
+        "AI implementation advisory"
+      ]
+    },
+    {
+      "id": "hr-consulting",
+      "title": "HR Consulting Solutions",
+      "keywords": ["HR", "SDM", "rekrutmen", "talent", "organisasi", "ketenagakerjaan", "remunerasi"],
+      "summary": "Layanan konsultasi SDM menyeluruh — mulai dari rekrutmen dan talent acquisition, struktur remunerasi, pengembangan organisasi, hingga kepatuhan regulasi ketenagakerjaan.",
+      "features": [
+        "Rekrutmen & talent acquisition",
+        "Struktur remunerasi & benefit",
+        "Employee engagement & retensi",
+        "Industrial relations & compliance"
+      ]
+    },
+    {
+      "id": "sales-project-management",
+      "title": "Sales & Project Management",
+      "keywords": ["sales", "penjualan", "proyek", "project", "manajemen", "eksekusi", "stakeholder"],
+      "summary": "Manajemen proyek end-to-end dengan fokus pada pencapaian target penjualan, koordinasi tim lapangan, pelaporan real-time, dan stakeholder management.",
+      "features": [
+        "Project planning & execution",
+        "Sales monitoring & performance reporting",
+        "Koordinasi tim multidisiplin",
+        "Stakeholder & risk management"
+      ]
+    },
+    {
+      "id": "financial-solutions",
+      "title": "Financial Solutions",
+      "keywords": ["keuangan", "financial", "akuntansi", "budget", "cash flow", "profitabilitas"],
+      "summary": "Konsultasi keuangan dan akuntansi untuk membantu bisnis mengelola arus kas, perencanaan anggaran, analisis profitabilitas, dan proses akuntansi yang lebih efisien.",
+      "features": [
+        "Financial planning & budgeting",
+        "Cash flow analysis & forecasting",
+        "Profitability & performance reporting",
+        "Accounting process advisory"
+      ]
+    }
+  ]
+}

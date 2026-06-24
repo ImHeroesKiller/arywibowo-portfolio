@@ -205,6 +205,25 @@
       "bestPractices": "Best Practices"
     }
   },
+  "ida": {
+    "name": "IDA",
+    "title": "IDA Assistant",
+    "subtitle": "Professional Consultant Assistant",
+    "buttonLabel": "Ask IDA",
+    "open": "Open IDA chat",
+    "close": "Close chat",
+    "send": "Send message",
+    "placeholder": "Ask about consulting services...",
+    "welcome": "Hello! I'm IDA, Ary Wibowo's consulting assistant. How can I help you with Renewable Energy, Business Development, IT & Digital, HR, Sales & Project Management, or Financial Solutions?",
+    "disclaimer": "IDA provides service information. For official proposals, visit the Contact page.",
+    "errors": {
+      "NOT_CONFIGURED": "Chatbot is not configured. Please use the Contact page.",
+      "AI_UNAVAILABLE": "IDA is temporarily unavailable. Please try again later.",
+      "EMPTY_RESPONSE": "No response received. Please try again.",
+      "SERVER_ERROR": "Something went wrong. Please try again.",
+      "VALIDATION_REQUIRED": "Message cannot be empty."
+    }
+  },
   "languageSwitcher": {
     "label": "Language",
     "locales": {

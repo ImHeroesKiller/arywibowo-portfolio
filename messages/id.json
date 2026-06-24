@@ -205,6 +205,25 @@
       "bestPractices": "Best Practices"
     }
   },
+  "ida": {
+    "name": "IDA",
+    "title": "IDA Assistant",
+    "subtitle": "Profesional Consultant Assistant",
+    "buttonLabel": "Tanya IDA",
+    "open": "Buka chat IDA",
+    "close": "Tutup chat",
+    "send": "Kirim pesan",
+    "placeholder": "Tanyakan seputar layanan konsultasi...",
+    "welcome": "Halo! Saya IDA, asisten konsultasi Ary Wibowo. Ada yang bisa saya bantu seputar layanan Renewable Energy, Business Development, IT & Digital, HR, Sales & Project Management, atau Financial Solutions?",
+    "disclaimer": "IDA membantu informasi layanan. Untuk penawaran resmi, hubungi halaman Kontak.",
+    "errors": {
+      "NOT_CONFIGURED": "Chatbot belum dikonfigurasi. Silakan hubungi melalui halaman Kontak.",
+      "AI_UNAVAILABLE": "IDA sementara tidak tersedia. Coba lagi nanti.",
+      "EMPTY_RESPONSE": "Tidak ada respons. Silakan coba lagi.",
+      "SERVER_ERROR": "Terjadi kesalahan. Silakan coba lagi.",
+      "VALIDATION_REQUIRED": "Pesan tidak boleh kosong."
+    }
+  },
   "languageSwitcher": {
     "label": "Bahasa",
     "locales": {

@@ -9,6 +9,7 @@ import {
 import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/footer";
+import { IdaChatbot } from "@/components/ida-chatbot";
 import { Navbar } from "@/components/navbar";
 import { PwaInstallPrompt } from "@/components/pwa-install-prompt";
 import { ServiceWorkerRegister } from "@/components/service-worker-register";
@@ -159,6 +160,7 @@ export default async function LocaleLayout({
             <Footer />
           </div>
           <PwaInstallPrompt />
+          <IdaChatbot />
           <ServiceWorkerRegister />
         </NextIntlClientProvider>
       </body>

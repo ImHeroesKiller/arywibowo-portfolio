@@ -205,6 +205,25 @@
       "bestPractices": "最佳实践"
     }
   },
+  "ida": {
+    "name": "IDA",
+    "title": "IDA 助手",
+    "subtitle": "专业顾问助手",
+    "buttonLabel": "咨询 IDA",
+    "open": "打开 IDA 聊天",
+    "close": "关闭聊天",
+    "send": "发送消息",
+    "placeholder": "咨询相关服务...",
+    "welcome": "您好！我是 IDA，Ary Wibowo 的咨询助手。我可以帮您了解可再生能源、业务发展、IT与数字化、人力资源、销售与项目管理或财务解决方案方面的服务。",
+    "disclaimer": "IDA 提供信息服务。如需正式报价，请访问联系页面。",
+    "errors": {
+      "NOT_CONFIGURED": "聊天机器人尚未配置。请通过联系页面与我们联系。",
+      "AI_UNAVAILABLE": "IDA 暂时不可用。请稍后再试。",
+      "EMPTY_RESPONSE": "未收到回复。请重试。",
+      "SERVER_ERROR": "出了点问题。请重试。",
+      "VALIDATION_REQUIRED": "消息不能为空。"
+    }
+  },
   "languageSwitcher": {
     "label": "语言",
     "locales": {
