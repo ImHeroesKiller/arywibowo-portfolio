@@ -38,17 +38,17 @@
   "hero": {
     "name": "Ary Wibowo",
     "title": "Professional Consultant",
-    "tagline": "Helping businesses grow through strategic consulting — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, and financial solutions.",
+    "tagline": "Helping businesses grow through <highlight>Strategic Consulting</highlight> — <highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital Transformation</highlight>, <highlight>HR & Operations</highlight>, <highlight>Sales & Project Management</highlight>, and <highlight>Financial Solutions</highlight>.",
     "contact": "Contact",
     "services": "Services"
   },
   "about": {
     "eyebrow": "About",
-    "title": "Professional profile",
-    "summary": "A blend of business development, client relations, and technology expertise for impactful business solutions.",
+    "title": "Professional Profile",
+    "summary": "A blend of <highlight>Business Development</highlight>, <highlight>Client Relations</highlight>, and <highlight>Technology Expertise</highlight> for impactful business solutions.",
     "bio": [
-      "Professional consultant with over 7 years of experience in business development, client relations, renewable energy, and digital transformation. A computer engineering background strengthens an analytical approach to designing measurable business solutions — from market growth strategy to digital system implementation.",
-      "Experienced in leading cross-industry projects in telecommunications and energy, coordinating multidisciplinary teams, and developing digital platforms for business process automation. Combines expertise in business development, HR, sales, project management, IT, and finance to deliver integrated consulting that creates real impact for organizations."
+      "Professional consultant with over 7 years of experience in <highlight>Business Development</highlight>, <highlight>client relations</highlight>, <highlight>renewable energy</highlight>, and <highlight>digital transformation</highlight>. A computer engineering background strengthens an analytical approach to designing <highlight>measurable business solutions</highlight> — from <highlight>market growth strategy</highlight> to <highlight>digital system implementation</highlight>.",
+      "Experienced in leading cross-industry projects in telecommunications and energy, coordinating <highlight>multidisciplinary teams</highlight>, and developing <highlight>digital platforms</highlight> for business process automation. Combines expertise in business development, HR, sales, project management, IT, and finance to deliver <highlight>integrated consulting</highlight> that creates real impact for organizations."
     ],
     "coreStrengthsTitle": "Core Strengths",
     "coreStrengthsDescription": "Six key areas of expertise supporting integrated consulting.",
@@ -60,21 +60,21 @@
       "Sales & Project Management",
       "Business Financial Solutions"
     ],
-    "readMore": "Learn more"
+    "readMore": "Learn More"
   },
   "services": {
     "eyebrow": "Services",
-    "title": "Integrated consulting solutions",
-    "description": "Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, and Financial Solutions — integrated solutions from strategy to execution.",
-    "descriptionFull": "Professional consulting services designed to support your business growth across multiple sectors.",
+    "title": "Integrated Consulting Solutions",
+    "description": "<highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital</highlight>, <highlight>HR Consulting</highlight>, <highlight>Sales & Project Management</highlight>, and <highlight>Financial Solutions</highlight> — integrated solutions from <highlight>strategy to execution</highlight>.",
+    "descriptionFull": "<highlight>Professional consulting services</highlight> designed to support your <highlight>business growth</highlight> across multiple sectors.",
     "seeMoreRich": "See full details on the <link>Services</link> page.",
-    "pageTitle": "Complete consulting services",
-    "pageDescription": "Integrated solutions to support your business transformation — from strategy to execution.",
+    "pageTitle": "Complete Consulting Services",
+    "pageDescription": "Integrated solutions to support your <highlight>business transformation</highlight> — from <highlight>strategic planning</highlight> to <highlight>execution</highlight>.",
     "items": {
       "renewableEnergy": {
-        "title": "Renewable Energy",
-        "usp": "Sustainable and measurable green energy transition strategies.",
-        "description": "Consulting on planning and implementing renewable energy solutions for businesses seeking operational efficiency while committing to environmental sustainability.",
+        "title": "Renewable Energy Solutions",
+        "usp": "Sustainable and measurable <highlight>green energy transition</highlight> strategies.",
+        "description": "Consulting on planning and implementing <highlight>renewable energy solutions</highlight> for businesses seeking <highlight>operational efficiency</highlight> while committing to <highlight>environmental sustainability</highlight>.",
         "features": [
           "Energy needs analysis & operational efficiency",
           "Phased green energy transition roadmap",
@@ -83,9 +83,9 @@
         ]
       },
       "businessDevelopment": {
-        "title": "Business Development",
-        "usp": "Opening new market opportunities and strengthening business growth.",
-        "description": "Business expansion strategy guidance, market opportunity identification, and scalable growth model development — from SMEs to enterprise-scale operations.",
+        "title": "Business Development Solutions",
+        "usp": "Opening <highlight>new market opportunities</highlight> and strengthening <highlight>business growth</highlight>.",
+        "description": "<highlight>Business expansion strategy</highlight> guidance, market opportunity identification, and <highlight>scalable growth model</highlight> development — from SMEs to enterprise-scale operations.",
         "features": [
           "Market research & competitive analysis",
           "Market penetration and expansion strategy",
@@ -94,9 +94,9 @@
         ]
       },
       "itDigital": {
-        "title": "IT & Digital",
-        "usp": "Digital transformation that improves operational efficiency.",
-        "description": "Information technology solutions and business process digitalization — from workflow automation and system integration to web platform development and AI implementation advisory.",
+        "title": "IT & Digital Solutions",
+        "usp": "<highlight>Digital Transformation</highlight> that improves operational efficiency.",
+        "description": "<highlight>Information technology solutions</highlight> and <highlight>business process digitalization</highlight> — from workflow automation and system integration to web platform development and <highlight>AI implementation advisory</highlight>.",
         "features": [
           "Digital transformation strategy",
           "System integration & API development",
@@ -105,9 +105,9 @@
         ]
       },
       "hrConsulting": {
-        "title": "HR Consulting",
-        "usp": "Optimizing human resources and productive industrial relations.",
-        "description": "Comprehensive HR consulting — from recruitment and talent acquisition, compensation structure, organizational development, to labor regulation compliance.",
+        "title": "HR Consulting Solutions",
+        "usp": "Optimizing <highlight>human resources</highlight> and productive <highlight>industrial relations</highlight>.",
+        "description": "Comprehensive <highlight>HR consulting</highlight> — from recruitment and talent acquisition, compensation structure, <highlight>organizational development</highlight>, to labor regulation compliance.",
         "features": [
           "Recruitment & talent acquisition",
           "Compensation structure & benefits",
@@ -117,8 +117,8 @@
       },
       "salesProjectManagement": {
         "title": "Sales & Project Management",
-        "usp": "On-time project execution with sales targets achieved.",
-        "description": "End-to-end project management focused on achieving sales targets, field team coordination, real-time reporting, and stakeholder management.",
+        "usp": "On-time <highlight>project execution</highlight> with <highlight>sales targets</highlight> achieved.",
+        "description": "<highlight>End-to-end project management</highlight> focused on achieving sales targets, field team coordination, <highlight>real-time reporting</highlight>, and <highlight>stakeholder management</highlight>.",
         "features": [
           "Project planning & execution",
           "Sales monitoring & performance reporting",
@@ -128,8 +128,8 @@
       },
       "financialSolutions": {
         "title": "Financial Solutions",
-        "usp": "Transparent and structured business financial planning.",
-        "description": "Financial and accounting consulting to help businesses manage cash flow, budget planning, profitability analysis, and more efficient accounting processes.",
+        "usp": "Transparent and structured <highlight>business financial planning</highlight>.",
+        "description": "<highlight>Financial and accounting consulting</highlight> to help businesses manage cash flow, <highlight>budget planning</highlight>, profitability analysis, and more efficient accounting processes.",
         "features": [
           "Financial planning & budgeting",
           "Cash flow analysis & forecasting",
@@ -141,8 +141,8 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let's collaborate",
-    "description": "Have a project or want to discuss business opportunities? Send a message and I'll respond as soon as possible.",
+    "title": "Let's Collaborate",
+    "description": "Have a project or want to discuss <highlight>business opportunities</highlight>? Send a message and I'll respond as soon as possible.",
     "email": "Email",
     "location": "Location",
     "responseNote": "I usually respond within 24–48 hours. For urgent inquiries, please mention it in your message."

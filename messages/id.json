@@ -38,17 +38,17 @@
   "hero": {
     "name": "Ary Wibowo",
     "title": "Profesional Consultant",
-    "tagline": "Mendampingi bisnis tumbuh melalui konsultasi strategis — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, hingga financial solutions.",
+    "tagline": "Mendampingi bisnis tumbuh melalui <highlight>konsultasi strategis</highlight> — <highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital Transformation</highlight>, <highlight>HR & Operations</highlight>, <highlight>Sales & Project Management</highlight>, hingga <highlight>Financial Solutions</highlight>.",
     "contact": "Hubungi",
     "services": "Layanan"
   },
   "about": {
     "eyebrow": "Tentang",
-    "title": "Profil profesional",
-    "summary": "Kombinasi pengalaman business development, hubungan klien, dan keahlian teknologi untuk solusi bisnis yang berdampak.",
+    "title": "Profil Profesional",
+    "summary": "Kombinasi pengalaman <highlight>Business Development</highlight>, <highlight>hubungan klien</highlight>, dan <highlight>keahlian teknologi</highlight> untuk solusi bisnis yang berdampak.",
     "bio": [
-      "Profesional konsultan dengan pengalaman lebih dari 7 tahun di business development, hubungan klien, energi terbarukan, dan transformasi digital. Latar belakang teknik komputer memperkuat pendekatan analitis dalam merancang solusi bisnis terukur — dari strategi pertumbuhan pasar hingga implementasi sistem digital.",
-      "Berpengalaman memimpin proyek lintas industri telekomunikasi dan energi, mengkoordinasikan tim multidisiplin, serta mengembangkan platform digital untuk otomasi operasi bisnis. Menggabungkan keahlian di pengembangan bisnis, SDM, penjualan, manajemen proyek, IT, dan keuangan untuk menghadirkan konsultasi terintegrasi yang memberikan dampak nyata bagi organisasi."
+      "Profesional konsultan dengan pengalaman lebih dari 7 tahun di <highlight>Business Development</highlight>, <highlight>hubungan klien</highlight>, <highlight>energi terbarukan</highlight>, dan <highlight>transformasi digital</highlight>. Latar belakang teknik komputer memperkuat pendekatan analitis dalam merancang <highlight>solusi bisnis terukur</highlight> — dari <highlight>strategi pertumbuhan pasar</highlight> hingga <highlight>implementasi sistem digital</highlight>.",
+      "Berpengalaman memimpin proyek lintas industri telekomunikasi dan energi, mengkoordinasikan <highlight>tim multidisiplin</highlight>, serta mengembangkan <highlight>platform digital</highlight> untuk otomasi operasi bisnis. Menggabungkan keahlian di pengembangan bisnis, SDM, penjualan, manajemen proyek, IT, dan keuangan untuk menghadirkan <highlight>konsultasi terintegrasi</highlight> yang memberikan dampak nyata bagi organisasi."
     ],
     "coreStrengthsTitle": "Keahlian Inti",
     "coreStrengthsDescription": "Enam area keahlian utama yang mendukung konsultasi terintegrasi.",
@@ -64,17 +64,17 @@
   },
   "services": {
     "eyebrow": "Layanan",
-    "title": "Solusi konsultasi terintegrasi",
-    "description": "Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, dan Financial Solutions — solusi terintegrasi dari strategi hingga eksekusi.",
-    "descriptionFull": "Layanan konsultasi profesional yang dirancang untuk mendukung pertumbuhan bisnis Anda di berbagai sektor.",
+    "title": "Solusi Konsultasi Terintegrasi",
+    "description": "<highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital</highlight>, <highlight>HR Consulting</highlight>, <highlight>Sales & Project Management</highlight>, dan <highlight>Financial Solutions</highlight> — solusi terintegrasi dari <highlight>strategi hingga eksekusi</highlight>.",
+    "descriptionFull": "Layanan <highlight>konsultasi profesional</highlight> yang dirancang untuk mendukung <highlight>pertumbuhan bisnis</highlight> Anda di berbagai sektor.",
     "seeMoreRich": "Lihat detail lengkap di halaman <link>Layanan</link>.",
-    "pageTitle": "Layanan konsultasi lengkap",
-    "pageDescription": "Solusi terintegrasi untuk mendukung transformasi bisnis Anda — dari strategi hingga eksekusi.",
+    "pageTitle": "Layanan Konsultasi Lengkap",
+    "pageDescription": "Solusi terintegrasi untuk mendukung <highlight>transformasi bisnis</highlight> Anda — dari <highlight>strategic planning</highlight> hingga <highlight>eksekusi</highlight>.",
     "items": {
       "renewableEnergy": {
-        "title": "Renewable Energy",
-        "usp": "Strategi transisi energi hijau yang berkelanjutan dan terukur.",
-        "description": "Konsultasi perencanaan dan implementasi solusi energi terbarukan untuk bisnis yang ingin meningkatkan efisiensi operasional sekaligus berkomitmen pada keberlanjutan lingkungan.",
+        "title": "Renewable Energy Solutions",
+        "usp": "Strategi <highlight>transisi energi hijau</highlight> yang berkelanjutan dan terukur.",
+        "description": "Konsultasi perencanaan dan implementasi <highlight>solusi energi terbarukan</highlight> untuk bisnis yang ingin meningkatkan <highlight>efisiensi operasional</highlight> sekaligus berkomitmen pada <highlight>keberlanjutan lingkungan</highlight>.",
         "features": [
           "Analisis kebutuhan energi & efisiensi operasional",
           "Roadmap transisi energi hijau bertahap",
@@ -83,9 +83,9 @@
         ]
       },
       "businessDevelopment": {
-        "title": "Business Development",
-        "usp": "Membuka peluang pasar baru dan memperkuat pertumbuhan bisnis.",
-        "description": "Pendampingan strategi ekspansi bisnis, identifikasi peluang pasar, dan penyusunan model pertumbuhan yang scalable — dari UMKM hingga operasi skala enterprise.",
+        "title": "Business Development Solutions",
+        "usp": "Membuka <highlight>peluang pasar baru</highlight> dan memperkuat <highlight>pertumbuhan bisnis</highlight>.",
+        "description": "Pendampingan <highlight>strategi ekspansi bisnis</highlight>, identifikasi peluang pasar, dan penyusunan <highlight>model pertumbuhan</highlight> yang scalable — dari UMKM hingga operasi skala enterprise.",
         "features": [
           "Market research & analisis kompetitif",
           "Strategi penetrasi dan ekspansi pasar",
@@ -94,9 +94,9 @@
         ]
       },
       "itDigital": {
-        "title": "IT & Digital",
-        "usp": "Transformasi digital yang meningkatkan efisiensi operasional.",
-        "description": "Solusi teknologi informasi dan digitalisasi proses bisnis — dari otomasi workflow, integrasi sistem, hingga pengembangan platform web dan advisory implementasi AI.",
+        "title": "IT & Digital Solutions",
+        "usp": "<highlight>Transformasi digital</highlight> yang meningkatkan efisiensi operasional.",
+        "description": "Solusi <highlight>teknologi informasi</highlight> dan <highlight>digitalisasi proses bisnis</highlight> — dari otomasi workflow, integrasi sistem, hingga pengembangan platform web dan <highlight>advisory implementasi AI</highlight>.",
         "features": [
           "Digital transformation strategy",
           "System integration & API development",
@@ -105,9 +105,9 @@
         ]
       },
       "hrConsulting": {
-        "title": "HR Consulting",
-        "usp": "Optimalisasi SDM dan hubungan industrial yang produktif.",
-        "description": "Layanan konsultasi SDM menyeluruh — mulai dari rekrutmen dan talent acquisition, struktur remunerasi, pengembangan organisasi, hingga kepatuhan regulasi ketenagakerjaan.",
+        "title": "HR Consulting Solutions",
+        "usp": "Optimalisasi <highlight>SDM</highlight> dan <highlight>hubungan industrial</highlight> yang produktif.",
+        "description": "Layanan <highlight>konsultasi SDM</highlight> menyeluruh — mulai dari rekrutmen dan talent acquisition, struktur remunerasi, <highlight>pengembangan organisasi</highlight>, hingga kepatuhan regulasi ketenagakerjaan.",
         "features": [
           "Rekrutmen & talent acquisition",
           "Struktur remunerasi & benefit",
@@ -117,8 +117,8 @@
       },
       "salesProjectManagement": {
         "title": "Sales & Project Management",
-        "usp": "Eksekusi proyek tepat waktu dengan target penjualan tercapai.",
-        "description": "Manajemen proyek end-to-end dengan fokus pada pencapaian target penjualan, koordinasi tim lapangan, pelaporan real-time, dan manajemen pemangku kepentingan.",
+        "usp": "<highlight>Eksekusi proyek</highlight> tepat waktu dengan <highlight>target penjualan</highlight> tercapai.",
+        "description": "<highlight>Manajemen proyek end-to-end</highlight> dengan fokus pada pencapaian target penjualan, koordinasi tim lapangan, <highlight>pelaporan real-time</highlight>, dan <highlight>stakeholder management</highlight>.",
         "features": [
           "Project planning & execution",
           "Sales monitoring & performance reporting",
@@ -128,8 +128,8 @@
       },
       "financialSolutions": {
         "title": "Financial Solutions",
-        "usp": "Perencanaan keuangan bisnis yang transparan dan terstruktur.",
-        "description": "Konsultasi keuangan dan akuntansi untuk membantu bisnis mengelola arus kas, perencanaan anggaran, analisis profitabilitas, dan proses akuntansi yang lebih efisien.",
+        "usp": "<highlight>Perencanaan keuangan bisnis</highlight> yang transparan dan terstruktur.",
+        "description": "Konsultasi <highlight>keuangan dan akuntansi</highlight> untuk membantu bisnis mengelola arus kas, <highlight>perencanaan anggaran</highlight>, analisis profitabilitas, dan proses akuntansi yang lebih efisien.",
         "features": [
           "Financial planning & budgeting",
           "Cash flow analysis & forecasting",
@@ -141,8 +141,8 @@
   },
   "contact": {
     "eyebrow": "Kontak",
-    "title": "Mari berkolaborasi",
-    "description": "Punya proyek atau ingin diskusi peluang bisnis? Kirim pesan dan saya akan merespons secepatnya.",
+    "title": "Mari Berkolaborasi",
+    "description": "Punya proyek atau ingin diskusi <highlight>peluang bisnis</highlight>? Kirim pesan dan saya akan merespons secepatnya.",
     "email": "Email",
     "location": "Lokasi",
     "responseNote": "Saya biasanya merespons dalam 24–48 jam. Untuk pertanyaan mendesak, sebutkan di pesan Anda."

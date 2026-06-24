@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 
+import { HighlightedText } from "@/components/HighlightedText";
 import {
   Card,
   CardContent,
@@ -42,20 +43,22 @@ export function ServiceCard({
           className={cn(
             "text-sm leading-relaxed sm:text-[0.9375rem]",
             variant === "detailed"
-              ? "font-medium text-primary/90"
+              ? "font-medium text-muted-foreground"
               : "text-muted-foreground"
           )}
         >
-          {usp}
+          <HighlightedText text={usp} />
         </CardDescription>
       </CardHeader>
 
       {variant === "detailed" && (description || features?.length) && (
         <CardContent className="flex flex-1 flex-col gap-5 pt-4">
           {description && (
-            <p className="text-sm leading-7 text-muted-foreground sm:text-[0.9375rem]">
-              {description}
-            </p>
+            <HighlightedText
+              as="p"
+              text={description}
+              className="text-sm leading-7 text-muted-foreground sm:text-[0.9375rem]"
+            />
           )}
           {features && features.length > 0 && (
             <ul className="mt-auto space-y-2.5 border-t border-border/50 pt-4">

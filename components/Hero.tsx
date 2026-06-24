@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
+import { HighlightedText } from "@/components/HighlightedText";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -86,12 +87,13 @@ export default function Hero() {
               }}
             />
 
-            <motion.p
-              {...fade(0.35)}
-              className="max-w-xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
-            >
-              {t("tagline")}
-            </motion.p>
+            <motion.div {...fade(0.35)}>
+              <HighlightedText
+                as="p"
+                text={t("tagline")}
+                className="max-w-xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+              />
+            </motion.div>
 
             <motion.div
               {...fade(0.45)}

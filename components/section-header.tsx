@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 
+import { HighlightedText } from "@/components/HighlightedText";
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
@@ -37,12 +38,14 @@ export function SectionHeader({
         </p>
       )}
       <h2 className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
-        {title}
+        <HighlightedText text={title} />
       </h2>
       {description && (
-        <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-          {description}
-        </p>
+        <HighlightedText
+          as="p"
+          text={description}
+          className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+        />
       )}
     </motion.div>
   );

@@ -4,6 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
+import { HighlightedText } from "@/components/HighlightedText";
 import { FadeIn } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
 import { Button } from "@/components/ui/button";
@@ -50,12 +51,12 @@ export function About({ className, showCta = true }: AboutProps) {
           <FadeIn delay={0.1}>
             <div className="space-y-5">
               {bio.map((paragraph) => (
-                <p
+                <HighlightedText
                   key={paragraph.slice(0, 40)}
+                  as="p"
+                  text={paragraph}
                   className="text-base leading-7 text-muted-foreground sm:text-[1.0625rem] sm:leading-8"
-                >
-                  {paragraph}
-                </p>
+                />
               ))}
             </div>
           </FadeIn>

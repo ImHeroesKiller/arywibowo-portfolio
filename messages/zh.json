@@ -38,17 +38,17 @@
   "hero": {
     "name": "Ary Wibowo",
     "title": "专业顾问",
-    "tagline": "通过战略咨询助力企业成长 — 涵盖可再生能源、业务发展、IT与数字化转型、人力资源与运营、销售与项目管理及财务解决方案。",
+    "tagline": "通过<highlight>战略咨询</highlight>助力企业成长 — 涵盖<highlight>可再生能源</highlight>、<highlight>业务发展</highlight>、<highlight>IT与数字化转型</highlight>、<highlight>人力资源与运营</highlight>、<highlight>销售与项目管理</highlight>及<highlight>财务解决方案</highlight>。",
     "contact": "联系",
     "services": "服务"
   },
   "about": {
     "eyebrow": "关于",
     "title": "专业简介",
-    "summary": "结合业务发展、客户关系和技术专长，提供有影响力的商业解决方案。",
+    "summary": "结合<highlight>业务发展</highlight>、<highlight>客户关系</highlight>和<highlight>技术专长</highlight>，提供有影响力的商业解决方案。",
     "bio": [
-      "拥有超过7年业务发展、客户关系、可再生能源和数字化转型经验的专业顾问。计算机工程背景强化了分析性思维，能够设计可衡量的商业解决方案 — 从市场增长战略到数字系统实施。",
-      "在电信和能源行业拥有跨行业项目管理经验，擅长协调多学科团队并开发数字平台以实现业务流程自动化。融合业务发展、人力资源、销售、项目管理、IT和财务方面的专长，提供能产生实际影响的综合咨询服务。"
+      "拥有超过7年<highlight>业务发展</highlight>、<highlight>客户关系</highlight>、<highlight>可再生能源</highlight>和<highlight>数字化转型</highlight>经验的专业顾问。计算机工程背景强化了分析性思维，能够设计<highlight>可衡量的商业解决方案</highlight> — 从<highlight>市场增长战略</highlight>到<highlight>数字系统实施</highlight>。",
+      "在电信和能源行业拥有跨行业项目管理经验，擅长协调<highlight>多学科团队</highlight>并开发<highlight>数字平台</highlight>以实现业务流程自动化。融合业务发展、人力资源、销售、项目管理、IT和财务方面的专长，提供能产生实际影响的<highlight>综合咨询服务</highlight>。"
     ],
     "coreStrengthsTitle": "核心优势",
     "coreStrengthsDescription": "支持综合咨询的六大核心专业领域。",
@@ -65,16 +65,16 @@
   "services": {
     "eyebrow": "服务",
     "title": "综合咨询解决方案",
-    "description": "可再生能源、业务发展、IT与数字化、人力资源咨询、销售与项目管理及财务解决方案 — 从战略到执行的综合解决方案。",
-    "descriptionFull": "专为支持您跨行业业务增长而设计的专业咨询服务。",
+    "description": "<highlight>可再生能源</highlight>、<highlight>业务发展</highlight>、<highlight>IT与数字化</highlight>、<highlight>人力资源咨询</highlight>、<highlight>销售与项目管理</highlight>及<highlight>财务解决方案</highlight> — 从<highlight>战略到执行</highlight>的综合解决方案。",
+    "descriptionFull": "专为支持您<highlight>跨行业业务增长</highlight>而设计的<highlight>专业咨询服务</highlight>。",
     "seeMoreRich": "查看完整详情请访问<link>服务</link>页面。",
     "pageTitle": "完整咨询服务",
-    "pageDescription": "支持您业务转型的综合解决方案 — 从战略到执行。",
+    "pageDescription": "支持您<highlight>业务转型</highlight>的综合解决方案 — 从<highlight>战略规划</highlight>到<highlight>执行落地</highlight>。",
     "items": {
       "renewableEnergy": {
-        "title": "可再生能源",
-        "usp": "可持续且可衡量的绿色能源转型战略。",
-        "description": "为希望提高运营效率同时致力于环境可持续发展的企业提供可再生能源解决方案的规划与实施咨询。",
+        "title": "可再生能源解决方案",
+        "usp": "可持续且可衡量的<highlight>绿色能源转型</highlight>战略。",
+        "description": "为希望提高<highlight>运营效率</highlight>同时致力于<highlight>环境可持续发展</highlight>的企业提供<highlight>可再生能源解决方案</highlight>的规划与实施咨询。",
         "features": [
           "能源需求分析与运营效率",
           "分阶段绿色能源转型路线图",
@@ -83,9 +83,9 @@
         ]
       },
       "businessDevelopment": {
-        "title": "业务发展",
-        "usp": "开拓新市场机会，强化业务增长。",
-        "description": "业务扩张战略指导、市场机会识别和可扩展增长模式制定 — 从中小企业到企业级运营。",
+        "title": "业务发展解决方案",
+        "usp": "开拓<highlight>新市场机会</highlight>，强化<highlight>业务增长</highlight>。",
+        "description": "<highlight>业务扩张战略</highlight>指导、市场机会识别和<highlight>可扩展增长模式</highlight>制定 — 从中小企业到企业级运营。",
         "features": [
           "市场调研与竞争分析",
           "市场渗透与扩张战略",
@@ -94,9 +94,9 @@
         ]
       },
       "itDigital": {
-        "title": "IT与数字化",
-        "usp": "提升运营效率的数字化转型。",
-        "description": "信息技术解决方案和业务流程数字化 — 从工作流自动化、系统集成到网络平台开发和AI实施咨询。",
+        "title": "IT与数字化解决方案",
+        "usp": "提升运营效率的<highlight>数字化转型</highlight>。",
+        "description": "<highlight>信息技术解决方案</highlight>和<highlight>业务流程数字化</highlight> — 从工作流自动化、系统集成到网络平台开发和<highlight>AI实施咨询</highlight>。",
         "features": [
           "数字化转型战略",
           "系统集成与API开发",
@@ -105,9 +105,9 @@
         ]
       },
       "hrConsulting": {
-        "title": "人力资源咨询",
-        "usp": "优化人力资源和生产性劳资关系。",
-        "description": "全面的人力资源咨询 — 涵盖招聘与人才获取、薪酬结构、组织发展及劳动法规合规。",
+        "title": "人力资源咨询解决方案",
+        "usp": "优化<highlight>人力资源</highlight>和生产性<highlight>劳资关系</highlight>。",
+        "description": "全面的<highlight>人力资源咨询</highlight> — 涵盖招聘与人才获取、薪酬结构、<highlight>组织发展</highlight>及劳动法规合规。",
         "features": [
           "招聘与人才获取",
           "薪酬结构与福利",
@@ -117,8 +117,8 @@
       },
       "salesProjectManagement": {
         "title": "销售与项目管理",
-        "usp": "按时执行项目，达成销售目标。",
-        "description": "端到端项目管理，专注于实现销售目标、现场团队协调、实时报告和利益相关者管理。",
+        "usp": "按时<highlight>执行项目</highlight>，达成<highlight>销售目标</highlight>。",
+        "description": "<highlight>端到端项目管理</highlight>，专注于实现销售目标、现场团队协调、<highlight>实时报告</highlight>和<highlight>利益相关者管理</highlight>。",
         "features": [
           "项目规划与执行",
           "销售监控与绩效报告",
@@ -128,8 +128,8 @@
       },
       "financialSolutions": {
         "title": "财务解决方案",
-        "usp": "透明且结构化的商业财务规划。",
-        "description": "财务和会计咨询，帮助企业管理层现金流、预算规划、盈利能力分析及更高效的会计流程。",
+        "usp": "透明且结构化的<highlight>商业财务规划</highlight>。",
+        "description": "<highlight>财务和会计咨询</highlight>，帮助企业管理层现金流、<highlight>预算规划</highlight>、盈利能力分析及更高效的会计流程。",
         "features": [
           "财务规划与预算",
           "现金流分析与预测",
@@ -142,7 +142,7 @@
   "contact": {
     "eyebrow": "联系",
     "title": "让我们合作",
-    "description": "有项目或想讨论商业机会？发送消息，我会尽快回复。",
+    "description": "有项目或想讨论<highlight>商业机会</highlight>？发送消息，我会尽快回复。",
     "email": "邮箱",
     "location": "地址",
     "responseNote": "我通常在24–48小时内回复。如有紧急事项，请在消息中注明。"
