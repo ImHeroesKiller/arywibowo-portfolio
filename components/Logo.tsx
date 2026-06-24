@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { siteConfig } from "@/lib/constants";
@@ -20,21 +19,21 @@ export default function Logo({
   const content = (
     <span
       className={cn(
-        "inline-flex items-center gap-2.5 transition-opacity hover:opacity-90",
+        "inline-flex items-center gap-2.5 bg-transparent transition-opacity hover:opacity-90",
         className
       )}
     >
-      <Image
+      <img
         src={siteConfig.logo}
         alt={`${siteConfig.name} logo`}
         width={160}
         height={48}
-        priority
-        unoptimized
+        decoding="async"
         className={cn(
-          "h-8 w-auto bg-transparent object-contain sm:h-9",
+          "block h-8 w-auto bg-transparent object-contain sm:h-9",
           imageClassName
         )}
+        style={{ background: "transparent" }}
       />
       {showName && (
         <span className="text-base font-semibold tracking-tight text-foreground sm:text-lg">
@@ -46,7 +45,7 @@ export default function Logo({
 
   if (linkToHome) {
     return (
-      <Link href="/" className="shrink-0">
+      <Link href="/" className="shrink-0 bg-transparent">
         {content}
       </Link>
     );

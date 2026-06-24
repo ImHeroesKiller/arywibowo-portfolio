@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
 import { Footer } from "@/components/footer";
@@ -18,6 +18,11 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#111111",
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.title,
@@ -25,6 +30,22 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  manifest: "/manifest.webmanifest",
+  applicationName: siteConfig.name,
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.name,
+    statusBarStyle: "black-translucent",
+  },
+  icons: {
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -41,6 +62,12 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-title": siteConfig.name,
   },
 };
 
