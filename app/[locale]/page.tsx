@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { About } from "@/components/about";
 import Hero from "@/components/Hero";
+import { LighthouseWidget } from "@/components/lighthouse-widget";
 import { PageTransition } from "@/components/page-transition";
 import { Services } from "@/components/services";
 import { type Locale, routing } from "@/i18n/routing";
@@ -40,6 +41,7 @@ export default function HomePage({ params: { locale } }: PageProps) {
       <Hero />
       <Services />
       <About />
+      <LighthouseWidget />
     </PageTransition>
   );
 }

@@ -188,6 +188,21 @@
     "installButton": "Install",
     "dismiss": "Not now"
   },
+  "lighthouse": {
+    "eyebrow": "Web Quality",
+    "title": "Lighthouse Scores",
+    "description": "Quality metrics for arywibowo.id from Google PageSpeed Insights.",
+    "lastChecked": "Last checked: {date}",
+    "viewReport": "View on PageSpeed Insights",
+    "loading": "Loading scores...",
+    "unavailable": "Scores temporarily unavailable",
+    "categories": {
+      "performance": "Performance",
+      "accessibility": "Accessibility",
+      "seo": "SEO",
+      "bestPractices": "Best Practices"
+    }
+  },
   "languageSwitcher": {
     "label": "Language",
     "locales": {

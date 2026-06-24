@@ -188,6 +188,21 @@
     "installButton": "安装",
     "dismiss": "稍后"
   },
+  "lighthouse": {
+    "eyebrow": "网站质量",
+    "title": "Lighthouse 评分",
+    "description": "来自 Google PageSpeed Insights 的 arywibowo.id 质量指标。",
+    "lastChecked": "上次检查：{date}",
+    "viewReport": "在 PageSpeed Insights 查看",
+    "loading": "正在加载评分...",
+    "unavailable": "评分暂时不可用",
+    "categories": {
+      "performance": "性能",
+      "accessibility": "无障碍",
+      "seo": "SEO",
+      "bestPractices": "最佳实践"
+    }
+  },
   "languageSwitcher": {
     "label": "语言",
     "locales": {

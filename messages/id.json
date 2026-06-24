@@ -188,6 +188,21 @@
     "installButton": "Instal",
     "dismiss": "Nanti saja"
   },
+  "lighthouse": {
+    "eyebrow": "Kualitas Web",
+    "title": "Skor Lighthouse",
+    "description": "Metrik kualitas situs arywibowo.id dari Google PageSpeed Insights.",
+    "lastChecked": "Terakhir diperiksa: {date}",
+    "viewReport": "Lihat di PageSpeed Insights",
+    "loading": "Memuat skor...",
+    "unavailable": "Skor sementara tidak tersedia",
+    "categories": {
+      "performance": "Performa",
+      "accessibility": "Aksesibilitas",
+      "seo": "SEO",
+      "bestPractices": "Best Practices"
+    }
+  },
   "languageSwitcher": {
     "label": "Bahasa",
     "locales": {
