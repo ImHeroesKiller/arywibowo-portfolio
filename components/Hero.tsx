@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
@@ -36,7 +35,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Foto Kanan + Gradient Overlay */}
+          {/* Foto Kanan + Gradient Overlay Smooth */}
           <div className="relative flex-1">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:aspect-auto md:h-[520px]">
               <Image
@@ -46,8 +45,9 @@ export default function Hero() {
                 className="object-cover"
                 priority
               />
-              {/* Gradient Overlay Smooth */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70 md:bg-gradient-to-r md:from-black/40 md:via-black/10 md:to-transparent" />
+              {/* Gradient Overlay Transparan Smooth */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70 
+                            md:bg-gradient-to-r md:from-black/40 md:via-black/10 md:to-transparent" />
             </div>
           </div>
 
