@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -16,6 +15,9 @@ const fade = (delay = 0) => ({
 
 const photoGradient =
   "linear-gradient(to top, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0.38) 20%, rgba(59,130,246,0.22) 45%, rgba(59,130,246,0.08) 70%, transparent 90%)";
+
+const PHOTO_WIDTH = 320;
+const PHOTO_HEIGHT = 440;
 
 export default function Hero() {
   return (
@@ -35,49 +37,41 @@ export default function Hero() {
         }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[440px]">
-          <div className="relative order-1 aspect-[4/3] w-full sm:aspect-[5/4] lg:order-2 lg:aspect-auto lg:min-h-[440px]">
-            <div className="relative h-full w-full lg:hidden">
-              <Image
-                src="/images/profile.png"
-                alt={siteConfig.name}
-                fill
-                priority
-                className="object-cover object-top"
-                sizes="100vw"
-              />
-            </div>
-
+          <div className="relative order-1 flex justify-center lg:order-2 lg:justify-end lg:pr-6">
             <div
-              className="relative hidden h-full w-full lg:absolute lg:inset-0 lg:block"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to left, black 70%, transparent 100%)",
-                maskImage:
-                  "linear-gradient(to left, black 70%, transparent 100%)",
-              }}
+              className="relative shrink-0 overflow-hidden"
+              style={{ width: PHOTO_WIDTH, height: PHOTO_HEIGHT }}
             >
-              <Image
+              <img
                 src="/images/profile.png"
                 alt={siteConfig.name}
-                fill
-                priority
-                className="object-cover object-right-top"
-                sizes="50vw"
+                width={PHOTO_WIDTH}
+                height={PHOTO_HEIGHT}
+                decoding="async"
+                className="block object-cover object-top"
+                style={{
+                  width: PHOTO_WIDTH,
+                  height: PHOTO_HEIGHT,
+                  minWidth: PHOTO_WIDTH,
+                  minHeight: PHOTO_HEIGHT,
+                  maxWidth: PHOTO_WIDTH,
+                  maxHeight: PHOTO_HEIGHT,
+                }}
+              />
+
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{ background: photoGradient }}
+              />
+
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(17,17,17,0.7) 0%, transparent 35%)",
+                }}
               />
             </div>
-
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: photoGradient }}
-            />
-
-            <div
-              className="pointer-events-none absolute inset-0 hidden lg:block"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(17,17,17,0.7) 0%, transparent 35%)",
-              }}
-            />
           </div>
 
           <div className="order-2 flex flex-col justify-center px-5 py-8 sm:px-8 sm:py-12 lg:order-1 lg:px-10 lg:py-14 xl:px-12">
