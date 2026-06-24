@@ -1,27 +1,56 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Link from "next/link";
+
+import { siteConfig } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 interface LogoProps {
-  className?: string
-  showText?: boolean
+  className?: string;
+  imageClassName?: string;
+  showName?: boolean;
+  linkToHome?: boolean;
 }
 
-export default function Logo({ className = '', showText = true }: LogoProps) {
-  return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <div className="relative h-8 w-8 md:h-9 md:w-9">
-        <Image
-          src="/images/awi-logo.png"
-          alt="AWI Logo"
-          fill
-          className="object-contain"
-          unoptimized // ← Penting untuk PNG transparan
-        />
-      </div>
-      {showText && (
-        <span className="font-semibold tracking-tight text-white text-lg md:text-xl">
-          Ary Wibowo
+export default function Logo({
+  className,
+  imageClassName,
+  showName = false,
+  linkToHome = true,
+}: LogoProps) {
+  const content = (
+    <span
+      className={cn(
+        "inline-flex items-center gap-2.5 transition-opacity hover:opacity-90",
+        className
+      )}
+    >
+      <Image
+        src={siteConfig.logo}
+        alt={`${siteConfig.name} logo`}
+        width={160}
+        height={48}
+        priority
+        unoptimized
+        className={cn(
+          "h-8 w-auto bg-transparent object-contain sm:h-9",
+          imageClassName
+        )}
+      />
+      {showName && (
+        <span className="text-base font-semibold tracking-tight text-foreground sm:text-lg">
+          {siteConfig.name}
         </span>
       )}
-    </div>
-  )
+    </span>
+  );
+
+  if (linkToHome) {
+    return (
+      <Link href="/" className="shrink-0">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }

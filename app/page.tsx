@@ -1,5 +1,5 @@
 import { About } from "@/components/about";
-import { Hero } from "@/components/Hero";
+import Hero from "@/components/Hero";
 import { PageTransition } from "@/components/page-transition";
 import { Services } from "@/components/services";
 
