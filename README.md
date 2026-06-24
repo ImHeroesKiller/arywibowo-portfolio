@@ -4,7 +4,8 @@ Portfolio website for **Ary Wibowo** — Profesional Consultant.
 
 Built with Next.js 14, TypeScript, Tailwind CSS v4, shadcn/ui, and Framer Motion.
 
-**Live site:** [https://arywibowo-portfolio.vercel.app](https://arywibowo-portfolio.vercel.app)  
+**GitHub:** [https://github.com/ImHeroesKiller/arywibowo-portfolio](https://github.com/ImHeroesKiller/arywibowo-portfolio)  
+**Vercel:** Import repo at [vercel.com/new](https://vercel.com/new) → deploy URL will be shown (e.g. `arywibowo-portfolio.vercel.app`)  
 **Custom domain (when DNS is ready):** [https://arywibowo.co.id](https://arywibowo.co.id)
 
 ---
