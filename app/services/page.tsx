@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Cloud, Database, Globe, Settings } from "lucide-react";
 
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
@@ -10,63 +9,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { services } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Web development, ERP integration, cloud infrastructure, and custom software solutions.",
+    "Layanan konsultasi profesional: Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, Financial Solutions.",
 };
-
-const services = [
-  {
-    icon: Globe,
-    title: "Web Development",
-    description:
-      "Modern, performant web applications built with Next.js, React, and TypeScript. From landing pages to complex SaaS platforms.",
-    features: [
-      "Responsive UI/UX",
-      "SSR & SSG optimization",
-      "API development",
-      "Third-party integrations",
-    ],
-  },
-  {
-    icon: Database,
-    title: "ERP Integration",
-    description:
-      "Seamless ERPNext and Odoo implementations — custom modules, workflows, and business process automation.",
-    features: [
-      "Custom module development",
-      "Data migration",
-      "Workflow automation",
-      "Reporting & dashboards",
-    ],
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Infrastructure",
-    description:
-      "Reliable, scalable cloud deployments on AWS and GCP. CI/CD pipelines, containerization, and monitoring.",
-    features: [
-      "Docker & Kubernetes",
-      "CI/CD pipelines",
-      "Server management",
-      "Performance optimization",
-    ],
-  },
-  {
-    icon: Settings,
-    title: "Consulting & Support",
-    description:
-      "Technical advisory, code reviews, architecture planning, and ongoing maintenance for existing systems.",
-    features: [
-      "Architecture review",
-      "Code audits",
-      "Performance tuning",
-      "Ongoing maintenance",
-    ],
-  },
-];
 
 export default function ServicesPage() {
   return (
@@ -75,26 +24,31 @@ export default function ServicesPage() {
         <FadeIn>
           <SectionHeader
             eyebrow="Services"
-            title="What I can help you with"
-            description="Tailored solutions for startups, SMEs, and enterprises — from concept to deployment and beyond."
+            title="Layanan konsultasi lengkap"
+            description="Solusi terintegrasi untuk mendukung transformasi bisnis Anda — dari strategi hingga eksekusi."
             align="center"
             className="mx-auto"
           />
         </FadeIn>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <FadeIn key={service.title} delay={index * 0.1}>
-              <Card className="h-full border-border/60 bg-card/80 transition-colors hover:border-primary/40">
+            <FadeIn key={service.id} delay={index * 0.08}>
+              <Card className="group flex h-full flex-col border-border/60 bg-card/80 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
                 <CardHeader>
-                  <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <div className="mb-3 flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
                     <service.icon className="size-5" />
                   </div>
                   <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardDescription className="font-medium text-primary/90">
+                    {service.usp}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
+                <CardContent className="flex flex-1 flex-col">
+                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                    {service.description}
+                  </p>
+                  <ul className="mt-auto space-y-2">
                     {service.features.map((feature) => (
                       <li
                         key={feature}

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
@@ -16,7 +20,11 @@ export function SectionHeader({
   align = "left",
 }: SectionHeaderProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
       className={cn(
         "max-w-2xl",
         align === "center" && "mx-auto text-center",
@@ -34,6 +42,6 @@ export function SectionHeader({
       {description && (
         <p className="mt-4 text-lg text-muted-foreground">{description}</p>
       )}
-    </div>
+    </motion.div>
   );
 }

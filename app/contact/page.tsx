@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Ary Wibowo for your next project.",
+  description: "Hubungi Ary Wibowo untuk konsultasi bisnis dan proyek.",
 };
 
 export default function ContactPage() {
@@ -18,8 +18,8 @@ export default function ContactPage() {
         <FadeIn>
           <SectionHeader
             eyebrow="Contact"
-            title="Let's work together"
-            description="Have a project in mind or want to discuss an opportunity? Send me a message and I'll get back to you."
+            title="Mari berkolaborasi"
+            description="Punya proyek atau ingin diskusi peluang bisnis? Kirim pesan dan saya akan merespons secepatnya."
             align="center"
             className="mx-auto"
           />
@@ -50,15 +50,15 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold">Location</h3>
                   <p className="mt-1 text-muted-foreground">
-                    Indonesia — Remote worldwide
+                    {siteConfig.location}
                   </p>
                 </div>
               </div>
 
               <div className="rounded-xl border border-border/60 bg-card/50 p-6">
                 <p className="text-sm text-muted-foreground">
-                  I typically respond within 24–48 hours. For urgent inquiries,
-                  please mention it in your message subject line.
+                  Saya biasanya merespons dalam 24–48 jam. Untuk pertanyaan
+                  mendesak, sebutkan di subject pesan Anda.
                 </p>
               </div>
             </div>
