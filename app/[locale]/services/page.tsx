@@ -3,13 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { ServiceCard } from "@/components/service-card";
 import { type Locale, routing } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
 import { serviceIcons, serviceIds } from "@/lib/services";
@@ -44,7 +38,7 @@ export default async function ServicesPage({ params: { locale } }: PageProps) {
 
   return (
     <PageTransition>
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <FadeIn>
           <SectionHeader
             eyebrow={t("eyebrow")}
@@ -55,40 +49,21 @@ export default async function ServicesPage({ params: { locale } }: PageProps) {
           />
         </FadeIn>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7">
           {serviceIds.map((id, index) => {
             const Icon = serviceIcons[id];
             const features = t.raw(`items.${id}.features`) as string[];
 
             return (
               <FadeIn key={id} delay={index * 0.08}>
-                <Card className="group flex h-full flex-col border-border/60 bg-card/80 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
-                  <CardHeader>
-                    <div className="mb-3 flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
-                      <Icon className="size-5" />
-                    </div>
-                    <CardTitle>{t(`items.${id}.title`)}</CardTitle>
-                    <CardDescription className="font-medium text-primary/90">
-                      {t(`items.${id}.usp`)}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex flex-1 flex-col">
-                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                      {t(`items.${id}.description`)}
-                    </p>
-                    <ul className="mt-auto space-y-2">
-                      {features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
-                        >
-                          <span className="size-1.5 shrink-0 rounded-full bg-primary" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                <ServiceCard
+                  icon={Icon}
+                  title={t(`items.${id}.title`)}
+                  usp={t(`items.${id}.usp`)}
+                  description={t(`items.${id}.description`)}
+                  features={features}
+                  variant="detailed"
+                />
               </FadeIn>
             );
           })}

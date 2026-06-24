@@ -26,21 +26,23 @@ export function SectionHeader({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, ease: "easeOut" }}
       className={cn(
-        "max-w-2xl",
+        "max-w-3xl",
         align === "center" && "mx-auto text-center",
         className
       )}
     >
       {eyebrow && (
-        <p className="mb-2 text-sm font-medium uppercase tracking-wider text-primary">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary sm:text-sm">
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+      <h2 className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-lg text-muted-foreground">{description}</p>
+        <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+          {description}
+        </p>
       )}
     </motion.div>
   );

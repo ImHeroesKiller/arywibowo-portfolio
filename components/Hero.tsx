@@ -16,14 +16,11 @@ const fade = (delay = 0) => ({
 const photoGradient =
   "linear-gradient(to top, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0.38) 20%, rgba(59,130,246,0.22) 45%, rgba(59,130,246,0.08) 70%, transparent 90%)";
 
-const PHOTO_WIDTH = 320;
-const PHOTO_HEIGHT = 440;
-
 export default function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative overflow-hidden bg-background px-3 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+    <section className="relative overflow-hidden bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
       <div className="pointer-events-none absolute -left-20 top-1/4 size-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-1/4 size-72 rounded-full bg-primary/10 blur-3xl" />
 
@@ -39,26 +36,15 @@ export default function Hero() {
         }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[440px]">
-          <div className="relative order-1 flex justify-center lg:order-2 lg:justify-end lg:pr-6">
-            <div
-              className="relative shrink-0 overflow-hidden"
-              style={{ width: PHOTO_WIDTH, height: PHOTO_HEIGHT }}
-            >
+          <div className="relative order-1 flex justify-center px-4 pt-8 lg:order-2 lg:justify-end lg:px-0 lg:pt-0 lg:pr-8">
+            <div className="relative aspect-[32/44] w-full max-w-[240px] overflow-hidden sm:max-w-[280px] lg:max-w-[320px]">
               <img
                 src="/images/profile.png"
                 alt={t("name")}
-                width={PHOTO_WIDTH}
-                height={PHOTO_HEIGHT}
+                width={320}
+                height={440}
                 decoding="async"
-                className="block object-cover object-top"
-                style={{
-                  width: PHOTO_WIDTH,
-                  height: PHOTO_HEIGHT,
-                  minWidth: PHOTO_WIDTH,
-                  minHeight: PHOTO_HEIGHT,
-                  maxWidth: PHOTO_WIDTH,
-                  maxHeight: PHOTO_HEIGHT,
-                }}
+                className="size-full object-cover object-top"
               />
 
               <div
@@ -76,24 +62,24 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="order-2 flex flex-col justify-center px-5 py-8 sm:px-8 sm:py-12 lg:order-1 lg:px-10 lg:py-14 xl:px-12">
+          <div className="order-2 flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12 lg:order-1 lg:px-12 lg:py-14 xl:px-14">
             <motion.h1
               {...fade(0.1)}
-              className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl xl:text-6xl"
+              className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl xl:text-6xl"
             >
               {t("name")}
             </motion.h1>
 
             <motion.p
               {...fade(0.2)}
-              className="mt-2 text-lg font-semibold text-primary sm:mt-3 sm:text-xl md:text-2xl"
+              className="mt-3 text-lg font-semibold leading-snug text-primary sm:mt-4 sm:text-xl md:text-2xl"
             >
               {t("title")}
             </motion.p>
 
             <motion.div
               {...fade(0.28)}
-              className="my-5 h-px w-full max-w-xs sm:my-6"
+              className="my-6 h-px w-full max-w-xs sm:my-7"
               style={{
                 background:
                   "linear-gradient(to right, rgba(59,130,246,0.6), transparent)",
@@ -102,7 +88,7 @@ export default function Hero() {
 
             <motion.p
               {...fade(0.35)}
-              className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg"
+              className="max-w-xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
             >
               {t("tagline")}
             </motion.p>

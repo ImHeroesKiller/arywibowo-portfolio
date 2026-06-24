@@ -40,7 +40,7 @@ export default async function ContactPage({ params: { locale } }: PageProps) {
 
   return (
     <PageTransition>
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <FadeIn>
           <SectionHeader
             eyebrow={t("eyebrow")}
@@ -51,38 +51,38 @@ export default async function ContactPage({ params: { locale } }: PageProps) {
           />
         </FadeIn>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-2">
+        <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-14">
           <FadeIn delay={0.1}>
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 rounded-xl border border-border/60 bg-card/40 p-5">
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Mail className="size-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{t("email")}</h3>
+                  <h3 className="font-semibold leading-snug">{t("email")}</h3>
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="mt-1 text-muted-foreground transition-colors hover:text-primary"
+                    className="mt-1.5 inline-block text-sm leading-relaxed text-muted-foreground transition-colors hover:text-primary sm:text-base"
                   >
                     {siteConfig.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <div className="flex items-start gap-4 rounded-xl border border-border/60 bg-card/40 p-5">
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <MapPin className="size-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{t("location")}</h3>
-                  <p className="mt-1 text-muted-foreground">
+                  <h3 className="font-semibold leading-snug">{t("location")}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground sm:text-base">
                     {tCommon("location")}
                   </p>
                 </div>
               </div>
 
-              <div className="rounded-xl border border-border/60 bg-card/50 p-6">
-                <p className="text-sm text-muted-foreground">
+              <div className="rounded-xl border border-border/60 bg-card/50 p-5 sm:p-6">
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {t("responseNote")}
                 </p>
               </div>

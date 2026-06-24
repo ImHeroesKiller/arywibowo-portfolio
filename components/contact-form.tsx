@@ -96,7 +96,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-xl border border-border/60 bg-card/50 p-6 sm:p-8"
+      className="space-y-5 rounded-xl border border-border/60 bg-card/50 p-6 sm:space-y-6 sm:p-8"
     >
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium">

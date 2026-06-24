@@ -38,7 +38,7 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
 
   return (
     <PageTransition>
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <FadeIn>
           <SectionHeader
             eyebrow={t("eyebrow")}
@@ -54,10 +54,10 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
             <div className="flex size-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <FolderOpen className="size-8" />
             </div>
-            <h3 className="mt-6 text-xl font-semibold">
+            <h3 className="mt-6 text-xl font-semibold leading-snug">
               {t("comingSoonTitle")}
             </h3>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
               {t("comingSoonDescription")}
             </p>
           </div>
