@@ -10,12 +10,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { services } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services",
+export const metadata: Metadata = createPageMetadata({
+  title: "Layanan Konsultasi",
   description:
-    "Layanan konsultasi profesional: Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, Financial Solutions.",
-};
+    "Enam layanan konsultasi terintegrasi: Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, dan Financial Solutions — dari strategi hingga eksekusi.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

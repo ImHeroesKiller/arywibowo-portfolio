@@ -3,11 +3,14 @@ import { FolderOpen } from "lucide-react";
 
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description: "Portfolio proyek Ary Wibowo — coming soon.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Proyek & Portfolio",
+  description:
+    "Portfolio proyek dan studi kasus Ary Wibowo di business development, energi terbarukan, transformasi digital, dan manajemen proyek lintas industri.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (

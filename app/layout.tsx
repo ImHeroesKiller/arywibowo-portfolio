@@ -4,6 +4,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { siteConfig } from "@/lib/constants";
+import { defaultOgImage, siteKeywords } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -18,6 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
 });
 
+const defaultTitle = `${siteConfig.name} | ${siteConfig.title}`;
+
 export const viewport: Viewport = {
   themeColor: "#111111",
   colorScheme: "dark",
@@ -25,13 +28,18 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.title,
+    default: defaultTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [...siteKeywords],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   metadataBase: new URL(siteConfig.url),
   manifest: "/manifest.webmanifest",
   applicationName: siteConfig.name,
+  category: "business",
   appleWebApp: {
     capable: true,
     title: siteConfig.name,
@@ -45,21 +53,38 @@ export const metadata: Metadata = {
     apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
   },
   openGraph: {
-    title: siteConfig.title,
+    title: defaultTitle,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    locale: "en_US",
+    locale: "id_ID",
     type: "website",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.title,
+    title: defaultTitle,
     description: siteConfig.description,
+    images: [defaultOgImage.url],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION && {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+    }),
+    ...(process.env.BING_SITE_VERIFICATION && {
+      other: { "msvalidate.01": process.env.BING_SITE_VERIFICATION },
+    }),
   },
   other: {
     "mobile-web-app-capable": "yes",
@@ -75,7 +100,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="id" className="dark">
       <body
         className={cn(
           "min-h-screen font-sans antialiased",

@@ -5,12 +5,14 @@ import { ContactForm } from "@/components/contact-form";
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
 import { siteConfig } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = createPageMetadata({
+  title: "Hubungi Saya",
   description:
-    "Hubungi Ary Wibowo untuk konsultasi bisnis — email aku@arywibowo.co.id, Jakarta, Indonesia.",
-};
+    "Hubungi Ary Wibowo untuk konsultasi bisnis, kolaborasi proyek, atau diskusi strategi. Kirim pesan melalui form atau email aku@arywibowo.co.id — Jakarta, Indonesia.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
