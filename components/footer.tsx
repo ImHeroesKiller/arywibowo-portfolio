@@ -18,13 +18,23 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/60 bg-card/50">
+    <footer className="border-t border-border/60 bg-card/50 pb-20 sm:pb-12">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               {tMeta("description")}
+            </p>
+            <p className="mt-5">
+              <a
+                href="https://arywibowo.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-muted-foreground/70 transition-colors hover:text-muted-foreground"
+              >
+                {t("creatorCredit")}
+              </a>
             </p>
           </div>
 
@@ -68,21 +78,9 @@ export function Footer() {
 
         <Separator className="my-8" />
 
-        <div className="space-y-2 text-center">
-          <p className="text-sm text-muted-foreground">
-            © {year} {tHero("name")}. {t("rights")}
-          </p>
-          <p>
-            <a
-              href="https://arywibowo.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-muted-foreground/60 transition-colors hover:text-muted-foreground"
-            >
-              {t("creatorCredit")}
-            </a>
-          </p>
-        </div>
+        <p className="text-center text-sm text-muted-foreground">
+          © {year} {tHero("name")}. {t("rights")}
+        </p>
       </div>
     </footer>
   );
