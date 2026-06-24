@@ -1,43 +1,52 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { CheckCircle2 } from "lucide-react";
 
 import { FadeIn } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { aboutContent } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface AboutProps {
-  showExperience?: boolean;
   className?: string;
+  showCta?: boolean;
 }
 
-export function About({ showExperience = false, className }: AboutProps) {
+const strengthVariants = {
+  hidden: { opacity: 0, x: -12 },
+  visible: (index: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.35,
+      delay: index * 0.08,
+      ease: [0.25, 0.1, 0.25, 1] as const,
+    },
+  }),
+};
+
+export function About({ className, showCta = true }: AboutProps) {
   return (
-    <section
-      className={cn(
-        "border-t border-border/60 bg-card/20",
-        className
-      )}
-    >
+    <section className={cn("border-t border-border/60 bg-card/20", className)}>
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionHeader
             eyebrow="About"
             title="Profil profesional"
-            description="Kombinasi pengalaman SDM, manajemen proyek, dan keahlian teknologi untuk solusi bisnis yang berdampak."
+            description={aboutContent.summary}
             align="center"
             className="mx-auto"
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-2">
+        <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:items-start">
           <FadeIn delay={0.1}>
             <div className="space-y-4 text-muted-foreground">
               {aboutContent.bio.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)} className="leading-relaxed">
+                <p key={paragraph.slice(0, 40)} className="leading-relaxed">
                   {paragraph}
                 </p>
               ))}
@@ -45,40 +54,36 @@ export function About({ showExperience = false, className }: AboutProps) {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div>
+            <div className="rounded-2xl border border-border/60 bg-card/50 p-6 sm:p-8">
               <h3 className="text-lg font-semibold text-foreground">
                 Core Strengths
               </h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {aboutContent.coreStrengths.map((strength) => (
-                  <Badge key={strength} variant="secondary">
-                    {strength}
-                  </Badge>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Enam area keahlian utama yang mendukung konsultasi terintegrasi.
+              </p>
+              <motion.ul
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-40px" }}
+                className="mt-6 space-y-3"
+              >
+                {aboutContent.coreStrengths.map((strength, index) => (
+                  <motion.li
+                    key={strength}
+                    custom={index}
+                    variants={strengthVariants}
+                    className="flex items-start gap-3 text-sm text-foreground"
+                  >
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                    <span>{strength}</span>
+                  </motion.li>
                 ))}
-              </div>
+              </motion.ul>
             </div>
           </FadeIn>
         </div>
 
-        {showExperience && (
-          <div className="mt-16 space-y-6">
-            <FadeIn>
-              <SectionHeader eyebrow="Experience" title="Perjalanan profesional" />
-            </FadeIn>
-            {aboutContent.experience.map((item, index) => (
-              <FadeIn key={item.role} delay={index * 0.1}>
-                <div className="rounded-xl border border-border/60 bg-card/50 p-6">
-                  <p className="text-sm font-medium text-primary">{item.period}</p>
-                  <h3 className="mt-1 text-lg font-semibold">{item.role}</h3>
-                  <p className="text-sm text-muted-foreground">{item.company}</p>
-                  <p className="mt-3 text-muted-foreground">{item.description}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        )}
-
-        {!showExperience && (
+        {showCta && (
           <FadeIn delay={0.3}>
             <div className="mt-12 text-center">
               <Button render={<Link href="/about" />} variant="outline">

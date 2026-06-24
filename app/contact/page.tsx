@@ -8,7 +8,8 @@ import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Hubungi Ary Wibowo untuk konsultasi bisnis dan proyek.",
+  description:
+    "Hubungi Ary Wibowo untuk konsultasi bisnis — email aku@arywibowo.co.id, Jakarta, Indonesia.",
 };
 
 export default function ContactPage() {

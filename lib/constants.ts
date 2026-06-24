@@ -14,14 +14,11 @@ export const siteConfig = {
   title: "Profesional Consultant",
   headline: "Profesional Consultant",
   tagline:
-    "Mendampingi bisnis tumbuh melalui konsultasi strategis — dari energi terbarukan hingga transformasi digital.",
+    "Mendampingi bisnis tumbuh melalui konsultasi strategis — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, hingga financial solutions.",
   description:
-    "Konsultan profesional di bidang energi terbarukan, pengembangan bisnis, IT & digital, SDM, penjualan, dan solusi keuangan — berbasis di Jakarta.",
+    "Konsultan profesional berpengalaman 7+ tahun di energi terbarukan, pengembangan bisnis, transformasi digital, SDM, penjualan, manajemen proyek, dan solusi keuangan — berbasis di Jakarta.",
   url: "https://arywibowo.co.id",
   email: "aku@arywibowo.co.id",
-  github: "https://github.com/ImHeroesKiller",
-  githubHandle: "ImHeroesKiller",
-  linkedin: "https://linkedin.com/in/boworesearch",
   location: "Jakarta, Indonesia",
 } as const;
 
@@ -49,12 +46,12 @@ export const services: ServiceItem[] = [
     usp: "Strategi transisi energi hijau yang berkelanjutan dan terukur.",
     icon: Sun,
     description:
-      "Konsultasi perencanaan dan implementasi solusi energi terbarukan untuk bisnis yang ingin bertransformasi menuju operasi lebih efisien dan ramah lingkungan.",
+      "Konsultasi perencanaan dan implementasi solusi energi terbarukan untuk bisnis yang ingin meningkatkan efisiensi operasional sekaligus berkomitmen pada keberlanjutan lingkungan.",
     features: [
-      "Analisis kebutuhan energi & efisiensi",
-      "Roadmap transisi energi hijau",
-      "Evaluasi ROI proyek energi",
-      "Koordinasi dengan pemangku kepentingan",
+      "Analisis kebutuhan energi & efisiensi operasional",
+      "Roadmap transisi energi hijau bertahap",
+      "Evaluasi ROI dan kelayakan proyek energi",
+      "Koordinasi pemangku kepentingan internal & eksternal",
     ],
   },
   {
@@ -63,12 +60,12 @@ export const services: ServiceItem[] = [
     usp: "Membuka peluang pasar baru dan memperkuat pertumbuhan bisnis.",
     icon: TrendingUp,
     description:
-      "Pendampingan strategi ekspansi bisnis, identifikasi peluang pasar, dan penyusunan model pertumbuhan yang scalable untuk UMKM hingga enterprise.",
+      "Pendampingan strategi ekspansi bisnis, identifikasi peluang pasar, dan penyusunan model pertumbuhan yang scalable — dari UMKM hingga operasi skala enterprise.",
     features: [
       "Market research & analisis kompetitif",
-      "Strategi penetrasi pasar",
+      "Strategi penetrasi dan ekspansi pasar",
       "Partnership & alliance building",
-      "Business model development",
+      "Pengembangan model bisnis berkelanjutan",
     ],
   },
   {
@@ -77,11 +74,11 @@ export const services: ServiceItem[] = [
     usp: "Transformasi digital yang meningkatkan efisiensi operasional.",
     icon: Cpu,
     description:
-      "Solusi teknologi informasi dan digitalisasi proses bisnis — dari otomasi workflow, integrasi sistem, hingga pengembangan platform web.",
+      "Solusi teknologi informasi dan digitalisasi proses bisnis — dari otomasi workflow, integrasi sistem, hingga pengembangan platform web dan advisory implementasi AI.",
     features: [
       "Digital transformation strategy",
-      "System integration & API",
-      "Web & automation development",
+      "System integration & API development",
+      "Web platform & workflow automation",
       "AI implementation advisory",
     ],
   },
@@ -91,11 +88,11 @@ export const services: ServiceItem[] = [
     usp: "Optimalisasi SDM dan hubungan industrial yang produktif.",
     icon: Users,
     description:
-      "Layanan konsultasi SDM menyeluruh — rekrutmen, remunerasi, pengembangan organisasi, dan kepatuhan regulasi ketenagakerjaan.",
+      "Layanan konsultasi SDM menyeluruh — mulai dari rekrutmen dan talent acquisition, struktur remunerasi, pengembangan organisasi, hingga kepatuhan regulasi ketenagakerjaan.",
     features: [
       "Rekrutmen & talent acquisition",
       "Struktur remunerasi & benefit",
-      "Employee engagement",
+      "Employee engagement & retensi",
       "Industrial relations & compliance",
     ],
   },
@@ -105,12 +102,12 @@ export const services: ServiceItem[] = [
     usp: "Eksekusi proyek tepat waktu dengan target penjualan tercapai.",
     icon: Briefcase,
     description:
-      "Manajemen proyek end-to-end dengan fokus pada pencapaian target penjualan, koordinasi tim lapangan, dan pelaporan real-time.",
+      "Manajemen proyek end-to-end dengan fokus pada pencapaian target penjualan, koordinasi tim lapangan, pelaporan real-time, dan manajemen pemangku kepentingan.",
     features: [
       "Project planning & execution",
-      "Sales monitoring & reporting",
-      "Team coordination",
-      "Stakeholder management",
+      "Sales monitoring & performance reporting",
+      "Koordinasi tim multidisiplin",
+      "Stakeholder & risk management",
     ],
   },
   {
@@ -119,51 +116,29 @@ export const services: ServiceItem[] = [
     usp: "Perencanaan keuangan bisnis yang transparan dan terstruktur.",
     icon: LineChart,
     description:
-      "Konsultasi keuangan dan akuntansi untuk membantu bisnis mengelola arus kas, perencanaan anggaran, dan analisis profitabilitas.",
+      "Konsultasi keuangan dan akuntansi untuk membantu bisnis mengelola arus kas, perencanaan anggaran, analisis profitabilitas, dan proses akuntansi yang lebih efisien.",
     features: [
       "Financial planning & budgeting",
-      "Cash flow analysis",
-      "Profitability reporting",
+      "Cash flow analysis & forecasting",
+      "Profitability & performance reporting",
       "Accounting process advisory",
     ],
   },
 ];
 
 export const aboutContent = {
+  summary:
+    "Kombinasi pengalaman business development, hubungan klien, dan keahlian teknologi untuk solusi bisnis yang berdampak.",
   bio: [
-    "Profesional berpengalaman di bidang Sumber Daya Manusia, manajemen proyek, dan telekomunikasi dengan pengalaman lebih dari satu dekade di berbagai industri.",
-    "Memiliki semangat tinggi terhadap teknologi dan bisnis, serta keahlian dalam berbagai perangkat lunak — dari Google Workspace hingga implementasi AI dan pengembangan web.",
-    "Lulusan S1 Computer Engineering dari STMIK Tegal, dengan track record sebagai Project Manager di PT GOS Indoraya dan pengalaman di Indosat Ooredoo, PERDANA, serta berbagai proyek digital seperti OneWork, FreeJobID, dan SaleGuard.",
+    "Profesional konsultan dengan pengalaman lebih dari 7 tahun di business development, hubungan klien, energi terbarukan, dan transformasi digital. Latar belakang teknik komputer memperkuat pendekatan analitis dalam merancang solusi bisnis terukur — dari strategi pertumbuhan pasar hingga implementasi sistem digital.",
+    "Berpengalaman memimpin proyek lintas industri telekomunikasi dan energi, mengkoordinasikan tim multidisiplin, serta mengembangkan platform digital untuk otomasi operasi bisnis. Menggabungkan keahlian di pengembangan bisnis, SDM, penjualan, manajemen proyek, IT, dan keuangan untuk menghadirkan konsultasi terintegrasi yang memberikan dampak nyata bagi organisasi.",
   ],
   coreStrengths: [
-    "Manajemen SDM & Hubungan Industrial",
-    "Project & Sales Management",
-    "Business Development",
-    "IT & Digital Transformation",
-    "Telecommunications",
-    "Financial & Accounting Advisory",
-  ],
-  experience: [
-    {
-      period: "Juli 2017 — Present",
-      role: "Project Manager",
-      company: "PT GOS Indoraya",
-      description:
-        "Memimpin eksekusi proyek skala enterprise, koordinasi tim lapangan, dan pencapaian target operasional.",
-    },
-    {
-      period: "2015 — 2017",
-      role: "Project Coordinator & Team Lead",
-      company: "Indosat Ooredoo",
-      description:
-        "Mengkoordinasikan proyek telekomunikasi, memimpin tim lapangan, dan memastikan SLA terpenuhi.",
-    },
-    {
-      period: "Juni 2023 — Present",
-      role: "Founder & Consultant",
-      company: "OneWork, FreeJobID, SaleGuard",
-      description:
-        "Mengembangkan platform digital untuk otomasi proses kerja, peluang kerja, dan monitoring penjualan distributor.",
-    },
+    "Business Development & Hubungan Klien",
+    "Konsultasi Energi Terbarukan",
+    "Transformasi IT & Digital",
+    "Konsultasi SDM & Organisasi",
+    "Sales & Project Management",
+    "Solusi Keuangan Bisnis",
   ],
 } as const;

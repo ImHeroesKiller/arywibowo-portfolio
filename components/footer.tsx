@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Mail, MapPin } from "lucide-react";
 
 import Logo from "@/components/Logo";
 import { Separator } from "@/components/ui/separator";
@@ -35,35 +36,22 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-medium">Connect</p>
-            <ul className="mt-3 space-y-2">
+            <p className="text-sm font-medium">Contact</p>
+            <ul className="mt-3 space-y-3">
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
+                  <Mail className="size-4 shrink-0" />
                   {siteConfig.email}
                 </a>
               </li>
               <li>
-                <a
-                  href={siteConfig.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                >
-                  {siteConfig.githubHandle}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={siteConfig.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                >
-                  LinkedIn
-                </a>
+                <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin className="size-4 shrink-0" />
+                  {siteConfig.location}
+                </span>
               </li>
             </ul>
           </div>

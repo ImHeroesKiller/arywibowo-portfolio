@@ -30,7 +30,7 @@ export function Services({ showAll = false, className }: ServicesProps) {
           description={
             showAll
               ? "Layanan konsultasi profesional yang dirancang untuk mendukung pertumbuhan bisnis Anda di berbagai sektor."
-              : "Enam area keahlian utama untuk mendukung transformasi dan pertumbuhan bisnis Anda."
+              : "Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, dan Financial Solutions — solusi terintegrasi dari strategi hingga eksekusi."
           }
           align="center"
           className="mx-auto mb-12"
