@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface LogoProps {
   className?: string
   imageClassName?: string
@@ -11,16 +13,19 @@ export default function Logo({
   showText = true, 
   showName 
 }: LogoProps) {
-  // Support both showText and showName
   const shouldShowText = showText !== false && showName !== false
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <img 
-        src="/images/awi-logo.png" 
-        alt="AWI Logo" 
-        className={`h-8 w-8 md:h-9 md:w-9 object-contain ${imageClassName}`}
-      />
+      <div className={`relative h-9 w-9 md:h-10 md:w-10 flex-shrink-0 ${imageClassName}`}>
+        <Image
+          src="/images/awi-logo.png"
+          alt="AWI Logo"
+          fill
+          className="object-contain"
+          unoptimized
+        />
+      </div>
       {shouldShowText && (
         <span className="font-semibold tracking-tight text-white text-lg md:text-xl">
           Ary Wibowo
