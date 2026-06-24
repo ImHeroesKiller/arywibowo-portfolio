@@ -1,21 +1,56 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+type FormStatus = "idle" | "loading" | "success" | "error";
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+export function ContactForm() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+    setErrorMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(data.error ?? "Failed to send message.");
+      }
+
+      setStatus("success");
+      e.currentTarget.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    }
   }
 
-  if (submitted) {
+  if (status === "success") {
     return (
       <div className="rounded-xl border border-primary/30 bg-primary/5 p-8 text-center">
         <h3 className="text-lg font-semibold text-primary">Message sent!</h3>
@@ -26,7 +61,7 @@ export function ContactForm() {
           variant="outline"
           size="sm"
           className="mt-6"
-          onClick={() => setSubmitted(false)}
+          onClick={() => setStatus("idle")}
         >
           Send another message
         </Button>
@@ -43,7 +78,13 @@ export function ContactForm() {
         <label htmlFor="name" className="text-sm font-medium">
           Name
         </label>
-        <Input id="name" name="name" placeholder="Your name" required />
+        <Input
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required
+          disabled={status === "loading"}
+        />
       </div>
 
       <div className="space-y-2">
@@ -56,18 +97,7 @@ export function ContactForm() {
           type="email"
           placeholder="you@example.com"
           required
-        />
-      </div>
-
-      <div className="space-y-2">
-        <label htmlFor="subject" className="text-sm font-medium">
-          Subject
-        </label>
-        <Input
-          id="subject"
-          name="subject"
-          placeholder="Project inquiry"
-          required
+          disabled={status === "loading"}
         />
       </div>
 
@@ -81,12 +111,33 @@ export function ContactForm() {
           placeholder="Tell me about your project..."
           rows={5}
           required
+          disabled={status === "loading"}
         />
       </div>
 
-      <Button type="submit" size="lg" className="w-full sm:w-auto">
-        Send Message
-        <Send />
+      {status === "error" && (
+        <p className="text-sm text-destructive" role="alert">
+          {errorMessage}
+        </p>
+      )}
+
+      <Button
+        type="submit"
+        size="lg"
+        className="w-full sm:w-auto"
+        disabled={status === "loading"}
+      >
+        {status === "loading" ? (
+          <>
+            Sending...
+            <Loader2 className="animate-spin" />
+          </>
+        ) : (
+          <>
+            Send Message
+            <Send />
+          </>
+        )}
       </Button>
     </form>
   );
