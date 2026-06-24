@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
