@@ -1,5 +1,7 @@
+"use client";
+
 import { Mail, MapPin } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 import Logo from "@/components/Logo";
 import { Separator } from "@/components/ui/separator";
@@ -7,10 +9,12 @@ import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/constants";
 import { navPaths } from "@/lib/navigation";
 
-export async function Footer() {
-  const t = await getTranslations("footer");
-  const tNav = await getTranslations("nav");
-  const tMeta = await getTranslations("metadata.site");
+export function Footer() {
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
+  const tMeta = useTranslations("metadata.site");
+  const tHero = useTranslations("hero");
+  const tCommon = useTranslations("common");
   const year = new Date().getFullYear();
 
   return (
@@ -55,7 +59,7 @@ export async function Footer() {
               <li>
                 <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                   <MapPin className="size-4 shrink-0" />
-                  {siteConfig.location}
+                  {tCommon("location")}
                 </span>
               </li>
             </ul>
@@ -65,7 +69,7 @@ export async function Footer() {
         <Separator className="my-8" />
 
         <p className="text-center text-sm text-muted-foreground">
-          © {year} {siteConfig.name}. {t("rights")}
+          © {year} {tHero("name")}. {t("rights")}
         </p>
       </div>
     </footer>

@@ -26,30 +26,31 @@
     }
   },
   "nav": {
-    "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "projects": "Projects",
-    "contact": "Contact",
-    "getInTouch": "Get in Touch",
+    "home": "Beranda",
+    "about": "Tentang",
+    "services": "Layanan",
+    "projects": "Proyek",
+    "contact": "Kontak",
+    "getInTouch": "Hubungi Saya",
     "openMenu": "Buka menu",
     "closeMenu": "Tutup menu"
   },
   "hero": {
+    "name": "Ary Wibowo",
     "title": "Profesional Consultant",
     "tagline": "Mendampingi bisnis tumbuh melalui konsultasi strategis — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, hingga financial solutions.",
-    "contact": "Contact",
-    "services": "Services"
+    "contact": "Hubungi",
+    "services": "Layanan"
   },
   "about": {
-    "eyebrow": "About",
+    "eyebrow": "Tentang",
     "title": "Profil profesional",
     "summary": "Kombinasi pengalaman business development, hubungan klien, dan keahlian teknologi untuk solusi bisnis yang berdampak.",
     "bio": [
       "Profesional konsultan dengan pengalaman lebih dari 7 tahun di business development, hubungan klien, energi terbarukan, dan transformasi digital. Latar belakang teknik komputer memperkuat pendekatan analitis dalam merancang solusi bisnis terukur — dari strategi pertumbuhan pasar hingga implementasi sistem digital.",
       "Berpengalaman memimpin proyek lintas industri telekomunikasi dan energi, mengkoordinasikan tim multidisiplin, serta mengembangkan platform digital untuk otomasi operasi bisnis. Menggabungkan keahlian di pengembangan bisnis, SDM, penjualan, manajemen proyek, IT, dan keuangan untuk menghadirkan konsultasi terintegrasi yang memberikan dampak nyata bagi organisasi."
     ],
-    "coreStrengthsTitle": "Core Strengths",
+    "coreStrengthsTitle": "Keahlian Inti",
     "coreStrengthsDescription": "Enam area keahlian utama yang mendukung konsultasi terintegrasi.",
     "coreStrengths": [
       "Business Development & Hubungan Klien",
@@ -62,12 +63,11 @@
     "readMore": "Selengkapnya"
   },
   "services": {
-    "eyebrow": "Services",
+    "eyebrow": "Layanan",
     "title": "Solusi konsultasi terintegrasi",
     "description": "Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, dan Financial Solutions — solusi terintegrasi dari strategi hingga eksekusi.",
     "descriptionFull": "Layanan konsultasi profesional yang dirancang untuk mendukung pertumbuhan bisnis Anda di berbagai sektor.",
-    "seeMore": "Lihat detail lengkap di halaman",
-    "seeMoreLink": "Services",
+    "seeMoreRich": "Lihat detail lengkap di halaman <link>Layanan</link>.",
     "pageTitle": "Layanan konsultasi lengkap",
     "pageDescription": "Solusi terintegrasi untuk mendukung transformasi bisnis Anda — dari strategi hingga eksekusi.",
     "items": {
@@ -140,34 +140,54 @@
     }
   },
   "contact": {
-    "eyebrow": "Contact",
+    "eyebrow": "Kontak",
     "title": "Mari berkolaborasi",
     "description": "Punya proyek atau ingin diskusi peluang bisnis? Kirim pesan dan saya akan merespons secepatnya.",
     "email": "Email",
-    "location": "Location",
+    "location": "Lokasi",
     "responseNote": "Saya biasanya merespons dalam 24–48 jam. Untuk pertanyaan mendesak, sebutkan di pesan Anda."
   },
   "contactForm": {
-    "name": "Name",
-    "namePlaceholder": "Your name",
+    "name": "Nama",
+    "namePlaceholder": "Nama Anda",
     "email": "Email",
-    "emailPlaceholder": "you@example.com",
-    "message": "Message",
-    "messagePlaceholder": "Tell me about your project...",
-    "send": "Send Message",
-    "sending": "Sending...",
-    "successTitle": "Message sent!",
-    "successDescription": "Thank you for reaching out. I'll get back to you soon.",
-    "sendAnother": "Send another message",
-    "errorDefault": "Something went wrong. Please try again.",
-    "errorFailed": "Failed to send message."
+    "emailPlaceholder": "anda@contoh.com",
+    "message": "Pesan",
+    "messagePlaceholder": "Ceritakan tentang proyek Anda...",
+    "send": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "successTitle": "Pesan terkirim!",
+    "successDescription": "Terima kasih telah menghubungi. Saya akan segera merespons.",
+    "sendAnother": "Kirim pesan lain",
+    "errorDefault": "Terjadi kesalahan. Silakan coba lagi.",
+    "errorFailed": "Gagal mengirim pesan.",
+    "errors": {
+      "NOT_CONFIGURED": "Layanan email belum dikonfigurasi.",
+      "VALIDATION_REQUIRED": "Nama, email, dan pesan wajib diisi.",
+      "INVALID_EMAIL": "Mohon masukkan alamat email yang valid.",
+      "SEND_FAILED": "Gagal mengirim pesan. Silakan coba lagi nanti.",
+      "SERVER_ERROR": "Terjadi kesalahan. Silakan coba lagi nanti."
+    }
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "comingSoonTitle": "Segera Hadir",
+    "comingSoonDescription": "Halaman ini sedang disiapkan. Proyek-proyek terpilih akan ditampilkan di sini."
+  },
+  "common": {
+    "location": "Jakarta, Indonesia"
   },
   "footer": {
-    "navigation": "Navigation",
-    "contact": "Contact",
-    "rights": "All rights reserved."
+    "navigation": "Navigasi",
+    "contact": "Kontak",
+    "rights": "Hak cipta dilindungi."
   },
   "languageSwitcher": {
-    "label": "Bahasa"
+    "label": "Bahasa",
+    "locales": {
+      "id": "ID",
+      "en": "EN",
+      "zh": "中文"
+    }
   }
 }

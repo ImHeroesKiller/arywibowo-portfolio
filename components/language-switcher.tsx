@@ -6,12 +6,6 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-const localeLabels: Record<Locale, string> = {
-  id: "ID",
-  en: "EN",
-  zh: "中文",
-};
-
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;
   const router = useRouter();
@@ -37,7 +31,7 @@ export function LanguageSwitcher() {
           )}
           aria-current={locale === loc ? "true" : undefined}
         >
-          {localeLabels[loc]}
+          {t(`locales.${loc}`)}
         </button>
       ))}
     </div>

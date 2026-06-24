@@ -10,10 +10,32 @@ import { Textarea } from "@/components/ui/textarea";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
+const API_ERROR_CODES = [
+  "NOT_CONFIGURED",
+  "VALIDATION_REQUIRED",
+  "INVALID_EMAIL",
+  "SEND_FAILED",
+  "SERVER_ERROR",
+] as const;
+
+type ApiErrorCode = (typeof API_ERROR_CODES)[number];
+
+function isApiErrorCode(value: string): value is ApiErrorCode {
+  return API_ERROR_CODES.includes(value as ApiErrorCode);
+}
+
 export function ContactForm() {
   const t = useTranslations("contactForm");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  function getErrorMessage(code?: string) {
+    if (code && isApiErrorCode(code)) {
+      return t(`errors.${code}`);
+    }
+
+    return t("errorDefault");
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,7 +59,7 @@ export function ContactForm() {
       const data = (await response.json()) as { error?: string };
 
       if (!response.ok) {
-        throw new Error(data.error ?? t("errorFailed"));
+        throw new Error(getErrorMessage(data.error));
       }
 
       setStatus("success");

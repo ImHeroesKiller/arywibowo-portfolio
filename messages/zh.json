@@ -36,6 +36,7 @@
     "closeMenu": "关闭菜单"
   },
   "hero": {
+    "name": "Ary Wibowo",
     "title": "专业顾问",
     "tagline": "通过战略咨询助力企业成长 — 涵盖可再生能源、业务发展、IT与数字化转型、人力资源与运营、销售与项目管理及财务解决方案。",
     "contact": "联系",
@@ -66,8 +67,7 @@
     "title": "综合咨询解决方案",
     "description": "可再生能源、业务发展、IT与数字化、人力资源咨询、销售与项目管理及财务解决方案 — 从战略到执行的综合解决方案。",
     "descriptionFull": "专为支持您跨行业业务增长而设计的专业咨询服务。",
-    "seeMore": "查看完整详情请访问",
-    "seeMoreLink": "服务",
+    "seeMoreRich": "查看完整详情请访问<link>服务</link>页面。",
     "pageTitle": "完整咨询服务",
     "pageDescription": "支持您业务转型的综合解决方案 — 从战略到执行。",
     "items": {
@@ -160,7 +160,22 @@
     "successDescription": "感谢您的联系，我会尽快回复您。",
     "sendAnother": "发送另一条消息",
     "errorDefault": "出了点问题，请重试。",
-    "errorFailed": "发送消息失败。"
+    "errorFailed": "发送消息失败。",
+    "errors": {
+      "NOT_CONFIGURED": "邮件服务尚未配置。",
+      "VALIDATION_REQUIRED": "姓名、邮箱和消息为必填项。",
+      "INVALID_EMAIL": "请提供有效的邮箱地址。",
+      "SEND_FAILED": "发送消息失败，请稍后重试。",
+      "SERVER_ERROR": "出了点问题，请稍后重试。"
+    }
+  },
+  "projects": {
+    "eyebrow": "作品集",
+    "comingSoonTitle": "即将推出",
+    "comingSoonDescription": "此页面正在准备中，精选项目将在此展示。"
+  },
+  "common": {
+    "location": "印度尼西亚雅加达"
   },
   "footer": {
     "navigation": "导航",
@@ -168,6 +183,11 @@
     "rights": "版权所有。"
   },
   "languageSwitcher": {
-    "label": "语言"
+    "label": "语言",
+    "locales": {
+      "id": "ID",
+      "en": "EN",
+      "zh": "中文"
+    }
   }
 }

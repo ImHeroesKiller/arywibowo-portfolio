@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/lib/constants";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -47,7 +46,7 @@ export default function Hero() {
             >
               <img
                 src="/images/profile.png"
-                alt={siteConfig.name}
+                alt={t("name")}
                 width={PHOTO_WIDTH}
                 height={PHOTO_HEIGHT}
                 decoding="async"
@@ -82,7 +81,7 @@ export default function Hero() {
               {...fade(0.1)}
               className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl xl:text-6xl"
             >
-              {siteConfig.name}
+              {t("name")}
             </motion.h1>
 
             <motion.p

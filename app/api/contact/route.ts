@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
-        { error: "Email service is not configured." },
+        { error: "NOT_CONFIGURED" },
         { status: 500 }
       );
     }
@@ -40,16 +40,13 @@ export async function POST(request: Request) {
 
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: "Name, email, and message are required." },
+        { error: "VALIDATION_REQUIRED" },
         { status: 400 }
       );
     }
 
     if (!isValidEmail(email)) {
-      return NextResponse.json(
-        { error: "Please provide a valid email address." },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "INVALID_EMAIL" }, { status: 400 });
     }
 
     const { error } = await resend.emails.send({
@@ -75,18 +72,12 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
-      return NextResponse.json(
-        { error: "Failed to send message. Please try again later." },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: "SEND_FAILED" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Contact API error:", error);
-    return NextResponse.json(
-      { error: "Something went wrong. Please try again later." },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "SERVER_ERROR" }, { status: 500 });
   }
 }

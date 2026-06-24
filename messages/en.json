@@ -36,6 +36,7 @@
     "closeMenu": "Close menu"
   },
   "hero": {
+    "name": "Ary Wibowo",
     "title": "Professional Consultant",
     "tagline": "Helping businesses grow through strategic consulting — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, and financial solutions.",
     "contact": "Contact",
@@ -66,8 +67,7 @@
     "title": "Integrated consulting solutions",
     "description": "Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, and Financial Solutions — integrated solutions from strategy to execution.",
     "descriptionFull": "Professional consulting services designed to support your business growth across multiple sectors.",
-    "seeMore": "See full details on the",
-    "seeMoreLink": "Services",
+    "seeMoreRich": "See full details on the <link>Services</link> page.",
     "pageTitle": "Complete consulting services",
     "pageDescription": "Integrated solutions to support your business transformation — from strategy to execution.",
     "items": {
@@ -160,7 +160,22 @@
     "successDescription": "Thank you for reaching out. I'll get back to you soon.",
     "sendAnother": "Send another message",
     "errorDefault": "Something went wrong. Please try again.",
-    "errorFailed": "Failed to send message."
+    "errorFailed": "Failed to send message.",
+    "errors": {
+      "NOT_CONFIGURED": "Email service is not configured.",
+      "VALIDATION_REQUIRED": "Name, email, and message are required.",
+      "INVALID_EMAIL": "Please provide a valid email address.",
+      "SEND_FAILED": "Failed to send message. Please try again later.",
+      "SERVER_ERROR": "Something went wrong. Please try again later."
+    }
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "comingSoonTitle": "Coming Soon",
+    "comingSoonDescription": "This page is being prepared. Selected projects will be displayed here."
+  },
+  "common": {
+    "location": "Jakarta, Indonesia"
   },
   "footer": {
     "navigation": "Navigation",
@@ -168,6 +183,11 @@
     "rights": "All rights reserved."
   },
   "languageSwitcher": {
-    "label": "Language"
+    "label": "Language",
+    "locales": {
+      "id": "ID",
+      "en": "EN",
+      "zh": "中文"
+    }
   }
 }

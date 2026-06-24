@@ -36,6 +36,7 @@ export async function generateMetadata({
 export default async function ContactPage({ params: { locale } }: PageProps) {
   setRequestLocale(locale);
   const t = await getTranslations("contact");
+  const tCommon = await getTranslations("common");
 
   return (
     <PageTransition>
@@ -75,7 +76,7 @@ export default async function ContactPage({ params: { locale } }: PageProps) {
                 <div>
                   <h3 className="font-semibold">{t("location")}</h3>
                   <p className="mt-1 text-muted-foreground">
-                    {siteConfig.location}
+                    {tCommon("location")}
                   </p>
                 </div>
               </div>

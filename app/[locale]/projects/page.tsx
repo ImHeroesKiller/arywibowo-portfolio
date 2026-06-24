@@ -33,16 +33,17 @@ export async function generateMetadata({
 
 export default async function ProjectsPage({ params: { locale } }: PageProps) {
   setRequestLocale(locale);
-  const t = await getTranslations("metadata.projects");
+  const tMeta = await getTranslations("metadata.projects");
+  const t = await getTranslations("projects");
 
   return (
     <PageTransition>
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionHeader
-            eyebrow="Portfolio"
-            title={t("title")}
-            description={t("description")}
+            eyebrow={t("eyebrow")}
+            title={tMeta("title")}
+            description={tMeta("description")}
             align="center"
             className="mx-auto"
           />
@@ -53,10 +54,11 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
             <div className="flex size-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <FolderOpen className="size-8" />
             </div>
-            <h3 className="mt-6 text-xl font-semibold">Coming Soon</h3>
+            <h3 className="mt-6 text-xl font-semibold">
+              {t("comingSoonTitle")}
+            </h3>
             <p className="mt-3 text-sm text-muted-foreground">
-              Halaman ini sedang disiapkan. Proyek-proyek terpilih akan
-              ditampilkan di sini.
+              {t("comingSoonDescription")}
             </p>
           </div>
         </FadeIn>

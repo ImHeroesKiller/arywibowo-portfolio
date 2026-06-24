@@ -63,14 +63,16 @@ export function Services({ showAll = false, className }: ServicesProps) {
       {!showAll && (
         <FadeIn delay={0.5}>
           <p className="mt-10 text-center text-sm text-muted-foreground">
-            {t("seeMore")}{" "}
-            <Link
-              href="/services"
-              className="font-medium text-primary hover:underline"
-            >
-              {t("seeMoreLink")}
-            </Link>
-            .
+            {t.rich("seeMoreRich", {
+              link: (chunks) => (
+                <Link
+                  href="/services"
+                  className="font-medium text-primary hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </p>
         </FadeIn>
       )}
