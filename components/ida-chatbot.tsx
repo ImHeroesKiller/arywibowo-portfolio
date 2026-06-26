@@ -129,14 +129,14 @@ export function IdaChatbot() {
             "animate-in fade-in slide-in-from-bottom-3 zoom-in-95 duration-300"
           )}
         >
-          <div className="relative shrink-0 border-b border-border/60 bg-card/80 pt-9 sm:pt-11">
+          <div className="relative shrink-0 border-b border-border/60 bg-card/80 pt-5 sm:pt-6">
             <IdaAvatar
               alt={t("title")}
-              size="xxl"
-              className="absolute left-3.5 top-0 z-20 -mt-6 shrink-0 drop-shadow-lg ring-2 ring-card/95 sm:left-4 sm:-mt-8"
+              size="lg"
+              className="absolute left-3 top-0 z-20 -mt-2 shrink-0 drop-shadow-md ring-2 ring-card/95 sm:left-4 sm:-mt-3"
             />
-            <header className="flex min-h-[3.5rem] items-end justify-between gap-3 px-4 pb-3.5 pt-1 pl-[6.75rem] sm:min-h-[3.75rem] sm:px-5 sm:pb-4 sm:pl-28">
-              <div className="min-w-0 pr-1">
+            <header className="flex items-center justify-between gap-3 px-4 py-4 pl-16 sm:px-5 sm:pl-20">
+              <div className="min-w-0 flex-1 pr-2">
                 <p className="font-semibold leading-tight text-foreground">
                   {t("name")}
                 </p>
