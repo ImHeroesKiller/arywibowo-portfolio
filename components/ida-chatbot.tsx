@@ -1,10 +1,11 @@
 "use client";
 
-import { Loader2, MessageCircle, Send, X } from "lucide-react";
+import { Loader2, Send, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
 import { ChatMessage } from "@/components/chat-message";
+import { IdaAvatar } from "@/components/ida-avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -128,9 +129,7 @@ export function IdaChatbot() {
           <header className="flex items-start justify-between gap-3 border-b border-border/60 bg-card/80 px-4 py-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <div className="flex size-8 items-center justify-center rounded-full bg-primary/15 text-sm font-bold text-primary">
-                  IDA
-                </div>
+                <IdaAvatar alt={t("title")} />
                 <div>
                   <p className="font-semibold leading-tight text-foreground">
                     {t("name")}
@@ -154,10 +153,16 @@ export function IdaChatbot() {
               <div
                 key={message.id}
                 className={cn(
-                  "flex",
+                  "flex gap-2",
                   message.role === "user" ? "justify-end" : "justify-start"
                 )}
               >
+                {message.role === "assistant" && (
+                  <IdaAvatar
+                    alt={t("title")}
+                    className="mb-0.5 shrink-0 self-end"
+                  />
+                )}
                 <ChatMessage
                   role={message.role}
                   content={message.content}
@@ -166,7 +171,11 @@ export function IdaChatbot() {
             ))}
 
             {loading && (
-              <div className="flex justify-start">
+              <div className="flex items-end gap-2 justify-start">
+                <IdaAvatar
+                  alt={t("title")}
+                  className="mb-0.5 shrink-0 self-end"
+                />
                 <div className="rounded-2xl rounded-bl-md border border-border/60 bg-muted/50 px-3.5 py-2">
                   <TypingIndicator />
                 </div>
@@ -223,7 +232,11 @@ export function IdaChatbot() {
         aria-expanded={open}
         aria-label={open ? t("close") : t("open")}
       >
-        {open ? <X className="size-5" /> : <MessageCircle className="size-5" />}
+        {open ? (
+          <X className="size-5" />
+        ) : (
+          <IdaAvatar alt={t("title")} className="size-7" />
+        )}
         <span className="hidden sm:inline">{t("buttonLabel")}</span>
       </Button>
     </div>

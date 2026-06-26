@@ -1,10 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { MessageCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
+import { IdaAvatar } from "@/components/ida-avatar";
 import { cn } from "@/lib/utils";
 
 const IdaChatbot = dynamic(
@@ -45,7 +45,7 @@ export function IdaChatbotDeferred() {
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
         )}
       >
-        <MessageCircle className="size-6" aria-hidden />
+        <IdaAvatar alt={t("title")} className="size-9" />
       </button>
     );
   }
