@@ -1,10 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { MessageCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
-import { IdaAvatar } from "@/components/ida-avatar";
 import { cn } from "@/lib/utils";
 
 const IdaChatbot = dynamic(
@@ -39,13 +39,13 @@ export function IdaChatbotDeferred() {
         onClick={activate}
         aria-label={t("buttonLabel")}
         className={cn(
-          "fixed bottom-6 right-6 z-50 flex size-14 items-center justify-center rounded-full",
+          "fixed bottom-6 right-6 z-50 flex size-12 items-center justify-center rounded-full sm:size-14",
           "bg-primary text-primary-foreground shadow-lg shadow-primary/25",
-          "transition-transform duration-200 hover:scale-105 active:scale-95",
+          "transition-all duration-200 hover:scale-105 active:scale-95",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
         )}
       >
-        <IdaAvatar alt={t("title")} className="size-9" />
+        <MessageCircle className="size-5" aria-hidden />
       </button>
     );
   }

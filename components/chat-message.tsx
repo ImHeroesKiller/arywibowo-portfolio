@@ -111,7 +111,7 @@ export function ChatMessage({
   return (
     <div className="flex items-end gap-2">
       {showAvatar ? (
-        <IdaAvatar alt={avatarAlt} className="mb-0.5 shrink-0" />
+        <IdaAvatar alt={avatarAlt} size="sm" className="mb-0.5 shrink-0" />
       ) : (
         <span className="mb-0.5 size-8 shrink-0" aria-hidden />
       )}

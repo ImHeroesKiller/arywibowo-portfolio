@@ -1,13 +1,13 @@
 "use client";
 
-import { Loader2, Send, X } from "lucide-react";
+import { Loader2, MessageCircle, Send, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
 import { ChatMessage } from "@/components/chat-message";
 import { IdaAvatar } from "@/components/ida-avatar";
 import { Button } from "@/components/ui/button";
-
+import { cn } from "@/lib/utils";
 
 type ChatMessage = {
   id: string;
@@ -124,12 +124,15 @@ export function IdaChatbot() {
         <div
           role="dialog"
           aria-label={t("title")}
-          className="flex h-[min(32rem,calc(100dvh-6rem))] w-[min(24rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/95 shadow-2xl shadow-black/40 backdrop-blur-md"
+          className={cn(
+            "flex h-[min(32rem,calc(100dvh-6rem))] w-[min(24rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/95 shadow-2xl shadow-black/40 backdrop-blur-md",
+            "animate-in fade-in slide-in-from-bottom-3 zoom-in-95 duration-300"
+          )}
         >
           <header className="flex items-start justify-between gap-3 border-b border-border/60 bg-card/80 px-4 py-3">
             <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <IdaAvatar alt={t("title")} />
+              <div className="flex items-center gap-3">
+                <IdaAvatar alt={t("title")} size="lg" className="shrink-0" />
                 <div>
                   <p className="font-semibold leading-tight text-foreground">
                     {t("name")}
@@ -162,6 +165,7 @@ export function IdaChatbot() {
               <div className="flex items-end gap-2">
                 <IdaAvatar
                   alt={t("title")}
+                  size="sm"
                   className="mb-0.5 shrink-0"
                 />
                 <div className="rounded-2xl rounded-bl-md border border-border/60 bg-muted/50 px-3.5 py-2">
@@ -214,18 +218,20 @@ export function IdaChatbot() {
 
       <Button
         type="button"
-        size="lg"
+        size="icon-lg"
         onClick={() => setOpen((value) => !value)}
-        className="h-12 gap-2 rounded-full px-4 shadow-lg shadow-primary/20"
+        className={cn(
+          "size-12 rounded-full shadow-lg shadow-primary/20 transition-all duration-200 sm:size-14",
+          !open && "gap-0 px-0"
+        )}
         aria-expanded={open}
         aria-label={open ? t("close") : t("open")}
       >
         {open ? (
-          <X className="size-5" />
+          <X className="size-5 transition-transform duration-200" />
         ) : (
-          <IdaAvatar alt={t("title")} className="size-7" />
+          <MessageCircle className="size-5 transition-transform duration-200" />
         )}
-        <span className="hidden sm:inline">{t("buttonLabel")}</span>
       </Button>
     </div>
   );
