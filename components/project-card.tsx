@@ -15,6 +15,7 @@ type ProjectCardProps = {
   imageAlt: string;
   href: string;
   visitLabel: string;
+  previewHost?: string;
   variant?: "compact" | "detailed";
 };
 
@@ -28,6 +29,7 @@ export function ProjectCard({
   imageAlt,
   href,
   visitLabel,
+  previewHost = "perada.net",
   variant = "detailed",
 }: ProjectCardProps) {
   return (
@@ -45,7 +47,7 @@ export function ProjectCard({
           <span className="size-2 rounded-full bg-amber-400/80" />
           <span className="size-2 rounded-full bg-emerald-400/80" />
           <span className="ml-2 truncate text-[10px] text-muted-foreground">
-            perada.net
+            {previewHost}
           </span>
         </div>
         <div className="relative flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-muted/50 via-background to-primary/5 p-6 transition-colors duration-300 group-hover:from-primary/5 group-hover:to-primary/10">

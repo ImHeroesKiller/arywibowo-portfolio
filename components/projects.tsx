@@ -10,6 +10,7 @@ import {
   projectIds,
   projectImages,
   projectLinks,
+  projectPreviewHosts,
 } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +41,7 @@ export function Projects({ showAll = false, className }: ProjectsProps) {
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-7">
           {displayIds.map((id, index) => {
             const highlights = t.raw(`items.${id}.highlights`) as string[];
 
@@ -55,7 +56,8 @@ export function Projects({ showAll = false, className }: ProjectsProps) {
                   imageSrc={projectImages[id]}
                   imageAlt={t(`items.${id}.imageAlt`)}
                   href={projectLinks[id]}
-                  visitLabel={t("visitWebsite")}
+                  visitLabel={t(`items.${id}.visitLabel`)}
+                  previewHost={projectPreviewHosts[id]}
                   variant={showAll ? "detailed" : "compact"}
                 />
               </FadeIn>

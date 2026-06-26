@@ -147,11 +147,25 @@
     "visitWebsite": "Visit perada.net",
     "highlightsTitle": "Value Delivered",
     "items": {
+      "superappsPerdana": {
+        "title": "Superapps Perdana Adi Yuda (End to End Recruitment & ERP)",
+        "category": "Superapps & Digital Platform",
+        "description": "A <highlight>Superapps platform</highlight> integrating <highlight>End-to-End Recruitment</highlight> and <highlight>ERP (Enterprise Resource Planning)</highlight> within PERADA GROUP. Ary Wibowo contributed to concept development and digital feature expansion to support operational needs and <highlight>Integrated HR Management</highlight>.",
+        "imageAlt": "Superapps ePortal PT Perdana Adi Yuda preview",
+        "visitLabel": "Visit portal.perada.net",
+        "highlights": [
+          "End-to-end recruitment process efficiency",
+          "Centralized HR data integration in one platform",
+          "Automated operational & HR business processes",
+          "Supports PERADA GROUP's Integrated HR Management"
+        ]
+      },
       "integratedHrConcept": {
         "title": "Integrated HR Management Concept Development",
         "category": "HR & Organization",
         "description": "Designing the <highlight>Integrated HR Management</highlight> concept that combines human capital, outsourcing, and PERADA GROUP's operational support into one unified service framework for corporate clients.",
         "imageAlt": "PERADA GROUP website preview",
+        "visitLabel": "Visit perada.net",
         "highlights": [
           "Cross-division integrated HR framework",
           "Scalable human capital approach",
@@ -163,6 +177,7 @@
         "category": "Digital Transformation",
         "description": "Supporting PERADA GROUP's <highlight>business process digitalization</highlight> — including digital presence and online platform development that strengthens positioning as a trusted logistics & HR partner.",
         "imageAlt": "PERADA GROUP logistics division preview",
+        "visitLabel": "Visit perada.net",
         "highlights": [
           "Strengthened PERADA GROUP digital brand",
           "Online platform for service information access",
@@ -174,6 +189,7 @@
         "category": "Integrated Solutions",
         "description": "Orchestrating collaboration between <highlight>logistics & freight forwarding</highlight> (PT Perkasa Adi Yuda) and <highlight>business support & HR</highlight> (PT Perdana Adi Yuda) — delivering one partner for diverse corporate operational needs.",
         "imageAlt": "PERADA GROUP business support division preview",
+        "visitLabel": "Visit perada.net",
         "highlights": [
           "One group, two strong specializations",
           "Efficient logistics & HR coordination",

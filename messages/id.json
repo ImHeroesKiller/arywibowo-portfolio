@@ -147,11 +147,25 @@
     "visitWebsite": "Kunjungi perada.net",
     "highlightsTitle": "Nilai yang Diberikan",
     "items": {
+      "superappsPerdana": {
+        "title": "Superapps Perdana Adi Yuda (End to End Recruitment & ERP)",
+        "category": "Superapps & Digital Platform",
+        "description": "Platform <highlight>Superapps</highlight> yang mengintegrasikan <highlight>End-to-End Recruitment</highlight> dan <highlight>ERP (Enterprise Resource Planning)</highlight> di lingkungan PERADA GROUP. Ary Wibowo terlibat dalam pengembangan konsep dan ekspansi fitur digital untuk mendukung kebutuhan operasional dan <highlight>HR Management Terpadu</highlight>.",
+        "imageAlt": "Preview Superapps ePortal PT Perdana Adi Yuda",
+        "visitLabel": "Kunjungi portal.perada.net",
+        "highlights": [
+          "Efisiensi proses rekrutmen dari awal hingga akhir",
+          "Integrasi data SDM dalam satu platform terpusat",
+          "Otomatisasi proses bisnis operasional & HR",
+          "Dukungan HR Management Terpadu PERADA GROUP"
+        ]
+      },
       "integratedHrConcept": {
         "title": "Pengembangan Konsep Integrated HR Management",
         "category": "HR & Organisasi",
         "description": "Merancang konsep <highlight>Integrated HR Management</highlight> yang menggabungkan human capital, outsourcing, dan dukungan operasional PERADA GROUP dalam satu framework layanan terpadu untuk klien korporat.",
         "imageAlt": "Preview website PERADA GROUP",
+        "visitLabel": "Kunjungi perada.net",
         "highlights": [
           "Framework SDM terintegrasi lintas divisi",
           "Pendekatan human capital yang scalable",
@@ -163,6 +177,7 @@
         "category": "Digital Transformation",
         "description": "Mendukung <highlight>digitalisasi proses bisnis</highlight> PERADA GROUP — termasuk pengembangan presence digital dan platform online yang memperkuat positioning sebagai mitra logistik & SDM terpercaya.",
         "imageAlt": "Preview divisi logistik PERADA GROUP",
+        "visitLabel": "Kunjungi perada.net",
         "highlights": [
           "Penguatan brand digital PERADA GROUP",
           "Platform online untuk akses informasi layanan",
@@ -174,6 +189,7 @@
         "category": "Integrated Solutions",
         "description": "Mengorkestrasi kolaborasi antara <highlight>logistik & freight forwarding</highlight> (PT Perkasa Adi Yuda) dan <highlight>business support & SDM</highlight> (PT Perdana Adi Yuda) — menghadirkan satu mitra untuk berbagai kebutuhan operasional klien korporat.",
         "imageAlt": "Preview divisi business support PERADA GROUP",
+        "visitLabel": "Kunjungi perada.net",
         "highlights": [
           "Satu grup, dua spesialisasi kuat",
           "Efisiensi koordinasi logistik & SDM",

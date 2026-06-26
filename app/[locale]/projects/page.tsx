@@ -9,6 +9,7 @@ import {
   projectIds,
   projectImages,
   projectLinks,
+  projectPreviewHosts,
 } from "@/lib/projects";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -54,7 +55,7 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-7">
           {projectIds.map((id, index) => {
             const highlights = t.raw(`items.${id}.highlights`) as string[];
 
@@ -69,7 +70,8 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
                   imageSrc={projectImages[id]}
                   imageAlt={t(`items.${id}.imageAlt`)}
                   href={projectLinks[id]}
-                  visitLabel={t("visitWebsite")}
+                  visitLabel={t(`items.${id}.visitLabel`)}
+                  previewHost={projectPreviewHosts[id]}
                   variant="detailed"
                 />
               </FadeIn>

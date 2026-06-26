@@ -147,11 +147,25 @@
     "visitWebsite": "访问 perada.net",
     "highlightsTitle": "交付价值",
     "items": {
+      "superappsPerdana": {
+        "title": "Superapps Perdana Adi Yuda（端到端招聘与 ERP）",
+        "category": "超级应用与数字平台",
+        "description": "在 PERADA GROUP 内整合<highlight>端到端招聘</highlight>与<highlight>ERP（企业资源规划）</highlight>的<highlight>超级应用平台</highlight>。Ary Wibowo 参与概念开发和数字功能扩展，以支持运营需求和<highlight>综合人力资源管理</highlight>。",
+        "imageAlt": "Superapps ePortal PT Perdana Adi Yuda 预览",
+        "visitLabel": "访问 portal.perada.net",
+        "highlights": [
+          "全流程招聘效率提升",
+          "人力资源数据集中整合于单一平台",
+          "运营与 HR 业务流程自动化",
+          "支持 PERADA GROUP 综合人力资源管理"
+        ]
+      },
       "integratedHrConcept": {
         "title": "Integrated HR Management 概念开发",
         "category": "人力资源与组织",
         "description": "设计<highlight>Integrated HR Management</highlight>概念，将人力资本、外包和 PERADA GROUP 运营支持整合为面向企业客户的统一服务框架。",
         "imageAlt": "PERADA GROUP 网站预览",
+        "visitLabel": "访问 perada.net",
         "highlights": [
           "跨部门综合人力资源框架",
           "可扩展的人力资本方法",
@@ -163,6 +177,7 @@
         "category": "数字化转型",
         "description": "支持 PERADA GROUP 的<highlight>业务流程数字化</highlight> — 包括数字形象和在线平台开发，强化作为值得信赖的物流与人力资源合作伙伴的定位。",
         "imageAlt": "PERADA GROUP 物流部门预览",
+        "visitLabel": "访问 perada.net",
         "highlights": [
           "强化 PERADA GROUP 数字品牌",
           "服务信息在线访问平台",
@@ -174,6 +189,7 @@
         "category": "综合解决方案",
         "description": "协调<highlight>物流与货运代理</highlight>（PT Perkasa Adi Yuda）和<highlight>业务支持与人力资源</highlight>（PT Perdana Adi Yuda）之间的合作 — 为企业多样化的运营需求提供单一合作伙伴。",
         "imageAlt": "PERADA GROUP 业务支持部门预览",
+        "visitLabel": "访问 perada.net",
         "highlights": [
           "一个集团，两大专业领域",
           "高效的物流与人力资源协调",
