@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import {
   IDA_MAX_OUTPUT_TOKENS,
   IDA_MODEL,
+  IDA_TEMPERATURE,
   buildIdaPrompt,
 } from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
@@ -54,7 +55,7 @@ async function callGemini(
         },
         contents: toGeminiHistory(messages),
         generationConfig: {
-          temperature: 0.45,
+          temperature: IDA_TEMPERATURE,
           maxOutputTokens: IDA_MAX_OUTPUT_TOKENS,
         },
       }),
