@@ -7,6 +7,7 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 
 import { Footer } from "@/components/footer";
 import { IdaChatbot } from "@/components/ida-chatbot";
@@ -163,6 +164,7 @@ export default async function LocaleLayout({
           <IdaChatbot />
           <ServiceWorkerRegister />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
