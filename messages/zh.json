@@ -14,7 +14,7 @@
     },
     "services": {
       "title": "咨询服务",
-      "description": "数字业务拓展、Integrated HR Management 与运营支持整合 — Ary Wibowo 为 PERADA GROUP 及企业客户提供的咨询解决方案。"
+      "description": "可再生能源、业务发展、IT 与数字化转型、综合人力资源、销售与项目管理及金融解决方案 — Ary Wibowo 的多学科咨询专长。"
     },
     "contact": {
       "title": "联系我",
@@ -64,46 +64,80 @@
   },
   "services": {
     "eyebrow": "服务",
-    "title": "数字拓展与综合人力资源管理",
-    "description": "支持 PERADA GROUP 的<highlight>数字业务拓展</highlight>和<highlight>Integrated HR Management</highlight>发展 — 将人力资源解决方案与物流及运营业务支持相整合。",
-    "descriptionFull": "专为支持 PERADA GROUP <highlight>数字业务增长</highlight>和综合运营而设计的<highlight>专业咨询服务</highlight>。",
+    "title": "综合咨询专长",
+    "description": "涵盖可再生能源、业务增长、数字化转型、人力资源、项目管理和金融解决方案的<highlight>专业咨询</highlight>。",
+    "descriptionFull": "六大核心专长领域，从战略设计到执行扩展，创造<highlight>可衡量的影响</highlight>。",
     "seeMoreRich": "查看完整详情请访问<link>服务</link>页面。",
     "pageTitle": "咨询服务",
-    "pageDescription": "支持<highlight>数字业务拓展</highlight>和<highlight>人力资源管理</highlight>的综合解决方案 — 从战略到执行。",
-    "positioningTitle": "Ary 在 PERADA GROUP 数字业务拓展中的角色",
-    "positioningDescription": "Ary Wibowo 在 PERADA GROUP 的<highlight>数字业务拓展</highlight>和<highlight>Integrated HR Management</highlight>概念开发中发挥关键作用。他的重点是<highlight>整合人力资源解决方案</highlight>与物流及业务支持服务 — 为企业客户提供统一、高效、可扩展的合作伙伴生态系统。",
+    "pageDescription": "涵盖<highlight>六大核心专长领域</highlight>的全方位咨询 — 助力组织成长、转型与高效运营。",
+    "positioningEyebrow": "方法论",
+    "positioningTitle": "从战略到执行",
+    "positioningDescription": "凭借在<highlight>业务发展</highlight>、<highlight>技术</highlight>和<highlight>运营</highlight>领域超过 10 年的经验，Ary Wibowo 采用多学科方法 — 协调战略、系统与人员，交付创造<highlight>真实可衡量影响</highlight>的解决方案。",
     "items": {
-      "digitalBusinessExpansion": {
-        "title": "Digital Business Expansion",
-        "usp": "开拓可衡量的<highlight>数字增长机会</highlight>，产生实际影响。",
-        "description": "<highlight>数字业务拓展</highlight>战略指导 — 从在线品牌定位、数字平台开发到整合新业务渠道，支持 PERADA GROUP 及企业客户的增长。",
+      "renewableEnergy": {
+        "title": "可再生能源解决方案",
+        "usp": "以实用、可扩展的方案加速<highlight>清洁能源应用</highlight>。",
+        "description": "可再生能源战略咨询 — 从太阳能整合和电动车基础设施到与业务目标一致的可持续发展路线图。",
         "features": [
-          "数字拓展战略与品牌定位",
-          "网络平台与在线形象开发",
-          "业务渠道与数字触点整合",
-          "可衡量的数字增长路线图"
+          "太阳能与电动车基础设施规划",
+          "清洁能源转型战略",
+          "通过可持续方案提升运营效率",
+          "可市场化的可再生能源实施"
+        ]
+      },
+      "businessDevelopment": {
+        "title": "业务发展与战略增长",
+        "usp": "通过数据驱动战略释放<highlight>可衡量的增长</highlight>。",
+        "description": "端到端业务发展指导 — 市场拓展、客户关系、合作伙伴战略和增长规划，将机遇转化为可持续收入。",
+        "features": [
+          "市场拓展与机会映射",
+          "战略合作伙伴开发",
+          "客户关系管理",
+          "可衡量的增长路线图"
+        ]
+      },
+      "itDigitalTransformation": {
+        "title": "IT 与数字化转型",
+        "usp": "将技术转化为<highlight>竞争优势</highlight>。",
+        "description": "数字化转型咨询 — 平台开发、流程自动化和 IT 战略，实现运营现代化和可衡量的效率提升。",
+        "features": [
+          "数字平台与系统开发",
+          "业务流程自动化",
+          "IT 战略与架构指导",
+          "可扩展的技术实施"
         ]
       },
       "integratedHrManagement": {
-        "title": "Integrated HR Management Solution",
-        "usp": "在一个服务生态系统中实现<highlight>综合人力资源解决方案</highlight>。",
-        "description": "开发<highlight>Integrated HR Management</highlight>概念，连接人力资本、外包和运营支持 — 使企业客户的人力资源需求在 PERADA GROUP 统一服务框架内得到满足。",
+        "title": "综合人力资源管理",
+        "usp": "一个整合框架实现<highlight>人力资本卓越</highlight>。",
+        "description": "设计综合人力资源解决方案 — 从人才管理和组织结构到外包框架和合规管理，随业务共同成长。",
         "features": [
-          "Integrated HR Management 概念与框架",
-          "人力资本与外包解决方案",
-          "组织结构与人才管理",
-          "劳动法规合规"
+          "综合人力资源框架设计",
+          "人才与组织发展",
+          "外包与劳动力解决方案",
+          "劳动合规与治理"
         ]
       },
-      "operationalBusinessSupport": {
-        "title": "Operational & Business Support Integration",
-        "usp": "在一个合作伙伴中统一<highlight>物流、人力资源和运营支持</highlight>。",
-        "description": "整合<highlight>业务运营服务</highlight> — 从货运代理和清关（PT Perkasa Adi Yuda）到业务支持、活动、设施管理和进口解决方案（PT Perdana Adi Yuda） — 形成协调统一的生态系统。",
+      "salesProjectManagement": {
+        "title": "销售与项目管理",
+        "usp": "<highlight>按时、按范围、按价值</highlight>交付项目。",
+        "description": "销售领导力和项目管理专长 — 协调跨职能团队、管理利益相关者期望，推动项目从概念到成功交付。",
         "features": [
-          "物流与运营支持协调",
-          "PERADA GROUP 跨部门服务整合",
-          "结构化进口与贸易解决方案（API-U）",
-          "为企业客户节省成本与时间"
+          "端到端项目协调",
+          "销售战略与管道管理",
+          "利益相关者与团队协同",
+          "按时、可衡量的交付"
+        ]
+      },
+      "financialSolutions": {
+        "title": "金融解决方案",
+        "usp": "更智能的<highlight>融资与数字金融服务</highlight>。",
+        "description": "金融解决方案咨询 — 数字借贷平台、融资流程优化和综合金融服务，拓宽融资渠道并提升运营效率。",
+        "features": [
+          "数字融资平台开发",
+          "金融流程效率优化",
+          "更广泛的融资渠道",
+          "综合数字金融服务"
         ]
       }
     }
@@ -147,6 +181,18 @@
     "visitWebsite": "访问 perada.net",
     "highlightsTitle": "交付价值",
     "items": {
+      "financialSolution": {
+        "title": "Financial Solution",
+        "category": "金融与数字解决方案",
+        "description": "为支持融资需求和数字金融服务而开发的<highlight>金融解决方案平台</highlight>。",
+        "imageAlt": "金融解决方案平台 — Danawangsa Capital",
+        "visitLabel": "访问 danawangsa.arywibowo.id",
+        "highlights": [
+          "金融流程效率提升",
+          "更广泛的融资渠道",
+          "数字化整合"
+        ]
+      },
       "bespokeSolarEv": {
         "title": "战略合作伙伴 — 印尼电动摩托车太阳能面板与电池系统实施",
         "category": "可再生能源与电动车",

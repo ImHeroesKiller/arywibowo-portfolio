@@ -1,16 +1,29 @@
 import type { LucideIcon } from "lucide-react";
-import { Globe, Layers, Users } from "lucide-react";
+import {
+  Cpu,
+  Landmark,
+  Sun,
+  Target,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 
 export const serviceIds = [
-  "digitalBusinessExpansion",
+  "renewableEnergy",
+  "businessDevelopment",
+  "itDigitalTransformation",
   "integratedHrManagement",
-  "operationalBusinessSupport",
+  "salesProjectManagement",
+  "financialSolutions",
 ] as const;
 
 export type ServiceId = (typeof serviceIds)[number];
 
 export const serviceIcons: Record<ServiceId, LucideIcon> = {
-  digitalBusinessExpansion: Globe,
+  renewableEnergy: Sun,
+  businessDevelopment: TrendingUp,
+  itDigitalTransformation: Cpu,
   integratedHrManagement: Users,
-  operationalBusinessSupport: Layers,
+  salesProjectManagement: Target,
+  financialSolutions: Landmark,
 };

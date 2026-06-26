@@ -2,12 +2,14 @@ import { HighlightedText } from "@/components/HighlightedText";
 import { cn } from "@/lib/utils";
 
 type ServicesPositioningProps = {
+  eyebrow: string;
   title: string;
   description: string;
   className?: string;
 };
 
 export function ServicesPositioning({
+  eyebrow,
   title,
   description,
   className,
@@ -15,14 +17,14 @@ export function ServicesPositioning({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card/80 to-card/60 p-6 shadow-sm sm:p-8",
+        "relative overflow-hidden rounded-2xl border border-border/60 bg-card/40 p-6 sm:p-8",
         className
       )}
     >
-      <div className="pointer-events-none absolute -right-12 -top-12 size-40 rounded-full bg-primary/10 blur-3xl" />
-      <div className="relative max-w-3xl">
+      <div className="pointer-events-none absolute -right-12 -top-12 size-40 rounded-full bg-primary/5 blur-3xl" />
+      <div className="relative mx-auto max-w-3xl text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary sm:text-sm">
-          PERADA GROUP
+          {eyebrow}
         </p>
         <h3 className="mt-3 text-xl font-semibold leading-snug text-foreground sm:text-2xl">
           {title}

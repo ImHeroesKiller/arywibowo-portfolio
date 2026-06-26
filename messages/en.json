@@ -14,7 +14,7 @@
     },
     "services": {
       "title": "Consulting Services",
-      "description": "Digital business expansion, Integrated HR Management, and operational support integration — Ary Wibowo's consulting solutions for PERADA GROUP and corporate clients."
+      "description": "Renewable energy, business development, IT & digital transformation, integrated HR, sales & project management, and financial solutions — Ary Wibowo's multidisciplinary consulting expertise."
     },
     "contact": {
       "title": "Contact Me",
@@ -64,46 +64,80 @@
   },
   "services": {
     "eyebrow": "Services",
-    "title": "Digital Expansion & Integrated HR",
-    "description": "Supporting <highlight>digital business expansion</highlight> and <highlight>Integrated HR Management</highlight> at PERADA GROUP — connecting HR solutions with logistics & operational business support.",
-    "descriptionFull": "<highlight>Professional consulting services</highlight> designed to support <highlight>digital business growth</highlight> and integrated operations at PERADA GROUP.",
+    "title": "Integrated Consulting Expertise",
+    "description": "<highlight>Professional consulting</highlight> across renewable energy, business growth, digital transformation, HR, project management, and financial solutions.",
+    "descriptionFull": "Six core areas of expertise delivering <highlight>measurable impact</highlight> — from strategy and design through to execution and scale.",
     "seeMoreRich": "See full details on the <link>Services</link> page.",
     "pageTitle": "Consulting Services",
-    "pageDescription": "Integrated solutions for <highlight>digital business expansion</highlight> and <highlight>HR management</highlight> — from strategy to execution at PERADA GROUP.",
-    "positioningTitle": "Ary's Role in PERADA GROUP's Digital Business Expansion",
-    "positioningDescription": "Ary Wibowo plays a key role in <highlight>digital business expansion</highlight> and developing the <highlight>Integrated HR Management</highlight> concept at PERADA GROUP. His focus is on <highlight>integrating HR solutions</highlight> with logistics & business support services — giving corporate clients one cohesive, efficient partner ecosystem ready to scale.",
+    "pageDescription": "End-to-end consulting across <highlight>six core expertise areas</highlight> — designed to help organizations grow, transform, and operate more efficiently.",
+    "positioningEyebrow": "Approach",
+    "positioningTitle": "From Strategy to Execution",
+    "positioningDescription": "With over 10 years spanning <highlight>business development</highlight>, <highlight>technology</highlight>, and <highlight>operations</highlight>, Ary Wibowo brings a multidisciplinary approach — aligning strategy, systems, and people to deliver solutions that create <highlight>real, measurable impact</highlight>.",
     "items": {
-      "digitalBusinessExpansion": {
-        "title": "Digital Business Expansion",
-        "usp": "Opening <highlight>measurable digital growth</highlight> opportunities with real impact.",
-        "description": "Guidance on <highlight>digital business expansion</highlight> strategy — from online brand positioning and digital platform development to integrating new business channels that support PERADA GROUP's growth and corporate clients.",
+      "renewableEnergy": {
+        "title": "Renewable Energy Solutions",
+        "usp": "Accelerating <highlight>clean energy adoption</highlight> with practical, scalable solutions.",
+        "description": "Strategic consulting for renewable energy initiatives — from solar integration and EV infrastructure to sustainability roadmaps aligned with business objectives.",
         "features": [
-          "Digital expansion strategy & brand positioning",
-          "Web platform & online presence development",
-          "Business channel & digital touchpoint integration",
-          "Measurable digital growth roadmap"
+          "Solar & EV infrastructure planning",
+          "Clean energy transition strategy",
+          "Operational efficiency through sustainable solutions",
+          "Market-ready renewable energy implementation"
+        ]
+      },
+      "businessDevelopment": {
+        "title": "Business Development & Strategic Growth",
+        "usp": "Unlocking <highlight>measurable growth</highlight> through data-driven strategy.",
+        "description": "End-to-end business development guidance — market expansion, client relations, partnership strategy, and growth planning that turns opportunity into sustainable revenue.",
+        "features": [
+          "Market expansion & opportunity mapping",
+          "Strategic partnership development",
+          "Client relationship management",
+          "Measurable growth roadmaps"
+        ]
+      },
+      "itDigitalTransformation": {
+        "title": "IT & Digital Transformation",
+        "usp": "Turning technology into <highlight>competitive advantage</highlight>.",
+        "description": "Digital transformation consulting — platform development, process automation, and IT strategy that modernizes operations and delivers measurable efficiency gains.",
+        "features": [
+          "Digital platform & system development",
+          "Business process automation",
+          "IT strategy & architecture guidance",
+          "Scalable technology implementation"
         ]
       },
       "integratedHrManagement": {
-        "title": "Integrated HR Management Solution",
-        "usp": "<highlight>Integrated HR solutions</highlight> within one service ecosystem.",
-        "description": "Developing the <highlight>Integrated HR Management</highlight> concept that connects human capital, outsourcing, and operational support — designed so corporate clients' HR needs are served within one PERADA GROUP service framework.",
+        "title": "Integrated HR Management",
+        "usp": "One integrated framework for <highlight>human capital excellence</highlight>.",
+        "description": "Designing integrated HR solutions — from talent management and organizational structure to outsourcing frameworks and compliance that scale with your business.",
         "features": [
-          "Integrated HR Management concept & framework",
-          "Human capital & outsourcing solutions",
-          "Organizational structure & talent management",
-          "Labor regulation compliance"
+          "Integrated HR framework design",
+          "Talent & organizational development",
+          "Outsourcing & workforce solutions",
+          "Labor compliance & governance"
         ]
       },
-      "operationalBusinessSupport": {
-        "title": "Operational & Business Support Integration",
-        "usp": "Unifying <highlight>logistics, HR, and operational support</highlight> in one partner.",
-        "description": "Integration of <highlight>business operational services</highlight> — from freight forwarding & customs clearance (PT Perkasa Adi Yuda) to business support, events, facility management, and import solutions (PT Perdana Adi Yuda) — in one coordinated ecosystem.",
+      "salesProjectManagement": {
+        "title": "Sales & Project Management",
+        "usp": "Delivering projects <highlight>on time, on scope, and on value</highlight>.",
+        "description": "Sales leadership and project management expertise — coordinating cross-functional teams, managing stakeholder expectations, and driving initiatives from concept to successful delivery.",
         "features": [
-          "Logistics & operational support coordination",
-          "Cross-division service integration at PERADA GROUP",
-          "Structured import & trading solutions (API-U)",
-          "Cost & time efficiency for corporate clients"
+          "End-to-end project coordination",
+          "Sales strategy & pipeline management",
+          "Stakeholder & team alignment",
+          "On-time, measurable delivery"
+        ]
+      },
+      "financialSolutions": {
+        "title": "Financial Solutions",
+        "usp": "Smarter <highlight>financing and digital financial services</highlight>.",
+        "description": "Financial solutions consulting — digital lending platforms, financing process optimization, and integrated financial services that broaden access and improve operational efficiency.",
+        "features": [
+          "Digital financing platform development",
+          "Financial process efficiency optimization",
+          "Broader access to funding channels",
+          "Integrated digital financial services"
         ]
       }
     }
@@ -147,6 +181,18 @@
     "visitWebsite": "Visit perada.net",
     "highlightsTitle": "Value Delivered",
     "items": {
+      "financialSolution": {
+        "title": "Financial Solution",
+        "category": "Financial & Digital Solution",
+        "description": "A <highlight>Financial Solution platform</highlight> developed to support financing needs and digital financial services.",
+        "imageAlt": "Financial Solution platform — Danawangsa Capital",
+        "visitLabel": "Visit danawangsa.arywibowo.id",
+        "highlights": [
+          "Financial process efficiency",
+          "Broader access to financing",
+          "Digital integration"
+        ]
+      },
       "bespokeSolarEv": {
         "title": "Strategic Partner — Solar Panel System & Battery for Electric Motorcycles in Indonesia",
         "category": "Renewable Energy & EV",

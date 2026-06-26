@@ -14,7 +14,7 @@
     },
     "services": {
       "title": "Layanan Konsultasi",
-      "description": "Ekspansi bisnis digital, Integrated HR Management, dan integrasi dukungan operasional — solusi konsultasi Ary Wibowo untuk PERADA GROUP dan klien korporat."
+      "description": "Renewable energy, business development, IT & digital transformation, integrated HR, sales & project management, dan financial solutions — keahlian konsultasi multidisiplin Ary Wibowo."
     },
     "contact": {
       "title": "Hubungi Saya",
@@ -64,46 +64,80 @@
   },
   "services": {
     "eyebrow": "Layanan",
-    "title": "Ekspansi Digital & SDM Terintegrasi",
-    "description": "Mendampingi <highlight>ekspansi bisnis digital</highlight> dan pengembangan <highlight>Integrated HR Management</highlight> di PERADA GROUP — mengintegrasikan solusi SDM dengan logistik & dukungan operasional.",
-    "descriptionFull": "Layanan <highlight>konsultasi profesional</highlight> yang dirancang untuk mendukung <highlight>pertumbuhan bisnis digital</highlight> dan operasional terintegrasi di PERADA GROUP.",
+    "title": "Keahlian Konsultasi Terintegrasi",
+    "description": "<highlight>Konsultasi profesional</highlight> di bidang renewable energy, pertumbuhan bisnis, transformasi digital, SDM, manajemen proyek, dan solusi keuangan.",
+    "descriptionFull": "Enam area keahlian inti yang menghadirkan <highlight>dampak terukur</highlight> — dari strategi dan desain hingga eksekusi dan skala.",
     "seeMoreRich": "Lihat detail lengkap di halaman <link>Layanan</link>.",
     "pageTitle": "Layanan Konsultasi",
-    "pageDescription": "Solusi terintegrasi untuk <highlight>ekspansi bisnis digital</highlight> dan <highlight>manajemen SDM</highlight> — dari strategi hingga eksekusi di PERADA GROUP.",
-    "positioningTitle": "Peran Ary dalam Ekspansi Bisnis Digital PERADA GROUP",
-    "positioningDescription": "Ary Wibowo berperan dalam <highlight>mengembangkan ekspansi bisnis digital</highlight> dan konsep <highlight>Integrated HR Management</highlight> di PERADA GROUP. Fokus utamanya adalah <highlight>mengintegrasikan solusi SDM</highlight> dengan layanan logistik & business support — sehingga klien korporat mendapat satu ekosistem mitra yang kohesif, efisien, dan siap scale.",
+    "pageDescription": "Konsultasi menyeluruh di <highlight>enam area keahlian inti</highlight> — dirancang untuk membantu organisasi tumbuh, bertransformasi, dan beroperasi lebih efisien.",
+    "positioningEyebrow": "Pendekatan",
+    "positioningTitle": "Dari Strategi hingga Eksekusi",
+    "positioningDescription": "Dengan pengalaman lebih dari 10 tahun di <highlight>business development</highlight>, <highlight>teknologi</highlight>, dan <highlight>operasional</highlight>, Ary Wibowo menghadirkan pendekatan multidisiplin — menyelaraskan strategi, sistem, dan orang untuk menghasilkan solusi dengan <highlight>dampak nyata dan terukur</highlight>.",
     "items": {
-      "digitalBusinessExpansion": {
-        "title": "Digital Business Expansion",
-        "usp": "Membuka <highlight>peluang pertumbuhan digital</highlight> yang terukur dan berdampak.",
-        "description": "Pendampingan strategi <highlight>ekspansi bisnis digital</highlight> — dari positioning brand online, pengembangan platform digital, hingga integrasi kanal bisnis baru yang mendukung pertumbuhan PERADA GROUP dan klien korporat.",
+      "renewableEnergy": {
+        "title": "Renewable Energy Solutions",
+        "usp": "Mempercepat <highlight>adopsi energi bersih</highlight> dengan solusi praktis dan scalable.",
+        "description": "Konsultasi strategis untuk inisiatif renewable energy — dari integrasi solar dan infrastruktur EV hingga roadmap keberlanjutan yang selaras dengan tujuan bisnis.",
         "features": [
-          "Strategi ekspansi digital & positioning brand",
-          "Pengembangan platform web & presence online",
-          "Integrasi kanal bisnis & digital touchpoint",
-          "Roadmap pertumbuhan digital yang terukur"
+          "Perencanaan infrastruktur solar & EV",
+          "Strategi transisi energi bersih",
+          "Efisiensi operasional melalui solusi berkelanjutan",
+          "Implementasi renewable energy siap pasar"
+        ]
+      },
+      "businessDevelopment": {
+        "title": "Business Development & Strategic Growth",
+        "usp": "Membuka <highlight>pertumbuhan terukur</highlight> melalui strategi berbasis data.",
+        "description": "Pendampingan business development menyeluruh — ekspansi pasar, hubungan klien, strategi kemitraan, dan perencanaan pertumbuhan yang mengubah peluang menjadi pendapatan berkelanjutan.",
+        "features": [
+          "Ekspansi pasar & pemetaan peluang",
+          "Pengembangan kemitraan strategis",
+          "Manajemen hubungan klien",
+          "Roadmap pertumbuhan yang terukur"
+        ]
+      },
+      "itDigitalTransformation": {
+        "title": "IT & Digital Transformation",
+        "usp": "Mengubah teknologi menjadi <highlight>keunggulan kompetitif</highlight>.",
+        "description": "Konsultasi transformasi digital — pengembangan platform, otomatisasi proses, dan strategi IT yang memodernisasi operasional dan menghadirkan efisiensi terukur.",
+        "features": [
+          "Pengembangan platform & sistem digital",
+          "Otomatisasi proses bisnis",
+          "Panduan strategi & arsitektur IT",
+          "Implementasi teknologi yang scalable"
         ]
       },
       "integratedHrManagement": {
-        "title": "Integrated HR Management Solution",
-        "usp": "Solusi <highlight>SDM terintegrasi</highlight> dalam satu ekosistem layanan.",
-        "description": "Pengembangan konsep <highlight>Integrated HR Management</highlight> yang menghubungkan human capital, outsourcing, dan dukungan operasional — dirancang agar kebutuhan SDM klien korporat terlayani dalam satu kerangka layanan PERADA GROUP.",
+        "title": "Integrated HR Management",
+        "usp": "Satu kerangka terintegrasi untuk <highlight>keunggulan human capital</highlight>.",
+        "description": "Merancang solusi SDM terintegrasi — dari talent management dan struktur organisasi hingga framework outsourcing dan kepatuhan yang tumbuh bersama bisnis Anda.",
         "features": [
-          "Konsep & framework Integrated HR Management",
-          "Human capital & outsourcing solutions",
-          "Struktur organisasi & talent management",
-          "Kepatuhan regulasi ketenagakerjaan"
+          "Desain framework SDM terintegrasi",
+          "Pengembangan talenta & organisasi",
+          "Solusi outsourcing & workforce",
+          "Kepatuhan & tata kelola ketenagakerjaan"
         ]
       },
-      "operationalBusinessSupport": {
-        "title": "Operational & Business Support Integration",
-        "usp": "Menyatukan <highlight>logistik, SDM, dan dukungan operasional</highlight> dalam satu mitra.",
-        "description": "Integrasi layanan <highlight>operasional bisnis</highlight> — dari freight forwarding & customs clearance (PT Perkasa Adi Yuda) hingga business support, event, facility management, dan import solutions (PT Perdana Adi Yuda) — dalam satu ekosistem terkoordinasi.",
+      "salesProjectManagement": {
+        "title": "Sales & Project Management",
+        "usp": "Menyelesaikan proyek <highlight>tepat waktu, tepat ruang lingkup, dan tepat nilai</highlight>.",
+        "description": "Keahlian sales leadership dan project management — mengoordinasikan tim lintas fungsi, mengelola ekspektasi stakeholder, dan mendorong inisiatif dari konsep hingga penyelesaian sukses.",
         "features": [
-          "Koordinasi logistik & dukungan operasional",
-          "Integrasi layanan lintas divisi PERADA GROUP",
-          "Solusi import & trading (API-U) terstruktur",
-          "Efisiensi biaya & waktu untuk klien korporat"
+          "Koordinasi proyek end-to-end",
+          "Strategi sales & manajemen pipeline",
+          "Keselarasan stakeholder & tim",
+          "Penyelesaian tepat waktu dan terukur"
+        ]
+      },
+      "financialSolutions": {
+        "title": "Financial Solutions",
+        "usp": "<highlight>Pembiayaan dan layanan keuangan digital</highlight> yang lebih cerdas.",
+        "description": "Konsultasi solusi keuangan — platform pembiayaan digital, optimasi proses pembiayaan, dan layanan keuangan terintegrasi yang memperluas akses dan meningkatkan efisiensi operasional.",
+        "features": [
+          "Pengembangan platform pembiayaan digital",
+          "Optimasi efisiensi proses keuangan",
+          "Akses pembiayaan yang lebih luas",
+          "Layanan keuangan digital terintegrasi"
         ]
       }
     }
@@ -147,6 +181,18 @@
     "visitWebsite": "Kunjungi perada.net",
     "highlightsTitle": "Nilai yang Diberikan",
     "items": {
+      "financialSolution": {
+        "title": "Financial Solution",
+        "category": "Financial & Digital Solution",
+        "description": "Platform <highlight>Financial Solution</highlight> yang dikembangkan untuk mendukung kebutuhan pembiayaan dan layanan keuangan digital.",
+        "imageAlt": "Platform Financial Solution — Danawangsa Capital",
+        "visitLabel": "Kunjungi danawangsa.arywibowo.id",
+        "highlights": [
+          "Efisiensi proses keuangan",
+          "Akses pembiayaan yang lebih luas",
+          "Integrasi digital"
+        ]
+      },
       "bespokeSolarEv": {
         "title": "Mitra Strategis Implementasi Solar Panel System & Battery untuk Motor Listrik di Indonesia",
         "category": "Renewable Energy & EV",
