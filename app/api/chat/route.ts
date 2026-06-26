@@ -54,7 +54,7 @@ async function callGemini(
         },
         contents: toGeminiHistory(messages),
         generationConfig: {
-          temperature: 0.35,
+          temperature: 0.45,
           maxOutputTokens: IDA_MAX_OUTPUT_TOKENS,
         },
       }),

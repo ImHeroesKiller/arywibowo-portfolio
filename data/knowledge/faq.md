@@ -1,5 +1,7 @@
 # FAQ Layanan Konsultasi
 
+**Keywords:** faq, tanya, jawab, mulai, harga, penawaran, UMKM, kontak, cara, konsultasi
+
 ## Bagaimana cara memulai konsultasi?
 Hubungi Ary Wibowo melalui form kontak di website atau email aku@arywibowo.id. Biasanya respons dalam 24–48 jam.
 

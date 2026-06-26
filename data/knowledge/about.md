@@ -1,5 +1,7 @@
 # Tentang Ary Wibowo
 
+**Keywords:** ary, wibowo, konsultan, consultant, profil, kontak, jakarta, pengalaman, layanan, tentang
+
 Ary Wibowo adalah Profesional Consultant berbasis di Jakarta, Indonesia.
 
 ## Profil
