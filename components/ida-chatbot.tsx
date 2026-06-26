@@ -129,31 +129,31 @@ export function IdaChatbot() {
             "animate-in fade-in slide-in-from-bottom-3 zoom-in-95 duration-300"
           )}
         >
-          <header className="relative flex items-start justify-between gap-3 border-b border-border/60 bg-card/80 px-4 pb-4 pt-5 sm:px-5 sm:pb-4 sm:pt-6">
-            <div className="min-w-0 flex-1">
-              <div className="flex items-end gap-3 sm:gap-3.5">
-                <div className="relative z-10 -mt-3 shrink-0 sm:-mt-4">
-                  <IdaAvatar alt={t("title")} size="header" />
-                </div>
-                <div className="min-w-0 pb-0.5">
-                  <p className="font-semibold leading-tight text-foreground">
-                    {t("name")}
-                  </p>
-                  <p className="text-xs leading-relaxed text-muted-foreground">
-                    {t("subtitle")}
-                  </p>
-                </div>
+          <div className="relative shrink-0 border-b border-border/60 bg-card/80 pt-8 sm:pt-10">
+            <IdaAvatar
+              alt={t("title")}
+              size="xxl"
+              className="absolute left-4 z-20 -mt-6 shrink-0 drop-shadow-md sm:left-5 sm:-mt-8"
+            />
+            <header className="flex items-center justify-between gap-3 px-4 pb-3 pl-[5.25rem] sm:px-5 sm:pl-24">
+              <div className="min-w-0">
+                <p className="font-semibold leading-tight text-foreground">
+                  {t("name")}
+                </p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  {t("subtitle")}
+                </p>
               </div>
-            </div>
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              className="rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              aria-label={t("close")}
-            >
-              <X className="size-4" />
-            </button>
-          </header>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                aria-label={t("close")}
+              >
+                <X className="size-4" />
+              </button>
+            </header>
+          </div>
 
           <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
             {messages.map((message) => (
@@ -161,17 +161,11 @@ export function IdaChatbot() {
                 key={message.id}
                 role={message.role}
                 content={message.content}
-                avatarAlt={t("title")}
               />
             ))}
 
             {loading && (
-              <div className="flex items-end gap-2">
-                <IdaAvatar
-                  alt={t("title")}
-                  size="sm"
-                  className="mb-0.5 shrink-0"
-                />
+              <div className="flex justify-start">
                 <div className="rounded-2xl rounded-bl-md border border-border/60 bg-muted/50 px-3.5 py-2">
                   <TypingIndicator />
                 </div>

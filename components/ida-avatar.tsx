@@ -6,6 +6,7 @@ const sizeStyles = {
   lg: { className: "size-12", dimension: 48 },
   xl: { className: "size-14", dimension: 56 },
   header: { className: "size-16", dimension: 64 },
+  xxl: { className: "size-20", dimension: 80 },
 } as const;
 
 type IdaAvatarProps = {
