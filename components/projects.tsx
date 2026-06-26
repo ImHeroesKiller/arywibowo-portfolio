@@ -9,7 +9,7 @@ import { Link } from "@/i18n/navigation";
 import { sectionContentGap, sectionShell } from "@/lib/layout-classes";
 import {
   projectIds,
-  projectImages,
+  projectImageSources,
   projectLinks,
   projectImageFit,
   projectPreviewHosts,
@@ -56,7 +56,7 @@ export function Projects({ showAll = false, className }: ProjectsProps) {
                   description={t(`items.${id}.description`)}
                   highlights={highlights}
                   highlightsTitle={t("highlightsTitle")}
-                  imageSrc={projectImages[id]}
+                  imageSources={projectImageSources[id]}
                   imageAlt={t(`items.${id}.imageAlt`)}
                   href={projectLinks[id]}
                   visitLabel={t(`items.${id}.visitLabel`)}

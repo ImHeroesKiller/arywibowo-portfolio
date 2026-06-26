@@ -1,22 +1,22 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { HighlightedText } from "@/components/HighlightedText";
+import { OptimizedPicture } from "@/components/optimized-picture";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { profileImage } from "@/lib/images";
+import { cn } from "@/lib/utils";
 
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] as const },
-});
-
-const photoGradient =
-  "linear-gradient(to top, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0.38) 20%, rgba(59,130,246,0.22) 45%, rgba(59,130,246,0.08) 70%, transparent 90%)";
+const heroStagger = [
+  "hero-animate",
+  "hero-animate hero-animate-delay-1",
+  "hero-animate hero-animate-delay-2",
+  "hero-animate hero-animate-delay-3",
+  "hero-animate hero-animate-delay-4",
+] as const;
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -39,20 +39,22 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[420px]">
           <div className="relative order-1 flex justify-center px-4 pt-8 lg:order-2 lg:justify-end lg:px-0 lg:pt-0 lg:pr-8">
             <div className="relative aspect-[32/44] w-full max-w-[240px] overflow-hidden sm:max-w-[280px] lg:max-w-[320px]">
-              <Image
-                src="/images/profile.png"
+              <OptimizedPicture
+                sources={profileImage}
                 alt={t("imageAlt")}
-                width={320}
-                height={440}
                 priority
-                fetchPriority="high"
                 sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 320px"
-                className="size-full object-cover object-top"
+                fit="cover"
+                className="size-full"
+                imgClassName="size-full object-top"
               />
 
               <div
                 className="pointer-events-none absolute inset-0"
-                style={{ background: photoGradient }}
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0.38) 20%, rgba(59,130,246,0.22) 45%, rgba(59,130,246,0.08) 70%, transparent 90%)",
+                }}
               />
 
               <div
@@ -66,40 +68,45 @@ export default function Hero() {
           </div>
 
           <div className="order-2 flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12 lg:order-1 lg:px-12 lg:py-14 xl:px-14">
-            <motion.h1
-              {...fade(0.05)}
-              className="text-balance text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl md:text-5xl xl:text-6xl"
+            <h1
+              className={cn(
+                heroStagger[0],
+                "text-balance text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl md:text-5xl xl:text-6xl"
+              )}
             >
               {t("name")}
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              {...fade(0.12)}
-              className="mt-3 text-lg font-semibold leading-snug text-primary sm:mt-4 sm:text-xl md:text-2xl"
+            <p
+              className={cn(
+                heroStagger[1],
+                "mt-3 text-lg font-semibold leading-snug text-primary sm:mt-4 sm:text-xl md:text-2xl"
+              )}
             >
               {t("title")}
-            </motion.p>
+            </p>
 
-            <motion.div
-              {...fade(0.18)}
-              className="my-6 h-px w-full max-w-xs sm:my-7"
+            <div
+              className={cn(heroStagger[2], "my-6 h-px w-full max-w-xs sm:my-7")}
               style={{
                 background:
                   "linear-gradient(to right, rgba(59,130,246,0.6), transparent)",
               }}
             />
 
-            <motion.div {...fade(0.24)}>
+            <div className={heroStagger[3]}>
               <HighlightedText
                 as="p"
                 text={t("tagline")}
                 className="max-w-xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              {...fade(0.32)}
-              className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
+            <div
+              className={cn(
+                heroStagger[4],
+                "mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
+              )}
             >
               <Button
                 render={<Link href="/contact" />}
@@ -117,7 +124,7 @@ export default function Hero() {
               >
                 {t("services")}
               </Button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

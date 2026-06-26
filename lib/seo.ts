@@ -21,9 +21,9 @@ export const siteKeywords = [
 ] as const;
 
 export const defaultOgImage = {
-  url: "/images/profile.png",
-  width: 1200,
-  height: 630,
+  url: "/images/profile.webp",
+  width: 586,
+  height: 880,
   alt: `${siteConfig.name} — Professional Consultant based in Jakarta, Indonesia`,
 } as const;
 

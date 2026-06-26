@@ -1,9 +1,10 @@
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
 
 import { HighlightedText } from "@/components/HighlightedText";
+import { OptimizedPicture } from "@/components/optimized-picture";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cardHover } from "@/lib/layout-classes";
+import type { OptimizedImageSources } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
 type ProjectCardProps = {
@@ -12,7 +13,7 @@ type ProjectCardProps = {
   description: string;
   highlights: string[];
   highlightsTitle: string;
-  imageSrc: string;
+  imageSources: OptimizedImageSources;
   imageAlt: string;
   href: string;
   visitLabel: string;
@@ -27,7 +28,7 @@ export function ProjectCard({
   description,
   highlights,
   highlightsTitle,
-  imageSrc,
+  imageSources,
   imageAlt,
   href,
   visitLabel,
@@ -62,21 +63,21 @@ export function ProjectCard({
           )}
         >
           {isCover ? (
-            <Image
-              src={imageSrc}
+            <OptimizedPicture
+              sources={imageSources}
               alt={imageAlt}
+              fit="cover"
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-              className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
+              imgClassName="opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
             />
           ) : (
-            <Image
-              src={imageSrc}
+            <OptimizedPicture
+              sources={imageSources}
               alt={imageAlt}
-              width={480}
-              height={180}
+              fit="contain"
               sizes="(max-width: 640px) 60vw, 240px"
-              className="max-h-16 w-auto object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 sm:max-h-20 lg:max-h-24"
+              imgClassName="max-h-16 w-auto opacity-90 transition-transform duration-500 group-hover:scale-105 sm:max-h-20 lg:max-h-24"
             />
           )}
         </div>

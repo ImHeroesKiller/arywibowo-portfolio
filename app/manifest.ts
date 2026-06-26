@@ -40,9 +40,9 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     screenshots: [
       {
-        src: "/images/profile.png",
-        sizes: "320x440",
-        type: "image/png",
+        src: "/images/profile.webp",
+        sizes: "586x880",
+        type: "image/webp",
       },
       {
         src: "/icon-512.png",

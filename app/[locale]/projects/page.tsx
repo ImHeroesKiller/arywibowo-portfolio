@@ -10,7 +10,7 @@ import { type Locale, routing } from "@/i18n/routing";
 import { sectionContentGap, sectionShell } from "@/lib/layout-classes";
 import {
   projectIds,
-  projectImages,
+  projectImageSources,
   projectLinks,
   projectImageFit,
   projectPreviewHosts,
@@ -78,7 +78,7 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
                   description={t(`items.${id}.description`)}
                   highlights={highlights}
                   highlightsTitle={t("highlightsTitle")}
-                  imageSrc={projectImages[id]}
+                  imageSources={projectImageSources[id]}
                   imageAlt={t(`items.${id}.imageAlt`)}
                   href={projectLinks[id]}
                   visitLabel={t(`items.${id}.visitLabel`)}

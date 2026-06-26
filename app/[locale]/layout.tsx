@@ -10,7 +10,7 @@ import {
 import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/footer";
-import { IdaChatbot } from "@/components/ida-chatbot";
+import { IdaChatbotDeferred } from "@/components/ida-chatbot-deferred";
 import { Navbar } from "@/components/navbar";
 import { PwaInstallPrompt } from "@/components/pwa-install-prompt";
 import { ServiceWorkerRegister } from "@/components/service-worker-register";
@@ -149,8 +149,16 @@ export default async function LocaleLayout({
       <head>
         <link
           rel="preload"
-          href="/images/profile.png"
+          href="/images/profile.avif"
           as="image"
+          type="image/avif"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          href="/images/profile.webp"
+          as="image"
+          type="image/webp"
           fetchPriority="high"
         />
       </head>
@@ -169,7 +177,7 @@ export default async function LocaleLayout({
             <Footer />
           </div>
           <PwaInstallPrompt />
-          <IdaChatbot />
+          <IdaChatbotDeferred />
           <ServiceWorkerRegister />
         </NextIntlClientProvider>
         <Analytics />

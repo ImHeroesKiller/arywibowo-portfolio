@@ -46,7 +46,7 @@ export function getStructuredData({
     url: pageUrl,
     email: siteConfig.email,
     jobTitle,
-    image: `${siteConfig.url}/images/profile.png`,
+    image: `${siteConfig.url}/images/profile.webp`,
     knowsAbout: [...KNOWS_ABOUT],
     worksFor: {
       "@id": serviceId,
@@ -65,7 +65,7 @@ export function getStructuredData({
     "@id": serviceId,
     name: `${siteConfig.name} | ${jobTitle}`,
     url: pageUrl,
-    image: `${siteConfig.url}/images/profile.png`,
+    image: `${siteConfig.url}/images/profile.webp`,
     description,
     email: siteConfig.email,
     priceRange: "$$",
