@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/page-transition";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeader } from "@/components/section-header";
 import { Link } from "@/i18n/navigation";
+import { sectionContentGap, sectionShell } from "@/lib/layout-classes";
 import {
   projectIds,
   projectImages,
@@ -22,16 +23,12 @@ interface ProjectsProps {
 
 export function Projects({ showAll = false, className }: ProjectsProps) {
   const t = useTranslations("projects");
-  const displayIds = showAll ? projectIds : projectIds;
 
   return (
     <section
-      className={cn(
-        "border-t border-border/60 bg-card/20",
-        className
-      )}
+      className={cn("border-t border-border/60 bg-card/20", className)}
     >
-      <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8">
+      <div className={sectionShell}>
         <FadeIn>
           <SectionHeader
             eyebrow={t("eyebrow")}
@@ -42,12 +39,17 @@ export function Projects({ showAll = false, className }: ProjectsProps) {
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-7">
-          {displayIds.map((id, index) => {
+        <div
+          className={cn(
+            sectionContentGap,
+            "grid gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6"
+          )}
+        >
+          {projectIds.map((id, index) => {
             const highlights = t.raw(`items.${id}.highlights`) as string[];
 
             return (
-              <FadeIn key={id} delay={index * 0.08}>
+              <FadeIn key={id} delay={index * 0.06}>
                 <ProjectCard
                   title={t(`items.${id}.title`)}
                   category={t(`items.${id}.category`)}
@@ -68,13 +70,13 @@ export function Projects({ showAll = false, className }: ProjectsProps) {
         </div>
 
         {!showAll && (
-          <FadeIn delay={0.5}>
-            <p className="mt-12 text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <FadeIn delay={0.4}>
+            <p className="mt-10 text-center text-sm leading-relaxed text-muted-foreground sm:mt-12 sm:text-base">
               {t.rich("seeMoreRich", {
                 link: (chunks) => (
                   <Link
                     href="/projects"
-                    className="font-medium text-primary transition-colors hover:text-primary/80 hover:underline"
+                    className="font-medium text-primary transition-colors hover:text-primary/80 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                   >
                     {chunks}
                   </Link>

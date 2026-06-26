@@ -45,13 +45,35 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                   >
                     {tNav(link.key)}
                   </Link>
                 </li>
               ))}
             </ul>
+            <p className="mt-4 text-xs leading-relaxed text-muted-foreground/80">
+              <Link
+                href="/services"
+                className="transition-colors hover:text-primary"
+              >
+                {tNav("services")}
+              </Link>
+              {" · "}
+              <Link
+                href="/projects"
+                className="transition-colors hover:text-primary"
+              >
+                {tNav("projects")}
+              </Link>
+              {" · "}
+              <Link
+                href="/contact"
+                className="transition-colors hover:text-primary"
+              >
+                {tNav("contact")}
+              </Link>
+            </p>
           </div>
 
           <div>

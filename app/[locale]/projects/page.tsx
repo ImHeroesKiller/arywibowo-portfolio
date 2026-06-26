@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { BreadcrumbStructuredData } from "@/components/breadcrumb-structured-data";
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeader } from "@/components/section-header";
+import { Link } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
+import { sectionContentGap, sectionShell } from "@/lib/layout-classes";
 import {
   projectIds,
   projectImages,
@@ -45,7 +48,12 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
 
   return (
     <PageTransition>
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <BreadcrumbStructuredData
+        locale={locale as Locale}
+        path="/projects"
+        titleNamespace="metadata.projects"
+      />
+      <div className={sectionShell}>
         <FadeIn>
           <SectionHeader
             eyebrow={t("eyebrow")}
@@ -56,12 +64,14 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-7">
+        <div
+          className={`${sectionContentGap} grid gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6`}
+        >
           {projectIds.map((id, index) => {
             const highlights = t.raw(`items.${id}.highlights`) as string[];
 
             return (
-              <FadeIn key={id} delay={index * 0.08}>
+              <FadeIn key={id} delay={index * 0.05}>
                 <ProjectCard
                   title={t(`items.${id}.title`)}
                   category={t(`items.${id}.category`)}
@@ -80,6 +90,29 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
             );
           })}
         </div>
+
+        <FadeIn delay={0.35}>
+          <p className="mt-10 text-center text-sm leading-relaxed text-muted-foreground sm:mt-12 sm:text-base">
+            {t.rich("contactCtaRich", {
+              contact: (chunks) => (
+                <Link
+                  href="/contact"
+                  className="font-medium text-primary transition-colors hover:text-primary/80 hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+              services: (chunks) => (
+                <Link
+                  href="/services"
+                  className="font-medium text-primary transition-colors hover:text-primary/80 hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
+          </p>
+        </FadeIn>
       </div>
     </PageTransition>
   );

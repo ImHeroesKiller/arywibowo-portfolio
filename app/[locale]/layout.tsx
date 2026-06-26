@@ -146,6 +146,14 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="dark">
+      <head>
+        <link
+          rel="preload"
+          href="/images/profile.png"
+          as="image"
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen font-sans antialiased",

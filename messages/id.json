@@ -2,27 +2,27 @@
   "metadata": {
     "site": {
       "title": "Profesional Consultant",
-      "description": "Konsultan profesional dengan pengalaman lebih dari 10 tahun di bidang bisnis, SDM, dan IT — serta energi terbarukan, penjualan, manajemen proyek, dan solusi keuangan — berbasis di Jakarta."
+      "description": "Mitra konsultasi strategis di Jakarta — 10+ tahun mendampingi bisnis tumbuh melalui renewable energy, transformasi digital, SDM, manajemen proyek, dan solusi keuangan."
     },
     "home": {
       "title": "Ary Wibowo | Profesional Consultant",
-      "description": "Mendampingi bisnis tumbuh melalui konsultasi strategis — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, hingga financial solutions."
+      "description": "Berkolaborasi dengan Ary Wibowo untuk konsultasi strategis berdampak — renewable energy, business development, IT, SDM, sales, manajemen proyek, dan financial solutions di Jakarta."
     },
     "about": {
       "title": "Tentang Saya",
-      "description": "Kenali Ary Wibowo — konsultan profesional dengan pengalaman lebih dari 10 tahun di bidang bisnis, SDM, dan IT. Berbasis di Jakarta, Indonesia."
+      "description": "Kenali bagaimana Ary Wibowo memadukan business development, teknologi, dan operasional dalam konsultasi terintegrasi — 10+ tahun berdampak di energi, telekomunikasi, dan sektor korporat."
     },
     "services": {
       "title": "Layanan Konsultasi",
-      "description": "Renewable energy, business development, IT & digital transformation, integrated HR, sales & project management, dan financial solutions — keahlian konsultasi multidisiplin Ary Wibowo."
+      "description": "Enam layanan konsultasi terintegrasi — renewable energy, pertumbuhan bisnis, transformasi digital, SDM, manajemen proyek, dan solusi keuangan. Dari strategi hingga eksekusi dengan hasil terukur."
     },
     "contact": {
       "title": "Hubungi Saya",
-      "description": "Hubungi Ary Wibowo untuk konsultasi bisnis, kolaborasi proyek, atau diskusi strategi. Kirim pesan melalui form atau email aku@arywibowo.id — Jakarta, Indonesia."
+      "description": "Siap diskusi proyek Anda? Hubungi Ary Wibowo untuk konsultasi strategis di Jakarta. Respons dalam 24–48 jam melalui form atau aku@arywibowo.id."
     },
     "projects": {
       "title": "Proyek & Portfolio",
-      "description": "Kolaborasi strategis Ary Wibowo dengan PERADA GROUP — dari konsep Integrated HR Management, digitalisasi bisnis, hingga solusi logistik & SDM terintegrasi untuk klien korporat."
+      "description": "Jelajahi studi kasus di renewable energy, platform keuangan, sistem SDM, dan transformasi digital — inisiatif Ary Wibowo dari konsep hingga implementasi."
     }
   },
   "nav": {
@@ -40,7 +40,8 @@
     "title": "Profesional Consultant",
     "tagline": "Mendampingi bisnis tumbuh melalui <highlight>konsultasi strategis</highlight> — <highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital Transformation</highlight>, <highlight>HR & Operations</highlight>, <highlight>Sales & Project Management</highlight>, hingga <highlight>Financial Solutions</highlight>.",
     "contact": "Hubungi",
-    "services": "Layanan"
+    "services": "Layanan",
+    "imageAlt": "Foto Ary Wibowo, Profesional Consultant berbasis di Jakarta, Indonesia"
   },
   "about": {
     "eyebrow": "Tentang",
@@ -60,7 +61,8 @@
       "Sales & Project Management",
       "Solusi Keuangan Bisnis"
     ],
-    "readMore": "Selengkapnya"
+    "readMore": "Selengkapnya",
+    "exploreServices": "Jelajahi Layanan"
   },
   "services": {
     "eyebrow": "Layanan",
@@ -68,6 +70,7 @@
     "description": "<highlight>Konsultasi profesional</highlight> di bidang renewable energy, pertumbuhan bisnis, transformasi digital, SDM, manajemen proyek, dan solusi keuangan.",
     "descriptionFull": "Enam area keahlian inti yang menghadirkan <highlight>dampak terukur</highlight> — dari strategi dan desain hingga eksekusi dan skala.",
     "seeMoreRich": "Lihat detail lengkap di halaman <link>Layanan</link>.",
+    "contactCtaRich": "Tertarik berkolaborasi? <contact>Hubungi saya</contact> atau jelajahi <projects>studi kasus</projects>.",
     "pageTitle": "Layanan Konsultasi",
     "pageDescription": "Konsultasi menyeluruh di <highlight>enam area keahlian inti</highlight> — dirancang untuk membantu organisasi tumbuh, bertransformasi, dan beroperasi lebih efisien.",
     "positioningEyebrow": "Pendekatan",
@@ -146,6 +149,7 @@
     "eyebrow": "Kontak",
     "title": "Mari Berkolaborasi",
     "description": "Punya proyek atau ingin diskusi <highlight>peluang bisnis</highlight>? Kirim pesan dan saya akan merespons secepatnya.",
+    "internalLinksRich": "Pelajari <services>layanan konsultasi</services> atau lihat <projects>portfolio proyek</projects> sebelum menghubungi.",
     "email": "Email",
     "location": "Lokasi",
     "responseNote": "Saya biasanya merespons dalam 24–48 jam. Untuk pertanyaan mendesak, sebutkan di pesan Anda."
@@ -175,9 +179,10 @@
   "projects": {
     "eyebrow": "Portfolio",
     "title": "Proyek Terpilih",
-    "description": "Kolaborasi strategis dengan <highlight>PERADA GROUP</highlight> dalam digitalisasi bisnis, SDM terintegrasi, dan solusi korporat.",
+    "description": "Proyek terpilih di bidang <highlight>renewable energy</highlight>, <highlight>solusi keuangan</highlight>, <highlight>platform digital</highlight>, dan inisiatif korporat terintegrasi.",
     "pageDescription": "Studi kasus terpilih dan inisiatif strategis Ary Wibowo — dari konsep hingga implementasi.",
     "seeMoreRich": "Lihat semua proyek di halaman <link>Proyek</link>.",
+    "contactCtaRich": "Ingin diskusi inisiatif serupa? <contact>Hubungi saya</contact> atau lihat <services>layanan konsultasi</services>.",
     "visitWebsite": "Kunjungi perada.net",
     "highlightsTitle": "Nilai yang Diberikan",
     "items": {

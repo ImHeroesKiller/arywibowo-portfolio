@@ -144,7 +144,7 @@ export function LighthouseWidget({ className }: { className?: string }) {
       className={cn("border-t border-border/60", className)}
       aria-label={t("title")}
     >
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <FadeIn>
           <div className="rounded-2xl border border-border/60 bg-card/40 p-5 shadow-sm sm:p-6">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">

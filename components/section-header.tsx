@@ -22,10 +22,10 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className={cn(
         "max-w-3xl",
         align === "center" && "mx-auto text-center",
@@ -33,18 +33,18 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary sm:text-sm">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary sm:mb-4 sm:text-sm">
           {eyebrow}
         </p>
       )}
-      <h2 className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
+      <h2 className="text-balance text-2xl font-bold leading-[1.2] tracking-tight text-foreground sm:text-3xl lg:text-4xl">
         <HighlightedText text={title} />
       </h2>
       {description && (
         <HighlightedText
           as="p"
           text={description}
-          className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+          className="mt-4 text-base leading-7 text-muted-foreground sm:mt-5 sm:text-lg sm:leading-8"
         />
       )}
     </motion.div>

@@ -7,4 +7,4 @@ export const siteConfig = {
 } as const;
 
 /** ISO date used for sitemap lastmod — update on meaningful content releases */
-export const SITE_LAST_MODIFIED = "2026-06-24T00:00:00.000Z";
+export const SITE_LAST_MODIFIED = "2026-06-26T00:00:00.000Z";

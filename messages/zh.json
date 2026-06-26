@@ -2,27 +2,27 @@
   "metadata": {
     "site": {
       "title": "专业顾问",
-      "description": "拥有10年以上商业、人力资源与IT经验的专业顾问，同时涵盖可再生能源、业务发展、数字化转型、销售、项目管理和财务解决方案 — 总部位于雅加达。"
+      "description": "雅加达战略咨询合作伙伴 — 10年以上经验，助力企业通过可再生能源、数字化转型、人力资源、项目管理和金融解决方案实现增长。"
     },
     "home": {
       "title": "Ary Wibowo | 专业顾问",
-      "description": "通过战略咨询助力企业成长 — 涵盖可再生能源、业务发展、IT与数字化转型、人力资源与运营、销售与项目管理及财务解决方案。"
+      "description": "与 Ary Wibowo 合作，获取可衡量的战略咨询成果 — 涵盖可再生能源、业务发展、IT、人力资源、销售、项目管理和金融解决方案。"
     },
     "about": {
       "title": "关于我",
-      "description": "了解 Ary Wibowo — 拥有10年以上商业、人力资源与IT经验的专业顾问。总部位于印度尼西亚雅加达。"
+      "description": "了解 Ary Wibowo 如何将业务发展、技术与运营融合为综合咨询 — 在能源、电信和企业领域拥有10年以上的实践经验。"
     },
     "services": {
       "title": "咨询服务",
-      "description": "可再生能源、业务发展、IT 与数字化转型、综合人力资源、销售与项目管理及金融解决方案 — Ary Wibowo 的多学科咨询专长。"
+      "description": "六大综合咨询服务 — 可再生能源、业务增长、数字化转型、人力资源、项目管理和金融解决方案。从战略到执行，创造可衡量的成果。"
     },
     "contact": {
       "title": "联系我",
-      "description": "联系 Ary Wibowo 进行商业、人力资源与IT咨询。通过表单或邮件 aku@arywibowo.id 发送消息 — 雅加达，印度尼西亚。"
+      "description": "准备讨论您的项目？联系 Ary Wibowo 获取雅加达战略咨询服务。通过表单或 aku@arywibowo.id 联系，24–48小时内回复。"
     },
     "projects": {
       "title": "项目与作品集",
-      "description": "Ary Wibowo 与 PERADA GROUP 的战略合作 — 涵盖 Integrated HR Management 概念、业务数字化及物流与人力资源整合解决方案。"
+      "description": "探索可再生能源、金融平台、人力资源系统和数字化转型案例 — Ary Wibowo 从概念到实施的战略举措。"
     }
   },
   "nav": {
@@ -40,7 +40,8 @@
     "title": "专业顾问",
     "tagline": "通过<highlight>战略咨询</highlight>助力企业成长 — 涵盖<highlight>可再生能源</highlight>、<highlight>业务发展</highlight>、<highlight>IT与数字化转型</highlight>、<highlight>人力资源与运营</highlight>、<highlight>销售与项目管理</highlight>及<highlight>财务解决方案</highlight>。",
     "contact": "联系",
-    "services": "服务"
+    "services": "服务",
+    "imageAlt": "Ary Wibowo 肖像照 — 总部位于印度尼西亚雅加达的专业顾问"
   },
   "about": {
     "eyebrow": "关于",
@@ -60,7 +61,8 @@
       "销售与项目管理",
       "商业财务解决方案"
     ],
-    "readMore": "了解更多"
+    "readMore": "了解更多",
+    "exploreServices": "探索服务"
   },
   "services": {
     "eyebrow": "服务",
@@ -68,6 +70,7 @@
     "description": "涵盖可再生能源、业务增长、数字化转型、人力资源、项目管理和金融解决方案的<highlight>专业咨询</highlight>。",
     "descriptionFull": "六大核心专长领域，从战略设计到执行扩展，创造<highlight>可衡量的影响</highlight>。",
     "seeMoreRich": "查看完整详情请访问<link>服务</link>页面。",
+    "contactCtaRich": "有兴趣合作？<contact>联系我</contact>或浏览<projects>案例研究</projects>。",
     "pageTitle": "咨询服务",
     "pageDescription": "涵盖<highlight>六大核心专长领域</highlight>的全方位咨询 — 助力组织成长、转型与高效运营。",
     "positioningEyebrow": "方法论",
@@ -146,6 +149,7 @@
     "eyebrow": "联系",
     "title": "让我们合作",
     "description": "有项目或想讨论<highlight>商业机会</highlight>？发送消息，我会尽快回复。",
+    "internalLinksRich": "联系前可先了解<services>咨询服务</services>或浏览<projects>项目作品集</projects>。",
     "email": "邮箱",
     "location": "地址",
     "responseNote": "我通常在24–48小时内回复。如有紧急事项，请在消息中注明。"
@@ -175,9 +179,10 @@
   "projects": {
     "eyebrow": "作品集",
     "title": "精选项目",
-    "description": "与 <highlight>PERADA GROUP</highlight> 在业务数字化、综合人力资源和企业解决方案方面的战略合作。",
+    "description": "精选项目涵盖<highlight>可再生能源</highlight>、<highlight>金融解决方案</highlight>、<highlight>数字平台</highlight>及综合企业举措。",
     "pageDescription": "Ary Wibowo 精选案例研究与战略举措 — 从概念到实施。",
     "seeMoreRich": "查看所有项目请访问<link>项目</link>页面。",
+    "contactCtaRich": "想讨论类似项目？<contact>联系我</contact>或查看<services>咨询服务</services>。",
     "visitWebsite": "访问 perada.net",
     "highlightsTitle": "交付价值",
     "items": {

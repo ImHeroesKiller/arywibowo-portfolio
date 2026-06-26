@@ -2,27 +2,27 @@
   "metadata": {
     "site": {
       "title": "Professional Consultant",
-      "description": "Professional consultant with 10+ years of experience in business, HR, and IT — plus renewable energy, business development, digital transformation, sales, project management, and financial solutions — based in Jakarta."
+      "description": "Strategic consulting partner in Jakarta — 10+ years helping businesses grow through renewable energy, digital transformation, HR, project management, and financial solutions."
     },
     "home": {
       "title": "Ary Wibowo | Professional Consultant",
-      "description": "Helping businesses grow through strategic consulting — renewable energy, business development, IT & digital transformation, HR & operations, sales & project management, and financial solutions."
+      "description": "Partner with Ary Wibowo for strategic consulting that delivers measurable results — renewable energy, business development, IT, HR, sales, project management, and financial solutions in Jakarta."
     },
     "about": {
       "title": "About Me",
-      "description": "Meet Ary Wibowo — a professional consultant with 10+ years in business, HR, and IT. Based in Jakarta, Indonesia."
+      "description": "Discover how Ary Wibowo blends business development, technology, and operations into integrated consulting — 10+ years of impact across energy, telecommunications, and corporate sectors."
     },
     "services": {
       "title": "Consulting Services",
-      "description": "Renewable energy, business development, IT & digital transformation, integrated HR, sales & project management, and financial solutions — Ary Wibowo's multidisciplinary consulting expertise."
+      "description": "Six integrated consulting services — renewable energy, business growth, digital transformation, HR, project management, and financial solutions. Strategy to execution with measurable outcomes."
     },
     "contact": {
       "title": "Contact Me",
-      "description": "Contact Ary Wibowo for business, HR, and IT consulting. Send a message via the form or email aku@arywibowo.id — Jakarta, Indonesia."
+      "description": "Ready to discuss your project? Contact Ary Wibowo for strategic consulting in Jakarta. Response within 24–48 hours via form or aku@arywibowo.id."
     },
     "projects": {
       "title": "Projects & Portfolio",
-      "description": "Strategic collaboration between Ary Wibowo and PERADA GROUP — from Integrated HR Management concepts, business digitalization, to integrated logistics & HR solutions for corporate clients."
+      "description": "Explore case studies in renewable energy, financial platforms, HR systems, and digital transformation — initiatives by Ary Wibowo from concept to implementation."
     }
   },
   "nav": {
@@ -40,7 +40,8 @@
     "title": "Professional Consultant",
     "tagline": "Helping businesses grow through <highlight>Strategic Consulting</highlight> — <highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital Transformation</highlight>, <highlight>HR & Operations</highlight>, <highlight>Sales & Project Management</highlight>, and <highlight>Financial Solutions</highlight>.",
     "contact": "Contact",
-    "services": "Services"
+    "services": "Services",
+    "imageAlt": "Portrait of Ary Wibowo, Professional Consultant based in Jakarta, Indonesia"
   },
   "about": {
     "eyebrow": "About",
@@ -60,7 +61,8 @@
       "Sales & Project Management",
       "Business Financial Solutions"
     ],
-    "readMore": "Learn More"
+    "readMore": "Learn More",
+    "exploreServices": "Explore Services"
   },
   "services": {
     "eyebrow": "Services",
@@ -68,6 +70,7 @@
     "description": "<highlight>Professional consulting</highlight> across renewable energy, business growth, digital transformation, HR, project management, and financial solutions.",
     "descriptionFull": "Six core areas of expertise delivering <highlight>measurable impact</highlight> — from strategy and design through to execution and scale.",
     "seeMoreRich": "See full details on the <link>Services</link> page.",
+    "contactCtaRich": "Interested in collaborating? <contact>Get in touch</contact> or explore <projects>case studies</projects>.",
     "pageTitle": "Consulting Services",
     "pageDescription": "End-to-end consulting across <highlight>six core expertise areas</highlight> — designed to help organizations grow, transform, and operate more efficiently.",
     "positioningEyebrow": "Approach",
@@ -146,6 +149,7 @@
     "eyebrow": "Contact",
     "title": "Let's Collaborate",
     "description": "Have a project or want to discuss <highlight>business opportunities</highlight>? Send a message and I'll respond as soon as possible.",
+    "internalLinksRich": "Learn more about <services>consulting services</services> or browse the <projects>project portfolio</projects> before reaching out.",
     "email": "Email",
     "location": "Location",
     "responseNote": "I usually respond within 24–48 hours. For urgent inquiries, please mention it in your message."
@@ -175,9 +179,10 @@
   "projects": {
     "eyebrow": "Portfolio",
     "title": "Selected Projects",
-    "description": "Strategic collaboration with <highlight>PERADA GROUP</highlight> in business digitalization, integrated HR, and corporate solutions.",
+    "description": "Selected projects across <highlight>renewable energy</highlight>, <highlight>financial solutions</highlight>, <highlight>digital platforms</highlight>, and integrated corporate initiatives.",
     "pageDescription": "Selected case studies and strategic initiatives by Ary Wibowo — from concept to implementation.",
     "seeMoreRich": "See all projects on the <link>Projects</link> page.",
+    "contactCtaRich": "Want to discuss a similar initiative? <contact>Contact me</contact> or review <services>consulting services</services>.",
     "visitWebsite": "Visit perada.net",
     "highlightsTitle": "Value Delivered",
     "items": {

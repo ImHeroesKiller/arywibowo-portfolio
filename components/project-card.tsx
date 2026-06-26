@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { HighlightedText } from "@/components/HighlightedText";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cardHover } from "@/lib/layout-classes";
 import { cn } from "@/lib/utils";
 
 type ProjectCardProps = {
@@ -35,20 +36,21 @@ export function ProjectCard({
   variant = "detailed",
 }: ProjectCardProps) {
   const isCover = imageFit === "cover";
+
   return (
     <Card
       className={cn(
-        "group relative h-full overflow-hidden border-border/60 bg-card/80 transition-all duration-300 ease-out",
-        "hover:-translate-y-1 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/10"
+        "group relative flex h-full flex-col overflow-hidden border-border/60 bg-card/80",
+        cardHover
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="relative overflow-hidden border-b border-border/50 bg-muted/30">
         <div className="flex items-center gap-1.5 border-b border-border/40 bg-card/60 px-3 py-2">
-          <span className="size-2 rounded-full bg-red-400/80" />
-          <span className="size-2 rounded-full bg-amber-400/80" />
-          <span className="size-2 rounded-full bg-emerald-400/80" />
+          <span className="size-2 rounded-full bg-red-400/80" aria-hidden />
+          <span className="size-2 rounded-full bg-amber-400/80" aria-hidden />
+          <span className="size-2 rounded-full bg-emerald-400/80" aria-hidden />
           <span className="ml-2 truncate text-[10px] text-muted-foreground">
             {previewHost}
           </span>
@@ -56,7 +58,7 @@ export function ProjectCard({
         <div
           className={cn(
             "relative aspect-[16/9] bg-gradient-to-br from-muted/50 via-background to-primary/5 transition-colors duration-300 group-hover:from-primary/5 group-hover:to-primary/10",
-            !isCover && "flex items-center justify-center p-6"
+            !isCover && "flex items-center justify-center p-5 sm:p-6"
           )}
         >
           {isCover ? (
@@ -64,8 +66,8 @@ export function ProjectCard({
               src={imageSrc}
               alt={imageAlt}
               fill
-              sizes="(max-width: 640px) 100vw, 400px"
-              className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+              className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
             />
           ) : (
             <Image
@@ -73,22 +75,23 @@ export function ProjectCard({
               alt={imageAlt}
               width={480}
               height={180}
-              className="max-h-20 w-auto object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 sm:max-h-24"
+              sizes="(max-width: 640px) 60vw, 240px"
+              className="max-h-16 w-auto object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 sm:max-h-20 lg:max-h-24"
             />
           )}
         </div>
       </div>
 
-      <CardHeader className="gap-3">
+      <CardHeader className="gap-2.5 sm:gap-3">
         <span className="w-fit rounded-full border border-primary/25 bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
           {category}
         </span>
-        <CardTitle className="text-lg font-semibold leading-snug tracking-tight sm:text-xl">
+        <CardTitle className="text-base font-semibold leading-snug tracking-tight sm:text-lg lg:text-xl">
           {title}
         </CardTitle>
       </CardHeader>
 
-      <CardContent className="flex flex-1 flex-col gap-5">
+      <CardContent className="flex flex-1 flex-col gap-4 pb-5 sm:gap-5">
         <HighlightedText
           as="p"
           text={description}
@@ -106,7 +109,10 @@ export function ProjectCard({
                   key={highlight}
                   className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"
                 >
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <CheckCircle2
+                    className="mt-0.5 size-4 shrink-0 text-primary"
+                    aria-hidden
+                  />
                   <span>{highlight}</span>
                 </li>
               ))}
@@ -118,10 +124,13 @@ export function ProjectCard({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+          className="mt-auto inline-flex items-center gap-1.5 rounded-md text-sm font-medium text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
         >
           {visitLabel}
-          <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <ArrowUpRight
+            className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            aria-hidden
+          />
         </a>
       </CardContent>
     </Card>

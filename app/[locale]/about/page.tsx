@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { About } from "@/components/about";
+import { BreadcrumbStructuredData } from "@/components/breadcrumb-structured-data";
 import { PageTransition } from "@/components/page-transition";
 import { type Locale, routing } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
@@ -35,6 +36,11 @@ export default function AboutPage({ params: { locale } }: PageProps) {
 
   return (
     <PageTransition>
+      <BreadcrumbStructuredData
+        locale={locale as Locale}
+        path="/about"
+        titleNamespace="metadata.about"
+      />
       <About showCta={false} className="border-t-0 bg-transparent" />
     </PageTransition>
   );

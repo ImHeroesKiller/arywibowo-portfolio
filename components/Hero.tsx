@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
 const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 16 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] as const },
+  transition: { duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] as const },
 });
 
 const photoGradient =
@@ -22,12 +22,11 @@ export default function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative overflow-hidden bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+    <section className="relative overflow-hidden bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="pointer-events-none absolute -left-20 top-1/4 size-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-1/4 size-72 rounded-full bg-primary/10 blur-3xl" />
 
-      <motion.div
-        {...fade(0)}
+      <div
         className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl sm:rounded-3xl"
         style={{
           background:
@@ -37,12 +36,12 @@ export default function Hero() {
             "0 0 60px rgba(59,130,246,0.1), inset 0 1px 0 rgba(255,255,255,0.05)",
         }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[440px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[420px]">
           <div className="relative order-1 flex justify-center px-4 pt-8 lg:order-2 lg:justify-end lg:px-0 lg:pt-0 lg:pr-8">
             <div className="relative aspect-[32/44] w-full max-w-[240px] overflow-hidden sm:max-w-[280px] lg:max-w-[320px]">
               <Image
                 src="/images/profile.png"
-                alt={t("name")}
+                alt={t("imageAlt")}
                 width={320}
                 height={440}
                 priority
@@ -68,21 +67,21 @@ export default function Hero() {
 
           <div className="order-2 flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12 lg:order-1 lg:px-12 lg:py-14 xl:px-14">
             <motion.h1
-              {...fade(0.1)}
-              className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl xl:text-6xl"
+              {...fade(0.05)}
+              className="text-balance text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl md:text-5xl xl:text-6xl"
             >
               {t("name")}
             </motion.h1>
 
             <motion.p
-              {...fade(0.2)}
+              {...fade(0.12)}
               className="mt-3 text-lg font-semibold leading-snug text-primary sm:mt-4 sm:text-xl md:text-2xl"
             >
               {t("title")}
             </motion.p>
 
             <motion.div
-              {...fade(0.28)}
+              {...fade(0.18)}
               className="my-6 h-px w-full max-w-xs sm:my-7"
               style={{
                 background:
@@ -90,7 +89,7 @@ export default function Hero() {
               }}
             />
 
-            <motion.div {...fade(0.35)}>
+            <motion.div {...fade(0.24)}>
               <HighlightedText
                 as="p"
                 text={t("tagline")}
@@ -99,7 +98,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-              {...fade(0.45)}
+              {...fade(0.32)}
               className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
             >
               <Button
@@ -121,7 +120,7 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

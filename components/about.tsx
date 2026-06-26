@@ -9,6 +9,7 @@ import { FadeIn } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { sectionContentGap, sectionShell } from "@/lib/layout-classes";
 import { cn } from "@/lib/utils";
 
 interface AboutProps {
@@ -23,7 +24,7 @@ const strengthVariants = {
     x: 0,
     transition: {
       duration: 0.35,
-      delay: index * 0.08,
+      delay: index * 0.06,
       ease: [0.25, 0.1, 0.25, 1] as const,
     },
   }),
@@ -36,7 +37,7 @@ export function About({ className, showCta = true }: AboutProps) {
 
   return (
     <section className={cn("border-t border-border/60 bg-card/20", className)}>
-      <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8">
+      <div className={sectionShell}>
         <FadeIn>
           <SectionHeader
             eyebrow={t("eyebrow")}
@@ -47,8 +48,13 @@ export function About({ className, showCta = true }: AboutProps) {
           />
         </FadeIn>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <FadeIn delay={0.1}>
+        <div
+          className={cn(
+            sectionContentGap,
+            "grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12"
+          )}
+        >
+          <FadeIn delay={0.08}>
             <div className="space-y-5">
               {bio.map((paragraph) => (
                 <HighlightedText
@@ -61,13 +67,13 @@ export function About({ className, showCta = true }: AboutProps) {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <div className="rounded-2xl border border-border/60 bg-card/60 p-6 shadow-sm sm:p-8">
+          <FadeIn delay={0.16}>
+            <div className="rounded-2xl border border-border/60 bg-card/60 p-5 shadow-sm sm:p-7">
               <div className="border-l-2 border-primary pl-4">
                 <h3 className="text-lg font-semibold leading-snug text-foreground sm:text-xl">
                   {t("coreStrengthsTitle")}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base sm:leading-7">
                   {t("coreStrengthsDescription")}
                 </p>
               </div>
@@ -76,7 +82,7 @@ export function About({ className, showCta = true }: AboutProps) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-40px" }}
-                className="mt-7 space-y-2"
+                className="mt-6 space-y-1.5 sm:mt-7"
               >
                 {coreStrengths.map((strength, index) => (
                   <motion.li
@@ -85,7 +91,10 @@ export function About({ className, showCta = true }: AboutProps) {
                     variants={strengthVariants}
                     className="flex items-start gap-3 rounded-lg px-3 py-2.5 text-sm leading-relaxed text-foreground transition-colors hover:bg-muted/40 sm:text-[0.9375rem]"
                   >
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                    <CheckCircle2
+                      className="mt-0.5 size-4 shrink-0 text-primary"
+                      aria-hidden
+                    />
                     <span>{strength}</span>
                   </motion.li>
                 ))}
@@ -95,10 +104,18 @@ export function About({ className, showCta = true }: AboutProps) {
         </div>
 
         {showCta && (
-          <FadeIn delay={0.3}>
-            <div className="mt-14 text-center">
+          <FadeIn delay={0.24}>
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:mt-12 sm:flex-row sm:gap-4">
               <Button render={<Link href="/about" />} variant="outline" size="lg">
                 {t("readMore")}
+              </Button>
+              <Button
+                render={<Link href="/services" />}
+                variant="ghost"
+                size="lg"
+                className="text-primary hover:bg-primary/10"
+              >
+                {t("exploreServices")}
               </Button>
             </div>
           </FadeIn>

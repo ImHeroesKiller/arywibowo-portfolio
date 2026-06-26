@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { BreadcrumbStructuredData } from "@/components/breadcrumb-structured-data";
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
 import { ServiceCard } from "@/components/service-card";
 import { ServicesPositioning } from "@/components/services-positioning";
+import { Link } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
+import { sectionContentGap, sectionShell } from "@/lib/layout-classes";
 import { createPageMetadata } from "@/lib/seo";
 import { serviceIcons, serviceIds } from "@/lib/services";
 
@@ -39,7 +42,12 @@ export default async function ServicesPage({ params: { locale } }: PageProps) {
 
   return (
     <PageTransition>
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <BreadcrumbStructuredData
+        locale={locale as Locale}
+        path="/services"
+        titleNamespace="metadata.services"
+      />
+      <div className={sectionShell}>
         <FadeIn>
           <SectionHeader
             eyebrow={t("eyebrow")}
@@ -50,22 +58,24 @@ export default async function ServicesPage({ params: { locale } }: PageProps) {
           />
         </FadeIn>
 
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0.08}>
           <ServicesPositioning
             eyebrow={t("positioningEyebrow")}
             title={t("positioningTitle")}
             description={t("positioningDescription")}
-            className="mx-auto mt-12 max-w-4xl"
+            className="mx-auto mt-10 max-w-4xl sm:mt-12"
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7">
+        <div
+          className={`${sectionContentGap} grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6`}
+        >
           {serviceIds.map((id, index) => {
             const Icon = serviceIcons[id];
             const features = t.raw(`items.${id}.features`) as string[];
 
             return (
-              <FadeIn key={id} delay={0.15 + index * 0.08}>
+              <FadeIn key={id} delay={0.12 + index * 0.05}>
                 <ServiceCard
                   icon={Icon}
                   title={t(`items.${id}.title`)}
@@ -78,6 +88,29 @@ export default async function ServicesPage({ params: { locale } }: PageProps) {
             );
           })}
         </div>
+
+        <FadeIn delay={0.4}>
+          <p className="mt-10 text-center text-sm leading-relaxed text-muted-foreground sm:mt-12 sm:text-base">
+            {t.rich("contactCtaRich", {
+              contact: (chunks) => (
+                <Link
+                  href="/contact"
+                  className="font-medium text-primary transition-colors hover:text-primary/80 hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+              projects: (chunks) => (
+                <Link
+                  href="/projects"
+                  className="font-medium text-primary transition-colors hover:text-primary/80 hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
+          </p>
+        </FadeIn>
       </div>
     </PageTransition>
   );

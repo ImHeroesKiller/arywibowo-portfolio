@@ -119,29 +119,22 @@
   html {
     @apply font-sans scroll-smooth;
   }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
 }
 
 @utility text-balance {
   text-wrap: balance;
 }
 
-/* Mobile spacing fix */
-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-@media (min-width: 768px) {
-  section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-
-/* Hero button mobile */
-@media (max-width: 640px) {
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
+@utility text-pretty {
+  text-wrap: pretty;
 }
