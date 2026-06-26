@@ -129,14 +129,14 @@ export function IdaChatbot() {
             "animate-in fade-in slide-in-from-bottom-3 zoom-in-95 duration-300"
           )}
         >
-          <div className="relative shrink-0 border-b border-border/60 bg-card/80 pt-5 sm:pt-6">
-            <IdaAvatar
-              alt={t("title")}
-              size="lg"
-              className="absolute left-3 top-0 z-20 -mt-2 shrink-0 drop-shadow-md ring-2 ring-card/95 sm:left-4 sm:-mt-3"
-            />
-            <header className="flex items-center justify-between gap-3 px-4 py-4 pl-16 sm:px-5 sm:pl-20">
-              <div className="min-w-0 flex-1 pr-2">
+          <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border/60 bg-card/80 px-4 py-3.5 sm:px-5 sm:py-4">
+            <div className="flex min-w-0 flex-1 items-center gap-3">
+              <IdaAvatar
+                alt={t("title")}
+                size="lg"
+                className="shrink-0"
+              />
+              <div className="min-w-0">
                 <p className="font-semibold leading-tight text-foreground">
                   {t("name")}
                 </p>
@@ -144,16 +144,16 @@ export function IdaChatbot() {
                   {t("subtitle")}
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                aria-label={t("close")}
-              >
-                <X className="size-4" />
-              </button>
-            </header>
-          </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              aria-label={t("close")}
+            >
+              <X className="size-4" />
+            </button>
+          </header>
 
           <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
             {messages.map((message) => (
