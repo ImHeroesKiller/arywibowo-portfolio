@@ -304,6 +304,7 @@
     "send": "Kirim pesan",
     "placeholder": "Tanya apa aja soal layanan konsultasi...",
     "welcome": "Hai! IDA di sini — ada yang bisa dibantu soal layanan konsultasi Ary? Boleh tanya tentang Renewable Energy, Business Development, IT & Digital, HR, Sales & Project Management, atau Financial Solutions.",
+    "typing": "IDA lagi ngetik...",
     "disclaimer": "IDA membantu informasi layanan. Untuk penawaran resmi, hubungi halaman Kontak.",
     "errors": {
       "NOT_CONFIGURED": "Chatbot belum dikonfigurasi. Silakan hubungi melalui halaman Kontak.",

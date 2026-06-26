@@ -19,12 +19,15 @@ function createId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
-function TypingIndicator() {
+function TypingIndicator({ label }: { label: string }) {
   return (
-    <div className="flex items-center gap-1 px-1 py-2">
-      <span className="size-1.5 animate-bounce rounded-full bg-primary [animation-delay:-0.2s]" />
-      <span className="size-1.5 animate-bounce rounded-full bg-primary [animation-delay:-0.1s]" />
-      <span className="size-1.5 animate-bounce rounded-full bg-primary" />
+    <div className="flex items-center gap-2.5">
+      <div className="flex items-center gap-1">
+        <span className="size-1.5 animate-bounce rounded-full bg-primary/80 [animation-delay:-0.2s]" />
+        <span className="size-1.5 animate-bounce rounded-full bg-primary/80 [animation-delay:-0.1s]" />
+        <span className="size-1.5 animate-bounce rounded-full bg-primary/80" />
+      </div>
+      <span className="text-xs text-muted-foreground">{label}</span>
     </div>
   );
 }
@@ -119,23 +122,19 @@ export function IdaChatbot() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-[70] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-4 right-4 z-[70] flex flex-col items-end gap-3 pb-[env(safe-area-inset-bottom)] sm:bottom-6 sm:right-6">
       {open && (
         <div
           role="dialog"
           aria-label={t("title")}
           className={cn(
-            "flex h-[min(32rem,calc(100dvh-6rem))] w-[min(24rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/95 shadow-2xl shadow-black/40 backdrop-blur-md",
+            "flex h-[min(32rem,calc(100dvh-5.5rem))] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/95 shadow-2xl shadow-black/40 backdrop-blur-md",
             "animate-in fade-in slide-in-from-bottom-3 zoom-in-95 duration-300"
           )}
         >
           <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border/60 bg-card/80 px-4 py-3.5 sm:px-5 sm:py-4">
             <div className="flex min-w-0 flex-1 items-center gap-3">
-              <IdaAvatar
-                alt={t("title")}
-                size="lg"
-                className="shrink-0"
-              />
+              <IdaAvatar alt={t("title")} size="lg" className="shrink-0" />
               <div className="min-w-0">
                 <p className="font-semibold leading-tight text-foreground">
                   {t("name")}
@@ -155,7 +154,9 @@ export function IdaChatbot() {
             </button>
           </header>
 
-          <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
+          <div
+            className="ida-chat-scroll flex-1 space-y-3 overflow-y-auto overscroll-contain px-3.5 py-4 sm:px-4"
+          >
             {messages.map((message) => (
               <ChatMessage
                 key={message.id}
@@ -165,15 +166,15 @@ export function IdaChatbot() {
             ))}
 
             {loading && (
-              <div className="flex justify-start">
-                <div className="rounded-2xl rounded-bl-md border border-border/60 bg-muted/50 px-3.5 py-2">
-                  <TypingIndicator />
+              <div className="flex justify-start animate-in fade-in duration-200">
+                <div className="rounded-2xl rounded-bl-md border border-border/60 bg-muted/50 px-3.5 py-2.5 shadow-sm">
+                  <TypingIndicator label={t("typing")} />
                 </div>
               </div>
             )}
 
             {error && (
-              <p className="rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive">
+              <p className="animate-in fade-in rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive">
                 {error}
               </p>
             )}
@@ -181,7 +182,7 @@ export function IdaChatbot() {
             <div ref={messagesEndRef} />
           </div>
 
-          <footer className="border-t border-border/60 bg-card/80 p-3">
+          <footer className="shrink-0 border-t border-border/60 bg-card/80 p-3 sm:p-3.5">
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
@@ -199,6 +200,7 @@ export function IdaChatbot() {
                 onClick={() => void handleSend()}
                 disabled={loading || !input.trim()}
                 aria-label={t("send")}
+                className="shrink-0"
               >
                 {loading ? (
                   <Loader2 className="size-4 animate-spin" />

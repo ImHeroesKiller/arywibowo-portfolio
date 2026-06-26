@@ -191,3 +191,21 @@
     animation: none;
   }
 }
+
+.ida-chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--border) 60%, transparent) transparent;
+}
+
+.ida-chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ida-chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ida-chat-scroll::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: color-mix(in oklch, var(--border) 70%, transparent);
+}

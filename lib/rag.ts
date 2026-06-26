@@ -11,14 +11,44 @@ export type KnowledgeChunk = {
 
 const KNOWLEDGE_DIR = path.join(process.cwd(), "data", "knowledge");
 
+const QUERY_ALIASES: Record<string, string[]> = {
+  perada: ["perdana", "perkasa", "logistik", "freight", "superapps", "portal"],
+  solar: ["renewable", "energi", "bespoke", "battery", "ev", "listrik"],
+  danawangsa: ["financial", "pembiayaan", "bridging", "restrukturisasi", "keuangan"],
+  hr: ["sdm", "rekrutmen", "human", "resources", "outsourcing"],
+  it: ["digital", "transformasi", "teknologi", "platform", "software"],
+  bisnis: ["business", "development", "ekspansi", "growth", "umkm"],
+  proyek: ["portfolio", "studi", "kasus", "project"],
+};
+
 let cachedChunks: KnowledgeChunk[] | null = null;
 
 function tokenize(text: string) {
   return text
     .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9\s]/g, " ")
     .split(/\s+/)
     .filter((token) => token.length > 2);
+}
+
+function expandQueryTokens(query: string) {
+  const tokens = new Set(tokenize(query));
+  const queryLower = query.toLowerCase();
+
+  for (const [anchor, aliases] of Object.entries(QUERY_ALIASES)) {
+    const anchorHit =
+      tokens.has(anchor) ||
+      aliases.some((alias) => tokens.has(alias) || queryLower.includes(alias));
+
+    if (anchorHit) {
+      tokens.add(anchor);
+      aliases.forEach((alias) => tokens.add(alias));
+    }
+  }
+
+  return Array.from(tokens);
 }
 
 function extractKeywordLine(markdown: string) {
@@ -82,50 +112,66 @@ export function loadKnowledgeBase(): KnowledgeChunk[] {
   return cachedChunks;
 }
 
-function scoreChunk(chunk: KnowledgeChunk, queryTokens: string[]) {
+function scoreChunk(chunk: KnowledgeChunk, queryTokens: string[], queryLower: string) {
   if (queryTokens.length === 0) return 0;
 
   const keywordSet = new Set(chunk.keywords);
+  const contentLower = chunk.content.toLowerCase();
+  const titleLower = chunk.title.toLowerCase();
+  const sourceLower = chunk.source.toLowerCase();
   let score = 0;
 
   for (const token of queryTokens) {
-    if (keywordSet.has(token)) score += 2;
-    if (chunk.content.toLowerCase().includes(token)) score += 1;
-    if (chunk.title.toLowerCase().includes(token)) score += 3;
-    if (chunk.source.toLowerCase().includes(token)) score += 2;
+    if (keywordSet.has(token)) score += 3;
+    if (titleLower.includes(token)) score += 4;
+    if (sourceLower.includes(token)) score += 3;
+    if (contentLower.includes(token)) score += 1;
   }
+
+  if (queryLower.includes("perada") && sourceLower.includes("perada")) score += 6;
+  if (queryLower.includes("bespoke") && sourceLower.includes("bespoke")) score += 6;
+  if (queryLower.includes("danawangsa") && sourceLower.includes("danawangsa")) score += 6;
+  if (queryLower.includes("solar") && sourceLower.includes("bespoke")) score += 4;
+  if (queryLower.includes("financial") && sourceLower.includes("financial")) score += 3;
 
   return score;
 }
 
 export function retrieveRelevantChunks(
   query: string,
-  limit = 4
+  limit = 5
 ): KnowledgeChunk[] {
   const chunks = loadKnowledgeBase();
-  const queryTokens = tokenize(query);
+  const queryTokens = expandQueryTokens(query);
+  const queryLower = query.toLowerCase();
 
   const ranked = chunks
-    .map((chunk) => ({ chunk, score: scoreChunk(chunk, queryTokens) }))
+    .map((chunk) => ({
+      chunk,
+      score: scoreChunk(chunk, queryTokens, queryLower),
+    }))
     .filter((item) => item.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit)
-    .map((item) => item.chunk);
+    .sort((a, b) => b.score - a.score);
 
-  if (ranked.length > 0) return ranked;
+  const top = ranked.slice(0, limit).map((item) => item.chunk);
+  if (top.length > 0) return top;
+
+  const fallbackSources = [
+    "ary-services.md",
+    "about.md",
+    "faq.md",
+  ];
 
   return chunks
-    .filter((chunk) =>
-      ["about.md", "faq.md"].includes(chunk.source)
-    )
-    .slice(0, 2);
+    .filter((chunk) => fallbackSources.includes(chunk.source))
+    .slice(0, 3);
 }
 
 export function buildRetrievalContext(query: string) {
   const chunks = retrieveRelevantChunks(query);
 
   if (chunks.length === 0) {
-    return "Tidak ada cuplikan knowledge base yang relevan. Jawab hanya berdasarkan ruang lingkup layanan yang diketahui.";
+    return "Tidak ada cuplikan knowledge base yang relevan. Jawab hanya berdasarkan ruang lingkup layanan yang diketahui dan arahkan ke Kontak jika perlu.";
   }
 
   return chunks

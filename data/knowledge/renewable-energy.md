@@ -11,5 +11,8 @@ Konsultasi perencanaan dan implementasi solusi energi terbarukan untuk bisnis ya
 - Evaluasi ROI dan kelayakan proyek energi
 - Koordinasi pemangku kepentingan internal & eksternal
 
+## Studi Kasus Terkait
+Kolaborasi strategis dengan **Bespoke Solar** (bespokesolar.com.au) untuk implementasi Solar Panel System + Battery Storage bagi ekosistem motor listrik di Indonesia.
+
 ## Cocok Untuk
 Perusahaan yang ingin mengurangi biaya energi, memenuhi target ESG, atau merencanakan investasi energi terbarukan.

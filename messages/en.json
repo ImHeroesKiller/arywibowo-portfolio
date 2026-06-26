@@ -304,6 +304,7 @@
     "send": "Send message",
     "placeholder": "Ask me anything about consulting services...",
     "welcome": "Hey! IDA here — need help with Ary's consulting services? Feel free to ask about Renewable Energy, Business Development, IT & Digital, HR, Sales & Project Management, or Financial Solutions.",
+    "typing": "IDA is typing...",
     "disclaimer": "IDA provides service information. For official proposals, visit the Contact page.",
     "errors": {
       "NOT_CONFIGURED": "Chatbot is not configured. Please use the Contact page.",

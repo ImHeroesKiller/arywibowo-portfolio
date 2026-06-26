@@ -12,7 +12,7 @@ type ChatMessageProps = {
 };
 
 const assistantMarkdownClass =
-  "prose prose-sm prose-invert max-w-none break-words [&>*:first-child]:mt-0 [&>*:last-child]:mb-0";
+  "prose prose-sm prose-invert max-w-none break-words text-[0.8125rem] sm:text-sm [&>*:first-child]:mt-0 [&>*:last-child]:mb-0";
 
 const markdownComponents = {
   p: ({ children }: { children?: ReactNode }) => (
@@ -67,19 +67,41 @@ const markdownComponents = {
       {children}
     </blockquote>
   ),
+  hr: () => <hr className="my-2 border-border/50" />,
+  table: ({ children }: { children?: ReactNode }) => (
+    <div className="mb-2 overflow-x-auto last:mb-0">
+      <table className="w-full min-w-[12rem] border-collapse text-left text-xs">
+        {children}
+      </table>
+    </div>
+  ),
+  thead: ({ children }: { children?: ReactNode }) => (
+    <thead className="border-b border-border/60 bg-background/40">{children}</thead>
+  ),
+  th: ({ children }: { children?: ReactNode }) => (
+    <th className="px-2 py-1.5 font-semibold text-foreground">{children}</th>
+  ),
+  td: ({ children }: { children?: ReactNode }) => (
+    <td className="border-t border-border/40 px-2 py-1.5">{children}</td>
+  ),
 };
 
 export function ChatMessage({ content, role }: ChatMessageProps) {
   const isUser = role === "user";
 
   return (
-    <div className={cn("flex", isUser ? "justify-end" : "justify-start")}>
+    <div
+      className={cn(
+        "flex animate-in fade-in slide-in-from-bottom-1 duration-200",
+        isUser ? "justify-end" : "justify-start"
+      )}
+    >
       <div
         className={cn(
-          "max-w-[88%] min-w-0 rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
+          "max-w-[90%] min-w-0 rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed sm:max-w-[85%]",
           isUser
-            ? "rounded-br-md bg-primary text-primary-foreground"
-            : "rounded-bl-md border border-border/60 bg-muted/50 text-foreground"
+            ? "rounded-br-md bg-primary text-primary-foreground shadow-sm"
+            : "rounded-bl-md border border-border/60 bg-muted/50 text-foreground shadow-sm"
         )}
       >
         {isUser ? (
