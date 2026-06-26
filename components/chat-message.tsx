@@ -4,11 +4,14 @@ import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import { IdaAvatar } from "@/components/ida-avatar";
 import { cn } from "@/lib/utils";
 
 type ChatMessageProps = {
   content: string;
   role: "user" | "assistant";
+  showAvatar?: boolean;
+  avatarAlt?: string;
 };
 
 const assistantMarkdownClass =
@@ -69,20 +72,25 @@ const markdownComponents = {
   ),
 };
 
-export function ChatMessage({ content, role }: ChatMessageProps) {
+export function ChatMessage({
+  content,
+  role,
+  showAvatar = true,
+  avatarAlt = "IDA Assistant",
+}: ChatMessageProps) {
   const isUser = role === "user";
 
-  return (
+  const bubble = (
     <div
       className={cn(
-        "max-w-[88%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
+        "min-w-0 rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
         isUser
-          ? "rounded-br-md bg-primary text-primary-foreground"
-          : "rounded-bl-md border border-border/60 bg-muted/50 text-foreground"
+          ? "max-w-[88%] rounded-br-md bg-primary text-primary-foreground"
+          : "max-w-full rounded-bl-md border border-border/60 bg-muted/50 text-foreground"
       )}
     >
       {isUser ? (
-        <p className="whitespace-pre-wrap">{content}</p>
+        <p className="whitespace-pre-wrap break-words">{content}</p>
       ) : (
         <div className={assistantMarkdownClass}>
           <ReactMarkdown
@@ -93,6 +101,21 @@ export function ChatMessage({ content, role }: ChatMessageProps) {
           </ReactMarkdown>
         </div>
       )}
+    </div>
+  );
+
+  if (isUser) {
+    return <div className="flex justify-end">{bubble}</div>;
+  }
+
+  return (
+    <div className="flex items-end gap-2">
+      {showAvatar ? (
+        <IdaAvatar alt={avatarAlt} className="mb-0.5 shrink-0" />
+      ) : (
+        <span className="mb-0.5 size-8 shrink-0" aria-hidden />
+      )}
+      <div className="min-w-0 max-w-[calc(100%-2.5rem)] flex-1">{bubble}</div>
     </div>
   );
 }

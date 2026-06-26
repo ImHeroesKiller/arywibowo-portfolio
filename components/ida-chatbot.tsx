@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChatMessage } from "@/components/chat-message";
 import { IdaAvatar } from "@/components/ida-avatar";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+
 
 type ChatMessage = {
   id: string;
@@ -150,31 +150,19 @@ export function IdaChatbot() {
 
           <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
             {messages.map((message) => (
-              <div
+              <ChatMessage
                 key={message.id}
-                className={cn(
-                  "flex gap-2",
-                  message.role === "user" ? "justify-end" : "justify-start"
-                )}
-              >
-                {message.role === "assistant" && (
-                  <IdaAvatar
-                    alt={t("title")}
-                    className="mb-0.5 shrink-0 self-end"
-                  />
-                )}
-                <ChatMessage
-                  role={message.role}
-                  content={message.content}
-                />
-              </div>
+                role={message.role}
+                content={message.content}
+                avatarAlt={t("title")}
+              />
             ))}
 
             {loading && (
-              <div className="flex items-end gap-2 justify-start">
+              <div className="flex items-end gap-2">
                 <IdaAvatar
                   alt={t("title")}
-                  className="mb-0.5 shrink-0 self-end"
+                  className="mb-0.5 shrink-0"
                 />
                 <div className="rounded-2xl rounded-bl-md border border-border/60 bg-muted/50 px-3.5 py-2">
                   <TypingIndicator />
