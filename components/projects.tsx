@@ -10,6 +10,7 @@ import {
   projectIds,
   projectImages,
   projectLinks,
+  projectImageFit,
   projectPreviewHosts,
 } from "@/lib/projects";
 import { cn } from "@/lib/utils";
@@ -58,6 +59,7 @@ export function Projects({ showAll = false, className }: ProjectsProps) {
                   href={projectLinks[id]}
                   visitLabel={t(`items.${id}.visitLabel`)}
                   previewHost={projectPreviewHosts[id]}
+                  imageFit={projectImageFit[id]}
                   variant={showAll ? "detailed" : "compact"}
                 />
               </FadeIn>

@@ -147,6 +147,19 @@
     "visitWebsite": "Kunjungi perada.net",
     "highlightsTitle": "Nilai yang Diberikan",
     "items": {
+      "bespokeSolarEv": {
+        "title": "Mitra Strategis Implementasi Solar Panel System & Battery untuk Motor Listrik di Indonesia",
+        "category": "Renewable Energy & EV",
+        "description": "Kolaborasi strategis dalam pengembangan dan implementasi <highlight>Solar Panel System + Battery Storage</highlight> untuk kendaraan listrik (motor listrik) di Indonesia. Ary Wibowo berperan sebagai <highlight>mitra strategis</highlight> dalam ekspansi bisnis renewable energy, khususnya integrasi <highlight>solar energy</highlight> dengan ekosistem kendaraan listrik.",
+        "imageAlt": "Preview Bespoke Solar — solar panel dan battery storage",
+        "visitLabel": "Kunjungi bespokesolar.com.au",
+        "highlights": [
+          "Mendukung transisi energi bersih di Indonesia",
+          "Integrasi solar energy dengan ekosistem motor listrik",
+          "Efisiensi operasional melalui battery storage",
+          "Pengembangan infrastruktur EV yang berkelanjutan"
+        ]
+      },
       "superappsPerdana": {
         "title": "Superapps Perdana Adi Yuda (End to End Recruitment & ERP)",
         "category": "Superapps & Digital Platform",

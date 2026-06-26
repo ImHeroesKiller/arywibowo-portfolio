@@ -9,6 +9,7 @@ import {
   projectIds,
   projectImages,
   projectLinks,
+  projectImageFit,
   projectPreviewHosts,
 } from "@/lib/projects";
 import { createPageMetadata } from "@/lib/seo";
@@ -72,6 +73,7 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
                   href={projectLinks[id]}
                   visitLabel={t(`items.${id}.visitLabel`)}
                   previewHost={projectPreviewHosts[id]}
+                  imageFit={projectImageFit[id]}
                   variant="detailed"
                 />
               </FadeIn>

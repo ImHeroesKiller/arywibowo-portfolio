@@ -147,6 +147,19 @@
     "visitWebsite": "Visit perada.net",
     "highlightsTitle": "Value Delivered",
     "items": {
+      "bespokeSolarEv": {
+        "title": "Strategic Partner — Solar Panel System & Battery for Electric Motorcycles in Indonesia",
+        "category": "Renewable Energy & EV",
+        "description": "Strategic collaboration in developing and implementing <highlight>Solar Panel System + Battery Storage</highlight> for electric motorcycles in Indonesia. Ary Wibowo serves as a <highlight>strategic partner</highlight> in renewable energy business expansion, focusing on integrating <highlight>solar energy</highlight> with the electric vehicle ecosystem.",
+        "imageAlt": "Bespoke Solar preview — solar panels and battery storage",
+        "visitLabel": "Visit bespokesolar.com.au",
+        "highlights": [
+          "Supporting clean energy transition in Indonesia",
+          "Solar energy integration with electric motorcycle ecosystem",
+          "Operational efficiency through battery storage",
+          "Sustainable EV infrastructure development"
+        ]
+      },
       "superappsPerdana": {
         "title": "Superapps Perdana Adi Yuda (End to End Recruitment & ERP)",
         "category": "Superapps & Digital Platform",

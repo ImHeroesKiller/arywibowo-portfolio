@@ -16,6 +16,7 @@ type ProjectCardProps = {
   href: string;
   visitLabel: string;
   previewHost?: string;
+  imageFit?: "contain" | "cover";
   variant?: "compact" | "detailed";
 };
 
@@ -30,8 +31,10 @@ export function ProjectCard({
   href,
   visitLabel,
   previewHost = "perada.net",
+  imageFit = "contain",
   variant = "detailed",
 }: ProjectCardProps) {
+  const isCover = imageFit === "cover";
   return (
     <Card
       className={cn(
@@ -50,14 +53,29 @@ export function ProjectCard({
             {previewHost}
           </span>
         </div>
-        <div className="relative flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-muted/50 via-background to-primary/5 p-6 transition-colors duration-300 group-hover:from-primary/5 group-hover:to-primary/10">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            width={480}
-            height={180}
-            className="max-h-20 w-auto object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 sm:max-h-24"
-          />
+        <div
+          className={cn(
+            "relative aspect-[16/9] bg-gradient-to-br from-muted/50 via-background to-primary/5 transition-colors duration-300 group-hover:from-primary/5 group-hover:to-primary/10",
+            !isCover && "flex items-center justify-center p-6"
+          )}
+        >
+          {isCover ? (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              sizes="(max-width: 640px) 100vw, 400px"
+              className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={480}
+              height={180}
+              className="max-h-20 w-auto object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 sm:max-h-24"
+            />
+          )}
         </div>
       </div>
 

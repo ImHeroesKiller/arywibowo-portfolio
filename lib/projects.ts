@@ -1,5 +1,6 @@
 export const projectIds = [
   "superappsPerdana",
+  "bespokeSolarEv",
   "integratedHrConcept",
   "businessDigitalization",
   "logisticsHrCollaboration",
@@ -9,6 +10,7 @@ export type ProjectId = (typeof projectIds)[number];
 
 export const projectImages: Record<ProjectId, string> = {
   superappsPerdana: "/images/projects/superapps-portal-icon.png",
+  bespokeSolarEv: "/images/projects/bespoke-solar-preview.jpg",
   integratedHrConcept: "/images/projects/perada-logo.png",
   businessDigitalization: "/images/projects/perada-perkasa-logo.png",
   logisticsHrCollaboration: "/images/projects/perada-perdana-logo.png",
@@ -16,6 +18,7 @@ export const projectImages: Record<ProjectId, string> = {
 
 export const projectLinks: Record<ProjectId, string> = {
   superappsPerdana: "https://portal.perada.net/#/",
+  bespokeSolarEv: "https://bespokesolar.com.au",
   integratedHrConcept: "https://perada.net",
   businessDigitalization: "https://perada.net",
   logisticsHrCollaboration: "https://perada.net",
@@ -23,7 +26,16 @@ export const projectLinks: Record<ProjectId, string> = {
 
 export const projectPreviewHosts: Record<ProjectId, string> = {
   superappsPerdana: "portal.perada.net",
+  bespokeSolarEv: "bespokesolar.com.au",
   integratedHrConcept: "perada.net",
   businessDigitalization: "perada.net",
   logisticsHrCollaboration: "perada.net",
+};
+
+export const projectImageFit: Record<ProjectId, "contain" | "cover"> = {
+  superappsPerdana: "contain",
+  bespokeSolarEv: "cover",
+  integratedHrConcept: "contain",
+  businessDigitalization: "contain",
+  logisticsHrCollaboration: "contain",
 };

@@ -147,6 +147,19 @@
     "visitWebsite": "访问 perada.net",
     "highlightsTitle": "交付价值",
     "items": {
+      "bespokeSolarEv": {
+        "title": "战略合作伙伴 — 印尼电动摩托车太阳能面板与电池系统实施",
+        "category": "可再生能源与电动车",
+        "description": "在印尼开发和实施面向电动摩托车（电动自行车）的<highlight>太阳能面板系统 + 电池储能</highlight>战略合作。Ary Wibowo 担任可再生能源业务拓展的<highlight>战略合作伙伴</highlight>，专注于将<highlight>太阳能</highlight>与电动车生态系统相整合。",
+        "imageAlt": "Bespoke Solar 预览 — 太阳能面板与电池储能",
+        "visitLabel": "访问 bespokesolar.com.au",
+        "highlights": [
+          "支持印尼清洁能源转型",
+          "太阳能与电动摩托车生态系统整合",
+          "通过电池储能提升运营效率",
+          "可持续电动车基础设施开发"
+        ]
+      },
       "superappsPerdana": {
         "title": "Superapps Perdana Adi Yuda（端到端招聘与 ERP）",
         "category": "超级应用与数字平台",
