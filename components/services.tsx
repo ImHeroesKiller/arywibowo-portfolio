@@ -34,7 +34,7 @@ export function Services({ showAll = false, className }: ServicesProps) {
         />
       </FadeIn>
 
-      <div className="mt-14 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7">
+      <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
         {serviceIds.map((id, index) => {
           const Icon = serviceIcons[id];
 

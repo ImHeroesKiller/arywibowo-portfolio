@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { FolderOpen } from "lucide-react";
 
 import { FadeIn, PageTransition } from "@/components/page-transition";
+import { ProjectCard } from "@/components/project-card";
 import { SectionHeader } from "@/components/section-header";
 import { type Locale, routing } from "@/i18n/routing";
+import {
+  projectIds,
+  projectImages,
+  projectLinks,
+} from "@/lib/projects";
 import { createPageMetadata } from "@/lib/seo";
 
 type PageProps = {
@@ -43,25 +48,34 @@ export default async function ProjectsPage({ params: { locale } }: PageProps) {
           <SectionHeader
             eyebrow={t("eyebrow")}
             title={tMeta("title")}
-            description={tMeta("description")}
+            description={t("pageDescription")}
             align="center"
             className="mx-auto"
           />
         </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <div className="mx-auto mt-20 flex max-w-md flex-col items-center rounded-2xl border border-dashed border-border/60 bg-card/30 px-8 py-16 text-center">
-            <div className="flex size-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <FolderOpen className="size-8" />
-            </div>
-            <h3 className="mt-6 text-xl font-semibold leading-snug">
-              {t("comingSoonTitle")}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              {t("comingSoonDescription")}
-            </p>
-          </div>
-        </FadeIn>
+        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
+          {projectIds.map((id, index) => {
+            const highlights = t.raw(`items.${id}.highlights`) as string[];
+
+            return (
+              <FadeIn key={id} delay={index * 0.08}>
+                <ProjectCard
+                  title={t(`items.${id}.title`)}
+                  category={t(`items.${id}.category`)}
+                  description={t(`items.${id}.description`)}
+                  highlights={highlights}
+                  highlightsTitle={t("highlightsTitle")}
+                  imageSrc={projectImages[id]}
+                  imageAlt={t(`items.${id}.imageAlt`)}
+                  href={projectLinks[id]}
+                  visitLabel={t("visitWebsite")}
+                  variant="detailed"
+                />
+              </FadeIn>
+            );
+          })}
+        </div>
       </div>
     </PageTransition>
   );

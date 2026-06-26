@@ -14,7 +14,7 @@
     },
     "services": {
       "title": "咨询服务",
-      "description": "六大综合咨询服务：可再生能源、业务发展、IT与数字化、人力资源咨询、销售与项目管理及财务解决方案 — 从战略到执行。"
+      "description": "数字业务拓展、Integrated HR Management 与运营支持整合 — Ary Wibowo 为 PERADA GROUP 及企业客户提供的咨询解决方案。"
     },
     "contact": {
       "title": "联系我",
@@ -22,7 +22,7 @@
     },
     "projects": {
       "title": "项目与作品集",
-      "description": "Ary Wibowo 在业务发展、可再生能源、数字化转型和跨行业项目管理方面的项目作品集和案例研究。"
+      "description": "Ary Wibowo 与 PERADA GROUP 的战略合作 — 涵盖 Integrated HR Management 概念、业务数字化及物流与人力资源整合解决方案。"
     }
   },
   "nav": {
@@ -64,77 +64,46 @@
   },
   "services": {
     "eyebrow": "服务",
-    "title": "综合咨询解决方案",
-    "description": "<highlight>可再生能源</highlight>、<highlight>业务发展</highlight>、<highlight>IT与数字化</highlight>、<highlight>人力资源咨询</highlight>、<highlight>销售与项目管理</highlight>及<highlight>财务解决方案</highlight> — 从<highlight>战略到执行</highlight>的综合解决方案。",
-    "descriptionFull": "专为支持您<highlight>跨行业业务增长</highlight>而设计的<highlight>专业咨询服务</highlight>。",
+    "title": "数字拓展与综合人力资源管理",
+    "description": "支持 PERADA GROUP 的<highlight>数字业务拓展</highlight>和<highlight>Integrated HR Management</highlight>发展 — 将人力资源解决方案与物流及运营业务支持相整合。",
+    "descriptionFull": "专为支持 PERADA GROUP <highlight>数字业务增长</highlight>和综合运营而设计的<highlight>专业咨询服务</highlight>。",
     "seeMoreRich": "查看完整详情请访问<link>服务</link>页面。",
-    "pageTitle": "完整咨询服务",
-    "pageDescription": "支持您<highlight>业务转型</highlight>的综合解决方案 — 从<highlight>战略规划</highlight>到<highlight>执行落地</highlight>。",
+    "pageTitle": "咨询服务",
+    "pageDescription": "支持<highlight>数字业务拓展</highlight>和<highlight>人力资源管理</highlight>的综合解决方案 — 从战略到执行。",
+    "positioningTitle": "Ary 在 PERADA GROUP 数字业务拓展中的角色",
+    "positioningDescription": "Ary Wibowo 在 PERADA GROUP 的<highlight>数字业务拓展</highlight>和<highlight>Integrated HR Management</highlight>概念开发中发挥关键作用。他的重点是<highlight>整合人力资源解决方案</highlight>与物流及业务支持服务 — 为企业客户提供统一、高效、可扩展的合作伙伴生态系统。",
     "items": {
-      "renewableEnergy": {
-        "title": "可再生能源解决方案",
-        "usp": "可持续且可衡量的<highlight>绿色能源转型</highlight>战略。",
-        "description": "为希望提高<highlight>运营效率</highlight>同时致力于<highlight>环境可持续发展</highlight>的企业提供<highlight>可再生能源解决方案</highlight>的规划与实施咨询。",
+      "digitalBusinessExpansion": {
+        "title": "Digital Business Expansion",
+        "usp": "开拓可衡量的<highlight>数字增长机会</highlight>，产生实际影响。",
+        "description": "<highlight>数字业务拓展</highlight>战略指导 — 从在线品牌定位、数字平台开发到整合新业务渠道，支持 PERADA GROUP 及企业客户的增长。",
         "features": [
-          "能源需求分析与运营效率",
-          "分阶段绿色能源转型路线图",
-          "投资回报评估与项目可行性",
-          "内外部利益相关者协调"
+          "数字拓展战略与品牌定位",
+          "网络平台与在线形象开发",
+          "业务渠道与数字触点整合",
+          "可衡量的数字增长路线图"
         ]
       },
-      "businessDevelopment": {
-        "title": "业务发展解决方案",
-        "usp": "开拓<highlight>新市场机会</highlight>，强化<highlight>业务增长</highlight>。",
-        "description": "<highlight>业务扩张战略</highlight>指导、市场机会识别和<highlight>可扩展增长模式</highlight>制定 — 从中小企业到企业级运营。",
+      "integratedHrManagement": {
+        "title": "Integrated HR Management Solution",
+        "usp": "在一个服务生态系统中实现<highlight>综合人力资源解决方案</highlight>。",
+        "description": "开发<highlight>Integrated HR Management</highlight>概念，连接人力资本、外包和运营支持 — 使企业客户的人力资源需求在 PERADA GROUP 统一服务框架内得到满足。",
         "features": [
-          "市场调研与竞争分析",
-          "市场渗透与扩张战略",
-          "合作伙伴与联盟建设",
-          "可持续商业模式开发"
+          "Integrated HR Management 概念与框架",
+          "人力资本与外包解决方案",
+          "组织结构与人才管理",
+          "劳动法规合规"
         ]
       },
-      "itDigital": {
-        "title": "IT与数字化解决方案",
-        "usp": "提升运营效率的<highlight>数字化转型</highlight>。",
-        "description": "<highlight>信息技术解决方案</highlight>和<highlight>业务流程数字化</highlight> — 从工作流自动化、系统集成到网络平台开发和<highlight>AI实施咨询</highlight>。",
+      "operationalBusinessSupport": {
+        "title": "Operational & Business Support Integration",
+        "usp": "在一个合作伙伴中统一<highlight>物流、人力资源和运营支持</highlight>。",
+        "description": "整合<highlight>业务运营服务</highlight> — 从货运代理和清关（PT Perkasa Adi Yuda）到业务支持、活动、设施管理和进口解决方案（PT Perdana Adi Yuda） — 形成协调统一的生态系统。",
         "features": [
-          "数字化转型战略",
-          "系统集成与API开发",
-          "网络平台与工作流自动化",
-          "AI实施咨询"
-        ]
-      },
-      "hrConsulting": {
-        "title": "人力资源咨询解决方案",
-        "usp": "优化<highlight>人力资源</highlight>和生产性<highlight>劳资关系</highlight>。",
-        "description": "全面的<highlight>人力资源咨询</highlight> — 涵盖招聘与人才获取、薪酬结构、<highlight>组织发展</highlight>及劳动法规合规。",
-        "features": [
-          "招聘与人才获取",
-          "薪酬结构与福利",
-          "员工敬业度与留任",
-          "劳资关系与合规"
-        ]
-      },
-      "salesProjectManagement": {
-        "title": "销售与项目管理",
-        "usp": "按时<highlight>执行项目</highlight>，达成<highlight>销售目标</highlight>。",
-        "description": "<highlight>端到端项目管理</highlight>，专注于实现销售目标、现场团队协调、<highlight>实时报告</highlight>和<highlight>利益相关者管理</highlight>。",
-        "features": [
-          "项目规划与执行",
-          "销售监控与绩效报告",
-          "多学科团队协调",
-          "利益相关者与风险管理"
-        ]
-      },
-      "financialSolutions": {
-        "title": "财务解决方案",
-        "usp": "透明且结构化的<highlight>商业财务规划</highlight>。",
-        "description": "<highlight>财务和会计咨询</highlight>，帮助企业管理层现金流、<highlight>预算规划</highlight>、盈利能力分析及更高效的会计流程。",
-        "features": [
-          "财务规划与预算",
-          "现金流分析与预测",
-          "盈利能力与绩效报告",
-          "会计流程咨询"
+          "物流与运营支持协调",
+          "PERADA GROUP 跨部门服务整合",
+          "结构化进口与贸易解决方案（API-U）",
+          "为企业客户节省成本与时间"
         ]
       }
     }
@@ -171,8 +140,47 @@
   },
   "projects": {
     "eyebrow": "作品集",
-    "comingSoonTitle": "即将推出",
-    "comingSoonDescription": "此页面正在准备中，精选项目将在此展示。"
+    "title": "精选项目",
+    "description": "与 <highlight>PERADA GROUP</highlight> 在业务数字化、综合人力资源和企业解决方案方面的战略合作。",
+    "pageDescription": "Ary Wibowo 与 <highlight>PERADA GROUP</highlight> 的案例研究和战略举措 — 从概念到实施。",
+    "seeMoreRich": "查看所有项目请访问<link>项目</link>页面。",
+    "visitWebsite": "访问 perada.net",
+    "highlightsTitle": "交付价值",
+    "items": {
+      "integratedHrConcept": {
+        "title": "Integrated HR Management 概念开发",
+        "category": "人力资源与组织",
+        "description": "设计<highlight>Integrated HR Management</highlight>概念，将人力资本、外包和 PERADA GROUP 运营支持整合为面向企业客户的统一服务框架。",
+        "imageAlt": "PERADA GROUP 网站预览",
+        "highlights": [
+          "跨部门综合人力资源框架",
+          "可扩展的人力资本方法",
+          "契合企业运营需求"
+        ]
+      },
+      "businessDigitalization": {
+        "title": "业务流程数字化举措",
+        "category": "数字化转型",
+        "description": "支持 PERADA GROUP 的<highlight>业务流程数字化</highlight> — 包括数字形象和在线平台开发，强化作为值得信赖的物流与人力资源合作伙伴的定位。",
+        "imageAlt": "PERADA GROUP 物流部门预览",
+        "highlights": [
+          "强化 PERADA GROUP 数字品牌",
+          "服务信息在线访问平台",
+          "数字业务拓展支持"
+        ]
+      },
+      "logisticsHrCollaboration": {
+        "title": "面向企业客户的物流+人力资源解决方案合作",
+        "category": "综合解决方案",
+        "description": "协调<highlight>物流与货运代理</highlight>（PT Perkasa Adi Yuda）和<highlight>业务支持与人力资源</highlight>（PT Perdana Adi Yuda）之间的合作 — 为企业多样化的运营需求提供单一合作伙伴。",
+        "imageAlt": "PERADA GROUP 业务支持部门预览",
+        "highlights": [
+          "一个集团，两大专业领域",
+          "高效的物流与人力资源协调",
+          "深受印尼大型企业信赖"
+        ]
+      }
+    }
   },
   "common": {
     "location": "印度尼西亚雅加达"

@@ -14,7 +14,7 @@
     },
     "services": {
       "title": "Consulting Services",
-      "description": "Six integrated consulting services: Renewable Energy, Business Development, IT & Digital, HR Consulting, Sales & Project Management, and Financial Solutions — from strategy to execution."
+      "description": "Digital business expansion, Integrated HR Management, and operational support integration — Ary Wibowo's consulting solutions for PERADA GROUP and corporate clients."
     },
     "contact": {
       "title": "Contact Me",
@@ -22,7 +22,7 @@
     },
     "projects": {
       "title": "Projects & Portfolio",
-      "description": "Portfolio of projects and case studies by Ary Wibowo in business development, renewable energy, digital transformation, and cross-industry project management."
+      "description": "Strategic collaboration between Ary Wibowo and PERADA GROUP — from Integrated HR Management concepts, business digitalization, to integrated logistics & HR solutions for corporate clients."
     }
   },
   "nav": {
@@ -64,77 +64,46 @@
   },
   "services": {
     "eyebrow": "Services",
-    "title": "Integrated Consulting Solutions",
-    "description": "<highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital</highlight>, <highlight>HR Consulting</highlight>, <highlight>Sales & Project Management</highlight>, and <highlight>Financial Solutions</highlight> — integrated solutions from <highlight>strategy to execution</highlight>.",
-    "descriptionFull": "<highlight>Professional consulting services</highlight> designed to support your <highlight>business growth</highlight> across multiple sectors.",
+    "title": "Digital Expansion & Integrated HR",
+    "description": "Supporting <highlight>digital business expansion</highlight> and <highlight>Integrated HR Management</highlight> at PERADA GROUP — connecting HR solutions with logistics & operational business support.",
+    "descriptionFull": "<highlight>Professional consulting services</highlight> designed to support <highlight>digital business growth</highlight> and integrated operations at PERADA GROUP.",
     "seeMoreRich": "See full details on the <link>Services</link> page.",
-    "pageTitle": "Complete Consulting Services",
-    "pageDescription": "Integrated solutions to support your <highlight>business transformation</highlight> — from <highlight>strategic planning</highlight> to <highlight>execution</highlight>.",
+    "pageTitle": "Consulting Services",
+    "pageDescription": "Integrated solutions for <highlight>digital business expansion</highlight> and <highlight>HR management</highlight> — from strategy to execution at PERADA GROUP.",
+    "positioningTitle": "Ary's Role in PERADA GROUP's Digital Business Expansion",
+    "positioningDescription": "Ary Wibowo plays a key role in <highlight>digital business expansion</highlight> and developing the <highlight>Integrated HR Management</highlight> concept at PERADA GROUP. His focus is on <highlight>integrating HR solutions</highlight> with logistics & business support services — giving corporate clients one cohesive, efficient partner ecosystem ready to scale.",
     "items": {
-      "renewableEnergy": {
-        "title": "Renewable Energy Solutions",
-        "usp": "Sustainable and measurable <highlight>green energy transition</highlight> strategies.",
-        "description": "Consulting on planning and implementing <highlight>renewable energy solutions</highlight> for businesses seeking <highlight>operational efficiency</highlight> while committing to <highlight>environmental sustainability</highlight>.",
+      "digitalBusinessExpansion": {
+        "title": "Digital Business Expansion",
+        "usp": "Opening <highlight>measurable digital growth</highlight> opportunities with real impact.",
+        "description": "Guidance on <highlight>digital business expansion</highlight> strategy — from online brand positioning and digital platform development to integrating new business channels that support PERADA GROUP's growth and corporate clients.",
         "features": [
-          "Energy needs analysis & operational efficiency",
-          "Phased green energy transition roadmap",
-          "ROI evaluation and project feasibility",
-          "Internal & external stakeholder coordination"
+          "Digital expansion strategy & brand positioning",
+          "Web platform & online presence development",
+          "Business channel & digital touchpoint integration",
+          "Measurable digital growth roadmap"
         ]
       },
-      "businessDevelopment": {
-        "title": "Business Development Solutions",
-        "usp": "Opening <highlight>new market opportunities</highlight> and strengthening <highlight>business growth</highlight>.",
-        "description": "<highlight>Business expansion strategy</highlight> guidance, market opportunity identification, and <highlight>scalable growth model</highlight> development — from SMEs to enterprise-scale operations.",
+      "integratedHrManagement": {
+        "title": "Integrated HR Management Solution",
+        "usp": "<highlight>Integrated HR solutions</highlight> within one service ecosystem.",
+        "description": "Developing the <highlight>Integrated HR Management</highlight> concept that connects human capital, outsourcing, and operational support — designed so corporate clients' HR needs are served within one PERADA GROUP service framework.",
         "features": [
-          "Market research & competitive analysis",
-          "Market penetration and expansion strategy",
-          "Partnership & alliance building",
-          "Sustainable business model development"
+          "Integrated HR Management concept & framework",
+          "Human capital & outsourcing solutions",
+          "Organizational structure & talent management",
+          "Labor regulation compliance"
         ]
       },
-      "itDigital": {
-        "title": "IT & Digital Solutions",
-        "usp": "<highlight>Digital Transformation</highlight> that improves operational efficiency.",
-        "description": "<highlight>Information technology solutions</highlight> and <highlight>business process digitalization</highlight> — from workflow automation and system integration to web platform development and <highlight>AI implementation advisory</highlight>.",
+      "operationalBusinessSupport": {
+        "title": "Operational & Business Support Integration",
+        "usp": "Unifying <highlight>logistics, HR, and operational support</highlight> in one partner.",
+        "description": "Integration of <highlight>business operational services</highlight> — from freight forwarding & customs clearance (PT Perkasa Adi Yuda) to business support, events, facility management, and import solutions (PT Perdana Adi Yuda) — in one coordinated ecosystem.",
         "features": [
-          "Digital transformation strategy",
-          "System integration & API development",
-          "Web platform & workflow automation",
-          "AI implementation advisory"
-        ]
-      },
-      "hrConsulting": {
-        "title": "HR Consulting Solutions",
-        "usp": "Optimizing <highlight>human resources</highlight> and productive <highlight>industrial relations</highlight>.",
-        "description": "Comprehensive <highlight>HR consulting</highlight> — from recruitment and talent acquisition, compensation structure, <highlight>organizational development</highlight>, to labor regulation compliance.",
-        "features": [
-          "Recruitment & talent acquisition",
-          "Compensation structure & benefits",
-          "Employee engagement & retention",
-          "Industrial relations & compliance"
-        ]
-      },
-      "salesProjectManagement": {
-        "title": "Sales & Project Management",
-        "usp": "On-time <highlight>project execution</highlight> with <highlight>sales targets</highlight> achieved.",
-        "description": "<highlight>End-to-end project management</highlight> focused on achieving sales targets, field team coordination, <highlight>real-time reporting</highlight>, and <highlight>stakeholder management</highlight>.",
-        "features": [
-          "Project planning & execution",
-          "Sales monitoring & performance reporting",
-          "Multidisciplinary team coordination",
-          "Stakeholder & risk management"
-        ]
-      },
-      "financialSolutions": {
-        "title": "Financial Solutions",
-        "usp": "Transparent and structured <highlight>business financial planning</highlight>.",
-        "description": "<highlight>Financial and accounting consulting</highlight> to help businesses manage cash flow, <highlight>budget planning</highlight>, profitability analysis, and more efficient accounting processes.",
-        "features": [
-          "Financial planning & budgeting",
-          "Cash flow analysis & forecasting",
-          "Profitability & performance reporting",
-          "Accounting process advisory"
+          "Logistics & operational support coordination",
+          "Cross-division service integration at PERADA GROUP",
+          "Structured import & trading solutions (API-U)",
+          "Cost & time efficiency for corporate clients"
         ]
       }
     }
@@ -171,8 +140,47 @@
   },
   "projects": {
     "eyebrow": "Portfolio",
-    "comingSoonTitle": "Coming Soon",
-    "comingSoonDescription": "This page is being prepared. Selected projects will be displayed here."
+    "title": "Selected Projects",
+    "description": "Strategic collaboration with <highlight>PERADA GROUP</highlight> in business digitalization, integrated HR, and corporate solutions.",
+    "pageDescription": "Case studies and strategic initiatives by Ary Wibowo with <highlight>PERADA GROUP</highlight> — from concept to implementation.",
+    "seeMoreRich": "See all projects on the <link>Projects</link> page.",
+    "visitWebsite": "Visit perada.net",
+    "highlightsTitle": "Value Delivered",
+    "items": {
+      "integratedHrConcept": {
+        "title": "Integrated HR Management Concept Development",
+        "category": "HR & Organization",
+        "description": "Designing the <highlight>Integrated HR Management</highlight> concept that combines human capital, outsourcing, and PERADA GROUP's operational support into one unified service framework for corporate clients.",
+        "imageAlt": "PERADA GROUP website preview",
+        "highlights": [
+          "Cross-division integrated HR framework",
+          "Scalable human capital approach",
+          "Aligned with corporate operational needs"
+        ]
+      },
+      "businessDigitalization": {
+        "title": "Business Process Digitalization Initiative",
+        "category": "Digital Transformation",
+        "description": "Supporting PERADA GROUP's <highlight>business process digitalization</highlight> — including digital presence and online platform development that strengthens positioning as a trusted logistics & HR partner.",
+        "imageAlt": "PERADA GROUP logistics division preview",
+        "highlights": [
+          "Strengthened PERADA GROUP digital brand",
+          "Online platform for service information access",
+          "Digital business expansion support"
+        ]
+      },
+      "logisticsHrCollaboration": {
+        "title": "Logistics + HR Solution Collaboration for Corporate Clients",
+        "category": "Integrated Solutions",
+        "description": "Orchestrating collaboration between <highlight>logistics & freight forwarding</highlight> (PT Perkasa Adi Yuda) and <highlight>business support & HR</highlight> (PT Perdana Adi Yuda) — delivering one partner for diverse corporate operational needs.",
+        "imageAlt": "PERADA GROUP business support division preview",
+        "highlights": [
+          "One group, two strong specializations",
+          "Efficient logistics & HR coordination",
+          "Trusted by major corporate partners in Indonesia"
+        ]
+      }
+    }
   },
   "common": {
     "location": "Jakarta, Indonesia"

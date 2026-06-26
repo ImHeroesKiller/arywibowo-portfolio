@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { FadeIn, PageTransition } from "@/components/page-transition";
 import { SectionHeader } from "@/components/section-header";
 import { ServiceCard } from "@/components/service-card";
+import { ServicesPositioning } from "@/components/services-positioning";
 import { type Locale, routing } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
 import { serviceIcons, serviceIds } from "@/lib/services";
@@ -49,13 +50,21 @@ export default async function ServicesPage({ params: { locale } }: PageProps) {
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7">
+        <FadeIn delay={0.1}>
+          <ServicesPositioning
+            title={t("positioningTitle")}
+            description={t("positioningDescription")}
+            className="mx-auto mt-12 max-w-4xl"
+          />
+        </FadeIn>
+
+        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
           {serviceIds.map((id, index) => {
             const Icon = serviceIcons[id];
             const features = t.raw(`items.${id}.features`) as string[];
 
             return (
-              <FadeIn key={id} delay={index * 0.08}>
+              <FadeIn key={id} delay={0.15 + index * 0.08}>
                 <ServiceCard
                   icon={Icon}
                   title={t(`items.${id}.title`)}

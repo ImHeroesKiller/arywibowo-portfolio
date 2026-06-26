@@ -10,9 +10,6 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-const cardBaseClass =
-  "group h-full border-border/60 bg-card/80 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/35 hover:bg-card hover:shadow-lg hover:shadow-primary/10";
-
 type ServiceCardProps = {
   icon: LucideIcon;
   title: string;
@@ -31,9 +28,18 @@ export function ServiceCard({
   variant = "compact",
 }: ServiceCardProps) {
   return (
-    <Card className={cn(cardBaseClass, variant === "detailed" && "flex flex-col")}>
-      <CardHeader className="gap-3 pb-0">
-        <div className="mb-1 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/20 group-hover:scale-105">
+    <Card
+      className={cn(
+        "group relative h-full overflow-hidden border-border/60 bg-card/80 transition-all duration-300 ease-out",
+        "hover:-translate-y-1 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/10",
+        variant === "detailed" && "flex flex-col"
+      )}
+    >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10" />
+
+      <CardHeader className="relative gap-3 pb-0">
+        <div className="mb-1 flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/15 transition-all duration-300 group-hover:scale-105 group-hover:from-primary/25 group-hover:to-primary/10 group-hover:ring-primary/30">
           <Icon className="size-5" />
         </div>
         <CardTitle className="text-lg font-semibold leading-snug tracking-tight sm:text-xl">
@@ -52,7 +58,7 @@ export function ServiceCard({
       </CardHeader>
 
       {variant === "detailed" && (description || features?.length) && (
-        <CardContent className="flex flex-1 flex-col gap-5 pt-4">
+        <CardContent className="relative flex flex-1 flex-col gap-5 pt-4">
           {description && (
             <HighlightedText
               as="p"
@@ -67,7 +73,7 @@ export function ServiceCard({
                   key={feature}
                   className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"
                 >
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_6px] shadow-primary/50" />
                   <span>{feature}</span>
                 </li>
               ))}
