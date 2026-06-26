@@ -4,6 +4,8 @@ const sizeStyles = {
   sm: { className: "size-8", dimension: 32 },
   md: { className: "size-10", dimension: 40 },
   lg: { className: "size-12", dimension: 48 },
+  xl: { className: "size-14", dimension: 56 },
+  header: { className: "size-16", dimension: 64 },
 } as const;
 
 type IdaAvatarProps = {

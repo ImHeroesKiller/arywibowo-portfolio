@@ -129,15 +129,19 @@ export function IdaChatbot() {
             "animate-in fade-in slide-in-from-bottom-3 zoom-in-95 duration-300"
           )}
         >
-          <header className="flex items-start justify-between gap-3 border-b border-border/60 bg-card/80 px-4 py-3">
-            <div className="min-w-0">
-              <div className="flex items-center gap-3">
-                <IdaAvatar alt={t("title")} size="lg" className="shrink-0" />
-                <div>
+          <header className="relative flex items-start justify-between gap-3 border-b border-border/60 bg-card/80 px-4 pb-4 pt-5 sm:px-5 sm:pb-4 sm:pt-6">
+            <div className="min-w-0 flex-1">
+              <div className="flex items-end gap-3 sm:gap-3.5">
+                <div className="relative z-10 -mt-3 shrink-0 sm:-mt-4">
+                  <IdaAvatar alt={t("title")} size="header" />
+                </div>
+                <div className="min-w-0 pb-0.5">
                   <p className="font-semibold leading-tight text-foreground">
                     {t("name")}
                   </p>
-                  <p className="text-xs text-muted-foreground">{t("subtitle")}</p>
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    {t("subtitle")}
+                  </p>
                 </div>
               </div>
             </div>
