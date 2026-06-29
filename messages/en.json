@@ -179,7 +179,7 @@
   "projects": {
     "eyebrow": "Portfolio",
     "title": "Selected Projects",
-    "description": "Selected projects across <highlight>renewable energy</highlight>, <highlight>financial solutions</highlight>, <highlight>digital platforms</highlight>, and integrated corporate initiatives.",
+    "description": "Selected projects across <highlight>AI assistants</highlight>, <highlight>renewable energy</highlight>, <highlight>financial solutions</highlight>, <highlight>digital platforms</highlight>, and integrated corporate initiatives.",
     "pageDescription": "Selected case studies and strategic initiatives by Ary Wibowo — from concept to implementation.",
     "seeMoreRich": "See all projects on the <link>Projects</link> page.",
     "contactCtaRich": "Want to discuss a similar initiative? <contact>Contact me</contact> or review <services>consulting services</services>.",
@@ -196,6 +196,20 @@
           "Financial process efficiency",
           "Broader access to financing",
           "Digital integration"
+        ]
+      },
+      "ida": {
+        "title": "IDA – Intelligent Digital Assistant",
+        "category": "AI Assistant & Productivity Tool",
+        "description": "An intelligent <highlight>AI chatbot platform</highlight> with RAG (Retrieval-Augmented Generation), secure session memory via Google OAuth, and multilingual support (Indonesian, English, Mandarin). Includes <highlight>AgentFlow</highlight> for AI-powered workflow automation — document analysis, human-in-the-loop approval, and secure sandbox execution. Designed, developed, and implemented end-to-end by Ary Wibowo as part of his digital assistant and productivity tools portfolio.",
+        "imageAlt": "IDA — Intelligent Digital Assistant platform preview",
+        "visitLabel": "Visit ida.arywibowo.id",
+        "highlights": [
+          "Context-aware responses powered by RAG",
+          "Secure session memory via Google OAuth",
+          "Multilingual support (ID / EN / ZH)",
+          "AgentFlow for AI workflow automation",
+          "Focused on productivity and learning"
         ]
       },
       "bespokeSolarEv": {

@@ -179,7 +179,7 @@
   "projects": {
     "eyebrow": "Portfolio",
     "title": "Proyek Terpilih",
-    "description": "Proyek terpilih di bidang <highlight>renewable energy</highlight>, <highlight>solusi keuangan</highlight>, <highlight>platform digital</highlight>, dan inisiatif korporat terintegrasi.",
+    "description": "Proyek terpilih di bidang <highlight>asisten AI</highlight>, <highlight>renewable energy</highlight>, <highlight>solusi keuangan</highlight>, <highlight>platform digital</highlight>, dan inisiatif korporat terintegrasi.",
     "pageDescription": "Studi kasus terpilih dan inisiatif strategis Ary Wibowo — dari konsep hingga implementasi.",
     "seeMoreRich": "Lihat semua proyek di halaman <link>Proyek</link>.",
     "contactCtaRich": "Ingin diskusi inisiatif serupa? <contact>Hubungi saya</contact> atau lihat <services>layanan konsultasi</services>.",
@@ -196,6 +196,20 @@
           "Efisiensi proses keuangan",
           "Akses pembiayaan yang lebih luas",
           "Integrasi digital"
+        ]
+      },
+      "ida": {
+        "title": "IDA – Intelligent Digital Assistant",
+        "category": "AI Assistant & Alat Produktivitas",
+        "description": "Platform <highlight>chatbot AI cerdas</highlight> dengan RAG (Retrieval-Augmented Generation), memori sesi aman via Google OAuth, dan dukungan multibahasa (Indonesia, English, Mandarin). Dilengkapi <highlight>AgentFlow</highlight> untuk otomatisasi workflow berbasis AI — analisis dokumen, persetujuan human-in-the-loop, dan eksekusi sandbox yang aman. Dirancang, dikembangkan, dan diimplementasikan end-to-end oleh Ary Wibowo sebagai bagian dari portofolio digital assistant dan productivity tools.",
+        "imageAlt": "Preview platform IDA — Intelligent Digital Assistant",
+        "visitLabel": "Kunjungi ida.arywibowo.id",
+        "highlights": [
+          "Respons kontekstual berbasis RAG",
+          "Memori sesi aman via Google OAuth",
+          "Dukungan multibahasa (ID / EN / ZH)",
+          "AgentFlow untuk otomatisasi workflow AI",
+          "Fokus pada produktivitas dan pembelajaran"
         ]
       },
       "bespokeSolarEv": {

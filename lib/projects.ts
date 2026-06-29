@@ -2,6 +2,7 @@ import type { OptimizedImageSources } from "@/lib/images";
 
 export const projectIds = [
   "financialSolution",
+  "ida",
   "superappsPerdana",
   "bespokeSolarEv",
   "integratedHrConcept",
@@ -18,6 +19,13 @@ export const projectImageSources: Record<ProjectId, OptimizedImageSources> = {
     fallback: "/images/projects/financial-solution-icon.png",
     width: 480,
     height: 342,
+  },
+  ida: {
+    avif: "/images/projects/ida-preview.avif",
+    webp: "/images/projects/ida-preview.webp",
+    fallback: "/images/projects/ida-preview.png",
+    width: 480,
+    height: 480,
   },
   superappsPerdana: {
     avif: "/images/projects/superapps-portal-icon.avif",
@@ -59,6 +67,7 @@ export const projectImageSources: Record<ProjectId, OptimizedImageSources> = {
 /** @deprecated Use projectImageSources — kept for OG/structured data references */
 export const projectImages: Record<ProjectId, string> = {
   financialSolution: projectImageSources.financialSolution.webp,
+  ida: projectImageSources.ida.webp,
   superappsPerdana: projectImageSources.superappsPerdana.webp,
   bespokeSolarEv: projectImageSources.bespokeSolarEv.webp,
   integratedHrConcept: projectImageSources.integratedHrConcept.webp,
@@ -68,6 +77,7 @@ export const projectImages: Record<ProjectId, string> = {
 
 export const projectLinks: Record<ProjectId, string> = {
   financialSolution: "https://danawangsa.arywibowo.id/en",
+  ida: "https://ida.arywibowo.id",
   superappsPerdana: "https://portal.perada.net/#/",
   bespokeSolarEv: "https://bespokesolar.com.au",
   integratedHrConcept: "https://perada.net",
@@ -77,6 +87,7 @@ export const projectLinks: Record<ProjectId, string> = {
 
 export const projectPreviewHosts: Record<ProjectId, string> = {
   financialSolution: "danawangsa.arywibowo.id",
+  ida: "ida.arywibowo.id",
   superappsPerdana: "portal.perada.net",
   bespokeSolarEv: "bespokesolar.com.au",
   integratedHrConcept: "perada.net",
@@ -86,6 +97,7 @@ export const projectPreviewHosts: Record<ProjectId, string> = {
 
 export const projectImageFit: Record<ProjectId, "contain" | "cover"> = {
   financialSolution: "contain",
+  ida: "contain",
   superappsPerdana: "contain",
   bespokeSolarEv: "cover",
   integratedHrConcept: "contain",

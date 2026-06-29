@@ -179,7 +179,7 @@
   "projects": {
     "eyebrow": "作品集",
     "title": "精选项目",
-    "description": "精选项目涵盖<highlight>可再生能源</highlight>、<highlight>金融解决方案</highlight>、<highlight>数字平台</highlight>及综合企业举措。",
+    "description": "精选项目涵盖<highlight>AI 助手</highlight>、<highlight>可再生能源</highlight>、<highlight>金融解决方案</highlight>、<highlight>数字平台</highlight>及综合企业举措。",
     "pageDescription": "Ary Wibowo 精选案例研究与战略举措 — 从概念到实施。",
     "seeMoreRich": "查看所有项目请访问<link>项目</link>页面。",
     "contactCtaRich": "想讨论类似项目？<contact>联系我</contact>或查看<services>咨询服务</services>。",
@@ -196,6 +196,20 @@
           "金融流程效率提升",
           "更广泛的融资渠道",
           "数字化整合"
+        ]
+      },
+      "ida": {
+        "title": "IDA – Intelligent Digital Assistant",
+        "category": "AI 助手与效率工具",
+        "description": "智能<highlight>AI 聊天机器人平台</highlight>，具备 RAG（检索增强生成）、通过 Google OAuth 实现的安全会话记忆，以及多语言支持（印尼语、英语、中文）。集成 <highlight>AgentFlow</highlight> 实现 AI 驱动的工作流自动化 — 文档分析、人机协同审批与安全沙箱执行。由 Ary Wibowo 端到端设计、开发与实施，是其数字助手与效率工具作品集的重要组成部分。",
+        "imageAlt": "IDA — Intelligent Digital Assistant 平台预览",
+        "visitLabel": "访问 ida.arywibowo.id",
+        "highlights": [
+          "基于 RAG 的上下文感知回复",
+          "通过 Google OAuth 实现安全会话记忆",
+          "多语言支持（印尼语 / 英语 / 中文）",
+          "AgentFlow 实现 AI 工作流自动化",
+          "聚焦生产力与学习场景"
         ]
       },
       "bespokeSolarEv": {
