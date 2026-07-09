@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision AI Agent Dashboard | Ary Wibowo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #3b82f6;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .section-header {
+            font-size: 1.75rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .metric-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .news-card {
+            transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        .news-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+
+        .dashboard-container {
+            background: linear-gradient(to bottom, #0f172a, #020617);
+        }
+
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200">
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-lg sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-blue-600 rounded-2xl flex items-center justify-center">
+                        <i class="fa-solid fa-robot text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-semibold tracking-tighter">Ary Wibowo</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-x-4">
+                    <a href="/" class="text-sm px-4 py-2 hover:bg-slate-800 rounded-2xl transition-colors flex items-center gap-x-2">
+                        <i class="fa-solid fa-home w-4"></i>
+                        <span class="hidden md:inline">Home</span>
+                    </a>
+                    <a href="/playground" class="text-sm px-4 py-2 hover:bg-slate-800 rounded-2xl transition-colors flex items-center gap-x-2">
+                        <i class="fa-solid fa-play w-4"></i>
+                        <span class="hidden md:inline">Playground</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-screen-2xl mx-auto px-8 pt-10 pb-16">
+        
+        <!-- Section 1: Header & Control -->
+        <div class="mb-10">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-y-4">
+                <div>
+                    <h1 class="font-display text-5xl tracking-tighter font-semibold text-white">Enterprise Decision AI &amp; Agentic Trend Tracker 2026</h1>
+                    <p class="mt-3 text-xl text-slate-400 max-w-2xl">Real-time monitoring of global enterprise agentic AI implementations and governance trends.</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                    <!-- Search Bar -->
+                    <div class="relative flex-1 lg:w-80">
+                        <i class="fa-solid fa-search absolute left-4 top-3.5 text-slate-500"></i>
+                        <input 
+                            type="text" 
+                            id="search-input"
+                            placeholder="Search publications..." 
+                            class="w-full bg-slate-900 border border-slate-700 focus:border-slate-600 transition-colors pl-11 py-3 rounded-3xl text-sm placeholder:text-slate-500 outline-none">
+                    </div>
+                    
+                    <!-- Filter -->
+                    <div class="relative">
+                        <select id="category-filter" 
+                                class="appearance-none bg-slate-900 border border-slate-700 focus:border-slate-600 transition-colors pl-4 pr-10 py-3 rounded-3xl text-sm outline-none cursor-pointer">
+                            <option value="">All Categories</option>
+                            <option value="Riset Global">Riset Global</option>
+                            <option value="Berita Big Tech">Berita Big Tech</option>
+                            <option value="Regulasi">Regulasi &amp; Governance</option>
+                            <option value="Implementasi">Implementasi Enterprise</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down absolute right-4 top-3.5 text-slate-500 pointer-events-none"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: KPI Cards -->
+        <div class="mb-10">
+            <h2 class="text-sm font-semibold tracking-widest text-slate-400 mb-4 px-1">KEY METRICS — LAST 30 DAYS</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                
+                <!-- Card 1: Total Publications -->
+                <div class="metric-card bg-slate-900 border border-slate-700 rounded-3xl p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="text-sm text-slate-400">Total Publications</div>
+                            <div class="mt-1 text-5xl font-semibold tabular-nums tracking-tighter" id="total-publications">247</div>
+                        </div>
+                        <div class="w-11 h-11 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-newspaper text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center gap-x-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400">
+                            <i class="fa-solid fa-arrow-trend-up mr-1.5"></i> +34
+                        </span>
+                        <span class="text-xs text-slate-400">from last month</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Trend Alignment -->
+                <div class="metric-card bg-slate-900 border border-slate-700 rounded-3xl p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="text-sm text-slate-400">Global Trend Alignment with IDA</div>
+                            <div class="mt-1 flex items-baseline gap-x-2">
+                                <span class="text-5xl font-semibold tabular-nums tracking-tighter" id="trend-alignment">87</span>
+                                <span class="text-2xl text-slate-400">%</span>
+                            </div>
+                        </div>
+                        <div class="w-11 h-11 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex items-center justify-between text-xs mb-1.5">
+                            <span class="text-emerald-400 font-medium">Strong shift to Enterprise Decision OS</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="h-2 bg-blue-500 rounded-full" style="width: 87%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Top Industry -->
+                <div class="metric-card bg-slate-900 border border-slate-700 rounded-3xl p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="text-sm text-slate-400">Highest Focus Industry</div>
+                            <div class="mt-1">
+                                <span class="text-3xl font-semibold tracking-tight">Enterprise Operations</span>
+                            </div>
+                            <div class="mt-0.5 text-sm text-emerald-400">+ Supply Chain &amp; Logistics</div>
+                        </div>
+                        <div class="w-11 h-11 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-industry text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-xs text-slate-400">
+                        68% of tracked implementations
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: News Feed -->
+        <div>
+            <div class="flex items-center justify-between mb-5 px-1">
+                <div>
+                    <h2 class="font-semibold text-xl tracking-tight">Recent Publications</h2>
+                    <p class="text-sm text-slate-400">Latest insights on Decision AI Agents &amp; Enterprise Governance</p>
+                </div>
+                <div class="text-xs px-3 py-1 bg-slate-800 rounded-2xl text-slate-400 hidden md:block">
+                    Updated 2 hours ago
+                </div>
+            </div>
+
+            <!-- News List -->
+            <div id="news-list" class="space-y-4">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        <p>Prototype Dashboard • Data as of July 2026 • For internal strategy reference only</p>
+    </footer>
+
+    <script>
+        // Dummy Data - 5 Recent Publications (2026)
+        const newsData = [
+            {
+                id: 1,
+                date: "2026-07-02",
+                title: "ServiceNow Launches Autonomous Platform 2026 with Multi-Agent Orchestration",
+                source: "Gartner",
+                category: "Implementasi Enterprise",
+                summary: "ServiceNow introduces native multi-agent governance layer, enabling enterprises to move from simple AI assistants to full Decision OS with policy enforcement and audit trails.",
+                relevance: 5,
+                tags: ["#Multi-Agent", "#Governance", "#Automation"]
+            },
+            {
+                id: 2,
+                date: "2026-06-28",
+                title: "Microsoft Copilot Studio 2026: From Assistants to Enterprise Decision Agents",
+                source: "TechCrunch",
+                category: "Berita Big Tech",
+                summary: "Microsoft expands Copilot capabilities with agentic workflows that can make autonomous decisions within defined guardrails, signaling shift toward Decision OS.",
+                relevance: 4,
+                tags: ["#AgenticAI", "#Microsoft", "#Governance"]
+            },
+            {
+                id: 3,
+                date: "2026-06-25",
+                title: "EU AI Act 2026 Update: New Requirements for High-Risk Decision Agents",
+                source: "Bloomberg",
+                category: "Regulasi",
+                summary: "Regulators introduce stricter transparency and human oversight rules for autonomous decision-making systems in enterprise environments.",
+                relevance: 5,
+                tags: ["#Regulasi", "#Governance", "#Compliance"]
+            },
+            {
+                id: 4,
+                date: "2026-06-20",
+                title: "Salesforce Agentforce 3.0 Enables Cross-Functional Decision Orchestration",
+                source: "Forbes",
+                category: "Berita Big Tech",
+                summary: "New release allows agents from different departments to collaborate on complex business decisions while maintaining centralized policy and audit capabilities.",
+                relevance: 4,
+                tags: ["#Multi-Agent", "#Salesforce", "#Orchestration"]
+            },
+            {
+                id: 5,
+                date: "2026-06-15",
+                title: "Gartner: 73% of Enterprises Moving from AI Assistants to Decision OS by 2027",
+                source: "Gartner",
+                category: "Riset Global",
+                summary: "Research shows accelerating enterprise shift toward systems that combine reasoning, orchestration, and governance — core principles of modern Decision AI Agents.",
+                relevance: 5,
+                tags: ["#Riset", "#Enterprise", "#Trend"]
+            }
+        ];
+
+        // Render News List
+        function renderNewsList(filteredData = newsData) {
+            const container = document.getElementById('news-list');
+            container.innerHTML = '';
+
+            if (filteredData.length === 0) {
+                container.innerHTML = `<div class="text-center py-8 text-slate-400">No publications found matching your criteria.</div>`;
+                return;
+            }
+
+            filteredData.forEach(item => {
+                const relevanceStars = '★'.repeat(item.relevance) + '☆'.repeat(5 - item.relevance);
+                
+                const html = `
+                    <div class="news-card bg-slate-900 border border-slate-700 rounded-3xl p-6 hover:border-slate-600">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <!-- Date & Source -->
+                            <div class="md:w-40 flex-shrink-0">
+                                <div class="text-sm font-mono text-slate-400">${item.date}</div>
+                                <div class="text-xs mt-1 px-2.5 py-0.5 bg-slate-800 inline-block rounded-full">${item.source}</div>
+                            </div>
+
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <h3 class="font-semibold text-lg leading-tight pr-4">${item.title}</h3>
+                                    
+                                    <!-- Relevance -->
+                                    <div class="hidden md:flex items-center gap-x-1 text-amber-400 text-sm flex-shrink-0">
+                                        <span>${relevanceStars}</span>
+                                        <span class="text-[10px] text-slate-500 ml-1">${item.relevance}/5</span>
+                                    </div>
+                                </div>
+
+                                <p class="mt-3 text-sm text-slate-300 leading-relaxed">${item.summary}</p>
+
+                                <div class="mt-4 flex flex-wrap items-center gap-2">
+                                    ${item.tags.map(tag => 
+                                        `<span class="tag bg-slate-800 text-slate-300 px-3 py-1 text-xs">${tag}</span>`
+                                    ).join('')}
+                                    
+                                    <span class="tag bg-blue-900/60 text-blue-300 ml-auto md:ml-0">${item.category}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += html;
+            });
+        }
+
+        // Filter & Search Functionality
+        function filterNews() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const category = document.getElementById('category-filter').value;
+
+            const filtered = newsData.filter(item => {
+                const matchesSearch = item.title.toLowerCase().includes(searchTerm) || 
+                                   item.summary.toLowerCase().includes(searchTerm);
+                const matchesCategory = !category || item.category === category;
+                return matchesSearch && matchesCategory;
+            });
+
+            renderNewsList(filtered);
+        }
+
+        // Event Listeners
+        function initFilters() {
+            const searchInput = document.getElementById('search-input');
+            const categoryFilter = document.getElementById('category-filter');
+
+            searchInput.addEventListener('input', filterNews);
+            categoryFilter.addEventListener('change', filterNews);
+        }
+
+        // Initialize
+        function initDashboard() {
+            renderNewsList();
+            initFilters();
+            
+            // Optional: Show initial count
+            console.log('%c[Decision AI Dashboard] Static prototype initialized with 5 publications.', 'color:#64748b');
+        }
+
+        // Boot
+        window.onload = initDashboard;
+    </script>
+</body>
+</html>
