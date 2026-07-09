@@ -1,109 +1,48 @@
-"use client";
+'use client'
 
-import { Mail, MapPin } from "lucide-react";
-import { useTranslations } from "next-intl";
+import Link from 'next/link'
 
-import Logo from "@/components/Logo";
-import { Separator } from "@/components/ui/separator";
-import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/lib/constants";
-import { navPaths } from "@/lib/navigation";
-
-export function Footer() {
-  const t = useTranslations("footer");
-  const tNav = useTranslations("nav");
-  const tMeta = useTranslations("metadata.site");
-  const tHero = useTranslations("hero");
-  const tCommon = useTranslations("common");
-  const year = new Date().getFullYear();
-
+export default function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-card/50 pb-20 sm:pb-12">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <Logo />
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              {tMeta("description")}
-            </p>
-            <p className="mt-5">
-              <a
-                href="https://arywibowo.id"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-muted-foreground/70 transition-colors hover:text-muted-foreground"
-              >
-                {t("creatorCredit")}
-              </a>
-            </p>
-          </div>
-
-          <div>
-            <p className="text-sm font-medium">{t("navigation")}</p>
-            <ul className="mt-3 space-y-2">
-              {navPaths.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-                  >
-                    {tNav(link.key)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-xs leading-relaxed text-muted-foreground/80">
-              <Link
-                href="/services"
-                className="transition-colors hover:text-primary"
-              >
-                {tNav("services")}
-              </Link>
-              {" · "}
-              <Link
-                href="/projects"
-                className="transition-colors hover:text-primary"
-              >
-                {tNav("projects")}
-              </Link>
-              {" · "}
-              <Link
-                href="/contact"
-                className="transition-colors hover:text-primary"
-              >
-                {tNav("contact")}
-              </Link>
-            </p>
-          </div>
-
-          <div>
-            <p className="text-sm font-medium">{t("contact")}</p>
-            <ul className="mt-3 space-y-3">
-              <li>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
-                >
-                  <Mail className="size-4 shrink-0" />
-                  {siteConfig.email}
-                </a>
-              </li>
-              <li>
-                <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="size-4 shrink-0" />
-                  {tCommon("location")}
-                </span>
-              </li>
-            </ul>
-          </div>
+    <footer className="border-t border-slate-800 bg-[#0a0a0a] py-12 text-sm">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-10">
+        
+        {/* Brand */}
+        <div>
+          <div className="font-semibold tracking-tight text-lg">Ary Wibowo</div>
+          <p className="text-xs text-slate-500 mt-1">Profesional Consultant</p>
         </div>
 
-        <Separator className="my-8" />
+        {/* Navigation */}
+        <div className="space-y-2">
+          <div className="font-medium text-xs tracking-widest text-slate-400 mb-3">NAVIGATION</div>
+          <Link href="/" className="block hover:text-white transition-colors">Home</Link>
+          <Link href="/about" className="block hover:text-white transition-colors">About</Link>
+          <Link href="/services" className="block hover:text-white transition-colors">Services</Link>
+          <Link href="/projects" className="block hover:text-white transition-colors">Projects</Link>
+          <Link href="/contact" className="block hover:text-white transition-colors">Contact</Link>
+        </div>
 
-        <p className="text-center text-sm text-muted-foreground">
-          © {year} {tHero("name")}. {t("rights")}
-        </p>
+        {/* Tools & Playground */}
+        <div className="space-y-2">
+          <div className="font-medium text-xs tracking-widest text-slate-400 mb-3">TOOLS &amp; PLAYGROUND</div>
+          <Link href="/playground" className="block hover:text-white transition-colors">AI Playground</Link>
+          <a href="/decision-ai-dashboard.html" className="block hover:text-white transition-colors">Decision AI Dashboard</a>
+          <Link href="/services" className="block hover:text-white transition-colors">Services</Link>
+        </div>
+
+        {/* Connect */}
+        <div>
+          <div className="font-medium text-xs tracking-widest text-slate-400 mb-3">CONNECT</div>
+          <a href="mailto:aku@arywibowo.co.id" className="block hover:text-white transition-colors">aku@arywibowo.co.id</a>
+          <a href="https://github.com/ImHeroesKiller" target="_blank" className="block hover:text-white transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/boworesearch" target="_blank" className="block hover:text-white transition-colors">LinkedIn</a>
+        </div>
+      </div>
+
+      <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        © {new Date().getFullYear()} Ary Wibowo. All rights reserved.
       </div>
     </footer>
-  );
+  )
 }
