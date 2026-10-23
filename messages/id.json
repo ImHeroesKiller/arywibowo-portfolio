@@ -173,7 +173,12 @@
       "VALIDATION_REQUIRED": "Nama, email, dan pesan wajib diisi.",
       "INVALID_EMAIL": "Mohon masukkan alamat email yang valid.",
       "SEND_FAILED": "Gagal mengirim pesan. Silakan coba lagi nanti.",
-      "SERVER_ERROR": "Terjadi kesalahan. Silakan coba lagi nanti."
+      "SERVER_ERROR": "Terjadi kesalahan. Silakan coba lagi nanti.",
+      "RATE_LIMITED": "Terlalu banyak permintaan. Coba lagi beberapa menit.",
+      "INVALID_REQUEST": "Input tidak valid atau terlalu panjang.",
+      "PAYLOAD_TOO_LARGE": "Pesan terlalu panjang.",
+      "FORBIDDEN_ORIGIN": "Permintaan tidak diizinkan.",
+      "UNSUPPORTED_MEDIA_TYPE": "Format permintaan tidak didukung."
     },
     "fallbackNote": "Pengiriman otomatis belum tersedia. Pesan Anda belum terkirim. Gunakan aplikasi email untuk mengirim pesan ini.",
     "fallbackButton": "Buka aplikasi email"
@@ -300,8 +305,8 @@
     "lastChecked": "Terakhir diperiksa: {date}",
     "viewReport": "Lihat di PageSpeed Insights",
     "loading": "Memuat skor...",
-    "unavailable": "API PageSpeed tidak tersedia — menampilkan skor cadangan.",
-    "fallbackNote": "Skor cadangan (API PageSpeed sementara tidak dapat diakses).",
+    "unavailable": "Skor historis dari 24 Juni 2026, bukan pengukuran terbaru. Tambahkan PAGESPEED_API_KEY untuk pemeriksaan harian.",
+    "fallbackNote": "Skor historis dari 24 Juni 2026, bukan pengukuran terbaru. Tambahkan PAGESPEED_API_KEY untuk pemeriksaan harian.",
     "refresh": "Perbarui",
     "categories": {
       "performance": "Performa",
@@ -327,7 +332,12 @@
       "AI_UNAVAILABLE": "IDA sementara tidak tersedia. Coba lagi nanti.",
       "EMPTY_RESPONSE": "Tidak ada respons. Silakan coba lagi.",
       "SERVER_ERROR": "Terjadi kesalahan. Silakan coba lagi.",
-      "VALIDATION_REQUIRED": "Pesan tidak boleh kosong."
+      "VALIDATION_REQUIRED": "Pesan tidak boleh kosong.",
+      "RATE_LIMITED": "Terlalu banyak permintaan. Coba lagi beberapa menit.",
+      "INVALID_REQUEST": "Input tidak valid atau terlalu panjang.",
+      "PAYLOAD_TOO_LARGE": "Pesan terlalu panjang.",
+      "FORBIDDEN_ORIGIN": "Permintaan tidak diizinkan.",
+      "UNSUPPORTED_MEDIA_TYPE": "Format permintaan tidak didukung."
     }
   },
   "languageSwitcher": {
