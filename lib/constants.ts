@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Ary Wibowo",
   logo: "/logo/awi-logo-new.png",
-  url: "https://arywibowo.co.id",
+  url: "https://arywibowo.id",
   email: "aku@arywibowo.id",
   location: "Jakarta, Indonesia",
 } as const;
