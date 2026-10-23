@@ -16,6 +16,11 @@ const API_ERROR_CODES = [
   "INVALID_EMAIL",
   "SEND_FAILED",
   "SERVER_ERROR",
+  "RATE_LIMITED",
+  "INVALID_REQUEST",
+  "PAYLOAD_TOO_LARGE",
+  "FORBIDDEN_ORIGIN",
+  "UNSUPPORTED_MEDIA_TYPE",
 ] as const;
 
 type ApiErrorCode = (typeof API_ERROR_CODES)[number];
@@ -50,6 +55,7 @@ export function ContactForm() {
       name: formData.get("name"),
       email: formData.get("email"),
       message: formData.get("message"),
+      website: formData.get("website"),
     };
 
     try {
@@ -109,6 +115,10 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       className="space-y-5 rounded-xl border border-border/60 bg-card/50 p-6 sm:space-y-6 sm:p-8"
     >
+      <div className="absolute h-px w-px overflow-hidden opacity-0" aria-hidden="true">
+        <label htmlFor="website">Leave this field blank</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium">
           {t("name")}
@@ -116,6 +126,7 @@ export function ContactForm() {
         <Input
           id="name"
           name="name"
+          maxLength={120}
           placeholder={t("namePlaceholder")}
           required
           disabled={status === "loading"}
@@ -129,6 +140,7 @@ export function ContactForm() {
         <Input
           id="email"
           name="email"
+          maxLength={254}
           type="email"
           placeholder={t("emailPlaceholder")}
           required
@@ -143,6 +155,7 @@ export function ContactForm() {
         <Textarea
           id="message"
           name="message"
+          maxLength={4000}
           placeholder={t("messagePlaceholder")}
           rows={5}
           required

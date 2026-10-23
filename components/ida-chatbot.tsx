@@ -59,9 +59,18 @@ export function IdaChatbot() {
     }
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onEscape);
+    return () => window.removeEventListener("keydown", onEscape);
+  }, [open]);
+
   async function handleSend() {
     const trimmed = input.trim();
-    if (!trimmed || loading) return;
+    if (!trimmed || loading || trimmed.length > 2000) return;
 
     const userMessage: ChatMessage = {
       id: createId(),
@@ -80,7 +89,7 @@ export function IdaChatbot() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: nextMessages.map(({ role, content }) => ({ role, content })),
+          messages: nextMessages.slice(-12).map(({ role, content }) => ({ role, content })),
         }),
       });
 
@@ -108,7 +117,12 @@ export function IdaChatbot() {
       ]);
     } catch (err) {
       const code = err instanceof Error ? err.message : "SERVER_ERROR";
-      setError(t(`errors.${code}` as "errors.SERVER_ERROR"));
+      const known = [
+        "NOT_CONFIGURED", "AI_UNAVAILABLE", "EMPTY_RESPONSE", "SERVER_ERROR",
+        "VALIDATION_REQUIRED", "RATE_LIMITED", "INVALID_REQUEST",
+        "PAYLOAD_TOO_LARGE", "FORBIDDEN_ORIGIN", "UNSUPPORTED_MEDIA_TYPE",
+      ];
+      setError(t(`errors.${known.includes(code) ? code : "SERVER_ERROR"}` as "errors.SERVER_ERROR"));
     } finally {
       setLoading(false);
     }
@@ -126,6 +140,7 @@ export function IdaChatbot() {
       {open && (
         <div
           role="dialog"
+          aria-modal="false"
           aria-label={t("title")}
           className={cn(
             "flex h-[min(32rem,calc(100dvh-5.5rem))] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/95 shadow-2xl shadow-black/40 backdrop-blur-md",
@@ -186,6 +201,8 @@ export function IdaChatbot() {
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
+                aria-label={t("placeholder")}
+                maxLength={2000}
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 onKeyDown={handleKeyDown}

@@ -173,7 +173,12 @@
       "VALIDATION_REQUIRED": "姓名、邮箱和消息为必填项。",
       "INVALID_EMAIL": "请提供有效的邮箱地址。",
       "SEND_FAILED": "发送消息失败，请稍后重试。",
-      "SERVER_ERROR": "出了点问题，请稍后重试。"
+      "SERVER_ERROR": "出了点问题，请稍后重试。",
+      "RATE_LIMITED": "请求过于频繁，请稍后再试。",
+      "INVALID_REQUEST": "输入无效或过长。",
+      "PAYLOAD_TOO_LARGE": "消息过长。",
+      "FORBIDDEN_ORIGIN": "不允许此请求。",
+      "UNSUPPORTED_MEDIA_TYPE": "不支持的请求格式。"
     },
     "fallbackNote": "自动发送暂不可用，您的消息尚未发送。请使用电子邮件应用发送此消息。",
     "fallbackButton": "打开邮件应用"
@@ -300,8 +305,8 @@
     "lastChecked": "上次检查：{date}",
     "viewReport": "在 PageSpeed Insights 查看",
     "loading": "正在加载评分...",
-    "unavailable": "PageSpeed API 不可用 — 显示备用评分。",
-    "fallbackNote": "备用评分（PageSpeed API 暂时无法访问）。",
+    "unavailable": "这些是 2026 年 6 月 24 日的历史评分，并非实时测量。配置 PAGESPEED_API_KEY 可启用每日检查。",
+    "fallbackNote": "这些是 2026 年 6 月 24 日的历史评分，并非实时测量。配置 PAGESPEED_API_KEY 可启用每日检查。",
     "refresh": "刷新",
     "categories": {
       "performance": "性能",
@@ -327,7 +332,12 @@
       "AI_UNAVAILABLE": "IDA 暂时不可用。请稍后再试。",
       "EMPTY_RESPONSE": "未收到回复。请重试。",
       "SERVER_ERROR": "出了点问题。请重试。",
-      "VALIDATION_REQUIRED": "消息不能为空。"
+      "VALIDATION_REQUIRED": "消息不能为空。",
+      "RATE_LIMITED": "请求过于频繁，请稍后再试。",
+      "INVALID_REQUEST": "输入无效或过长。",
+      "PAYLOAD_TOO_LARGE": "消息过长。",
+      "FORBIDDEN_ORIGIN": "不允许此请求。",
+      "UNSUPPORTED_MEDIA_TYPE": "不支持的请求格式。"
     }
   },
   "languageSwitcher": {
