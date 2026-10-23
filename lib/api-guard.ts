@@ -1,3 +1,4 @@
+import { isIP } from "node:net";
 import { NextResponse } from "next/server";
 
 export class ApiRequestError extends Error {
@@ -56,13 +57,15 @@ export function enforcePublicApiGuard(
   if (request.headers.get("content-type")?.split(";")[0]?.trim().toLowerCase() !== "application/json") {
     return NextResponse.json({ error: "UNSUPPORTED_MEDIA_TYPE" }, { status: 415 });
   }
-  // Use a proxy-supplied client address when present. Never use a client-supplied
-  // identity/token as the sole identity for abuse controls.
-  const ip =
-    request.headers.get("x-real-ip") ||
-    request.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim() ||
-    "unidentified";
-  const result = takeRateLimit(`${scope}:${ip.slice(0, 120)}`, limit, windowMs);
+  // Vercel overwrites x-forwarded-for to prevent client-supplied IP spoofing.
+  // Prefer its dedicated header, then the platform-forwarded address. Do NOT
+  // prefer a caller's x-real-ip header or arbitrary user-provided identifiers.
+  const forwarded =
+    request.headers.get("x-vercel-forwarded-for") ||
+    request.headers.get("x-forwarded-for");
+  const candidate = forwarded?.split(",")[0]?.trim() || "";
+  const ip = isIP(candidate) ? candidate.toLowerCase() : "unidentified";
+  const result = takeRateLimit(`${scope}:${ip}`, limit, windowMs);
   if (!result.allowed) {
     return NextResponse.json(
       { error: "RATE_LIMITED" },
