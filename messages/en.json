@@ -173,7 +173,12 @@
       "VALIDATION_REQUIRED": "Name, email, and message are required.",
       "INVALID_EMAIL": "Please provide a valid email address.",
       "SEND_FAILED": "Failed to send message. Please try again later.",
-      "SERVER_ERROR": "Something went wrong. Please try again later."
+      "SERVER_ERROR": "Something went wrong. Please try again later.",
+      "RATE_LIMITED": "Too many requests. Please try again in a few minutes.",
+      "INVALID_REQUEST": "Invalid or overly long input.",
+      "PAYLOAD_TOO_LARGE": "Your message is too long.",
+      "FORBIDDEN_ORIGIN": "Request not permitted.",
+      "UNSUPPORTED_MEDIA_TYPE": "Unsupported request format."
     },
     "fallbackNote": "Automatic delivery is unavailable. Your message has not been sent. Use your email app to send it.",
     "fallbackButton": "Open email app"
@@ -300,8 +305,8 @@
     "lastChecked": "Last checked: {date}",
     "viewReport": "View on PageSpeed Insights",
     "loading": "Loading scores...",
-    "unavailable": "PageSpeed API unavailable — showing fallback scores.",
-    "fallbackNote": "Fallback scores (PageSpeed API temporarily unavailable).",
+    "unavailable": "Historical scores from June 24, 2026, not a current measurement. Configure PAGESPEED_API_KEY for daily checks.",
+    "fallbackNote": "Historical scores from June 24, 2026, not a current measurement. Configure PAGESPEED_API_KEY for daily checks.",
     "refresh": "Refresh",
     "categories": {
       "performance": "Performance",
@@ -327,7 +332,12 @@
       "AI_UNAVAILABLE": "IDA is temporarily unavailable. Please try again later.",
       "EMPTY_RESPONSE": "No response received. Please try again.",
       "SERVER_ERROR": "Something went wrong. Please try again.",
-      "VALIDATION_REQUIRED": "Message cannot be empty."
+      "VALIDATION_REQUIRED": "Message cannot be empty.",
+      "RATE_LIMITED": "Too many requests. Please try again in a few minutes.",
+      "INVALID_REQUEST": "Invalid or overly long input.",
+      "PAYLOAD_TOO_LARGE": "Your message is too long.",
+      "FORBIDDEN_ORIGIN": "Request not permitted.",
+      "UNSUPPORTED_MEDIA_TYPE": "Unsupported request format."
     }
   },
   "languageSwitcher": {
