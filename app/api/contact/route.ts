@@ -2,6 +2,10 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 const CONTACT_EMAIL = "aku@arywibowo.id";
+// The sender domain must be verified in the Resend dashboard before production email can be sent.
+const CONTACT_FROM_EMAIL =
+  process.env.CONTACT_FROM_EMAIL?.trim() ||
+  "Ary Wibowo Portfolio <noreply@arywibowo.id>";
 
 type ContactPayload = {
   name?: string;
@@ -50,7 +54,7 @@ export async function POST(request: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: "Ary Wibowo Portfolio <onboarding@resend.dev>",
+      from: CONTACT_FROM_EMAIL,
       to: [CONTACT_EMAIL],
       replyTo: email,
       subject: `New contact from ${name}`,
