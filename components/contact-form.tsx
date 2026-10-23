@@ -166,7 +166,7 @@ export function ContactForm() {
             </div>
           )}
         </div>
-      )
+      )}
 
       <Button
         type="submit"
