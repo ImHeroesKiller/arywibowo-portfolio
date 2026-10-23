@@ -56,9 +56,24 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+        document.getElementById("mobile-nav-toggle")?.focus();
+      }
+    };
+    window.addEventListener("keydown", onEscape);
+    return () => window.removeEventListener("keydown", onEscape);
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-8">
+      <a href="#main-content" className="sr-only absolute left-3 top-2 z-[100] rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground focus:not-sr-only">
+        Skip to content
+      </a>
+      <nav aria-label="Primary navigation" className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-3 sm:h-16 sm:px-6 lg:px-8">
         <Logo />
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -66,6 +81,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
                 className={cn(
                   "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                   pathname === link.href
@@ -89,9 +105,11 @@ export default function Navbar() {
           </div>
 
           <Button
+            id="mobile-nav-toggle"
+            aria-controls="mobile-navigation"
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="shrink-0 md:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={mobileOpen}
@@ -112,6 +130,9 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-navigation"
+            role="region"
+            aria-label="Mobile navigation"
             variants={menuVariants}
             initial="closed"
             animate="open"
@@ -123,6 +144,7 @@ export default function Navbar() {
                 <motion.li key={link.href} variants={itemVariants}>
                   <Link
                     href={link.href}
+                    aria-current={pathname === link.href ? "page" : undefined}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       "block rounded-lg px-3 py-3 text-sm font-medium transition-colors",
