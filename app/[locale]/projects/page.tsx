@@ -18,7 +18,7 @@ import {
 import { createPageMetadata } from "@/lib/seo";
 
 type PageProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
@@ -26,8 +26,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({
     locale,
     namespace: "metadata.projects",
@@ -41,7 +42,8 @@ export async function generateMetadata({
   });
 }
 
-export default async function ProjectsPage({ params: { locale } }: PageProps) {
+export default async function ProjectsPage({ params }: PageProps) {
+  const { locale } = await params;
   setRequestLocale(locale);
   const tMeta = await getTranslations("metadata.projects");
   const t = await getTranslations("projects");
