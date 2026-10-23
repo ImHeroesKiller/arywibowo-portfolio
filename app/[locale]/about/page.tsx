@@ -8,7 +8,7 @@ import { type Locale, routing } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
 
 type PageProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
@@ -16,8 +16,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({
     locale,
     namespace: "metadata.about",
@@ -31,7 +32,8 @@ export async function generateMetadata({
   });
 }
 
-export default function AboutPage({ params: { locale } }: PageProps) {
+export default async function AboutPage({ params }: PageProps) {
+  const { locale } = await params;
   setRequestLocale(locale);
 
   return (
