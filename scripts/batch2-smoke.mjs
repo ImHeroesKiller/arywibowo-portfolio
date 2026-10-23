@@ -59,6 +59,15 @@ try {
     assert.equal(r.status, 400);
     assert.equal((await r.json()).error, "INVALID_EMAIL");
   });
+  await check("SMTP unavailable without secret", async () => {
+    const r = await post("/api/contact", {
+      name: "UAT",
+      email: "uat@example.org",
+      message: "Check that missing secret is handled without sending.",
+    }, "smoke-mail-not-configured");
+    assert.equal(r.status, 503);
+    assert.equal((await r.json()).error, "NOT_CONFIGURED");
+  });
   await check("bot honeypot", async () => {
     const r = await post("/api/contact", { website: "bot", name: "Bot", email: "b@example.com", message: "x" }, "smoke-bot");
     assert.equal(r.status, 200);
