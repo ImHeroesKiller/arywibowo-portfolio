@@ -39,3 +39,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Security and route smoke regression
+        run: node scripts/batch2-smoke.mjs
