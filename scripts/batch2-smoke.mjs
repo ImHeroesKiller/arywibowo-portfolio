@@ -30,10 +30,18 @@ async function check(name, action) {
   console.log("PASS", name);
 }
 
-async function post(path, value, ip) {
+const testIpAddresses = new Map();
+function testIp(identity) {
+  if (!testIpAddresses.has(identity)) {
+    testIpAddresses.set(identity, `198.51.100.${testIpAddresses.size + 1}`);
+  }
+  return testIpAddresses.get(identity);
+}
+
+async function post(path, value, identity) {
   return fetch(root + path, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "X-Real-IP": ip },
+    headers: { "Content-Type": "application/json", "X-Forwarded-For": testIp(identity) },
     body: JSON.stringify(value),
   });
 }
@@ -82,6 +90,34 @@ try {
       const r = await post("/api/contact", { name: "", email: "", message: "" }, "smoke-limit-unique");
       assert.equal(r.status, i === 5 ? 429 : 400);
       if (i === 5) assert.ok(Number(r.headers.get("retry-after")) > 0);
+    }
+  });
+  await check("spoofed x-real-ip cannot bypass rate limit", async () => {
+    for (let i = 0; i < 6; i += 1) {
+      const response = await fetch(root + "/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Forwarded-For": "203.0.113.200",
+          "X-Real-IP": `203.0.113.${i + 10}`,
+        },
+        body: JSON.stringify({ name: "", email: "", message: "" }),
+      });
+      assert.equal(response.status, i === 5 ? 429 : 400);
+    }
+  });
+  await check("Vercel forwarded header is preferred", async () => {
+    for (let i = 0; i < 6; i += 1) {
+      const response = await fetch(root + "/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Vercel-Forwarded-For": "203.0.113.201",
+          "X-Forwarded-For": `203.0.113.${i + 20}`,
+        },
+        body: JSON.stringify({ name: "", email: "", message: "" }),
+      });
+      assert.equal(response.status, i === 5 ? 429 : 400);
     }
   });
   await check("PageSpeed historical fallback", async () => {
