@@ -109,7 +109,7 @@ export function LighthouseWidget({ className }: { className?: string }) {
     setStatus("loading");
 
     try {
-      const response = await fetch("/api/pagespeed", { cache: "no-store" });
+      const response = await fetch("/api/pagespeed");
       const data = (await response.json()) as PageSpeedApiResponse;
 
       if (isPageSpeedScores(data)) {
@@ -196,7 +196,8 @@ export function LighthouseWidget({ className }: { className?: string }) {
                   <button
                     type="button"
                     onClick={() => void loadScores()}
-                    className="inline-flex items-center gap-1 text-primary transition-colors hover:text-primary/80"
+                    aria-label={t("refresh")}
+                    className="inline-flex items-center gap-1 rounded-sm text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   >
                     <RefreshCw className="size-3" aria-hidden />
                     {t("refresh")}
