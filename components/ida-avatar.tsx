@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const sizeStyles = {
@@ -23,7 +24,7 @@ export function IdaAvatar({
   const { className: sizeClass, dimension } = sizeStyles[size];
 
   return (
-    <img
+    <Image
       src="/images/ida-avatar.png"
       alt={alt}
       width={dimension}
