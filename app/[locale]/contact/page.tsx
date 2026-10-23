@@ -13,7 +13,7 @@ import { sectionContentGap, sectionShell } from "@/lib/layout-classes";
 import { createPageMetadata } from "@/lib/seo";
 
 type PageProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
@@ -21,8 +21,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({
     locale,
     namespace: "metadata.contact",
@@ -36,7 +37,8 @@ export async function generateMetadata({
   });
 }
 
-export default async function ContactPage({ params: { locale } }: PageProps) {
+export default async function ContactPage({ params }: PageProps) {
+  const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("contact");
   const tCommon = await getTranslations("common");

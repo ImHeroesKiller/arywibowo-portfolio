@@ -28,6 +28,7 @@ export function ContactForm() {
   const t = useTranslations("contactForm");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [fallbackHref, setFallbackHref] = useState<string | null>(null);
 
   function getErrorMessage(code?: string) {
     if (code && isApiErrorCode(code)) {
@@ -41,8 +42,10 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
+    setFallbackHref(null);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const payload = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -63,8 +66,16 @@ export function ContactForm() {
       }
 
       setStatus("success");
-      e.currentTarget.reset();
+      form.reset();
     } catch (error) {
+      // Preserve the visitor's message. Offer a user-initiated mailto link
+      // until the authenticated Resend sender domain is verified.
+      const name = String(payload.name || "");
+      const email = String(payload.email || "");
+      const message = String(payload.message || "");
+      const subject = encodeURIComponent(`Website inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      setFallbackHref(`mailto:aku@arywibowo.id?subject=${subject}&body=${body}`);
       setStatus("error");
       setErrorMessage(
         error instanceof Error ? error.message : t("errorDefault")
@@ -140,9 +151,21 @@ export function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-destructive" role="alert">
-          {errorMessage}
-        </p>
+        <div className="space-y-2" role="alert">
+          <p className="text-sm text-destructive">{errorMessage}</p>
+          {fallbackHref && (
+            <div className="space-y-2">
+              <p className="text-sm text-muted-foreground">{t("fallbackNote")}</p>
+              <a
+                href={fallbackHref}
+                className="inline-flex items-center gap-2 rounded-lg border border-primary/50 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                {t("fallbackButton")}
+                <Send className="size-4" aria-hidden />
+              </a>
+            </div>
+          )}
+        </div>
       )}
 
       <Button

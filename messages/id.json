@@ -174,7 +174,9 @@
       "INVALID_EMAIL": "Mohon masukkan alamat email yang valid.",
       "SEND_FAILED": "Gagal mengirim pesan. Silakan coba lagi nanti.",
       "SERVER_ERROR": "Terjadi kesalahan. Silakan coba lagi nanti."
-    }
+    },
+    "fallbackNote": "Pengiriman otomatis belum tersedia. Pesan Anda belum terkirim. Gunakan aplikasi email untuk mengirim pesan ini.",
+    "fallbackButton": "Buka aplikasi email"
   },
   "projects": {
     "eyebrow": "Portfolio",

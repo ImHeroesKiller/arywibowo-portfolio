@@ -2,6 +2,10 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 const CONTACT_EMAIL = "aku@arywibowo.id";
+// The sender domain must be verified in the Resend dashboard before production email can be sent.
+const CONTACT_FROM_EMAIL =
+  process.env.CONTACT_FROM_EMAIL?.trim() ||
+  "Ary Wibowo Portfolio <noreply@arywibowo.id>";
 
 type ContactPayload = {
   name?: string;
@@ -24,15 +28,6 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   try {
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "NOT_CONFIGURED" },
-        { status: 500 }
-      );
-    }
-
-    const resend = new Resend(apiKey);
     const body = (await request.json()) as ContactPayload;
     const name = body.name?.trim();
     const email = body.email?.trim();
@@ -49,8 +44,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "INVALID_EMAIL" }, { status: 400 });
     }
 
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "NOT_CONFIGURED" },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
+
     const { error } = await resend.emails.send({
-      from: "Ary Wibowo Portfolio <onboarding@resend.dev>",
+      from: CONTACT_FROM_EMAIL,
       to: [CONTACT_EMAIL],
       replyTo: email,
       subject: `New contact from ${name}`,

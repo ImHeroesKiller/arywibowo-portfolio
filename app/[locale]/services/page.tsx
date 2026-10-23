@@ -13,7 +13,7 @@ import { createPageMetadata } from "@/lib/seo";
 import { serviceIcons, serviceIds } from "@/lib/services";
 
 type PageProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
@@ -21,8 +21,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({
     locale,
     namespace: "metadata.services",
@@ -36,7 +37,8 @@ export async function generateMetadata({
   });
 }
 
-export default async function ServicesPage({ params: { locale } }: PageProps) {
+export default async function ServicesPage({ params }: PageProps) {
+  const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("services");
 

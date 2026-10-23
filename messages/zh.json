@@ -174,7 +174,9 @@
       "INVALID_EMAIL": "请提供有效的邮箱地址。",
       "SEND_FAILED": "发送消息失败，请稍后重试。",
       "SERVER_ERROR": "出了点问题，请稍后重试。"
-    }
+    },
+    "fallbackNote": "自动发送暂不可用，您的消息尚未发送。请使用电子邮件应用发送此消息。",
+    "fallbackButton": "打开邮件应用"
   },
   "projects": {
     "eyebrow": "作品集",
