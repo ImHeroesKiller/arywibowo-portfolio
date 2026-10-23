@@ -34,7 +34,7 @@ export default function Footer() {
         {/* Connect */}
         <div>
           <div className="font-medium text-xs tracking-widest text-slate-400 mb-3">CONNECT</div>
-          <a href="mailto:aku@arywibowo.co.id" className="block hover:text-white transition-colors">aku@arywibowo.co.id</a>
+          <a href="mailto:aku@arywibowo.id" className="block hover:text-white transition-colors">aku@arywibowo.id</a>
           <a href="https://github.com/ImHeroesKiller" target="_blank" className="block hover:text-white transition-colors">GitHub</a>
           <a href="https://linkedin.com/in/boworesearch" target="_blank" className="block hover:text-white transition-colors">LinkedIn</a>
         </div>
