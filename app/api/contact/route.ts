@@ -28,15 +28,6 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   try {
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "NOT_CONFIGURED" },
-        { status: 500 }
-      );
-    }
-
-    const resend = new Resend(apiKey);
     const body = (await request.json()) as ContactPayload;
     const name = body.name?.trim();
     const email = body.email?.trim();
@@ -52,6 +43,16 @@ export async function POST(request: Request) {
     if (!isValidEmail(email)) {
       return NextResponse.json({ error: "INVALID_EMAIL" }, { status: 400 });
     }
+
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "NOT_CONFIGURED" },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
       from: CONTACT_FROM_EMAIL,
