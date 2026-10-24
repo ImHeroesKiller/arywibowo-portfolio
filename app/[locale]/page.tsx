@@ -9,6 +9,7 @@ import { PortfolioShowcase } from "@/components/portfolio-showcase";
 import { Services } from "@/components/services";
 import { type Locale, routing } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/constants";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -41,6 +42,7 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <PageTransition>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"Person","@id":`${siteConfig.url}/#person`,name:siteConfig.name,url:siteConfig.url,jobTitle:"Business & Technology Strategist",image:`${siteConfig.url}/images/profile.webp`})}} />
       <Hero />
       <Services />
       <PortfolioShowcase locale={locale} featured />

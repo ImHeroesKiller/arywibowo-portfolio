@@ -10,6 +10,8 @@ import caseEn from "@/content/case-studies-en.json";
 import caseZh from "@/content/case-studies-zh.json";
 const cases = { id: caseId, en: caseEn, zh: caseZh };
 import { createPageMetadata } from "@/lib/seo";
+import { getLocalizedUrl } from "@/lib/i18n-paths";
+import { siteConfig } from "@/lib/constants";
 
 const text = {
  id: {back:"Kembali ke semua produk",summary:"Ringkasan produk",maturity:"Status produk",evidence:"Bukti implementasi",url:"Buka aplikasi atau website",repo:"Repository GitHub",noUrl:"Tidak tersedia demo publik untuk produk ini.",note:"Status didasarkan pada dokumentasi dan hasil pemeriksaan yang tersedia. Deployment bukan bukti bahwa setiap fitur siap secara operasional.",shot:"Screenshot halaman publik, bukan bukti fungsi setelah login.",noShot:"Visual produk belum disetujui untuk publikasi; ikon pengganti digunakan pada katalog.",pending:"Fitur yang masih dikembangkan atau divalidasi tidak dinyatakan telah siap production.",role:"Klasifikasi"},
@@ -23,7 +25,17 @@ export async function generateMetadata({params}:Props):Promise<Metadata> {
  if(!routing.locales.includes(locale as Locale)) return {};
  const product=getProduct(locale as Locale,slug);
  if(!product) return {};
- return createPageMetadata({title:`${product.name} — Portfolio`,description:product.description,path:`/projects/${slug}`,locale:locale as Locale});
+ return {
+  ...createPageMetadata({title:`${product.name} — Portfolio`,description:product.description,path:`/projects/${slug}`,locale:locale as Locale}),
+  openGraph: {
+   title: `${product.name} | ${siteConfig.name}`,
+   description: product.description,
+   url: getLocalizedUrl(`/projects/${slug}`,locale as Locale,siteConfig.url),
+   siteName: siteConfig.name,
+   type: "article",
+   images: images[product.id] ? [{url:`${siteConfig.url}/images/portfolio/${images[product.id]}-public-1440x810.webp`,width:1440,height:810,alt:`${product.name} — public page preview`}] : undefined,
+  }
+ };
 }
 export default async function ProductPage({params}:Props) {
  const {locale:language,slug}=await params;
@@ -35,6 +47,21 @@ export default async function ProductPage({params}:Props) {
  const details = cases[locale].products[slug as keyof typeof cases["id"]["products"]];
  const labels = cases[locale].labels;
  const image=images[product.id];
+ const canonical = getLocalizedUrl(`/projects/${slug}`,locale,siteConfig.url);
+ const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": `${canonical}#case-study`,
+  name: product.name,
+  headline: `${product.name} — Portfolio Case Study`,
+  description: product.description,
+  url: canonical,
+  inLanguage: locale === "id" ? "id-ID" : locale === "zh" ? "zh-CN" : "en-US",
+  author: { "@type": "Person", name: siteConfig.name, url: siteConfig.url },
+  mainEntityOfPage: canonical,
+  ...(image ? {image: `${siteConfig.url}/images/portfolio/${image}-public-1440x810.webp`} : {}),
+ };
+
  const index=productIds.indexOf(slug);
  const previousId=index>0?productIds[index-1]:null;
  const nextId=index>=0&&index<productIds.length-1?productIds[index+1]:null;
@@ -43,6 +70,7 @@ export default async function ProductPage({params}:Props) {
  const previousLabel=locale==="id"?"Produk sebelumnya":locale==="zh"?"上一个产品":"Previous product";
  const nextLabel=locale==="id"?"Produk berikutnya":locale==="zh"?"下一个产品":"Next product";
  return <div className="min-h-[65vh] bg-gradient-to-b from-blue-50/70 to-background">
+  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData).replace(/</g,"\\u003c")}} />
   <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-20">
    <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"><ArrowLeft size={16}/>{t.back}</Link>
    <div className="mt-10 flex flex-wrap items-center gap-2 text-xs">
@@ -52,13 +80,13 @@ export default async function ProductPage({params}:Props) {
    <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl">{product.name}</h1>
    <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">{product.description}</p>
    <div className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    {image?<><div className="relative aspect-video"><Image src={`/images/portfolio/${image}-public-1440x810.webp`} alt={`${product.name} public page`} fill sizes="(max-width: 1024px) 100vw, 960px" className="object-cover" priority/></div><p className="border-t border-border px-5 py-3 text-xs text-muted-foreground">{t.shot}</p></>:<div className="flex aspect-video flex-col items-center justify-center gap-4 bg-gradient-to-br from-blue-50 to-indigo-100 p-6 text-center"><Monitor className="size-16 text-primary" strokeWidth={1.3}/><p className="max-w-md text-sm text-slate-600">{t.noShot}</p></div>}
+    {image?<><div className="relative aspect-video"><Image src={`/images/portfolio/${image}-public-1440x810.webp`} alt={`${product.name} — public website or login preview, not authenticated product functionality`} fill sizes="(max-width: 1024px) 100vw, 960px" className="object-cover" priority/></div><p className="border-t border-border px-5 py-3 text-xs text-muted-foreground">{t.shot}</p></>:<div className="flex aspect-video flex-col items-center justify-center gap-4 bg-gradient-to-br from-blue-50 to-indigo-100 p-6 text-center"><Monitor className="size-16 text-primary" strokeWidth={1.3}/><p className="max-w-md text-sm text-slate-600">{t.noShot}</p></div>}
    </div>
    {image && <section className="mt-8 rounded-2xl border border-border bg-white p-6">
     <h2 className="text-lg font-semibold">{labels.evidence} — {labels.screenshot}</h2>
     <p className="mt-2 text-sm leading-6 text-muted-foreground">{t.shot}</p>
     <div className="mt-5 flex flex-col items-center gap-4 rounded-xl bg-slate-50 p-4 sm:flex-row sm:items-start sm:justify-center sm:gap-8">
-      <div className="w-full max-w-[240px]"><div className="relative aspect-[430/900] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><Image src={`/images/portfolio/${image}-mobile-public.webp`} alt={`${product.name} mobile public page`} fill sizes="240px" className="object-contain" /></div></div>
+      <div className="w-full max-w-[240px]"><div className="relative aspect-[430/900] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><Image src={`/images/portfolio/${image}-mobile-public.webp`} alt={`${product.name} mobile-sized public page preview`} fill sizes="240px" loading="lazy" className="object-contain" /></div></div>
       <div className="max-w-xs text-sm leading-7 text-slate-600">{labels.method}<p className="mt-3 text-xs text-muted-foreground">{t.note}</p></div>
     </div>
    </section>}
