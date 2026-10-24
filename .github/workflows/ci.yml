@@ -51,3 +51,6 @@ jobs:
 
       - name: P4.5 multilingual case-study release regression
         run: node scripts/p45-release-regression.mjs
+
+      - name: IDA Labs chat API contract regression (mock provider; no billable requests)
+        run: node scripts/ida-chat-contract.mjs

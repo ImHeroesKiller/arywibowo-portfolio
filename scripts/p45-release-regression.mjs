@@ -9,7 +9,7 @@ const languages = ['id', 'en', 'zh'];
 const products = JSON.parse(await readFile('content/portfolio-id.json','utf8')).products;
 const server = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'start', '-p', String(port)], {
   cwd: process.cwd(),
-  env: {...process.env, SMTP_PASSWORD:'', GEMINI_API_KEY:'', PAGESPEED_API_KEY:''},
+  env: {...process.env, SMTP_PASSWORD:'', IDA_API_KEY:'', PAGESPEED_API_KEY:''},
   stdio: 'ignore',
 });
 let tests = 0;

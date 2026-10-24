@@ -1,49 +1,35 @@
 import { NextResponse } from "next/server";
-import {
-  ApiRequestError,
-  enforcePublicApiGuard,
-  parseLimitedJson,
-  respondApiError,
-} from "@/lib/api-guard";
-import {
-  IDA_MAX_OUTPUT_TOKENS,
-  IDA_MODEL,
-  IDA_TEMPERATURE,
-  buildIdaPrompt,
-} from "@/lib/ida-prompt";
+import { ApiRequestError, enforcePublicApiGuard, parseLimitedJson, respondApiError } from "@/lib/api-guard";
+import { IDA_MAX_OUTPUT_TOKENS, IDA_MODEL, IDA_TEMPERATURE, buildIdaPrompt } from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
 
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+// IDA's documented response time can be longer when the provider is busy.
+export const maxDuration = 180;
 
-const GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
+const IDA_CHAT_URL = "https://api-ida.arywibowo.id/api/v1/chat/completions";
 const MAX_MESSAGES = 12;
 const MAX_MESSAGE_LENGTH = 2000;
 const MAX_TOTAL_LENGTH = 10000;
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
-type GeminiContent = { role: "user" | "model"; parts: Array<{ text: string }> };
+type Completion = { choices?: Array<{ message?: { content?: unknown } }> };
 
 function validateMessages(payload: unknown): ChatMessage[] {
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
     throw new ApiRequestError(400, "INVALID_REQUEST");
   }
   const messages = (payload as { messages?: unknown }).messages;
-  if (!Array.isArray(messages) || messages.length === 0) {
-    throw new ApiRequestError(400, "VALIDATION_REQUIRED");
-  }
-  if (messages.length > MAX_MESSAGES) {
-    throw new ApiRequestError(400, "INVALID_REQUEST");
-  }
+  if (!Array.isArray(messages) || messages.length === 0) throw new ApiRequestError(400, "VALIDATION_REQUIRED");
+  if (messages.length > MAX_MESSAGES) throw new ApiRequestError(400, "INVALID_REQUEST");
+
   const safe: ChatMessage[] = [];
   let totalLength = 0;
   for (const message of messages) {
-    if (
-      !message ||
-      typeof message !== "object" ||
+    if (!message || typeof message !== "object" ||
       (message.role !== "user" && message.role !== "assistant") ||
-      typeof message.content !== "string" ||
-      message.content.length > MAX_MESSAGE_LENGTH
-    ) {
+      typeof message.content !== "string" || message.content.length > MAX_MESSAGE_LENGTH) {
       throw new ApiRequestError(400, "INVALID_REQUEST");
     }
     const content = message.content.trim();
@@ -56,57 +42,71 @@ function validateMessages(payload: unknown): ChatMessage[] {
   return safe;
 }
 
-async function callGemini(systemPrompt: string, messages: ChatMessage[]): Promise<string> {
-  const key = process.env.GEMINI_API_KEY?.trim();
-  if (!key) throw new ApiRequestError(503, "NOT_CONFIGURED");
-  const contents: GeminiContent[] = messages.map(({ role, content }) => ({
-    role: role === "assistant" ? "model" : "user",
-    parts: [{ text: content }],
-  }));
+async function callIda(messages: ChatMessage[]) {
+  const apiKey = process.env.IDA_API_KEY?.trim();
+  if (!apiKey) throw new ApiRequestError(503, "NOT_CONFIGURED");
+
+  // No client-supplied URL is accepted. Test override is opt-in only for local mock tests.
+  const endpoint = process.env.IDA_MOCK_TEST === "true" &&
+    process.env.IDA_MOCK_ENDPOINT === "http://127.0.0.1:3199/chat/completions"
+    ? process.env.IDA_MOCK_ENDPOINT : IDA_CHAT_URL;
+
+  const context = buildRetrievalContext(messages.at(-1)!.content);
+  const body = {
+    model: IDA_MODEL,
+    messages: [
+      { role: "system", content: buildIdaPrompt(context) },
+      ...messages,
+    ],
+    max_tokens: IDA_MAX_OUTPUT_TOKENS,
+    temperature: IDA_TEMPERATURE,
+    stream: false,
+    ida: { web_search: false },
+  };
 
   let response: Response;
   try {
-    response = await fetch(`${GEMINI_API_BASE}/${IDA_MODEL}:generateContent`, {
+    response = await fetch(endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": key },
-      signal: AbortSignal.timeout(20000),
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(body),
       cache: "no-store",
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: systemPrompt }] },
-        contents,
-        generationConfig: {
-          temperature: IDA_TEMPERATURE,
-          maxOutputTokens: IDA_MAX_OUTPUT_TOKENS,
-        },
-      }),
+      signal: AbortSignal.timeout(170_000),
     });
   } catch {
     throw new ApiRequestError(504, "AI_UNAVAILABLE");
   }
+
+  // Never forward provider details/headers to anonymous visitors or log credentials.
   if (!response.ok) {
-    // Avoid logging provider response bodies, which may contain user content.
-    console.error("Gemini API status:", response.status);
+    if (response.status === 429) throw new ApiRequestError(429, "RATE_LIMITED");
+    if (response.status === 401 || response.status === 403) throw new ApiRequestError(503, "NOT_CONFIGURED");
+    if (response.status === 402) throw new ApiRequestError(503, "AI_UNAVAILABLE");
     throw new ApiRequestError(502, "AI_UNAVAILABLE");
   }
-  const body = (await response.json()) as {
-    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-  };
-  const answer = body.candidates?.[0]?.content?.parts?.map((part) => part.text || "").join("").trim();
-  if (!answer) throw new ApiRequestError(502, "EMPTY_RESPONSE");
-  return answer;
+  let result: Completion;
+  try {
+    result = (await response.json()) as Completion;
+  } catch {
+    throw new ApiRequestError(502, "AI_UNAVAILABLE");
+  }
+  const message = result.choices?.[0]?.message?.content;
+  if (typeof message !== "string" || !message.trim()) throw new ApiRequestError(502, "EMPTY_RESPONSE");
+  return message.trim();
 }
 
 export async function POST(request: Request) {
   const blocked = enforcePublicApiGuard(request, "chat", 12, 10 * 60 * 1000);
   if (blocked) return blocked;
-
   try {
-    const payload = await parseLimitedJson(request, 32 * 1024);
-    const messages = validateMessages(payload);
-    const context = buildRetrievalContext(messages.at(-1)!.content);
-    const message = await callGemini(buildIdaPrompt(context), messages);
+    const messages = validateMessages(await parseLimitedJson(request, 32 * 1024));
+    const message = await callIda(messages);
     return NextResponse.json({ message }, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
-    return respondApiError(error, "IDA chat error");
+    return respondApiError(error, "IDA chat API error");
   }
 }

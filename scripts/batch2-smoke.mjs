@@ -5,7 +5,7 @@ const port = 3197;
 const root = `http://127.0.0.1:${port}`;
 const server = spawn(process.execPath, ["node_modules/next/dist/bin/next", "start", "-p", String(port)], {
   cwd: process.cwd(),
-  env: { ...process.env, GEMINI_API_KEY: "", RESEND_API_KEY: "", PAGESPEED_API_KEY: "" },
+  env: { ...process.env, IDA_API_KEY: "", RESEND_API_KEY: "", PAGESPEED_API_KEY: "" },
   stdio: "ignore",
 });
 let checks = 0;
