@@ -355,5 +355,30 @@
       "en": "EN",
       "zh": "中文"
     }
+  },
+  "consultation": {
+    "title": "Request consultation",
+    "description": "Review and complete your inquiry. No conversation is sent automatically.",
+    "reviewTitle": "Review your request",
+    "reviewDescription": "Check the details before sending. Only the fields shown here will be emailed.",
+    "name": "Name",
+    "email": "Email",
+    "organization": "Company (optional)",
+    "service": "Service or topic",
+    "summary": "Project summary",
+    "servicePlaceholder": "e.g., Payroll or AI solution",
+    "summaryPlaceholder": "Describe your requirements...",
+    "excerptOptIn": "Include an excerpt of my own chat messages (optional).",
+    "excerptPreview": "Excerpt to be included",
+    "noExcerpt": "No user messages to include.",
+    "reviewNotice": "Ready for your confirmation",
+    "consent": "I consent to email the information in this form for follow-up. The full chat history will not be sent.",
+    "review": "Review before sending",
+    "send": "Send consultation request",
+    "sendError": "Sending was not confirmed. Please try again.",
+    "success": "Request submitted",
+    "reference": "Reference number",
+    "successDescription": "The email was accepted by the mail server for delivery.",
+    "backChat": "Back to chat"
   }
 }

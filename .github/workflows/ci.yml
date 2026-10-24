@@ -54,3 +54,6 @@ jobs:
 
       - name: IDA Labs chat API contract regression (mock provider; no billable requests)
         run: node scripts/ida-chat-contract.mjs
+
+      - name: IDA consultation consent and SMTP guard regression (no live mail)
+        run: node scripts/ida-consultation-regression.mjs

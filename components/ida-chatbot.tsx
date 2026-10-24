@@ -5,10 +5,10 @@ import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
 import { ChatMessage } from "@/components/chat-message";
+import { IdaConsultationForm } from "@/components/ida-consultation-form";
 import { IdaAvatar } from "@/components/ida-avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Link } from "@/i18n/navigation";
 
 type ChatMessage = {
   id: string;
@@ -36,6 +36,7 @@ function TypingIndicator({ label }: { label: string }) {
 export function IdaChatbot() {
   const t = useTranslations("ida");
   const [open, setOpen] = useState(false);
+  const [consulting,setConsulting]=useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -175,7 +176,7 @@ export function IdaChatbot() {
             </button>
           </header>
 
-          <div
+          {consulting ? <IdaConsultationForm onBack={()=>setConsulting(false)} conversation={messages.map(({role,content})=>({role,content}))}/> : <div
             className="ida-chat-scroll min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain px-4 py-5 sm:px-5"
           >
             {messages.map((message) => (
@@ -216,9 +217,9 @@ export function IdaChatbot() {
             )}
 
             <div ref={messagesEndRef} />
-          </div>
+          </div>}
 
-          <footer className="shrink-0 border-t border-border/60 bg-card px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 sm:p-4">
+          {!consulting && <footer className="shrink-0 border-t border-border/60 bg-card px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 sm:p-4">
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
@@ -248,10 +249,10 @@ export function IdaChatbot() {
               </Button>
             </div>
             <div className="mt-2 flex items-center justify-between gap-2">
-              <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"><Mail className="size-3.5" />{t("consultationLink")}</Link>
+              <button type="button" onClick={()=>setConsulting(true)} className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"><Mail className="size-3.5" />{t("consultationLink")}</button>
               <span className="text-[11px] tabular-nums text-muted-foreground">{input.length}/750</span>
             </div>
-          </footer>
+          </footer>}
         </div>
       )}
 
