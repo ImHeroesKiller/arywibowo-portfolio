@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Code2, Info, Monitor, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Info, Monitor, ShieldCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { catalogs, getProduct, images, productIds } from "@/lib/product-catalog";
@@ -109,7 +109,6 @@ export default async function ProductPage({params}:Props) {
    <section className="mt-6 rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{labels.limits}</h2><p className="mt-3 text-sm leading-7 text-muted-foreground">{details.verification}</p><p className="mt-2 text-xs leading-6 text-muted-foreground">{labels.method}</p></section>
    <section className="mt-6 rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{t.evidence}</h2><div className="mt-5 flex flex-wrap gap-3">
     {product.url?<a href={product.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground">{t.url}<ArrowUpRight size={16}/></a>:<p className="text-sm text-muted-foreground">{t.noUrl}</p>}
-    {product.repository&&<a href={product.repository} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-3 text-sm font-medium hover:bg-muted"><Code2 size={16}/>{t.repo}<ArrowUpRight size={15}/></a>}
    </div></section>
    <nav aria-label={locale==="id"?"Navigasi antarproduk":locale==="zh"?"产品导航":"Product navigation"} className="mt-10 grid gap-3 sm:grid-cols-2">
     {previous&&<Link href={`/projects/${previous.id}`} className="rounded-xl border border-border bg-white px-5 py-4 transition hover:border-primary/50 hover:shadow-sm"><span className="text-xs text-muted-foreground">← {previousLabel}</span><span className="mt-1 block font-semibold">{previous.name}</span></Link>}

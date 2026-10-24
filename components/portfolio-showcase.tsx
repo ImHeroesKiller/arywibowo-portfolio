@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Search, X,  BrainCircuit, ShieldCheck, UsersRound, Truck, Wallet, LineChart, LayoutDashboard, Building2, FileText, Smartphone, BriefcaseBusiness, Boxes } from "lucide-react";
+import { ArrowUpRight, Search, X,  BrainCircuit, ShieldCheck, UsersRound, Truck, Wallet, LineChart, Building2, Smartphone, BriefcaseBusiness, Boxes } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 import catalogId from "@/content/portfolio-id.json";
@@ -49,9 +49,9 @@ const productIcons: Record<string, typeof BrainCircuit> = {
   "ida-gen3":BrainCircuit,"ida-labs":BrainCircuit,"ida-call-shield":ShieldCheck,
   "proqpay-lite":Wallet,"proqpay-enterprise":Wallet,"proqpay-ess":UsersRound,
   "proqtrade":LineChart,"proqacc":Wallet,"kawankas":Wallet,"proqtrack":UsersRound,
-  "pay-hr":UsersRound,"perada-recruitment":UsersRound,"freejobid":UsersRound,
-  "arah-fleet":Truck,"oms-perada":Boxes,"notagen":FileText,"saleguard":LineChart,
-  "onework":LayoutDashboard,"msg":Building2,"perada-group":Building2,
+  "pay-hr":UsersRound,"perada-recruitment":UsersRound,
+  "arah-fleet":Truck,"oms-perada":Boxes,
+  "msg":Building2,"perada-group":Building2,
   "danawangsa":BriefcaseBusiness,"mkb":Building2,"qjob-concept":BriefcaseBusiness,
   "bespoke-solar":Boxes,
 };

@@ -188,17 +188,6 @@
       "role": "Recruitment prototype; no production data claim",
       "verification": "Public page and repository documentation; authenticated features not independently audited."
     },
-    "freejobid": {
-      "challenge": "Freelance openings are scattered across sources",
-      "approach": "Bilingual job discovery product under development",
-      "features": [
-        "Job discovery",
-        "Bilingual experience"
-      ],
-      "stack": [],
-      "role": "Recruitment product exploration",
-      "verification": "Public page and repository documentation; authenticated features not independently audited."
-    },
     "arah-fleet": {
       "challenge": "Fleet dispatch needs visibility",
       "approach": "Fleet visibility and route oversight",
@@ -225,38 +214,6 @@
       ],
       "stack": [],
       "role": "Logistics workflow and business system architecture",
-      "verification": "Public page and repository documentation; authenticated features not independently audited."
-    },
-    "notagen": {
-      "challenge": "Operations staff need repeatable document output",
-      "approach": "Productivity suite for printable notes and documents",
-      "features": [
-        "Document generation",
-        "Print-ready output"
-      ],
-      "stack": [],
-      "role": "Business operations tooling",
-      "verification": "Public page and repository documentation; authenticated features not independently audited."
-    },
-    "saleguard": {
-      "challenge": "Sales teams need activity and exception visibility",
-      "approach": "Sales monitoring and reporting workflow",
-      "features": [
-        "Sales activity monitoring",
-        "Exception reporting"
-      ],
-      "stack": [],
-      "role": "Sales operations technology exploration",
-      "verification": "Public page and repository documentation; authenticated features not independently audited."
-    },
-    "onework": {
-      "challenge": "Repetitive desktop tasks increase manual workload",
-      "approach": "No-code desktop GUI automation prototype",
-      "features": [
-        "Desktop workflow experimentation"
-      ],
-      "stack": [],
-      "role": "Workflow automation prototype",
       "verification": "Public page and repository documentation; authenticated features not independently audited."
     },
     "msg": {

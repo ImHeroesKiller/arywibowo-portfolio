@@ -188,17 +188,6 @@
       "role": "Recruitment prototype; no production data claim",
       "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
     },
-    "freejobid": {
-      "challenge": "需要简化 freejobid 相关的工作流程。",
-      "approach": "根据现有文档开发与验证 freejobid 方案。",
-      "features": [
-        "职位发现",
-        "双语体验"
-      ],
-      "stack": [],
-      "role": "Recruitment product exploration",
-      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
-    },
     "arah-fleet": {
       "challenge": "车队调度需要可视化",
       "approach": "车队与路线管理",
@@ -225,38 +214,6 @@
       ],
       "stack": [],
       "role": "Logistics workflow and business system architecture",
-      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
-    },
-    "notagen": {
-      "challenge": "需要简化 notagen 相关的工作流程。",
-      "approach": "根据现有文档开发与验证 notagen 方案。",
-      "features": [
-        "文档生成",
-        "可打印输出"
-      ],
-      "stack": [],
-      "role": "Business operations tooling",
-      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
-    },
-    "saleguard": {
-      "challenge": "需要简化 saleguard 相关的工作流程。",
-      "approach": "根据现有文档开发与验证 saleguard 方案。",
-      "features": [
-        "销售活动监测",
-        "异常报告"
-      ],
-      "stack": [],
-      "role": "Sales operations technology exploration",
-      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
-    },
-    "onework": {
-      "challenge": "需要简化 onework 相关的工作流程。",
-      "approach": "根据现有文档开发与验证 onework 方案。",
-      "features": [
-        "桌面流程实验"
-      ],
-      "stack": [],
-      "role": "Workflow automation prototype",
       "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
     },
     "msg": {
