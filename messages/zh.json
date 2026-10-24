@@ -2,11 +2,11 @@
   "metadata": {
     "site": {
       "title": "专业顾问",
-      "description": "雅加达战略咨询合作伙伴 — 10年以上经验，助力企业通过可再生能源、数字化转型、人力资源、项目管理和金融解决方案实现增长。"
+      "description": "Ary Wibowo 的商业战略、人工智能产品、金融科技、人力管理、物流及数字化转型。"
     },
     "home": {
       "title": "Ary Wibowo | 专业顾问",
-      "description": "与 Ary Wibowo 合作，获取可衡量的战略咨询成果 — 涵盖可再生能源、业务发展、IT、人力资源、销售、项目管理和金融解决方案。"
+      "description": "Ary Wibowo 将商业战略、人工智能技术与运营相结合，展示以事实为依据的数字产品组合。"
     },
     "about": {
       "title": "关于我",
@@ -21,8 +21,8 @@
       "description": "准备讨论您的项目？联系 Ary Wibowo 获取雅加达战略咨询服务。通过表单或 aku@arywibowo.id 联系，24–48小时内回复。"
     },
     "projects": {
-      "title": "项目与作品集",
-      "description": "探索可再生能源、金融平台、人力资源系统和数字化转型案例 — Ary Wibowo 从概念到实施的战略举措。"
+      "title": "产品与数字化项目",
+      "description": "涵盖正式运营、用户验收测试、开发、原型和概念阶段的数字产品与案例。"
     }
   },
   "nav": {
@@ -37,8 +37,8 @@
   },
   "hero": {
     "name": "Ary Wibowo",
-    "title": "专业顾问",
-    "tagline": "通过<highlight>战略咨询</highlight>助力企业成长 — 涵盖<highlight>可再生能源</highlight>、<highlight>业务发展</highlight>、<highlight>IT与数字化转型</highlight>、<highlight>人力资源与运营</highlight>、<highlight>销售与项目管理</highlight>及<highlight>财务解决方案</highlight>。",
+    "title": "商业与技术战略顾问",
+    "tagline": "连接<highlight>商业战略</highlight>、<highlight>人工智能与技术</highlight>及<highlight>运营</highlight>，从商业机遇到可验证、持续改进的数字产品。",
     "contact": "联系",
     "services": "服务",
     "imageAlt": "Ary Wibowo 肖像照 — 总部位于印度尼西亚雅加达的专业顾问"
@@ -185,9 +185,9 @@
   },
   "projects": {
     "eyebrow": "作品集",
-    "title": "精选项目",
-    "description": "精选项目涵盖<highlight>AI 助手</highlight>、<highlight>可再生能源</highlight>、<highlight>金融解决方案</highlight>、<highlight>数字平台</highlight>及综合企业举措。",
-    "pageDescription": "Ary Wibowo 精选案例研究与战略举措 — 从概念到实施。",
+    "title": "产品与数字化项目",
+    "description": "探索<highlight>人工智能</highlight>、<highlight>金融科技</highlight>、<highlight>人力管理</highlight>和<highlight>运营</highlight>产品，透明呈现开发状态。",
+    "pageDescription": "涵盖正式运营、用户验收测试、开发、原型和概念阶段的数字产品与案例。",
     "seeMoreRich": "查看所有项目请访问<link>项目</link>页面。",
     "contactCtaRich": "想讨论类似项目？<contact>联系我</contact>或查看<services>咨询服务</services>。",
     "visitWebsite": "访问 perada.net",
