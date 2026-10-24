@@ -27,3 +27,11 @@ The portfolio browser sends messages to its own `POST /api/chat` route. Only the
 ## Release gate
 
 Key was provisioned and live IDA responses were verified during the preceding release. Each later rollout still requires preview CI and production smoke testing.
+
+## Cost-minimizing fallback policy (2026-10-24)
+
+- Primary model: `ida-chat-fast` (IDA mini). A single `ida-chat` fallback is attempted **only** when mini returns upstream HTTP 502/503/504; requests do not activate web search. Both use a 220-token output cap.
+- Greetings, thanks, contact shortcuts, clearly out-of-scope topics, and simple named-product overview queries are answered using website-controlled content without spending IDA credits.
+- Recent message history is bounded (four turns, 1,800 characters), and the system RAG context is shortened.
+- If both providers fail, the assistant returns a clearly labeled degraded local response and directs visitors to the portfolio/contact page rather than fabricating an answer.
+- Provider credits are per request based on total **actual** tokens, not simply the output `max_tokens` limit. Provider-side transient failures may still occur.

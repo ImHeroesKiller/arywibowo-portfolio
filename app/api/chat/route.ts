@@ -3,7 +3,7 @@ import { ApiRequestError, enforcePublicApiGuard, parseLimitedJson, respondApiErr
 import { IDA_MAX_OUTPUT_TOKENS, IDA_MODEL, IDA_TEMPERATURE, buildIdaPrompt } from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
 import { normalizeIdaResponse } from "@/lib/ida-response";
-import { MAX_INPUT_CHARS, localFallback, relevantProducts, trimChatHistory } from "@/lib/ida-budget";
+import { MAX_INPUT_CHARS, localFallback, outageFallback, relevantProducts, trimChatHistory } from "@/lib/ida-budget";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -122,8 +122,16 @@ export async function POST(request: Request) {
     const last = messages.at(-1)!.content;
     if (last.length > MAX_INPUT_CHARS) throw new ApiRequestError(400,"INVALID_REQUEST");
     const reply = localFallback(last);
-    const message = reply ?? await callIda(messages);
-    return NextResponse.json({ message }, { headers: { "Cache-Control": "no-store", "X-IDA-Route": reply ? "local" : "model" } });
+    if (reply) return NextResponse.json({message:reply}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"local"}});
+    try {
+      const message = await callIda(messages);
+      return NextResponse.json({message}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"model"}});
+    } catch (failure) {
+      if (failure instanceof ApiRequestError && failure.code === "AI_UNAVAILABLE") {
+        return NextResponse.json({message:outageFallback(last),degraded:true}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"degraded"}});
+      }
+      throw failure;
+    }
   } catch (error) {
     return respondApiError(error, "IDA chat API error");
   }
