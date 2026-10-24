@@ -71,9 +71,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 shadow-[0_2px_18px_rgba(28,58,118,0.035)] backdrop-blur-xl">
       <a href="#main-content" className="sr-only absolute left-3 top-2 z-[100] rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground focus:not-sr-only">
-        Skip to content
+        {t("skipToMain")}
       </a>
-      <nav aria-label="Primary navigation" className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
+      <nav aria-label={t("primaryNavigation")} className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
         <Logo />
 
         <ul className="hidden items-center gap-1 lg:flex">
@@ -132,7 +132,7 @@ export default function Navbar() {
           <motion.div
             id="mobile-navigation"
             role="region"
-            aria-label="Mobile navigation"
+            aria-label={t("mobileNavigation")}
             variants={menuVariants}
             initial="closed"
             animate="open"

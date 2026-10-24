@@ -74,7 +74,7 @@ export function PwaInstallPrompt() {
     <div
       role="dialog"
       aria-live="polite"
-      className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-md rounded-xl border border-primary/30 bg-card/95 p-4 shadow-lg shadow-primary/10 backdrop-blur-md sm:inset-x-auto sm:right-6 sm:bottom-6"
+      className="fixed bottom-6 left-6 z-[60] hidden max-w-sm rounded-xl border border-primary/30 bg-card/95 p-4 shadow-lg shadow-primary/10 backdrop-blur-md sm:block"
     >
       <div className="flex items-start gap-3">
         <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">

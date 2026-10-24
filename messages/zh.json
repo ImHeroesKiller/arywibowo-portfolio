@@ -1,20 +1,20 @@
 {
   "metadata": {
     "site": {
-      "title": "专业顾问",
+      "title": "商业与技术战略顾问",
       "description": "Ary Wibowo 的商业战略、人工智能产品、金融科技、人力管理、物流及数字化转型。"
     },
     "home": {
-      "title": "Ary Wibowo | 专业顾问",
+      "title": "Ary Wibowo | 商业与技术战略顾问",
       "description": "Ary Wibowo 将商业战略、人工智能技术与运营相结合，展示以事实为依据的数字产品组合。"
     },
     "about": {
-      "title": "关于我",
-      "description": "了解 Ary Wibowo 如何将业务发展、技术与运营融合为综合咨询 — 在能源、电信和企业领域拥有10年以上的实践经验。"
+      "title": "战略、技术与执行",
+      "description": "商业战略、人工智能、数字产品开发与运营"
     },
     "services": {
-      "title": "咨询服务",
-      "description": "六大综合咨询服务 — 可再生能源、业务增长、数字化转型、人力资源、项目管理和金融解决方案。从战略到执行，创造可衡量的成果。"
+      "title": "商业战略与数字化转型",
+      "description": "商业战略、人工智能产品、企业技术及运营转型。"
     },
     "contact": {
       "title": "联系我",
@@ -33,7 +33,10 @@
     "contact": "联系",
     "getInTouch": "取得联系",
     "openMenu": "打开菜单",
-    "closeMenu": "关闭菜单"
+    "closeMenu": "关闭菜单",
+    "skipToMain": "跳转至主要内容",
+    "primaryNavigation": "主导航",
+    "mobileNavigation": "移动导航"
   },
   "hero": {
     "name": "Ary Wibowo",
@@ -41,12 +44,12 @@
     "tagline": "连接<highlight>商业战略</highlight>、<highlight>人工智能与技术</highlight>及<highlight>运营</highlight>，从商业机遇到可验证、持续改进的数字产品。",
     "contact": "联系",
     "services": "服务",
-    "imageAlt": "Ary Wibowo 肖像照 — 总部位于印度尼西亚雅加达的专业顾问"
+    "imageAlt": "Ary Wibowo — 商业与技术战略顾问"
   },
   "about": {
     "eyebrow": "关于",
-    "title": "专业简介",
-    "summary": "结合<highlight>业务发展</highlight>、<highlight>客户关系</highlight>和<highlight>技术专长</highlight>，提供有影响力的商业解决方案。",
+    "title": "战略、技术与执行",
+    "summary": "融合<highlight>商业战略</highlight>、<highlight>人工智能技术</highlight>与<highlight>运营</highlight>，打造可验证、持续改进的解决方案。",
     "bio": [
       "拥有超过10年<highlight>商业</highlight>、<highlight>人力资源</highlight>和<highlight>IT</highlight>经验的专业顾问，涵盖<highlight>业务发展</highlight>、<highlight>客户关系</highlight>、<highlight>可再生能源</highlight>和<highlight>数字化转型</highlight>。计算机工程背景强化了分析性思维，能够设计<highlight>可衡量的商业解决方案</highlight> — 从<highlight>市场增长战略</highlight>到<highlight>数字系统实施</highlight>。",
       "在电信和能源行业拥有跨行业项目管理经验，擅长协调<highlight>多学科团队</highlight>并开发<highlight>数字平台</highlight>以实现业务流程自动化。融合业务发展、人力资源、销售、项目管理、IT和财务方面的专长，提供能产生实际影响的<highlight>综合咨询服务</highlight>。"
@@ -67,11 +70,11 @@
   "services": {
     "eyebrow": "服务",
     "title": "综合咨询专长",
-    "description": "涵盖可再生能源、业务增长、数字化转型、人力资源、项目管理和金融解决方案的<highlight>专业咨询</highlight>。",
+    "description": "从<highlight>商业战略</highlight>和数字产品开发到<highlight>运营转型</highlight>，结合跨行业经验。",
     "descriptionFull": "六大核心专长领域，从战略设计到执行扩展，创造<highlight>可衡量的影响</highlight>。",
     "seeMoreRich": "查看完整详情请访问<link>服务</link>页面。",
     "contactCtaRich": "有兴趣合作？<contact>联系我</contact>或浏览<projects>案例研究</projects>。",
-    "pageTitle": "咨询服务",
+    "pageTitle": "商业战略与数字化转型",
     "pageDescription": "涵盖<highlight>六大核心专长领域</highlight>的全方位咨询 — 助力组织成长、转型与高效运营。",
     "positioningEyebrow": "方法论",
     "positioningTitle": "从战略到执行",

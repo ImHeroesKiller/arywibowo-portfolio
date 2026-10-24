@@ -1,20 +1,20 @@
 {
   "metadata": {
     "site": {
-      "title": "Professional Consultant",
+      "title": "Business & Technology Strategist",
       "description": "Business strategy, AI products, fintech, workforce, logistics, and digital transformation by Ary Wibowo."
     },
     "home": {
-      "title": "Ary Wibowo | Professional Consultant",
+      "title": "Ary Wibowo | Business & Technology Strategist",
       "description": "Ary Wibowo connects business strategy, AI technology, and operations through an evidence-based digital product portfolio."
     },
     "about": {
-      "title": "About Me",
-      "description": "Discover how Ary Wibowo blends business development, technology, and operations into integrated consulting — 10+ years of impact across energy, telecommunications, and corporate sectors."
+      "title": "Strategy, Technology & Execution",
+      "description": "Business strategy, AI, digital product development, and operations"
     },
     "services": {
-      "title": "Consulting Services",
-      "description": "Six integrated consulting services — renewable energy, business growth, digital transformation, HR, project management, and financial solutions. Strategy to execution with measurable outcomes."
+      "title": "Business Strategy & Digital Transformation",
+      "description": "Business strategy, AI products, enterprise technology, and operational transformation."
     },
     "contact": {
       "title": "Contact Me",
@@ -33,7 +33,10 @@
     "contact": "Contact",
     "getInTouch": "Get in Touch",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "skipToMain": "Skip to main content",
+    "primaryNavigation": "Primary navigation",
+    "mobileNavigation": "Mobile navigation"
   },
   "hero": {
     "name": "Ary Wibowo",
@@ -41,12 +44,12 @@
     "tagline": "Connecting <highlight>business strategy</highlight>, <highlight>AI & technology</highlight>, and <highlight>operations</highlight> — from commercial opportunities to digital products built for validation and iteration.",
     "contact": "Contact",
     "services": "Services",
-    "imageAlt": "Portrait of Ary Wibowo, Professional Consultant based in Jakarta, Indonesia"
+    "imageAlt": "Ary Wibowo — Business & Technology Strategist"
   },
   "about": {
     "eyebrow": "About",
-    "title": "Professional Profile",
-    "summary": "A blend of <highlight>Business Development</highlight>, <highlight>Client Relations</highlight>, and <highlight>Technology Expertise</highlight> for impactful business solutions.",
+    "title": "Strategy, Technology & Execution",
+    "summary": "Connecting <highlight>business strategy</highlight>, <highlight>AI technology</highlight>, and <highlight>operations</highlight> to build solutions that can be tested and refined.",
     "bio": [
       "Professional consultant with over 10 years of experience in <highlight>business</highlight>, <highlight>HR</highlight>, and <highlight>IT</highlight> — spanning <highlight>Business Development</highlight>, <highlight>client relations</highlight>, <highlight>renewable energy</highlight>, and <highlight>digital transformation</highlight>. A computer engineering background strengthens an analytical approach to designing <highlight>measurable business solutions</highlight> — from <highlight>market growth strategy</highlight> to <highlight>digital system implementation</highlight>.",
       "Experienced in leading cross-industry projects in telecommunications and energy, coordinating <highlight>multidisciplinary teams</highlight>, and developing <highlight>digital platforms</highlight> for business process automation. Combines expertise in business development, HR, sales, project management, IT, and finance to deliver <highlight>integrated consulting</highlight> that creates real impact for organizations."
@@ -67,11 +70,11 @@
   "services": {
     "eyebrow": "Services",
     "title": "Integrated Consulting Expertise",
-    "description": "<highlight>Professional consulting</highlight> across renewable energy, business growth, digital transformation, HR, project management, and financial solutions.",
+    "description": "From <highlight>business strategy</highlight> and digital product development to <highlight>operational transformation</highlight>, informed by cross-industry experience.",
     "descriptionFull": "Six core areas of expertise delivering <highlight>measurable impact</highlight> — from strategy and design through to execution and scale.",
     "seeMoreRich": "See full details on the <link>Services</link> page.",
     "contactCtaRich": "Interested in collaborating? <contact>Get in touch</contact> or explore <projects>case studies</projects>.",
-    "pageTitle": "Consulting Services",
+    "pageTitle": "Business Strategy & Digital Transformation",
     "pageDescription": "End-to-end consulting across <highlight>six core expertise areas</highlight> — designed to help organizations grow, transform, and operate more efficiently.",
     "positioningEyebrow": "Approach",
     "positioningTitle": "From Strategy to Execution",
