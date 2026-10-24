@@ -48,3 +48,6 @@ jobs:
 
       - name: Security and route smoke regression
         run: node scripts/batch2-smoke.mjs
+
+      - name: P4.5 multilingual case-study release regression
+        run: node scripts/p45-release-regression.mjs
