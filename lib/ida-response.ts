@@ -1,6 +1,10 @@
 /** Normalize unexpected full HTML documents from IDA's chat model to safe readable text. */
 export function normalizeIdaResponse(content: string): string {
   const raw = content.trim();
+  // Models sometimes prepend an HTML mockup and then provide the actual answer.
+  // Prefer the natural-language answer when a fenced HTML example is embedded.
+  const proseOnly = raw.replace(/```html\s*[\s\S]*?```/gi, "").trim();
+  if (proseOnly && proseOnly !== raw) return proseOnly;
   const html = raw.replace(/^```(?:html)?\s*/i, "").replace(/\s*```$/, "").trim();
   if (!/^(?:<!doctype\s+html|<html[\s>]|<head[\s>]|<body[\s>])/i.test(html)) return raw;
   // Treat generated HTML as data, not executable markup. Drop hidden/code sections.
