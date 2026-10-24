@@ -41,6 +41,9 @@ try{
  const normalized=(await r.json()).message;
  assert.ok(normalized.includes('Saya membantu menjelaskan produk portfolio.'));
  assert.ok(!normalized.includes('<html') && !normalized.includes('color:red') && !normalized.includes('alert(1)'));
+ mockStatus=200;mockResponse={choices:[{message:{content:'```html\n<div class="sample"><p>Example layout</p></div>\n```\n\nIDA membantu Anda memahami produk portfolio.'}}]};
+ r=await post(req);assert.equal(r.status,200);
+ assert.equal((await r.json()).message,'IDA membantu Anda memahami produk portfolio.');
  mockStatus=200;mockResponse={choices:[]};
  r=await post(req);assert.equal(r.status,502);assert.equal((await r.json()).error,'EMPTY_RESPONSE');
  console.log('IDA chat mock contract PASS: validated body/model/Bearer/prompt/scope/rate-limit/empty response; no paid provider request');
