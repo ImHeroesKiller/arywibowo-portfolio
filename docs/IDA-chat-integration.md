@@ -6,9 +6,9 @@ Documentation: https://dash-ida.arywibowo.id/docs
 
 The portfolio browser sends messages to its own `POST /api/chat` route. Only the Next.js server calls `POST https://api-ida.arywibowo.id/api/v1/chat/completions`. Authentication is server-side `Authorization: Bearer ${IDA_API_KEY}`. **Never expose the key through `NEXT_PUBLIC_*` or client scripts**.
 
-- Model: `ida-chat` (balanced); `max_tokens: 512`; `stream: false`.
+- Model: `ida-chat-fast` (IDA mini), with one fallback to `ida-chat` only for HTTP 502/503/504 provider errors; both capped at `max_tokens: 220`; `stream: false`.
 - Web search: `ida.web_search: false` for the portfolio to avoid requiring a search scope or incurring web-search credit costs.
-- System context: published portfolio catalog (20 products at migration) and matching website knowledge chunks. Unpublished products are excluded.
+- System context: compact published-product matches (up to three) and truncated matching knowledge snippets. Unpublished products are excluded. Recent conversation limited to four turns, 1,800 characters in history; latest user question <=750 characters. Common greetings, thanks, contact keywords, and clearly out-of-scope questions use static local replies without provider calls.
 - Validated role and message limits, origin checks, request size limit, per-instance throttling remain active.
 - Timeout: request 170 seconds; documented provider-client recommendation >= 180 seconds. Vercel function duration configured at 180 seconds (check plan support).
 - Provider 429 -> `RATE_LIMITED`; auth/scope errors -> `NOT_CONFIGURED`; malformed/empty responses -> `AI_UNAVAILABLE`/`EMPTY_RESPONSE`. No provider credentials or error bodies sent to browser.
@@ -26,4 +26,12 @@ The portfolio browser sends messages to its own `POST /api/chat` route. Only the
 
 ## Release gate
 
-**Do not merge/deploy to production without provisioning a valid key and verifying a live IDA response.** Otherwise the existing working Gemini chat would be replaced with `NOT_CONFIGURED`.
+Key was provisioned and live IDA responses were verified during the preceding release. Each later rollout still requires preview CI and production smoke testing.
+
+## Cost-minimizing fallback policy (2026-10-24)
+
+- Primary model: `ida-chat-fast` (IDA mini). A single `ida-chat` fallback is attempted **only** when mini returns upstream HTTP 502/503/504; requests do not activate web search. Both use a 220-token output cap.
+- Greetings, thanks, contact shortcuts, clearly out-of-scope topics, and simple named-product overview queries are answered using website-controlled content without spending IDA credits.
+- Recent message history is bounded (four turns, 1,800 characters), and the system RAG context is shortened.
+- If both providers fail, the assistant returns a clearly labeled degraded local response and directs visitors to the portfolio/contact page rather than fabricating an answer.
+- Provider credits are per request based on total **actual** tokens, not simply the output `max_tokens` limit. Provider-side transient failures may still occur.

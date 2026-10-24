@@ -3,6 +3,7 @@ import { ApiRequestError, enforcePublicApiGuard, parseLimitedJson, respondApiErr
 import { IDA_MAX_OUTPUT_TOKENS, IDA_MODEL, IDA_TEMPERATURE, buildIdaPrompt } from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
 import { normalizeIdaResponse } from "@/lib/ida-response";
+import { MAX_INPUT_CHARS, localFallback, outageFallback, relevantProducts, trimChatHistory } from "@/lib/ida-budget";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -52,12 +53,14 @@ async function callIda(messages: ChatMessage[]) {
     process.env.IDA_MOCK_ENDPOINT === "http://127.0.0.1:3199/chat/completions"
     ? process.env.IDA_MOCK_ENDPOINT : IDA_CHAT_URL;
 
-  const context = buildRetrievalContext(messages.at(-1)!.content);
+  const question = messages.at(-1)!.content;
+  const context = buildRetrievalContext(question);
+  const productContext = relevantProducts(question);
   const body = {
     model: IDA_MODEL,
     messages: [
-      { role: "system", content: buildIdaPrompt(context) },
-      ...messages,
+      { role: "system", content: buildIdaPrompt(context, productContext) },
+      ...trimChatHistory(messages),
     ],
     max_tokens: IDA_MAX_OUTPUT_TOKENS,
     temperature: IDA_TEMPERATURE,
@@ -65,36 +68,45 @@ async function callIda(messages: ChatMessage[]) {
     ida: { web_search: false },
   };
 
-  let response: Response;
-  try {
-    response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(body),
-      cache: "no-store",
-      signal: AbortSignal.timeout(170_000),
-    });
-  } catch {
-    throw new ApiRequestError(504, "AI_UNAVAILABLE");
+  async function requestCompletion(model: string): Promise<{response: Response; result: Completion | null; providerCode: string}> {
+    let response: Response;
+    try {
+      response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({...body, model}),
+        cache: "no-store",
+        signal: AbortSignal.timeout(35_000),
+      });
+    } catch {
+      throw new ApiRequestError(504, "AI_UNAVAILABLE");
+    }
+    let data: unknown = null;
+    try { data = await response.json(); } catch { /* provider sometimes returns an empty error body */ }
+    const parsed = data && typeof data === "object" ? data as {error?: {code?: unknown}} : {};
+    const rawCode = parsed.error?.code;
+    const providerCode = typeof rawCode === "string" && /^[A-Z_]{2,50}$/.test(rawCode) ? rawCode : "UNKNOWN";
+    return {response, result: response.ok ? data as Completion : null, providerCode};
   }
 
-  // Never forward provider details/headers to anonymous visitors or log credentials.
+  let {response, result, providerCode} = await requestCompletion(IDA_MODEL);
+  // One controlled fallback only when mini provider is temporarily unavailable.
+  if (!response.ok && [502,503,504].includes(response.status)) {
+    console.warn("IDA mini temporarily unavailable; attempting balanced model fallback", {status:response.status,code:providerCode});
+    ({response,result,providerCode} = await requestCompletion("ida-chat"));
+  }
   if (!response.ok) {
-    if (response.status === 429) throw new ApiRequestError(429, "RATE_LIMITED");
-    if (response.status === 401 || response.status === 403) throw new ApiRequestError(503, "NOT_CONFIGURED");
-    if (response.status === 402) throw new ApiRequestError(503, "AI_UNAVAILABLE");
-    throw new ApiRequestError(502, "AI_UNAVAILABLE");
+    console.warn("IDA upstream request failed", {status:response.status,code:providerCode});
+    if (response.status === 429) throw new ApiRequestError(429,"RATE_LIMITED");
+    if (response.status === 401 || response.status === 403) throw new ApiRequestError(503,"NOT_CONFIGURED");
+    if (response.status === 402) throw new ApiRequestError(503,"AI_UNAVAILABLE");
+    throw new ApiRequestError(502,"AI_UNAVAILABLE");
   }
-  let result: Completion;
-  try {
-    result = (await response.json()) as Completion;
-  } catch {
-    throw new ApiRequestError(502, "AI_UNAVAILABLE");
-  }
+  if (!result) throw new ApiRequestError(502,"AI_UNAVAILABLE");
   const message = result.choices?.[0]?.message?.content;
   if (typeof message !== "string" || !message.trim()) throw new ApiRequestError(502, "EMPTY_RESPONSE");
   const normalized = normalizeIdaResponse(message);
@@ -107,8 +119,19 @@ export async function POST(request: Request) {
   if (blocked) return blocked;
   try {
     const messages = validateMessages(await parseLimitedJson(request, 32 * 1024));
-    const message = await callIda(messages);
-    return NextResponse.json({ message }, { headers: { "Cache-Control": "no-store" } });
+    const last = messages.at(-1)!.content;
+    if (last.length > MAX_INPUT_CHARS) throw new ApiRequestError(400,"INVALID_REQUEST");
+    const reply = localFallback(last);
+    if (reply) return NextResponse.json({message:reply}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"local"}});
+    try {
+      const message = await callIda(messages);
+      return NextResponse.json({message}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"model"}});
+    } catch (failure) {
+      if (failure instanceof ApiRequestError && failure.code === "AI_UNAVAILABLE") {
+        return NextResponse.json({message:outageFallback(last),degraded:true}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"degraded"}});
+      }
+      throw failure;
+    }
   } catch (error) {
     return respondApiError(error, "IDA chat API error");
   }
