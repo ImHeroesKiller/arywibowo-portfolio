@@ -1,22 +1,26 @@
-/** Normalize unexpected full HTML documents from IDA's chat model to safe readable text. */
+/**
+ * Chat answers are prose, not code previews. Strip unexpected executable/code
+ * payloads before handing them to the Markdown renderer. This is a display
+ * policy; raw HTML execution is already disabled by react-markdown.
+ */
 export function normalizeIdaResponse(content: string): string {
-  const raw = content.trim();
-  // Models sometimes prepend an HTML mockup and then provide the actual answer.
-  // Prefer the natural-language answer when a fenced HTML example is embedded.
-  const proseOnly = raw.replace(/```html\s*[\s\S]*?```/gi, "").trim();
-  if (proseOnly && proseOnly !== raw) return proseOnly;
-  const html = raw.replace(/^```(?:html)?\s*/i, "").replace(/\s*```$/, "").trim();
-  if (!/^(?:<!doctype\s+html|<html[\s>]|<head[\s>]|<body[\s>])/i.test(html)) return raw;
-  // Treat generated HTML as data, not executable markup. Drop hidden/code sections.
-  const visible = html
-    .replace(/<!--[^]*?-->/g, "")
-    .replace(/<(?:head|script|style|template|svg|noscript)\b[^>]*>[^]*?<\/(?:head|script|style|template|svg|noscript)>/gi, "")
-    .replace(/<br\s*\/?\s*>/gi, "\n")
-    .replace(/<\/(?:p|h[1-6]|li|div|section|article|main|blockquote)>/gi, "\n")
-    .replace(/<[^>]*>/g, "")
-    .replace(/&nbsp;/gi, " ").replace(/&amp;/gi, "&").replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">").replace(/&quot;/gi, '"').replace(/&#39;/gi, "'")
-    .replace(/\n[\t ]*\n[\t \n]*/g, "\n\n")
-    .trim();
-  return visible.length >= 12 ? visible.slice(0, 4000) : "";
+  let text = content.trim();
+  // Completely remove fenced HTML/JavaScript/JSON/CSS examples and other
+  // code blocks. IDA's portfolio assistant is not a programming endpoint.
+  const wholeFence = /^```(?:html|javascript|js|css|json)?\s*\n([\s\S]*?)\n?```$/i.exec(text);
+  if (wholeFence && /<(?:!doctype|html|div|section|p|h[1-6])\b/i.test(wholeFence[1])) {
+    text = wholeFence[1]; // preserve human-readable words from a standalone HTML answer
+  } else {
+    text = text.replace(/```[^\n`]*\n[\s\S]*?```/g, "").replace(/```[\s\S]*?```/g, "");
+  }
+  text = text.replace(/<(script|style|head|template|svg|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, "");
+  text = text.replace(/<!--[^]*?-->/g, "");
+  text = text.replace(/<!doctype[^>]*>/gi, "");
+  text = text.replace(/<[^>]*>/g, "");
+  text = text.replace(/\b(?:const|let|var)\s+\w+\s*=\s*[^\n;]*;?/g, "");
+  text = text.replace(/\n[ \t]*\n(?:[ \t]*\n)+/g, "\n\n").trim();
+  // Decode common safe entities after stripping tags, never render as raw HTML.
+  return text.replace(/&nbsp;/gi," ").replace(/&amp;/gi,"&")
+    .replace(/&quot;/gi,'"').replace(/&#39;/gi,"'")
+    .slice(0,4000).trim();
 }

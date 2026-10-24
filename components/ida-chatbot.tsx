@@ -1,6 +1,6 @@
 "use client";
 
-import { Loader2, MessageCircle, Send, X } from "lucide-react";
+import { ArrowUp, Loader2, MessageCircle, X, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
@@ -8,6 +8,7 @@ import { ChatMessage } from "@/components/chat-message";
 import { IdaAvatar } from "@/components/ida-avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 
 type ChatMessage = {
   id: string;
@@ -54,9 +55,13 @@ export function IdaChatbot() {
   }, [messages, loading, open]);
 
   useEffect(() => {
-    if (open) {
-      inputRef.current?.focus();
-    }
+    if (!open) return;
+    // Desktop gets instant focus. On mobile, avoid forcing open the keyboard
+    // and shrinking the conversation immediately.
+    if (window.matchMedia("(min-width: 640px)").matches) inputRef.current?.focus();
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previous; };
   }, [open]);
 
   useEffect(() => {
@@ -68,9 +73,9 @@ export function IdaChatbot() {
     return () => window.removeEventListener("keydown", onEscape);
   }, [open]);
 
-  async function handleSend() {
-    const trimmed = input.trim();
-    if (!trimmed || loading || trimmed.length > 2000) return;
+  async function handleSend(suggested?: string) {
+    const trimmed = (suggested ?? input).trim();
+    if (!trimmed || loading || trimmed.length > 750) return;
 
     const userMessage: ChatMessage = {
       id: createId(),
@@ -89,7 +94,7 @@ export function IdaChatbot() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: nextMessages.slice(-12).map(({ role, content }) => ({ role, content })),
+          messages: nextMessages.slice(-8).map(({ role, content }) => ({ role, content })),
         }),
       });
 
@@ -136,20 +141,21 @@ export function IdaChatbot() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-[70] flex flex-col items-end gap-3 pb-[env(safe-area-inset-bottom)] sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-4 right-4 z-[70] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       {open && (
         <div
           role="dialog"
-          aria-modal="false"
+          aria-modal="true"
           aria-label={t("title")}
           className={cn(
-            "flex h-[min(32rem,calc(100dvh-5.5rem))] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/95 shadow-2xl shadow-black/40 backdrop-blur-md",
-            "animate-in fade-in slide-in-from-bottom-3 zoom-in-95 duration-300"
+            "fixed inset-0 z-[80] flex h-[100dvh] w-full flex-col overflow-hidden bg-card shadow-2xl",
+            "sm:relative sm:inset-auto sm:h-[min(40rem,calc(100dvh-7rem))] sm:w-[min(26rem,calc(100vw-2rem))] sm:rounded-2xl sm:border sm:border-border/70",
+            "animate-in fade-in slide-in-from-bottom-3 duration-200"
           )}
         >
-          <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border/60 bg-card/80 px-4 py-3.5 sm:px-5 sm:py-4">
+          <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border/60 bg-card px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-5 sm:py-4">
             <div className="flex min-w-0 flex-1 items-center gap-3">
-              <IdaAvatar alt={t("title")} size="lg" className="shrink-0" />
+              <IdaAvatar alt={t("title")} size="md" className="shrink-0" />
               <div className="min-w-0">
                 <p className="font-semibold leading-tight text-foreground">
                   {t("name")}
@@ -162,15 +168,15 @@ export function IdaChatbot() {
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="flex size-10 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary"
               aria-label={t("close")}
             >
-              <X className="size-4" />
+              <X className="size-5" />
             </button>
           </header>
 
           <div
-            className="ida-chat-scroll flex-1 space-y-3 overflow-y-auto overscroll-contain px-3.5 py-4 sm:px-4"
+            className="ida-chat-scroll min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain px-4 py-5 sm:px-5"
           >
             {messages.map((message) => (
               <ChatMessage
@@ -179,6 +185,21 @@ export function IdaChatbot() {
                 content={message.content}
               />
             ))}
+
+            {messages.length === 1 && !loading && (
+              <div className="flex flex-wrap gap-2 pt-1" aria-label={t("suggestedLabel")}>
+                {(["suggestedProduct", "suggestedServices", "suggestedConsultation"] as const).map((key) => (
+                  <button
+                    type="button"
+                    key={key}
+                    onClick={() => void handleSend(t(key))}
+                    className="rounded-full border border-primary/20 bg-primary/5 px-3 py-2 text-left text-xs font-medium leading-5 text-primary transition-colors hover:border-primary/50 hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    {t(key)}
+                  </button>
+                ))}
+              </div>
+            )}
 
             {loading && (
               <div className="flex justify-start animate-in fade-in duration-200">
@@ -197,19 +218,19 @@ export function IdaChatbot() {
             <div ref={messagesEndRef} />
           </div>
 
-          <footer className="shrink-0 border-t border-border/60 bg-card/80 p-3 sm:p-3.5">
+          <footer className="shrink-0 border-t border-border/60 bg-card px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 sm:p-4">
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
                 aria-label={t("placeholder")}
-                maxLength={2000}
+                maxLength={750}
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 onKeyDown={handleKeyDown}
                 rows={1}
                 placeholder={t("placeholder")}
                 disabled={loading}
-                className="max-h-24 min-h-10 flex-1 resize-none rounded-xl border border-border/70 bg-background/80 px-3 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/20 disabled:opacity-60"
+                className="max-h-28 min-h-12 flex-1 resize-none rounded-2xl border border-border bg-background px-4 py-3 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/20 disabled:opacity-60"
               />
               <Button
                 type="button"
@@ -222,13 +243,14 @@ export function IdaChatbot() {
                 {loading ? (
                   <Loader2 className="size-4 animate-spin" />
                 ) : (
-                  <Send className="size-4" />
+                  <ArrowUp className="size-5" />
                 )}
               </Button>
             </div>
-            <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
-              {t("disclaimer")}
-            </p>
+            <div className="mt-2 flex items-center justify-between gap-2">
+              <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"><Mail className="size-3.5" />{t("consultationLink")}</Link>
+              <span className="text-[11px] tabular-nums text-muted-foreground">{input.length}/750</span>
+            </div>
           </footer>
         </div>
       )}
@@ -239,6 +261,7 @@ export function IdaChatbot() {
         onClick={() => setOpen((value) => !value)}
         className={cn(
           "size-12 rounded-full shadow-lg shadow-primary/20 transition-all duration-200 sm:size-14",
+          open && "hidden sm:flex",
           !open && "gap-0 px-0"
         )}
         aria-expanded={open}

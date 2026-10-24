@@ -26,7 +26,7 @@ try{
  const req={messages:[{role:'user',content:'Bagaimana approval di ProQPay Lite?'}]};
  let r=await post(req);assert.equal(r.status,200);assert.equal((await r.json()).message,'Halo! Ini jawaban IDA Labs.');
  assert.equal(mockRequests.length,1);assert.equal(mockRequests[0].body.model,'ida-chat-fast');
- assert.equal(mockRequests[0].body.max_tokens,220);
+ assert.equal(mockRequests[0].body.max_tokens,360);
  assert.equal(mockRequests[0].body.stream,false);assert.equal(mockRequests[0].body.ida.web_search,false);
  assert.equal(mockRequests[0].headers.authorization,'Bearer ida_live_mock_not_a_real_secret');
  assert.equal(mockRequests[0].body.messages[0].role,'system');
@@ -39,13 +39,13 @@ try{
  const local=await post({messages:[{role:'user',content:'Halo'}]});assert.equal(local.status,200);assert.equal(local.headers.get('x-ida-route'),'local');
  assert.equal(mockRequests.length,before,'greeting should not call provider');
  const unrelated=await post({messages:[{role:'user',content:'cuaca hari ini'}]});assert.equal(unrelated.status,200);
- assert.equal(unrelated.headers.get('x-ida-route'),'local');assert.equal(mockRequests.length,before,'unrelated query should not call provider');
- const overview=await post({messages:[{role:'user',content:'Apa itu ProQPay Lite?'}]});assert.equal(overview.status,200);assert.equal(overview.headers.get('x-ida-route'),'local');assert.match((await overview.json()).message,/ProQPay Lite/);assert.equal(mockRequests.length,before);
- const thanks=await post({messages:[{role:'user',content:'Terima kasih'}]});assert.equal(thanks.status,200);assert.equal(mockRequests.length,before);
+ assert.equal(unrelated.headers.get('x-ida-route'),'model');assert.equal(mockRequests.length,before+1,'off-topic should be handled by model naturally');
+ const overview=await post({messages:[{role:'user',content:'Apa itu ProQPay Lite?'}]});assert.equal(overview.status,200);assert.equal(overview.headers.get('x-ida-route'),'model');assert.equal(mockRequests.length,before+2);
+ const thanks=await post({messages:[{role:'user',content:'Terima kasih'}]});assert.equal(thanks.status,200);assert.equal(mockRequests.length,before+2);
  const large=await post({messages:[{role:'user',content:'X'.repeat(751)}]});assert.equal(large.status,400);
  const prior=await post({messages:[{role:'user',content:'konteks lama'},{role:'assistant',content:'jawaban lama'},{role:'user',content:'lanjutkan'},{role:'assistant',content:'hasil'},{role:'user',content:'ProQPay Lite'}]});assert.equal(prior.status,200);
- assert.ok(mockRequests.at(-1).body.messages.length<=5,'history bounded');
- assert.ok(mockRequests.at(-1).body.messages[0].content.length<1600,'system context should be bounded');
+ assert.ok(mockRequests.at(-1).body.messages.length<=7,'history bounded');
+ assert.ok(mockRequests.at(-1).body.messages[0].content.length<2600,'system context should be bounded');
  mockStatus=429;mockResponse={error:{code:'RATE_LIMITED'}};
  r=await post(req);assert.equal(r.status,429);assert.equal((await r.json()).error,'RATE_LIMITED');
  mockStatus=403;mockResponse={error:{code:'SCOPE_FORBIDDEN'}};
@@ -59,6 +59,10 @@ try{
  r=await post(req);assert.equal(r.status,200);
  assert.equal((await r.json()).message,'IDA membantu Anda memahami produk portfolio.');
  // Verify mini is primary and only temporary upstream outage triggers a single balanced-model retry.
+ mockStatus=200;mockResponse={choices:[{message:{content:'IDA membantu mengembangkan solusi bisnis.\n\n```javascript\nconsole.log(\"secret\");\n```\n\nApa tantangan terbesarnya?'}}]};
+ r=await post(req);assert.equal(r.status,200);
+ const plain=(await r.json()).message;assert.match(plain,/Apa tantangan terbesarnya/);
+ assert.ok(!plain.includes('console.log') && !plain.includes('```'));
  mockStatus=502;mockResponse={error:{code:'UPSTREAM_ERROR'}};
  const beforeRetry=mockRequests.length;
  // Mock provider serves success on second attempt, based on the requested model.

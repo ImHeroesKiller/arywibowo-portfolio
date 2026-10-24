@@ -2,10 +2,10 @@ import catalog from "@/content/portfolio-id.json";
 import catalogEn from "@/content/portfolio-en.json";
 import catalogZh from "@/content/portfolio-zh.json";
 
-export const MAX_HISTORY_TURNS = 4;
+export const MAX_HISTORY_TURNS = 6;
 export const MAX_INPUT_CHARS = 750;
 const MAX_CONTEXT_CHARS = 900;
-const MAX_HISTORY_CHARS = 1800;
+const MAX_HISTORY_CHARS = 3000;
 
 export type ChatTurn = { role: "user" | "assistant"; content: string };
 
@@ -53,18 +53,7 @@ export function localFallback(question: string): string | null {
   if (/^(hai|halo|hi|hello|hey|pagi|siang|sore|malam|selamat pagi|selamat siang|你好|您好)$/.test(normalized)) return t.hello;
   if (/^(makasih|terima kasih|thanks|thank you|谢谢|多谢)$/.test(normalized)) return t.thanks;
   if (/^(kontak|hubungi|contact|email|alamat kontak|联系|联系方式)$/.test(normalized)) return t.contact;
-  const overview = /^(apa itu|jelaskan|info (tentang|mengenai)|what is|tell me about|介绍|什么是)\s+/i.test(q);
-  if (overview) {
-    const product = catalog.products.find(p => q.toLocaleLowerCase().includes(p.name.toLocaleLowerCase()));
-    if (product) {
-      const loc = language(q);
-      const localized = (loc === "en" ? catalogEn.products : loc === "zh" ? catalogZh.products : catalog.products).find(p=>p.id === product.id) ?? product;
-      const detail = loc === "en" ? `Status: ${product.status.toUpperCase()}. Learn more: https://arywibowo.id/en/projects/${product.id}` : loc === "zh" ? `当前状态：${product.status.toUpperCase()}。详情：https://arywibowo.id/zh/projects/${product.id}` : `Status: ${product.status.toUpperCase()}. Detail: https://arywibowo.id/projects/${product.id}`;
-      return `${product.name}: ${localized.description} ${detail}`;
-    }
-  }
-  // Obvious unrelated categories only. Ambiguous queries go to IDA instead of being incorrectly refused.
-  if (/\b(cuaca (hari ini|besok)|weather (today|tomorrow)|resep (masakan|ayam|kue)|recipe for|skor (bola|pertandingan)|football score|lirik lagu|song lyrics)\b/i.test(q) || /^(今天天气|明天天气)/.test(q)) return t.outside;
+  // Let IDA handle nuanced/off-topic questions naturally; no blanket canned refusal.
   return null;
 }
 
