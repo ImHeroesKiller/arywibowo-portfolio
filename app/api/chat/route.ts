@@ -87,6 +87,13 @@ async function callIda(messages: ChatMessage[]) {
 
   // Never forward provider details/headers to anonymous visitors or log credentials.
   if (!response.ok) {
+    // Log only the upstream HTTP status and bounded error code. Never log key or provider response text.
+    let providerCode = "UNKNOWN";
+    try {
+      const failure = await response.json() as {error?: {code?: unknown}};
+      if (typeof failure?.error?.code === "string" && /^[A-Z_]{2,50}$/.test(failure.error.code)) providerCode = failure.error.code;
+    } catch { /* ignore malformed upstream error */ }
+    console.warn("IDA upstream rejected request", {status: response.status, code: providerCode});
     if (response.status === 429) throw new ApiRequestError(429, "RATE_LIMITED");
     if (response.status === 401 || response.status === 403) throw new ApiRequestError(503, "NOT_CONFIGURED");
     if (response.status === 402) throw new ApiRequestError(503, "AI_UNAVAILABLE");
