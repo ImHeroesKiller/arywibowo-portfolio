@@ -1,0 +1,114 @@
+{
+  "recorded": "2026-10-24",
+  "method": "headless Chrome publicly accessible pages; no login performed",
+  "images": [
+    {
+      "product": "ida",
+      "file": "ida-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 12546,
+      "sha256": "f4846fd6f41075cb41098e17c8d42aa6f2d760c71253ef0d47c4d11abf55e5f0",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "labs",
+      "file": "labs-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 27378,
+      "sha256": "79f02b23eeebab9400fde81fb409351f7423af6ce955cd4a88942e6ac6f93b16",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "proqpay",
+      "file": "proqpay-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 16894,
+      "sha256": "4866df09ce7655d93b72d3e462e56742d8f74c6fcdb2fdd97151385a1d29d520",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "proqtrack",
+      "file": "proqtrack-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 15632,
+      "sha256": "8fcfa153799047bf6f0107aa69c0d66fe53381f34420d06bec5e42c79a386b10",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "arah",
+      "file": "arah-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 12664,
+      "sha256": "c675dcfce33df7949399195ea29c5d10056cd12f7377a96e49c45365cd7279ac",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "notagen",
+      "file": "notagen-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 9380,
+      "sha256": "4832ba69672edc6f5c467ba2bed9154ef395713b57f76d7e0412b4b113f62776",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "msg",
+      "file": "msg-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 42178,
+      "sha256": "59da3169d0fe55053741fbee144d8101a1bc93d5ac52a958bcefc88398af3e45",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "perada",
+      "file": "perada-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 36062,
+      "sha256": "901518d29c1578c6ad84c246676710bd9ff681831f79c0632718d8c66ec21ba5",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    },
+    {
+      "product": "danawangsa",
+      "file": "danawangsa-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 33448,
+      "sha256": "9df7d863f88f1eddadfc04a5133de49ddbe4c49a70a132e0b217260f92e8c9eb",
+      "approval": "Public page capture; no authenticated business data",
+      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+    }
+  ]
+}
