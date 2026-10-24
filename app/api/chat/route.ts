@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { ApiRequestError, enforcePublicApiGuard, parseLimitedJson, respondApiError } from "@/lib/api-guard";
 import { IDA_MAX_OUTPUT_TOKENS, IDA_MODEL, IDA_TEMPERATURE, buildIdaPrompt } from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
+import { normalizeIdaResponse } from "@/lib/ida-response";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -96,7 +97,9 @@ async function callIda(messages: ChatMessage[]) {
   }
   const message = result.choices?.[0]?.message?.content;
   if (typeof message !== "string" || !message.trim()) throw new ApiRequestError(502, "EMPTY_RESPONSE");
-  return message.trim();
+  const normalized = normalizeIdaResponse(message);
+  if (!normalized) throw new ApiRequestError(502, "EMPTY_RESPONSE");
+  return normalized;
 }
 
 export async function POST(request: Request) {

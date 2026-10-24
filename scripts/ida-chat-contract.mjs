@@ -36,6 +36,11 @@ try{
  r=await post(req);assert.equal(r.status,429);assert.equal((await r.json()).error,'RATE_LIMITED');
  mockStatus=403;mockResponse={error:{code:'SCOPE_FORBIDDEN'}};
  r=await post(req);assert.equal(r.status,503);assert.equal((await r.json()).error,'NOT_CONFIGURED');
+ mockStatus=200;mockResponse={choices:[{message:{content:'```html\n<!doctype html><html><head><style>body{color:red}</style></head><body><h1>IDA</h1><p>Saya membantu menjelaskan produk portfolio.</p><script>alert(1)</script></body></html>\n```'}}]};
+ r=await post(req);assert.equal(r.status,200);
+ const normalized=(await r.json()).message;
+ assert.ok(normalized.includes('Saya membantu menjelaskan produk portfolio.'));
+ assert.ok(!normalized.includes('<html') && !normalized.includes('color:red') && !normalized.includes('alert(1)'));
  mockStatus=200;mockResponse={choices:[]};
  r=await post(req);assert.equal(r.status,502);assert.equal((await r.json()).error,'EMPTY_RESPONSE');
  console.log('IDA chat mock contract PASS: validated body/model/Bearer/prompt/scope/rate-limit/empty response; no paid provider request');
