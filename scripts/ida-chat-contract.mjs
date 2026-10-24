@@ -79,6 +79,11 @@ try{
  assert.equal(r.status,200);assert.equal(r.headers.get('x-ida-route'),'degraded');
  const degraded=await r.json();assert.equal(degraded.degraded,true);assert.match(degraded.message,/gangguan/i);
  mockStatus=200;mockResponse={choices:[]};
- r=await post(req);assert.equal(r.status,502);assert.equal((await r.json()).error,'EMPTY_RESPONSE');
+ const emptyBefore=mockRequests.length;
+ r=await post(req);assert.equal(r.status,200);
+ const emptyFallback=await r.json();assert.equal(emptyFallback.degraded,true);
+ assert.equal(mockRequests.length-emptyBefore,2);
+ assert.equal(mockRequests.at(-2).body.model,'ida-chat-fast');
+ assert.equal(mockRequests.at(-1).body.model,'ida-chat');
  console.log('IDA chat mock contract PASS: validated mini model/token caps/local fallbacks/history/Bearer/prompt/scope/rate-limit/empty response; no paid provider request');
 }finally{server.kill('SIGTERM');mock.close();}
