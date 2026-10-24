@@ -2,11 +2,11 @@
   "metadata": {
     "site": {
       "title": "Profesional Consultant",
-      "description": "Mitra konsultasi strategis di Jakarta — 10+ tahun mendampingi bisnis tumbuh melalui renewable energy, transformasi digital, SDM, manajemen proyek, dan solusi keuangan."
+      "description": "Strategi bisnis, pengembangan produk AI, fintech, workforce, logistik, dan transformasi digital oleh Ary Wibowo."
     },
     "home": {
       "title": "Ary Wibowo | Profesional Consultant",
-      "description": "Berkolaborasi dengan Ary Wibowo untuk konsultasi strategis berdampak — renewable energy, business development, IT, SDM, sales, manajemen proyek, dan financial solutions di Jakarta."
+      "description": "Ary Wibowo menghubungkan strategi bisnis, teknologi AI, dan operasional melalui portofolio produk nyata dengan status implementasi transparan."
     },
     "about": {
       "title": "Tentang Saya",
@@ -21,8 +21,8 @@
       "description": "Siap diskusi proyek Anda? Hubungi Ary Wibowo untuk konsultasi strategis di Jakarta. Respons dalam 24–48 jam melalui form atau aku@arywibowo.id."
     },
     "projects": {
-      "title": "Proyek & Portfolio",
-      "description": "Jelajahi studi kasus di renewable energy, platform keuangan, sistem SDM, dan transformasi digital — inisiatif Ary Wibowo dari konsep hingga implementasi."
+      "title": "Produk & Inisiatif Digital",
+      "description": "Katalog produk dan studi kasus digital, termasuk proyek production, UAT, development, prototype, dan concept."
     }
   },
   "nav": {
@@ -37,8 +37,8 @@
   },
   "hero": {
     "name": "Ary Wibowo",
-    "title": "Profesional Consultant",
-    "tagline": "Mendampingi bisnis tumbuh melalui <highlight>konsultasi strategis</highlight> — <highlight>Renewable Energy</highlight>, <highlight>Business Development</highlight>, <highlight>IT & Digital Transformation</highlight>, <highlight>HR & Operations</highlight>, <highlight>Sales & Project Management</highlight>, hingga <highlight>Financial Solutions</highlight>.",
+    "title": "Business & Technology Strategist",
+    "tagline": "Menghubungkan <highlight>strategi bisnis</highlight>, <highlight>AI & teknologi</highlight>, dan <highlight>operasional</highlight> — dari peluang komersial hingga pengembangan produk digital yang dapat diuji dan ditingkatkan.",
     "contact": "Hubungi",
     "services": "Layanan",
     "imageAlt": "Foto Ary Wibowo, Profesional Consultant berbasis di Jakarta, Indonesia"
@@ -185,9 +185,9 @@
   },
   "projects": {
     "eyebrow": "Portfolio",
-    "title": "Proyek Terpilih",
-    "description": "Proyek terpilih di bidang <highlight>asisten AI</highlight>, <highlight>renewable energy</highlight>, <highlight>solusi keuangan</highlight>, <highlight>platform digital</highlight>, dan inisiatif korporat terintegrasi.",
-    "pageDescription": "Studi kasus terpilih dan inisiatif strategis Ary Wibowo — dari konsep hingga implementasi.",
+    "title": "Produk & Inisiatif Digital",
+    "description": "Jelajahi <highlight>produk AI</highlight>, <highlight>fintech</highlight>, <highlight>workforce</highlight>, dan <highlight>operasional</highlight> dengan status pengembangan yang transparan.",
+    "pageDescription": "Katalog produk dan studi kasus digital, termasuk proyek production, UAT, development, prototype, dan concept.",
     "seeMoreRich": "Lihat semua proyek di halaman <link>Proyek</link>.",
     "contactCtaRich": "Ingin diskusi inisiatif serupa? <contact>Hubungi saya</contact> atau lihat <services>layanan konsultasi</services>.",
     "visitWebsite": "Kunjungi perada.net",
