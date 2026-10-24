@@ -57,3 +57,6 @@ jobs:
 
       - name: IDA consultation consent and SMTP guard regression (no live mail)
         run: node scripts/ida-consultation-regression.mjs
+
+      - name: IDA contextual consultation handoff regression
+        run: node scripts/ida-handoff-regression.mjs

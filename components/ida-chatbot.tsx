@@ -9,6 +9,7 @@ import { IdaConsultationForm } from "@/components/ida-consultation-form";
 import { IdaAvatar } from "@/components/ida-avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { consultationIntent, visitorConsultationSummary } from "@/lib/ida-consultation-intent";
 
 type ChatMessage = {
   id: string;
@@ -88,6 +89,20 @@ export function IdaChatbot() {
     setMessages(nextMessages);
     setInput("");
     setError(null);
+    const lastAssistant = [...messages].reverse().find(message => message.role === "assistant")?.content ?? "";
+    const confirmedHandoff = /^(?:iya|ya|yes|oke|ok|boleh|baik|sure)(?:[.,! ]|$)/i.test(trimmed)
+      && /(?:jadwalkan konsultasi|kirim formulir|request consultation|schedule a consultation|consultation form)/i.test(lastAssistant);
+    const intent = confirmedHandoff ? "open-form" : consultationIntent(trimmed);
+    if (intent === "open-form") {
+      setMessages((prev)=>[...prev,{id:createId(),role:"assistant",content:t("formHandoff")}]);
+      setConsulting(true);
+      return;
+    }
+    if (intent === "show-summary") {
+      const summary = visitorConsultationSummary(nextMessages);
+      setMessages((prev)=>[...prev,{id:createId(),role:"assistant",content:summary ? `${t("summaryIntro")}\n\n${summary}\n\n${t("summaryNext")}` : t("summaryEmpty")}]);
+      return;
+    }
     setLoading(true);
 
     try {
@@ -193,7 +208,7 @@ export function IdaChatbot() {
                   <button
                     type="button"
                     key={key}
-                    onClick={() => void handleSend(t(key))}
+                    onClick={() => key === "suggestedConsultation" ? (setConsulting(true)) : void handleSend(t(key))}
                     className="rounded-full border border-primary/20 bg-primary/5 px-3 py-2 text-left text-xs font-medium leading-5 text-primary transition-colors hover:border-primary/50 hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {t(key)}

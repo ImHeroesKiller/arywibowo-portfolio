@@ -346,7 +346,11 @@
     "suggestedLabel": "Pertanyaan yang bisa dicoba",
     "suggestedProduct": "Ceritakan tentang produk AI Anda",
     "suggestedServices": "Layanan bisnis apa yang tersedia?",
-    "suggestedConsultation": "Saya ingin konsultasi bisnis"
+    "suggestedConsultation": "Saya ingin konsultasi bisnis",
+    "formHandoff": "Baik, saya buka formulir konsultasinya. Ringkasan kebutuhan Anda sudah disiapkan dan bisa diedit. Silakan lengkapi kontak, tinjau, dan tekan Kirim jika setuju. Saya belum mengirim email atau membuat jadwal apa pun.",
+    "summaryIntro": "Berikut rangkuman sementara dari kebutuhan yang Anda ceritakan:",
+    "summaryNext": "Apakah ada yang ingin diubah? Jika sudah sesuai, ketik “kirim formulirnya” agar saya membuka formulir. Tidak ada email yang dikirim otomatis.",
+    "summaryEmpty": "Saya belum memiliki cukup informasi untuk menyusun ringkasan. Ceritakan dulu kebutuhan atau tantangan bisnis Anda."
   },
   "languageSwitcher": {
     "label": "Bahasa",
