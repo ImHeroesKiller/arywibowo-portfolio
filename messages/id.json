@@ -355,5 +355,30 @@
       "en": "EN",
       "zh": "中文"
     }
+  },
+  "consultation": {
+    "title": "Permintaan konsultasi",
+    "description": "Tinjau dan lengkapi kebutuhan Anda. Tidak ada percakapan yang dikirim otomatis.",
+    "reviewTitle": "Tinjau permintaan Anda",
+    "reviewDescription": "Periksa kembali isi dan penerima email. Hanya data yang tercantum di formulir ini akan dikirim.",
+    "name": "Nama",
+    "email": "Email",
+    "organization": "Perusahaan (opsional)",
+    "service": "Layanan atau topik",
+    "summary": "Ringkasan kebutuhan",
+    "servicePlaceholder": "Contoh: Solusi payroll atau AI",
+    "summaryPlaceholder": "Ceritakan kebutuhan Anda...",
+    "excerptOptIn": "Saya ingin menyertakan kutipan pesan saya dari percakapan (opsional).",
+    "excerptPreview": "Kutipan yang akan disertakan",
+    "noExcerpt": "Belum ada pesan pengguna yang dapat disertakan.",
+    "reviewNotice": "Siap ditinjau sebelum dikirim",
+    "consent": "Saya menyetujui pengiriman data dalam formulir ini melalui email untuk ditindaklanjuti. Riwayat chat penuh tidak dikirim.",
+    "review": "Tinjau sebelum kirim",
+    "send": "Kirim permintaan konsultasi",
+    "sendError": "Pengiriman belum berhasil. Data Anda belum dikonfirmasi terkirim. Coba lagi.",
+    "success": "Permintaan terkirim",
+    "reference": "Nomor referensi",
+    "successDescription": "Email telah diterima server pengiriman untuk diteruskan ke tim.",
+    "backChat": "Kembali ke chat"
   }
 }

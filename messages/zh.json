@@ -355,5 +355,30 @@
       "en": "EN",
       "zh": "中文"
     }
+  },
+  "consultation": {
+    "title": "申请咨询",
+    "description": "请检查并完善您的需求。聊天记录不会自动发送。",
+    "reviewTitle": "确认您的申请",
+    "reviewDescription": "发送前请核对。仅表单中的信息会通过邮件发送。",
+    "name": "姓名",
+    "email": "邮箱",
+    "organization": "公司（选填）",
+    "service": "服务或主题",
+    "summary": "需求概述",
+    "servicePlaceholder": "例如：薪资系统或人工智能",
+    "summaryPlaceholder": "请描述您的需求",
+    "excerptOptIn": "附上我自己的聊天消息摘要（选填）",
+    "excerptPreview": "将附上的摘录",
+    "noExcerpt": "暂无可用的用户消息",
+    "reviewNotice": "发送前确认",
+    "consent": "我同意通过电子邮件发送此表单信息以便后续联系。完整聊天记录不会发送。",
+    "review": "检查后发送",
+    "send": "发送咨询申请",
+    "sendError": "尚未确认发送成功，请重试。",
+    "success": "申请已提交",
+    "reference": "参考编号",
+    "successDescription": "邮件服务器已接受此邮件并安排投递。",
+    "backChat": "返回聊天"
   }
 }
