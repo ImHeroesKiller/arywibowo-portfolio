@@ -94,6 +94,7 @@ async function callIda(messages: ChatMessage[]) {
       if (typeof failure?.error?.code === "string" && /^[A-Z_]{2,50}$/.test(failure.error.code)) providerCode = failure.error.code;
     } catch { /* ignore malformed upstream error */ }
     console.warn("IDA upstream rejected request", {status: response.status, code: providerCode});
+    if (process.env.VERCEL_ENV === "preview") throw new ApiRequestError(502, `IDA_UPSTREAM_${response.status}_${providerCode}`);
     if (response.status === 429) throw new ApiRequestError(429, "RATE_LIMITED");
     if (response.status === 401 || response.status === 403) throw new ApiRequestError(503, "NOT_CONFIGURED");
     if (response.status === 402) throw new ApiRequestError(503, "AI_UNAVAILABLE");
