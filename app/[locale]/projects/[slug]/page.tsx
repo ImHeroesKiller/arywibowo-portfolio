@@ -5,6 +5,10 @@ import { ArrowLeft, ArrowUpRight, Code2, Info, Monitor, ShieldCheck } from "luci
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { catalogs, getProduct, images, productIds } from "@/lib/product-catalog";
+import caseId from "@/content/case-studies-id.json";
+import caseEn from "@/content/case-studies-en.json";
+import caseZh from "@/content/case-studies-zh.json";
+const cases = { id: caseId, en: caseEn, zh: caseZh };
 import { createPageMetadata } from "@/lib/seo";
 
 const text = {
@@ -28,6 +32,8 @@ export default async function ProductPage({params}:Props) {
  const product=getProduct(locale,slug);
  if(!product) notFound();
  const t=text[locale]; const cat=catalogs[locale];
+ const details = cases[locale].products[slug as keyof typeof cases["id"]["products"]];
+ const labels = cases[locale].labels;
  const image=images[product.id];
  return <div className="min-h-[65vh] bg-gradient-to-b from-blue-50/70 to-background">
   <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-20">
@@ -41,10 +47,31 @@ export default async function ProductPage({params}:Props) {
    <div className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
     {image?<><div className="relative aspect-video"><Image src={`/images/portfolio/${image}-public-1440x810.webp`} alt={`${product.name} public page`} fill sizes="(max-width: 1024px) 100vw, 960px" className="object-cover" priority/></div><p className="border-t border-border px-5 py-3 text-xs text-muted-foreground">{t.shot}</p></>:<div className="flex aspect-video flex-col items-center justify-center gap-4 bg-gradient-to-br from-blue-50 to-indigo-100 p-6 text-center"><Monitor className="size-16 text-primary" strokeWidth={1.3}/><p className="max-w-md text-sm text-slate-600">{t.noShot}</p></div>}
    </div>
+   {image && <section className="mt-8 rounded-2xl border border-border bg-white p-6">
+    <h2 className="text-lg font-semibold">{labels.evidence} — {labels.screenshot}</h2>
+    <p className="mt-2 text-sm leading-6 text-muted-foreground">{t.shot}</p>
+    <div className="mt-5 flex flex-col items-center gap-4 rounded-xl bg-slate-50 p-4 sm:flex-row sm:items-start sm:justify-center sm:gap-8">
+      <div className="w-full max-w-[240px]"><div className="relative aspect-[430/900] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><Image src={`/images/portfolio/${image}-mobile-public.webp`} alt={`${product.name} mobile public page`} fill sizes="240px" className="object-contain" /></div></div>
+      <div className="max-w-xs text-sm leading-7 text-slate-600">{labels.method}<p className="mt-3 text-xs text-muted-foreground">{t.note}</p></div>
+    </div>
+   </section>}
    <div className="mt-9 grid gap-5 md:grid-cols-2">
     <section className="rounded-2xl border border-border bg-white p-6"><h2 className="flex items-center gap-2 text-lg font-semibold"><Info size={20}/>{t.summary}</h2><p className="mt-4 leading-7 text-muted-foreground">{product.description}</p><p className="mt-4 text-sm font-medium">{t.role}: {cat.categories[product.category as keyof typeof cat.categories]}</p></section>
     <section className="rounded-2xl border border-border bg-white p-6"><h2 className="flex items-center gap-2 text-lg font-semibold"><ShieldCheck size={20}/>{t.maturity}</h2><p className="mt-4 font-semibold text-primary">{cat.policy.statuses[product.status as keyof typeof cat.policy.statuses]}</p><p className="mt-3 text-sm leading-6 text-muted-foreground">{t.note}</p><p className="mt-2 text-sm leading-6 text-muted-foreground">{t.pending}</p></section>
    </div>
+   <div className="mt-6 grid gap-5 md:grid-cols-2">
+    <section className="rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{labels.challenge}</h2><p className="mt-3 leading-7 text-muted-foreground">{details.challenge}</p></section>
+    <section className="rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{labels.approach}</h2><p className="mt-3 leading-7 text-muted-foreground">{details.approach}</p></section>
+   </div>
+   <section className="mt-6 rounded-2xl border border-border bg-white p-6">
+    <h2 className="text-lg font-semibold">{labels.features}</h2>
+    <ul className="mt-4 grid gap-3 sm:grid-cols-2">{details.features.map((item)=><li key={item} className="flex gap-3 rounded-xl bg-blue-50/50 p-3 text-sm leading-6"><ShieldCheck size={17} className="mt-1 shrink-0 text-primary"/><span>{item}</span></li>)}</ul>
+   </section>
+   <div className="mt-6 grid gap-5 md:grid-cols-2">
+    <section className="rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{labels.stack}</h2>{details.stack.length?<div className="mt-4 flex flex-wrap gap-2">{details.stack.map(tech=><span key={tech} className="rounded-full border border-border bg-muted/30 px-3 py-2 text-sm">{tech}</span>)}</div>:<p className="mt-3 text-sm text-muted-foreground">{labels.unknown}</p>}</section>
+    <section className="rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{labels.role}</h2><p className="mt-3 leading-7 text-muted-foreground">{details.role}</p></section>
+   </div>
+   <section className="mt-6 rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{labels.limits}</h2><p className="mt-3 text-sm leading-7 text-muted-foreground">{details.verification}</p><p className="mt-2 text-xs leading-6 text-muted-foreground">{labels.method}</p></section>
    <section className="mt-6 rounded-2xl border border-border bg-white p-6"><h2 className="text-lg font-semibold">{t.evidence}</h2><div className="mt-5 flex flex-wrap gap-3">
     {product.url?<a href={product.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground">{t.url}<ArrowUpRight size={16}/></a>:<p className="text-sm text-muted-foreground">{t.noUrl}</p>}
     {product.repository&&<a href={product.repository} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-3 text-sm font-medium hover:bg-muted"><Code2 size={16}/>{t.repo}<ArrowUpRight size={15}/></a>}

@@ -1,0 +1,330 @@
+{
+  "labels": {
+    "challenge": "Operational challenge",
+    "approach": "Solution approach",
+    "features": "Documented capabilities",
+    "stack": "Technologies documented",
+    "role": "Contribution focus",
+    "limits": "Verification boundaries",
+    "evidence": "Evidence type",
+    "screenshot": "Public-page screenshot",
+    "none": "No approved authenticated dashboard screenshot is available",
+    "unknown": "Not independently verified from the reviewed documentation",
+    "method": "Based on project documentation and public pages. No unverified KPIs or feature readiness claims."
+  },
+  "products": {
+    "ida-gen3": {
+      "challenge": "AI tools need one usable workspace",
+      "approach": "An integrated AI workspace",
+      "features": [
+        "Chat and reasoning",
+        "Web research and vision",
+        "Document workflows"
+      ],
+      "stack": [
+        "React",
+        "Vite",
+        "Supabase"
+      ],
+      "role": "Application engineering and AI product integration",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "ida-labs": {
+      "challenge": "Research pipelines need reproducible retrieval",
+      "approach": "Search, extraction, crawling and research infrastructure",
+      "features": [
+        "Search and extraction",
+        "Research pipeline",
+        "Gateway and monitoring"
+      ],
+      "stack": [
+        "FastAPI",
+        "Python",
+        "Docker",
+        "Ubuntu"
+      ],
+      "role": "AI infrastructure architecture and integration",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "ida-call-shield": {
+      "challenge": "Unknown calls need selective handling",
+      "approach": "Native Android call screening with risk heuristics",
+      "features": [
+        "Native call screening",
+        "Repeat-call analysis",
+        "Device diagnostics"
+      ],
+      "stack": [
+        "Kotlin",
+        "Android",
+        "SQLite"
+      ],
+      "role": "Android product engineering; voice screening remains unverified",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "proqpay-lite": {
+      "challenge": "Payroll needs controlled approvals and reconciliation",
+      "approach": "Payroll workflows with approvals and audit trail",
+      "features": [
+        "Payroll calculations",
+        "Maker-checker approvals",
+        "Audit trails"
+      ],
+      "stack": [
+        "Next.js",
+        "Cloudflare Pages",
+        "D1"
+      ],
+      "role": "Payroll workflow and product architecture; payment integration pending validation",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "proqpay-enterprise": {
+      "challenge": "Enterprise payroll needs structured orchestration",
+      "approach": "Separate enterprise payroll implementation under development",
+      "features": [
+        "Payroll workflow planning",
+        "Enterprise integration design"
+      ],
+      "stack": [],
+      "role": "Product design and enterprise integration; standalone deployment unverified",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "proqpay-ess": {
+      "challenge": "Employees need independent access to payroll records",
+      "approach": "Employee self-service payroll view",
+      "features": [
+        "Payslip access",
+        "Payroll status"
+      ],
+      "stack": [
+        "Cloudflare Workers"
+      ],
+      "role": "Employee-facing portal integration",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "proqtrade": {
+      "challenge": "Market workflows require modular data and execution services",
+      "approach": "Trading technology architecture with modular backends",
+      "features": [
+        "Market data services",
+        "Trading service modules",
+        "Notifications"
+      ],
+      "stack": [
+        "Cloudflare Pages",
+        "Workers"
+      ],
+      "role": "Modular product and backend integration; trading readiness unverified",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "proqacc": {
+      "challenge": "Accounting workflows need an accessible application interface",
+      "approach": "Accounting frontend migration and modernization",
+      "features": [
+        "Accounting user interface",
+        "Frontend migration"
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "role": "Frontend architecture and product modernization",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "kawankas": {
+      "challenge": "Informal loans need clear recordkeeping",
+      "approach": "Personal ledger for borrowings between friends",
+      "features": [
+        "Transaction records",
+        "Personal financial history"
+      ],
+      "stack": [],
+      "role": "Personal finance product concept; not a lender",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "proqtrack": {
+      "challenge": "Field activities lack central oversight",
+      "approach": "Task and field workforce monitoring",
+      "features": [
+        "Field activity tracking",
+        "Task operations",
+        "Role-based workflows"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "D1",
+        "R2"
+      ],
+      "role": "Field operations and workforce product engineering",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "pay-hr": {
+      "challenge": "Workforce operations are fragmented",
+      "approach": "Unified HR, attendance, advances and payroll",
+      "features": [
+        "Attendance and overtime",
+        "Salary advances",
+        "Payroll and payslips"
+      ],
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL"
+      ],
+      "role": "HR operations workflow and system integration",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "perada-recruitment": {
+      "challenge": "Recruitment journeys need a consistent user flow",
+      "approach": "Prototype recruitment portal with applicant and AI-interview simulations",
+      "features": [
+        "Recruitment flow prototype",
+        "Interview simulation"
+      ],
+      "stack": [
+        "Browser localStorage"
+      ],
+      "role": "Recruitment prototype; no production data claim",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "freejobid": {
+      "challenge": "Freelance openings are scattered across sources",
+      "approach": "Bilingual job discovery product under development",
+      "features": [
+        "Job discovery",
+        "Bilingual experience"
+      ],
+      "stack": [],
+      "role": "Recruitment product exploration",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "arah-fleet": {
+      "challenge": "Fleet dispatch needs visibility",
+      "approach": "Fleet visibility and route oversight",
+      "features": [
+        "Fleet visibility",
+        "Route management",
+        "Field coordination"
+      ],
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "MapLibre"
+      ],
+      "role": "Fleet operations product and interface engineering",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "oms-perada": {
+      "challenge": "Logistics order-to-cash activity needs traceability",
+      "approach": "Operations workflow for trucking orders and billing",
+      "features": [
+        "Order management",
+        "Billing and invoices",
+        "Receivables tracking"
+      ],
+      "stack": [],
+      "role": "Logistics workflow and business system architecture",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "notagen": {
+      "challenge": "Operations staff need repeatable document output",
+      "approach": "Productivity suite for printable notes and documents",
+      "features": [
+        "Document generation",
+        "Print-ready output"
+      ],
+      "stack": [],
+      "role": "Business operations tooling",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "saleguard": {
+      "challenge": "Sales teams need activity and exception visibility",
+      "approach": "Sales monitoring and reporting workflow",
+      "features": [
+        "Sales activity monitoring",
+        "Exception reporting"
+      ],
+      "stack": [],
+      "role": "Sales operations technology exploration",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "onework": {
+      "challenge": "Repetitive desktop tasks increase manual workload",
+      "approach": "No-code desktop GUI automation prototype",
+      "features": [
+        "Desktop workflow experimentation"
+      ],
+      "stack": [],
+      "role": "Workflow automation prototype",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "msg": {
+      "challenge": "A business services firm needs a credible digital presence",
+      "approach": "Public corporate website presenting its offerings",
+      "features": [
+        "Corporate service presentation",
+        "Public contact presence"
+      ],
+      "stack": [],
+      "role": "Business positioning and corporate web presence",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "perada-group": {
+      "challenge": "Logistics and workforce divisions need clear presentation",
+      "approach": "Corporate website for integrated logistics and HR services",
+      "features": [
+        "Logistics services",
+        "Workforce service presentation"
+      ],
+      "stack": [],
+      "role": "Corporate digital presence and positioning",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "danawangsa": {
+      "challenge": "Advisory offerings need a clear digital introduction",
+      "approach": "Public website for strategic business advisory",
+      "features": [
+        "Advisory service pages",
+        "Contact journeys"
+      ],
+      "stack": [],
+      "role": "Business and financial advisory digital positioning",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "mkb": {
+      "challenge": "Workforce activation needs clear service positioning",
+      "approach": "Corporate and field-reporting platform exploration",
+      "features": [
+        "Workforce website",
+        "Field reporting concept"
+      ],
+      "stack": [],
+      "role": "Corporate and field technology development",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "qjob-concept": {
+      "challenge": "Corporate information architecture can be hard to navigate",
+      "approach": "Static corporate website redesign concept",
+      "features": [
+        "Web information architecture",
+        "Design exploration"
+      ],
+      "stack": [],
+      "role": "Exploratory UX concept; not an official release",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "bespoke-solar": {
+      "challenge": "Clean energy partnerships need cross-sector planning",
+      "approach": "Strategic collaboration concept for solar, battery and EV",
+      "features": [
+        "Solar integration concept",
+        "Battery storage concept",
+        "EV ecosystem planning"
+      ],
+      "stack": [],
+      "role": "Business development collaboration concept",
+      "verification": "Public page and repository documentation; authenticated features not independently audited."
+    }
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "labels": {
+    "challenge": "Kebutuhan operasional yang ditangani",
+    "approach": "Pendekatan solusi",
+    "features": "Kapabilitas yang terdokumentasi",
+    "stack": "Teknologi yang disebutkan dalam dokumentasi",
+    "role": "Fokus kontribusi",
+    "limits": "Batas verifikasi",
+    "evidence": "Jenis bukti",
+    "screenshot": "Screenshot halaman publik",
+    "none": "Belum ada screenshot dashboard autentikasi yang disetujui",
+    "unknown": "Belum terverifikasi dari dokumentasi yang diperiksa",
+    "method": "Deskripsi berasal dari dokumentasi proyek dan situs publik. Tidak mengklaim KPI atau kesiapan fungsi yang belum diuji."
+  },
+  "products": {
+    "ida-gen3": {
+      "challenge": "Alat AI tersebar dalam berbagai alur kerja",
+      "approach": "Workspace AI terpadu",
+      "features": [
+        "Percakapan dan penalaran",
+        "Riset web dan analisis gambar",
+        "Alur kerja dokumen"
+      ],
+      "stack": [
+        "React",
+        "Vite",
+        "Supabase"
+      ],
+      "role": "Application engineering and AI product integration",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "ida-labs": {
+      "challenge": "Riset memerlukan pencarian dan ekstraksi yang berulang",
+      "approach": "Infrastruktur riset, crawling, dan ekstraksi",
+      "features": [
+        "Pencarian dan ekstraksi",
+        "Pipeline riset",
+        "Gateway dan pemantauan"
+      ],
+      "stack": [
+        "FastAPI",
+        "Python",
+        "Docker",
+        "Ubuntu"
+      ],
+      "role": "AI infrastructure architecture and integration",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "ida-call-shield": {
+      "challenge": "Panggilan tak dikenal membutuhkan penyaringan selektif",
+      "approach": "Penyaringan native Android berbasis pola panggilan",
+      "features": [
+        "Penyaringan panggilan native",
+        "Analisis panggilan berulang",
+        "Diagnostik perangkat"
+      ],
+      "stack": [
+        "Kotlin",
+        "Android",
+        "SQLite"
+      ],
+      "role": "Android product engineering; voice screening remains unverified",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "proqpay-lite": {
+      "challenge": "Payroll membutuhkan persetujuan dan rekonsiliasi terkontrol",
+      "approach": "Workflow payroll, approval, dan audit trail",
+      "features": [
+        "Perhitungan payroll",
+        "Persetujuan maker-checker",
+        "Jejak audit"
+      ],
+      "stack": [
+        "Next.js",
+        "Cloudflare Pages",
+        "D1"
+      ],
+      "role": "Payroll workflow and product architecture; payment integration pending validation",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "proqpay-enterprise": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses proqpay enterprise yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi proqpay enterprise sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Perancangan alur payroll",
+        "Perancangan integrasi enterprise"
+      ],
+      "stack": [],
+      "role": "Product design and enterprise integration; standalone deployment unverified",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "proqpay-ess": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses proqpay ess yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi proqpay ess sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Akses slip gaji",
+        "Status payroll"
+      ],
+      "stack": [
+        "Cloudflare Workers"
+      ],
+      "role": "Employee-facing portal integration",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "proqtrade": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses proqtrade yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi proqtrade sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Layanan data pasar",
+        "Modul layanan trading",
+        "Notifikasi"
+      ],
+      "stack": [
+        "Cloudflare Pages",
+        "Workers"
+      ],
+      "role": "Modular product and backend integration; trading readiness unverified",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "proqacc": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses proqacc yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi proqacc sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Antarmuka akuntansi",
+        "Migrasi frontend"
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "role": "Frontend architecture and product modernization",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "kawankas": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses kawankas yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi kawankas sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Pencatatan transaksi",
+        "Riwayat keuangan pribadi"
+      ],
+      "stack": [],
+      "role": "Personal finance product concept; not a lender",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "proqtrack": {
+      "challenge": "Aktivitas tim lapangan memerlukan visibilitas terpusat",
+      "approach": "Pemantauan aktivitas dan tugas tim lapangan",
+      "features": [
+        "Pelacakan aktivitas lapangan",
+        "Operasional tugas",
+        "Alur kerja berbasis peran"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "D1",
+        "R2"
+      ],
+      "role": "Field operations and workforce product engineering",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "pay-hr": {
+      "challenge": "Operasional SDM tersebar di banyak proses",
+      "approach": "HRIS untuk absensi, panjar, dan payroll",
+      "features": [
+        "Absensi dan lembur",
+        "Panjar gaji",
+        "Payroll dan slip gaji"
+      ],
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL"
+      ],
+      "role": "HR operations workflow and system integration",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "perada-recruitment": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses perada recruitment yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi perada recruitment sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Prototipe alur rekrutmen",
+        "Simulasi wawancara"
+      ],
+      "stack": [
+        "Browser localStorage"
+      ],
+      "role": "Recruitment prototype; no production data claim",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "freejobid": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses freejobid yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi freejobid sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Pencarian lowongan",
+        "Pengalaman dwibahasa"
+      ],
+      "stack": [],
+      "role": "Recruitment product exploration",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "arah-fleet": {
+      "challenge": "Armada memerlukan visibilitas operasional",
+      "approach": "Monitoring armada dan rute",
+      "features": [
+        "Visibilitas armada",
+        "Manajemen rute",
+        "Koordinasi lapangan"
+      ],
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "MapLibre"
+      ],
+      "role": "Fleet operations product and interface engineering",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "oms-perada": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses oms perada yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi oms perada sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Manajemen order",
+        "Penagihan dan invoice",
+        "Pelacakan piutang"
+      ],
+      "stack": [],
+      "role": "Logistics workflow and business system architecture",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "notagen": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses notagen yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi notagen sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Pembuatan dokumen",
+        "Output siap cetak"
+      ],
+      "stack": [],
+      "role": "Business operations tooling",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "saleguard": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses saleguard yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi saleguard sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Pemantauan aktivitas sales",
+        "Pelaporan pengecualian"
+      ],
+      "stack": [],
+      "role": "Sales operations technology exploration",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "onework": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses onework yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi onework sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Eksperimen workflow desktop"
+      ],
+      "stack": [],
+      "role": "Workflow automation prototype",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "msg": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses msg yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi msg sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Presentasi layanan korporat",
+        "Kanal kontak publik"
+      ],
+      "stack": [],
+      "role": "Business positioning and corporate web presence",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "perada-group": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses perada group yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi perada group sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Layanan logistik",
+        "Presentasi layanan SDM"
+      ],
+      "stack": [],
+      "role": "Corporate digital presence and positioning",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "danawangsa": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses danawangsa yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi danawangsa sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Halaman layanan advisory",
+        "Alur kontak"
+      ],
+      "stack": [],
+      "role": "Business and financial advisory digital positioning",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "mkb": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses mkb yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi mkb sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Website workforce",
+        "Konsep pelaporan lapangan"
+      ],
+      "stack": [],
+      "role": "Corporate and field technology development",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "qjob-concept": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses qjob concept yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi qjob concept sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Arsitektur informasi website",
+        "Eksplorasi desain"
+      ],
+      "stack": [],
+      "role": "Exploratory UX concept; not an official release",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "bespoke-solar": {
+      "challenge": "Kebutuhan untuk menyederhanakan proses bespoke solar yang masih tersebar atau manual.",
+      "approach": "Pengembangan solusi bespoke solar sesuai ruang lingkup yang terdokumentasi.",
+      "features": [
+        "Konsep integrasi solar",
+        "Konsep penyimpanan baterai",
+        "Perencanaan ekosistem EV"
+      ],
+      "stack": [],
+      "role": "Business development collaboration concept",
+      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    }
+  }
+}

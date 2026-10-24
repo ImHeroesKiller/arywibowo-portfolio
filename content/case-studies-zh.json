@@ -1,0 +1,330 @@
+{
+  "labels": {
+    "challenge": "业务需求",
+    "approach": "解决方案",
+    "features": "有文档记录的功能",
+    "stack": "文档提及的技术",
+    "role": "参与重点",
+    "limits": "验证边界",
+    "evidence": "证据类型",
+    "screenshot": "公开页面截图",
+    "none": "尚无获批的登录后仪表盘截图",
+    "unknown": "所审核文档中尚未独立验证",
+    "method": "依据项目文档和公开页面，不声称未经验证的指标或功能就绪状态。"
+  },
+  "products": {
+    "ida-gen3": {
+      "challenge": "人工智能工具分散在不同流程",
+      "approach": "统一人工智能工作空间",
+      "features": [
+        "对话与推理",
+        "网络研究与视觉分析",
+        "文档工作流程"
+      ],
+      "stack": [
+        "React",
+        "Vite",
+        "Supabase"
+      ],
+      "role": "Application engineering and AI product integration",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "ida-labs": {
+      "challenge": "研究流程需要可重复的信息检索",
+      "approach": "搜索、提取与研究基础设施",
+      "features": [
+        "搜索与提取",
+        "研究流程",
+        "网关与监测"
+      ],
+      "stack": [
+        "FastAPI",
+        "Python",
+        "Docker",
+        "Ubuntu"
+      ],
+      "role": "AI infrastructure architecture and integration",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "ida-call-shield": {
+      "challenge": "未知来电需要有选择地筛查",
+      "approach": "基于号码模式的 Android 原生来电筛查",
+      "features": [
+        "原生来电筛查",
+        "重复来电分析",
+        "设备诊断"
+      ],
+      "stack": [
+        "Kotlin",
+        "Android",
+        "SQLite"
+      ],
+      "role": "Android product engineering; voice screening remains unverified",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "proqpay-lite": {
+      "challenge": "薪资管理需要审批和核对",
+      "approach": "含审批与审计轨迹的薪资工作流",
+      "features": [
+        "薪资计算",
+        "双人审批",
+        "审计记录"
+      ],
+      "stack": [
+        "Next.js",
+        "Cloudflare Pages",
+        "D1"
+      ],
+      "role": "Payroll workflow and product architecture; payment integration pending validation",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "proqpay-enterprise": {
+      "challenge": "需要简化 proqpay enterprise 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 proqpay enterprise 方案。",
+      "features": [
+        "薪资流程规划",
+        "企业集成设计"
+      ],
+      "stack": [],
+      "role": "Product design and enterprise integration; standalone deployment unverified",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "proqpay-ess": {
+      "challenge": "需要简化 proqpay ess 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 proqpay ess 方案。",
+      "features": [
+        "工资单访问",
+        "薪资状态"
+      ],
+      "stack": [
+        "Cloudflare Workers"
+      ],
+      "role": "Employee-facing portal integration",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "proqtrade": {
+      "challenge": "需要简化 proqtrade 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 proqtrade 方案。",
+      "features": [
+        "市场数据服务",
+        "交易服务模块",
+        "通知"
+      ],
+      "stack": [
+        "Cloudflare Pages",
+        "Workers"
+      ],
+      "role": "Modular product and backend integration; trading readiness unverified",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "proqacc": {
+      "challenge": "需要简化 proqacc 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 proqacc 方案。",
+      "features": [
+        "会计用户界面",
+        "前端迁移"
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "role": "Frontend architecture and product modernization",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "kawankas": {
+      "challenge": "需要简化 kawankas 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 kawankas 方案。",
+      "features": [
+        "交易记录",
+        "个人财务记录"
+      ],
+      "stack": [],
+      "role": "Personal finance product concept; not a lender",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "proqtrack": {
+      "challenge": "外勤活动缺乏统一监管",
+      "approach": "外勤任务与活动监控",
+      "features": [
+        "外勤活动跟踪",
+        "任务管理",
+        "角色工作流程"
+      ],
+      "stack": [
+        "Cloudflare Workers",
+        "D1",
+        "R2"
+      ],
+      "role": "Field operations and workforce product engineering",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "pay-hr": {
+      "challenge": "人力流程分散",
+      "approach": "统一人力、考勤、预支与薪资系统",
+      "features": [
+        "考勤与加班",
+        "薪资预支",
+        "薪资与工资单"
+      ],
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL"
+      ],
+      "role": "HR operations workflow and system integration",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "perada-recruitment": {
+      "challenge": "需要简化 perada recruitment 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 perada recruitment 方案。",
+      "features": [
+        "招聘流程原型",
+        "面试模拟"
+      ],
+      "stack": [
+        "Browser localStorage"
+      ],
+      "role": "Recruitment prototype; no production data claim",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "freejobid": {
+      "challenge": "需要简化 freejobid 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 freejobid 方案。",
+      "features": [
+        "职位发现",
+        "双语体验"
+      ],
+      "stack": [],
+      "role": "Recruitment product exploration",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "arah-fleet": {
+      "challenge": "车队调度需要可视化",
+      "approach": "车队与路线管理",
+      "features": [
+        "车队可视化",
+        "路线管理",
+        "现场协调"
+      ],
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "MapLibre"
+      ],
+      "role": "Fleet operations product and interface engineering",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "oms-perada": {
+      "challenge": "需要简化 oms perada 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 oms perada 方案。",
+      "features": [
+        "订单管理",
+        "开票与账单",
+        "应收账款追踪"
+      ],
+      "stack": [],
+      "role": "Logistics workflow and business system architecture",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "notagen": {
+      "challenge": "需要简化 notagen 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 notagen 方案。",
+      "features": [
+        "文档生成",
+        "可打印输出"
+      ],
+      "stack": [],
+      "role": "Business operations tooling",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "saleguard": {
+      "challenge": "需要简化 saleguard 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 saleguard 方案。",
+      "features": [
+        "销售活动监测",
+        "异常报告"
+      ],
+      "stack": [],
+      "role": "Sales operations technology exploration",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "onework": {
+      "challenge": "需要简化 onework 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 onework 方案。",
+      "features": [
+        "桌面流程实验"
+      ],
+      "stack": [],
+      "role": "Workflow automation prototype",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "msg": {
+      "challenge": "需要简化 msg 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 msg 方案。",
+      "features": [
+        "企业服务展示",
+        "公开联系渠道"
+      ],
+      "stack": [],
+      "role": "Business positioning and corporate web presence",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "perada-group": {
+      "challenge": "需要简化 perada group 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 perada group 方案。",
+      "features": [
+        "物流服务",
+        "人力资源服务展示"
+      ],
+      "stack": [],
+      "role": "Corporate digital presence and positioning",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "danawangsa": {
+      "challenge": "需要简化 danawangsa 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 danawangsa 方案。",
+      "features": [
+        "咨询服务页面",
+        "联系流程"
+      ],
+      "stack": [],
+      "role": "Business and financial advisory digital positioning",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "mkb": {
+      "challenge": "需要简化 mkb 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 mkb 方案。",
+      "features": [
+        "人力资源网站",
+        "外勤报告概念"
+      ],
+      "stack": [],
+      "role": "Corporate and field technology development",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "qjob-concept": {
+      "challenge": "需要简化 qjob concept 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 qjob concept 方案。",
+      "features": [
+        "网站信息架构",
+        "设计探索"
+      ],
+      "stack": [],
+      "role": "Exploratory UX concept; not an official release",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "bespoke-solar": {
+      "challenge": "需要简化 bespoke solar 相关的工作流程。",
+      "approach": "根据现有文档开发与验证 bespoke solar 方案。",
+      "features": [
+        "太阳能集成概念",
+        "电池储能概念",
+        "电动汽车生态规划"
+      ],
+      "stack": [],
+      "role": "Business development collaboration concept",
+      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    }
+  }
+}
