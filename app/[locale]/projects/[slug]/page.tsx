@@ -35,6 +35,13 @@ export default async function ProductPage({params}:Props) {
  const details = cases[locale].products[slug as keyof typeof cases["id"]["products"]];
  const labels = cases[locale].labels;
  const image=images[product.id];
+ const index=productIds.indexOf(slug);
+ const previousId=index>0?productIds[index-1]:null;
+ const nextId=index>=0&&index<productIds.length-1?productIds[index+1]:null;
+ const previous=previousId?getProduct(locale,previousId):null;
+ const next=nextId?getProduct(locale,nextId):null;
+ const previousLabel=locale==="id"?"Produk sebelumnya":locale==="zh"?"上一个产品":"Previous product";
+ const nextLabel=locale==="id"?"Produk berikutnya":locale==="zh"?"下一个产品":"Next product";
  return <div className="min-h-[65vh] bg-gradient-to-b from-blue-50/70 to-background">
   <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-20">
    <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"><ArrowLeft size={16}/>{t.back}</Link>
@@ -76,6 +83,10 @@ export default async function ProductPage({params}:Props) {
     {product.url?<a href={product.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground">{t.url}<ArrowUpRight size={16}/></a>:<p className="text-sm text-muted-foreground">{t.noUrl}</p>}
     {product.repository&&<a href={product.repository} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-3 text-sm font-medium hover:bg-muted"><Code2 size={16}/>{t.repo}<ArrowUpRight size={15}/></a>}
    </div></section>
+   <nav aria-label={locale==="id"?"Navigasi antarproduk":locale==="zh"?"产品导航":"Product navigation"} className="mt-10 grid gap-3 sm:grid-cols-2">
+    {previous&&<Link href={`/projects/${previous.id}`} className="rounded-xl border border-border bg-white px-5 py-4 transition hover:border-primary/50 hover:shadow-sm"><span className="text-xs text-muted-foreground">← {previousLabel}</span><span className="mt-1 block font-semibold">{previous.name}</span></Link>}
+    {next&&<Link href={`/projects/${next.id}`} className="rounded-xl border border-border bg-white px-5 py-4 transition hover:border-primary/50 hover:shadow-sm sm:col-start-2 sm:text-right"><span className="text-xs text-muted-foreground">{nextLabel} →</span><span className="mt-1 block font-semibold">{next.name}</span></Link>}
+   </nav>
    <div className="mt-10"><Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"><ArrowLeft size={16}/>{t.back}</Link></div>
   </div>
  </div>;
