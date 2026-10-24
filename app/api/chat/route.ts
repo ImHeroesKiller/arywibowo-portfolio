@@ -3,6 +3,7 @@ import { ApiRequestError, enforcePublicApiGuard, parseLimitedJson, respondApiErr
 import { IDA_MAX_OUTPUT_TOKENS, IDA_MODEL, IDA_TEMPERATURE, buildIdaPrompt } from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
 import { normalizeIdaResponse } from "@/lib/ida-response";
+import { MAX_INPUT_CHARS, localFallback, relevantProducts, trimChatHistory } from "@/lib/ida-budget";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -52,12 +53,14 @@ async function callIda(messages: ChatMessage[]) {
     process.env.IDA_MOCK_ENDPOINT === "http://127.0.0.1:3199/chat/completions"
     ? process.env.IDA_MOCK_ENDPOINT : IDA_CHAT_URL;
 
-  const context = buildRetrievalContext(messages.at(-1)!.content);
+  const question = messages.at(-1)!.content;
+  const context = buildRetrievalContext(question);
+  const productContext = relevantProducts(question);
   const body = {
     model: IDA_MODEL,
     messages: [
-      { role: "system", content: buildIdaPrompt(context) },
-      ...messages,
+      { role: "system", content: buildIdaPrompt(context, productContext) },
+      ...trimChatHistory(messages),
     ],
     max_tokens: IDA_MAX_OUTPUT_TOKENS,
     temperature: IDA_TEMPERATURE,
@@ -107,8 +110,11 @@ export async function POST(request: Request) {
   if (blocked) return blocked;
   try {
     const messages = validateMessages(await parseLimitedJson(request, 32 * 1024));
-    const message = await callIda(messages);
-    return NextResponse.json({ message }, { headers: { "Cache-Control": "no-store" } });
+    const last = messages.at(-1)!.content;
+    if (last.length > MAX_INPUT_CHARS) throw new ApiRequestError(400,"INVALID_REQUEST");
+    const reply = localFallback(last);
+    const message = reply ?? await callIda(messages);
+    return NextResponse.json({ message }, { headers: { "Cache-Control": "no-store", "X-IDA-Route": reply ? "local" : "model" } });
   } catch (error) {
     return respondApiError(error, "IDA chat API error");
   }
