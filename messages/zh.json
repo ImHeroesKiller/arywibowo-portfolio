@@ -346,7 +346,11 @@
     "suggestedLabel": "推荐问题",
     "suggestedProduct": "介绍一下人工智能产品",
     "suggestedServices": "有哪些商业服务？",
-    "suggestedConsultation": "我想咨询业务合作"
+    "suggestedConsultation": "我想咨询业务合作",
+    "formHandoff": "我已打开咨询表单，并准备了可编辑的需求摘要。请填写联系方式、检查内容并确认提交。目前尚未发送邮件，也没有安排任何预约。",
+    "summaryIntro": "根据您提供的信息，初步摘要如下：",
+    "summaryNext": "需要修改吗？准备好后请输入“打开咨询表单”。邮件不会自动发送。",
+    "summaryEmpty": "目前信息还不足以生成有用的摘要，请先描述您的业务需求。"
   },
   "languageSwitcher": {
     "label": "语言",

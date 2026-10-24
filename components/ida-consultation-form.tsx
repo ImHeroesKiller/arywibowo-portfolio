@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowLeft, CheckCircle2, Loader2, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
+import { visitorConsultationSummary, serviceFromConversation } from "@/lib/ida-consultation-intent";
 
 type Props={ onBack:()=>void; conversation: Array<{role:"user"|"assistant";content:string}> };
 const newKey=()=>`${Date.now()}-${Math.random().toString(36).slice(2,12)}`;
@@ -10,8 +11,8 @@ const newKey=()=>`${Date.now()}-${Math.random().toString(36).slice(2,12)}`;
 export function IdaConsultationForm({onBack,conversation}:Props){
  const t=useTranslations("consultation");
  const [name,setName]=useState("");const [email,setEmail]=useState("");const [organization,setOrganization]=useState("");
- const [service,setService]=useState("");
- const initialSummary=conversation.filter(m=>m.role==="user").slice(-4).map(m=>m.content).join("\n").slice(0,3500);
+ const initialSummary=visitorConsultationSummary(conversation);
+ const [service,setService]=useState(serviceFromConversation(initialSummary));
  const [summary,setSummary]=useState(initialSummary);
  const [includeExcerpt,setIncludeExcerpt]=useState(false);
  const [consent,setConsent]=useState(false);

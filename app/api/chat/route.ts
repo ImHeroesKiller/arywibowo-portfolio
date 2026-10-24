@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { ApiRequestError, enforcePublicApiGuard, parseLimitedJson, respondApiError } from "@/lib/api-guard";
-import { IDA_MAX_OUTPUT_TOKENS, IDA_MODEL, IDA_TEMPERATURE, buildIdaPrompt } from "@/lib/ida-prompt";
+import { IDA_MAX_OUTPUT_TOKENS, IDA_MODEL, IDA_TEMPERATURE, buildIdaPrompt, conversationLanguage } from "@/lib/ida-prompt";
 import { buildRetrievalContext } from "@/lib/rag";
 import { normalizeIdaResponse } from "@/lib/ida-response";
 import { MAX_INPUT_CHARS, localFallback, outageFallback, relevantProducts, trimChatHistory } from "@/lib/ida-budget";
@@ -59,7 +59,7 @@ async function callIda(messages: ChatMessage[]) {
   const body = {
     model: IDA_MODEL,
     messages: [
-      { role: "system", content: buildIdaPrompt(context, productContext) },
+      { role: "system", content: buildIdaPrompt(context, productContext, conversationLanguage(messages)) },
       ...trimChatHistory(messages),
     ],
     max_tokens: IDA_MAX_OUTPUT_TOKENS,

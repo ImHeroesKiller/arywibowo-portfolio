@@ -346,7 +346,11 @@
     "suggestedLabel": "Suggested questions",
     "suggestedProduct": "Tell me about your AI products",
     "suggestedServices": "What business services are available?",
-    "suggestedConsultation": "I would like a business consultation"
+    "suggestedConsultation": "I would like a business consultation",
+    "formHandoff": "I’ve opened the consultation form and prepared an editable summary of your needs. Please review your contact details and approve the submission. No email has been sent and no appointment is scheduled yet.",
+    "summaryIntro": "Here’s a preliminary summary based on what you shared:",
+    "summaryNext": "Would you change anything? When you’re ready, say “send the consultation form” to open it. No email is sent automatically.",
+    "summaryEmpty": "I don’t have enough context for a useful summary yet. Tell me about your business goal or challenge."
   },
   "languageSwitcher": {
     "label": "Language",
