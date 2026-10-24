@@ -4,23 +4,24 @@ import { getLocalizedUrl } from "@/lib/i18n-paths";
 import { routing } from "@/i18n/routing";
 import { SITE_LAST_MODIFIED, siteConfig } from "@/lib/constants";
 import { navPaths } from "@/lib/navigation";
+import { productIds } from "@/lib/product-catalog";
 
 const lastModified = new Date(SITE_LAST_MODIFIED);
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return navPaths.map((link) => {
+  return [...navPaths.map((link) => link.href), ...productIds.map((slug) => `/projects/${slug}`)].map((path) => {
     const languages = Object.fromEntries(
       routing.locales.map((locale) => [
         locale,
-        getLocalizedUrl(link.href, locale, siteConfig.url),
+        getLocalizedUrl(path, locale, siteConfig.url),
       ])
     );
 
     return {
-      url: getLocalizedUrl(link.href, routing.defaultLocale, siteConfig.url),
+      url: getLocalizedUrl(path, routing.defaultLocale, siteConfig.url),
       lastModified,
-      changeFrequency: link.href === "/" ? "weekly" : "monthly",
-      priority: link.href === "/" ? 1 : 0.8,
+      changeFrequency: path === "/" ? "weekly" : "monthly",
+      priority: path === "/" ? 1 : path.startsWith("/projects/") ? 0.6 : 0.8,
       alternates: {
         languages,
       },

@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="space-y-3"><p className="mb-4 text-xs font-bold uppercase tracking-[.15em] text-slate-900">{copy.products}</p><Link href="/projects" className="block w-fit py-1 text-sm text-slate-600 hover:text-primary">Portfolio & Products</Link><Link href="/playground" className="block w-fit py-1 text-sm text-slate-600 hover:text-primary">AI Playground</Link><a href="/decision-ai-dashboard.html" className="block w-fit py-1 text-sm text-slate-600 hover:text-primary">Decision AI Dashboard</a></div>
           <div className="space-y-3"><p className="mb-4 text-xs font-bold uppercase tracking-[.15em] text-slate-900">{copy.connect}</p><a href={`mailto:${siteConfig.email}`} className="block w-fit break-all py-1 text-sm text-slate-600 hover:text-primary">{siteConfig.email}</a><a href="https://github.com/ImHeroesKiller" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 py-1 text-sm text-slate-600 hover:text-primary">GitHub <ArrowUpRight className="size-3.5"/></a></div>
         </div>
-        <div className="flex flex-col gap-2 pt-7 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} {siteConfig.name}. {copy.rights}</p><p>AI · Fintech · Enterprise Systems</p></div>
+        <div className="flex flex-col gap-2 pt-7 text-xs text-slate-700 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} {siteConfig.name}. {copy.rights}</p><p>AI · Fintech · Enterprise Systems</p></div>
       </div>
     </footer>
   );

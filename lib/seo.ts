@@ -8,6 +8,10 @@ export const siteKeywords = [
   "Ary Wibowo",
   "konsultan bisnis",
   "konsultan profesional",
+  "AI product development",
+  "enterprise software",
+  "payroll technology",
+  "business technology strategist",
   "business development",
   "renewable energy",
   "energi terbarukan",
@@ -24,7 +28,7 @@ export const defaultOgImage = {
   url: "/images/profile.webp",
   width: 586,
   height: 880,
-  alt: `${siteConfig.name} — Professional Consultant based in Jakarta, Indonesia`,
+  alt: `${siteConfig.name} — Business & Technology Strategist based in Jakarta, Indonesia`,
 } as const;
 
 const ogLocaleMap: Record<Locale, string> = {
