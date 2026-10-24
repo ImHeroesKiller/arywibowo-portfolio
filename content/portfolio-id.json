@@ -25,7 +25,7 @@
       "category": "ai",
       "status": "uat",
       "url": "https://ida.arywibowo.id",
-      "repository": "https://github.com/ImHeroesKiller/ida-gen3",
+      "repository": null,
       "description": "Workspace AI untuk percakapan, riset, analisis gambar, dan dokumen."
     },
     {
@@ -34,7 +34,7 @@
       "category": "ai",
       "status": "uat",
       "url": "https://ida-labs-dashboard.vercel.app",
-      "repository": "https://github.com/ImHeroesKiller/ida-labs",
+      "repository": null,
       "description": "Infrastruktur riset AI untuk pencarian, ekstraksi, dan sintesis informasi."
     },
     {
@@ -43,7 +43,7 @@
       "category": "ai",
       "status": "uat",
       "url": null,
-      "repository": "https://github.com/ImHeroesKiller/ida-call-shield",
+      "repository": null,
       "description": "Aplikasi Android untuk penyaringan panggilan, analisis pola nomor, dan monitoring perangkat; penyaringan suara AI belum terverifikasi."
     },
     {
@@ -52,7 +52,7 @@
       "category": "fintech",
       "status": "uat",
       "url": "https://proqpay.msg-os.com",
-      "repository": "https://github.com/ImHeroesKiller/proqpay-lite",
+      "repository": null,
       "description": "Sistem payroll berbasis AI, approval bertingkat, audit trail, dan integrasi pembayaran yang masih divalidasi."
     },
     {
@@ -61,7 +61,7 @@
       "category": "fintech",
       "status": "development",
       "url": "https://proqpay.msg-os.com",
-      "repository": "https://github.com/ImHeroesKiller/proqpay-app",
+      "repository": null,
       "description": "Implementasi workflow payroll enterprise dengan codebase terpisah; deployment langsungnya belum terverifikasi terpisah."
     },
     {
@@ -70,7 +70,7 @@
       "category": "fintech",
       "status": "uat",
       "url": "https://proqpay-ess.arywibowo.workers.dev",
-      "repository": "https://github.com/ImHeroesKiller/proqpay-ess",
+      "repository": null,
       "description": "Portal mandiri karyawan untuk status payroll dan slip gaji."
     },
     {
@@ -79,7 +79,7 @@
       "category": "fintech",
       "status": "development",
       "url": "https://proqtrade.pages.dev",
-      "repository": "https://github.com/ImHeroesKiller/proqtrade",
+      "repository": null,
       "description": "Platform trading dalam pengembangan dengan layanan AI, data, market, trading, dan notifikasi."
     },
     {
@@ -88,7 +88,7 @@
       "category": "fintech",
       "status": "development",
       "url": "https://proqacc.msg-os.com",
-      "repository": "https://github.com/ImHeroesKiller/proqacc",
+      "repository": null,
       "description": "Aplikasi akuntansi dalam migrasi frontend; kesiapan production end-to-end belum terverifikasi."
     },
     {
@@ -97,7 +97,7 @@
       "category": "fintech",
       "status": "development",
       "url": "https://kawankas.arywibowo.id",
-      "repository": "https://github.com/ImHeroesKiller/kawankas",
+      "repository": null,
       "description": "Pencatatan pinjam-meminjam antarteman; bukan penyedia pinjaman."
     },
     {
@@ -106,7 +106,7 @@
       "category": "enterprise",
       "status": "uat",
       "url": "https://proqtrack.arywibowo.workers.dev",
-      "repository": "https://github.com/ImHeroesKiller/proqtrack",
+      "repository": null,
       "description": "Monitoring tim lapangan, aktivitas, dan tugas operasional lintas lokasi."
     },
     {
@@ -115,7 +115,7 @@
       "category": "enterprise",
       "status": "uat",
       "url": "https://hris.perada.net",
-      "repository": "https://github.com/ImHeroesKiller/hr-pay",
+      "repository": null,
       "description": "HRIS untuk absensi, lembur, panjar, data klien, dan payroll."
     },
     {
@@ -124,17 +124,8 @@
       "category": "enterprise",
       "status": "prototype",
       "url": null,
-      "repository": "https://github.com/ImHeroesKiller/perdana-portal",
+      "repository": null,
       "description": "Prototipe rekrutmen dan simulasi wawancara AI berbasis penyimpanan browser."
-    },
-    {
-      "id": "freejobid",
-      "name": "FreeJobID",
-      "category": "enterprise",
-      "status": "development",
-      "url": null,
-      "repository": "https://github.com/ImHeroesKiller/FreeJobID",
-      "description": "Platform pencarian pekerjaan paruh waktu dan freelance, berbahasa Indonesia dan Inggris."
     },
     {
       "id": "arah-fleet",
@@ -142,7 +133,7 @@
       "category": "logistics",
       "status": "uat",
       "url": "https://arah-app-delta.vercel.app",
-      "repository": "https://github.com/ImHeroesKiller/arah-app",
+      "repository": null,
       "description": "Konsol visibilitas armada, pengaturan rute, dan koordinasi lapangan."
     },
     {
@@ -151,35 +142,8 @@
       "category": "logistics",
       "status": "uat",
       "url": null,
-      "repository": "https://github.com/ImHeroesKiller/oms-perkasa",
+      "repository": null,
       "description": "Sistem order, penagihan, invoice, dan piutang untuk logistik/trucking."
-    },
-    {
-      "id": "notagen",
-      "name": "NotaGen / PERADA Tools",
-      "category": "operations",
-      "status": "uat",
-      "url": "https://nota-gen-two.vercel.app",
-      "repository": "https://github.com/ImHeroesKiller/nota-gen",
-      "description": "Perangkat produktivitas dan pembuatan dokumen operasional siap cetak."
-    },
-    {
-      "id": "saleguard",
-      "name": "SaleGuard",
-      "category": "operations",
-      "status": "development",
-      "url": null,
-      "repository": "https://github.com/ImHeroesKiller/SaleGuard",
-      "description": "Monitoring aktivitas penjualan/distributor, pelaporan, dan peringatan ketidaksesuaian."
-    },
-    {
-      "id": "onework",
-      "name": "OneWork",
-      "category": "operations",
-      "status": "prototype",
-      "url": null,
-      "repository": "https://github.com/ImHeroesKiller/OneWork",
-      "description": "Eksperimen otomasi antarmuka desktop tanpa pemrograman."
     },
     {
       "id": "msg",
@@ -187,7 +151,7 @@
       "category": "business",
       "status": "production",
       "url": "https://www.msg-os.com",
-      "repository": "https://github.com/ImHeroesKiller/proqpay-website",
+      "repository": null,
       "description": "Website korporat untuk solusi workforce, advisory, dan transformasi bisnis."
     },
     {
@@ -196,7 +160,7 @@
       "category": "business",
       "status": "production",
       "url": "https://perada.net",
-      "repository": "https://github.com/ImHeroesKiller/PeradaGroup.web",
+      "repository": null,
       "description": "Website korporat layanan logistik dan sumber daya manusia."
     },
     {
@@ -205,7 +169,7 @@
       "category": "business",
       "status": "production",
       "url": "https://danawangsa.arywibowo.id",
-      "repository": "https://github.com/ImHeroesKiller/danawangsa-site",
+      "repository": null,
       "description": "Website konsultasi strategi bisnis dan keuangan; bukan klaim layanan keuangan berizin."
     },
     {
@@ -214,7 +178,7 @@
       "category": "business",
       "status": "development",
       "url": null,
-      "repository": "https://github.com/ImHeroesKiller/mkb-website",
+      "repository": null,
       "description": "Website workforce dan brand activation dengan konsep teknologi pelaporan lapangan."
     },
     {
@@ -223,7 +187,7 @@
       "category": "business",
       "status": "concept",
       "url": null,
-      "repository": "https://github.com/ImHeroesKiller/outsourcing-management-system",
+      "repository": null,
       "description": "Konsep desain ulang website korporat statis; bukan klaim produk resmi yang telah diluncurkan."
     },
     {

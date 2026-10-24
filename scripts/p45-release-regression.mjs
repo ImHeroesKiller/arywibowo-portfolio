@@ -37,7 +37,7 @@ try{
  }
  const {r:sitemapRes,html:xml}=await read('/sitemap.xml');
  check(sitemapRes.status===200,'sitemap HTTP');
- check((xml.match(/<loc>/g)||[]).length===29,'sitemap should contain 29 canonical routes');
+ check((xml.match(/<loc>/g)||[]).length===products.length+5,'sitemap should contain 29 canonical routes');
  for(const product of products){
   check(xml.includes(`https://arywibowo.id/projects/${product.id}`),`missing sitemap product ${product.id}`);
   check(xml.includes(`https://arywibowo.id/en/projects/${product.id}`),`missing EN alternate ${product.id}`);
@@ -45,6 +45,25 @@ try{
  }
  const {r:unknown}=await read('/projects/not-a-product');
  check(unknown.status===404,'invalid case study must 404');
+ const removed = ['freejobid','notagen','saleguard','onework'];
+ check(products.length===20,'public product catalog has 20 products');
+ for(const locale of languages){
+  const prefix=locale==='id'?'':`/${locale}`;
+  for(const slug of removed){
+   const {r}=await read(`${prefix}/projects/${slug}`);
+   check(r.status===404,`removed product ${slug} must 404 in ${locale}`);
+  }
+  const {html:page}=await read(prefix+'/projects');
+  for(const forbidden of ['FreeJobID','NotaGen / PERADA Tools','SaleGuard','OneWork','github.com/ImHeroesKiller','AI Playground','Decision AI Dashboard']){
+   check(!page.includes(forbidden),`${locale} portfolio should not expose ${forbidden}`);
+  }
+ }
+ for(const resource of ['/manifest.webmanifest','/icon.png','/favicon.ico','/apple-icon.png','/icon-192.png','/icon-512.png','/icon-512-maskable.png']){
+  const {r}=await read(resource);
+  check(r.status===200,`PWA/fav icon ${resource} unavailable`);
+ }
+ const {html:manifest}=await read('/manifest.webmanifest');
+ check(manifest.includes('Business & Technology Strategist'),'PWA branding is outdated');
  const {r:missingImg}=await read('/images/portfolio/ida-mobile-public.webp');
  check(missingImg.status===200 && missingImg.headers.get('content-type')?.includes('image/webp'),'mobile evidence WebP available');
  const contact=await fetch(base+'/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'QA',email:'wrong',message:'QA only'})});

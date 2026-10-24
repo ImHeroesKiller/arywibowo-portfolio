@@ -73,7 +73,7 @@ export default function Navbar() {
       <a href="#main-content" className="sr-only absolute left-3 top-2 z-[100] rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground focus:not-sr-only">
         {t("skipToMain")}
       </a>
-      <nav aria-label={t("primaryNavigation")} className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
+      <nav aria-label={t("primaryNavigation")} className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:h-[84px] sm:px-6 lg:px-8">
         <Logo />
 
         <ul className="hidden items-center gap-1 lg:flex">
@@ -83,7 +83,7 @@ export default function Navbar() {
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
                 className={cn(
-                  "relative rounded-lg px-3 py-2 text-[13px] font-medium transition-colors",
+                  "relative rounded-lg px-3 py-2 text-base font-semibold transition-colors",
                   pathname === link.href
                     ? "text-primary after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2px] after:rounded-full after:bg-primary"
                     : "text-slate-600 hover:bg-blue-50 hover:text-primary"
@@ -147,7 +147,7 @@ export default function Navbar() {
                     aria-current={pathname === link.href ? "page" : undefined}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
-                      "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+                      "block rounded-xl px-4 py-3 text-base font-semibold transition-colors",
                       pathname === link.href
                         ? "bg-primary/10 text-primary"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"

@@ -12,6 +12,6 @@ export function getProduct(locale: Locale, slug: string) {
 }
 export const images: Record<string,string> = {
   "ida-gen3":"ida", "ida-labs":"labs", "proqpay-lite":"proqpay",
-  "proqtrack":"proqtrack", "arah-fleet":"arah", "notagen":"notagen",
+  "proqtrack":"proqtrack", "arah-fleet":"arah",
   "msg":"msg", "perada-group":"perada", "danawangsa":"danawangsa",
 };

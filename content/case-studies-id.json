@@ -188,17 +188,6 @@
       "role": "Recruitment prototype; no production data claim",
       "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
     },
-    "freejobid": {
-      "challenge": "Kebutuhan untuk menyederhanakan proses freejobid yang masih tersebar atau manual.",
-      "approach": "Pengembangan solusi freejobid sesuai ruang lingkup yang terdokumentasi.",
-      "features": [
-        "Pencarian lowongan",
-        "Pengalaman dwibahasa"
-      ],
-      "stack": [],
-      "role": "Recruitment product exploration",
-      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
-    },
     "arah-fleet": {
       "challenge": "Armada memerlukan visibilitas operasional",
       "approach": "Monitoring armada dan rute",
@@ -225,38 +214,6 @@
       ],
       "stack": [],
       "role": "Logistics workflow and business system architecture",
-      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
-    },
-    "notagen": {
-      "challenge": "Kebutuhan untuk menyederhanakan proses notagen yang masih tersebar atau manual.",
-      "approach": "Pengembangan solusi notagen sesuai ruang lingkup yang terdokumentasi.",
-      "features": [
-        "Pembuatan dokumen",
-        "Output siap cetak"
-      ],
-      "stack": [],
-      "role": "Business operations tooling",
-      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
-    },
-    "saleguard": {
-      "challenge": "Kebutuhan untuk menyederhanakan proses saleguard yang masih tersebar atau manual.",
-      "approach": "Pengembangan solusi saleguard sesuai ruang lingkup yang terdokumentasi.",
-      "features": [
-        "Pemantauan aktivitas sales",
-        "Pelaporan pengecualian"
-      ],
-      "stack": [],
-      "role": "Sales operations technology exploration",
-      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
-    },
-    "onework": {
-      "challenge": "Kebutuhan untuk menyederhanakan proses onework yang masih tersebar atau manual.",
-      "approach": "Pengembangan solusi onework sesuai ruang lingkup yang terdokumentasi.",
-      "features": [
-        "Eksperimen workflow desktop"
-      ],
-      "stack": [],
-      "role": "Workflow automation prototype",
       "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
     },
     "msg": {
