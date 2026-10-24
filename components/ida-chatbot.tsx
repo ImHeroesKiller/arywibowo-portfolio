@@ -91,7 +91,7 @@ export function IdaChatbot() {
       setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:result.question!}]);
     }catch {
       setQuestionError(true);
-      setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:loc==="id"?"Pertanyaan konsultasi belum berhasil dibuat oleh IDA. Silakan coba lagi; jawaban Anda tetap tersimpan.":loc==="zh"?"IDA 暂时无法生成下一个咨询问题。请重试，您的回答仍已保存。":"IDA couldn't generate the next consultation question. Please retry; your answers are still saved."}]);
+      setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:loc==="id"?"IDA belum berhasil membuat pertanyaan karena koneksi model sedang bermasalah. Kebutuhan Anda tetap tersimpan. Anda bisa mencoba ulang, menjelaskan kebutuhan lebih lanjut, atau membuka formulir konsultasi tanpa menunggu AI.":loc==="zh"?"IDA 目前无法生成问题，您的需求仍已保留。您可以重试，或直接继续填写咨询表单。":"IDA couldn't generate a question due to a model connection issue. Your request is preserved. Retry, or continue to the consultation form without waiting for AI."}]);
     }finally{setLoading(false);}
   }
 
@@ -99,7 +99,7 @@ export function IdaChatbot() {
     const goal=firstMessage || messages.filter(m=>m.role==="user").at(-1)?.content || "Business consultation";
     const loc=consultationLanguage(goal, "id");
     setConsultLocale(loc);setConsultGoal(goal);
-    setConsultAnswers([]);setConsultQuestions([]);setConsultStage("questions");
+    setConsultAnswers([]);setConsultQuestions([]);setConsultStage("questions");setQuestionError(false);
     void askNextQuestion(goal,loc,[],[]);
   }
 
@@ -277,18 +277,24 @@ export function IdaChatbot() {
                 {consultLocale==="id"?`Konsultasi dengan IDA · Pertanyaan ${consultAnswers.length+1} dari 4`:consultLocale==="zh"?`咨询 · 第 ${consultAnswers.length+1} / 4 个问题`:`Consultation · Question ${consultAnswers.length+1} of 4`}
               </div>
             )}
-            {consultStage === "questions" && questionError && <button type="button" className="rounded-xl border border-primary/40 px-4 py-3 text-sm font-semibold text-primary" onClick={()=>void askNextQuestion(consultGoal,consultLocale,consultAnswers,consultQuestions)}>{consultLocale==="id"?"Coba buat pertanyaan lagi":consultLocale==="zh"?"重试生成问题":"Retry question"}</button>}
+            {consultStage === "questions" && questionError && (
+              <div className="grid gap-2 rounded-2xl border border-amber-200 bg-amber-50 p-3" role="status">
+                <p className="text-sm text-amber-900">{consultLocale==="id"?"Model IDA sedang tidak tersedia. Kebutuhan Anda tidak hilang; belum ada email yang dikirim.":consultLocale==="zh"?"IDA 模型暂时不可用。您的需求已保留，尚未发送邮件。":"IDA is temporarily unavailable. Your request is preserved; no email has been sent."}</p>
+                <button type="button" className="rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground" onClick={()=>void askNextQuestion(consultGoal,consultLocale,consultAnswers,consultQuestions)}>{consultLocale==="id"?"Coba tanya IDA lagi":consultLocale==="zh"?"重试提问":"Retry IDA question"}</button>
+                <button type="button" className="rounded-xl border border-primary/40 bg-white px-4 py-3 text-sm font-semibold text-primary" onClick={()=>setConsultStage("summary")}>{consultLocale==="id"?"Lanjut ke ringkasan dan formulir":consultLocale==="zh"?"继续查看摘要和表单":"Continue to summary and form"}</button>
+              </div>
+            )}
             {consultStage === "summary" && (
               <section className="rounded-2xl border border-primary/25 bg-white p-4 shadow-sm" data-testid="ida-consult-summary">
                 <h3 className="font-semibold">{consultLocale==="id"?"Ringkasan konsultasi":consultLocale==="zh"?"咨询摘要":"Consultation summary"}</h3>
-                <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-7 text-slate-700">{consultationSummary(consultAnswers,consultLocale,consultQuestions)}</p>
+                <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-7 text-slate-700">{consultationSummary(consultAnswers,consultLocale,consultQuestions) || consultGoal}</p>
                 <div className="mt-4 grid gap-2 sm:grid-cols-2">
                   <button type="button" onClick={()=>{setConsultStage("questions");setConsultAnswers([]);setConsultQuestions([]);void askNextQuestion(consultGoal,consultLocale,[],[]);}} className="rounded-xl border border-border px-3 py-3 text-sm font-medium">{consultLocale==="id"?"Ulangi / koreksi":consultLocale==="zh"?"修改摘要":"Edit answers"}</button>
                   <button type="button" onClick={()=>setConsultStage("form")} className="rounded-xl bg-primary px-3 py-3 text-sm font-semibold text-primary-foreground">{consultLocale==="id"?"Lanjut ke formulir":consultLocale==="zh"?"填写咨询表单":"Continue to form"}</button>
                 </div>
               </section>
             )}
-            {consultStage === "form" && <IdaConsultationForm onBack={()=>setConsultStage("summary")} initialSummary={consultationSummary(consultAnswers,consultLocale,consultQuestions)} conversation={messages.map(({role,content})=>({role,content}))}/>}
+            {consultStage === "form" && <IdaConsultationForm onBack={()=>setConsultStage("summary")} initialSummary={consultationSummary(consultAnswers,consultLocale,consultQuestions) || consultGoal} conversation={messages.map(({role,content})=>({role,content}))}/>}
 
             {loading && (
               <div className="flex justify-start animate-in fade-in duration-200">
