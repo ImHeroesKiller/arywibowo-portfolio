@@ -321,13 +321,13 @@
   "ida": {
     "name": "IDA",
     "title": "IDA Assistant",
-    "subtitle": "Friendly consulting assistant",
+    "subtitle": "Portfolio & consultation assistant",
     "buttonLabel": "Ask IDA",
     "open": "Open IDA chat",
     "close": "Close chat",
     "send": "Send message",
-    "placeholder": "Ask me anything about consulting services...",
-    "welcome": "Hey! IDA here — need help with Ary's consulting services? Feel free to ask about Renewable Energy, Business Development, IT & Digital, HR, Sales & Project Management, or Financial Solutions.",
+    "placeholder": "Write your question...",
+    "welcome": "Hi! I’m IDA. Tell me which product or business challenge you would like to discuss.",
     "typing": "IDA is typing...",
     "disclaimer": "IDA provides service information. For official proposals, visit the Contact page.",
     "errors": {
@@ -341,7 +341,12 @@
       "PAYLOAD_TOO_LARGE": "Your message is too long.",
       "FORBIDDEN_ORIGIN": "Request not permitted.",
       "UNSUPPORTED_MEDIA_TYPE": "Unsupported request format."
-    }
+    },
+    "consultationLink": "Request consultation",
+    "suggestedLabel": "Suggested questions",
+    "suggestedProduct": "Tell me about your AI products",
+    "suggestedServices": "What business services are available?",
+    "suggestedConsultation": "I would like a business consultation"
   },
   "languageSwitcher": {
     "label": "Language",

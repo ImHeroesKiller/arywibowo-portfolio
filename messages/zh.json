@@ -321,13 +321,13 @@
   "ida": {
     "name": "IDA",
     "title": "IDA 助手",
-    "subtitle": "亲切的咨询助手",
+    "subtitle": "作品集与咨询助手",
     "buttonLabel": "咨询 IDA",
     "open": "打开 IDA 聊天",
     "close": "关闭聊天",
     "send": "发送消息",
-    "placeholder": "随便问问相关服务...",
-    "welcome": "嗨！我是 IDA — 有什么关于 Ary 咨询服务的问题吗？可以问我可再生能源、业务发展、IT与数字化、人力资源、销售与项目管理或财务解决方案相关的内容。",
+    "placeholder": "请输入您的问题...",
+    "welcome": "您好！我是 IDA。欢迎咨询产品或讨论您的业务需求。",
     "typing": "IDA 正在输入...",
     "disclaimer": "IDA 提供信息服务。如需正式报价，请访问联系页面。",
     "errors": {
@@ -341,7 +341,12 @@
       "PAYLOAD_TOO_LARGE": "消息过长。",
       "FORBIDDEN_ORIGIN": "不允许此请求。",
       "UNSUPPORTED_MEDIA_TYPE": "不支持的请求格式。"
-    }
+    },
+    "consultationLink": "申请咨询",
+    "suggestedLabel": "推荐问题",
+    "suggestedProduct": "介绍一下人工智能产品",
+    "suggestedServices": "有哪些商业服务？",
+    "suggestedConsultation": "我想咨询业务合作"
   },
   "languageSwitcher": {
     "label": "语言",

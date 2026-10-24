@@ -12,7 +12,7 @@ type ChatMessageProps = {
 };
 
 const assistantMarkdownClass =
-  "prose prose-sm prose-invert max-w-none break-words text-[0.8125rem] sm:text-sm [&>*:first-child]:mt-0 [&>*:last-child]:mb-0";
+  "prose prose-sm max-w-none break-words text-[15px] leading-7 sm:text-sm [&>*:first-child]:mt-0 [&>*:last-child]:mb-0";
 
 const markdownComponents = {
   p: ({ children }: { children?: ReactNode }) => (
@@ -42,16 +42,8 @@ const markdownComponents = {
   h3: ({ children }: { children?: ReactNode }) => (
     <h3 className="mb-1.5 text-sm font-medium text-foreground">{children}</h3>
   ),
-  code: ({ children }: { children?: ReactNode }) => (
-    <code className="rounded bg-background/80 px-1 py-0.5 font-mono text-[0.8em] text-primary">
-      {children}
-    </code>
-  ),
-  pre: ({ children }: { children?: ReactNode }) => (
-    <pre className="mb-2 overflow-x-auto rounded-lg border border-border/60 bg-background/80 p-2.5 text-xs last:mb-0">
-      {children}
-    </pre>
-  ),
+  code: ({ children }: { children?: ReactNode }) => <span>{children}</span>,
+  pre: () => null,
   a: ({ href, children }: { href?: string; children?: ReactNode }) => (
     <a
       href={href}
@@ -98,7 +90,7 @@ export function ChatMessage({ content, role }: ChatMessageProps) {
     >
       <div
         className={cn(
-          "max-w-[90%] min-w-0 rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed sm:max-w-[85%]",
+          "max-w-[94%] min-w-0 rounded-2xl px-4 py-3 text-[15px] leading-7 sm:max-w-[88%]",
           isUser
             ? "rounded-br-md bg-primary text-primary-foreground shadow-sm"
             : "rounded-bl-md border border-border/60 bg-muted/50 text-foreground shadow-sm"

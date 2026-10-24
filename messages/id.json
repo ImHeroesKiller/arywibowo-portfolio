@@ -321,13 +321,13 @@
   "ida": {
     "name": "IDA",
     "title": "IDA Assistant",
-    "subtitle": "Asisten konsultasi yang siap bantu",
+    "subtitle": "Asisten portfolio & konsultasi",
     "buttonLabel": "Tanya IDA",
     "open": "Buka chat IDA",
     "close": "Tutup chat",
     "send": "Kirim pesan",
-    "placeholder": "Tanya apa aja soal layanan konsultasi...",
-    "welcome": "Hai! IDA di sini — ada yang bisa dibantu soal layanan konsultasi Ary? Boleh tanya tentang Renewable Energy, Business Development, IT & Digital, HR, Sales & Project Management, atau Financial Solutions.",
+    "placeholder": "Tulis pertanyaan Anda...",
+    "welcome": "Halo! Saya IDA. Ceritakan produk atau kebutuhan bisnis yang ingin Anda diskusikan.",
     "typing": "IDA lagi ngetik...",
     "disclaimer": "IDA membantu informasi layanan. Untuk penawaran resmi, hubungi halaman Kontak.",
     "errors": {
@@ -341,7 +341,12 @@
       "PAYLOAD_TOO_LARGE": "Pesan terlalu panjang.",
       "FORBIDDEN_ORIGIN": "Permintaan tidak diizinkan.",
       "UNSUPPORTED_MEDIA_TYPE": "Format permintaan tidak didukung."
-    }
+    },
+    "consultationLink": "Minta konsultasi",
+    "suggestedLabel": "Pertanyaan yang bisa dicoba",
+    "suggestedProduct": "Ceritakan tentang produk AI Anda",
+    "suggestedServices": "Layanan bisnis apa yang tersedia?",
+    "suggestedConsultation": "Saya ingin konsultasi bisnis"
   },
   "languageSwitcher": {
     "label": "Bahasa",
