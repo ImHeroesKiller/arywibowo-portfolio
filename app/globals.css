@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @theme inline {
   --color-background: var(--background);
@@ -39,73 +38,39 @@
     --font-sans: var(--font-sans);
   }
 
-  :root {
-    --background: #111111;
-    --foreground: #f5f5f5;
-    --card: #1a1a1a;
-    --card-foreground: #f5f5f5;
-    --popover: #1a1a1a;
-    --popover-foreground: #f5f5f5;
-    --primary: #3b82f6;
+  :root, .dark {
+    --background: #f8fbff;
+    --foreground: #101b37;
+    --card: #ffffff;
+    --card-foreground: #101b37;
+    --popover: #ffffff;
+    --popover-foreground: #101b37;
+    --primary: #255ff4;
     --primary-foreground: #ffffff;
-    --secondary: #1f2937;
-    --secondary-foreground: #f5f5f5;
-    --muted: #1f1f1f;
-    --muted-foreground: #a3a3a3;
-    --accent: #3b82f6;
-    --accent-foreground: #ffffff;
-    --destructive: #ef4444;
-    --border: rgba(255, 255, 255, 0.1);
-    --input: rgba(255, 255, 255, 0.12);
-    --ring: #3b82f6;
-    --chart-1: #3b82f6;
-    --chart-2: #60a5fa;
-    --chart-3: #93c5fd;
-    --chart-4: #1d4ed8;
-    --chart-5: #1e40af;
-    --radius: 0.625rem;
-    --sidebar: #1a1a1a;
-    --sidebar-foreground: #f5f5f5;
-    --sidebar-primary: #3b82f6;
+    --secondary: #eaf1ff;
+    --secondary-foreground: #172b60;
+    --muted: #eef3fb;
+    --muted-foreground: #526582;
+    --accent: #e8efff;
+    --accent-foreground: #173d9a;
+    --destructive: #dc3545;
+    --border: #dce5f3;
+    --input: #dce5f3;
+    --ring: #477bff;
+    --chart-1: #255ff4;
+    --chart-2: #8061f4;
+    --chart-3: #36bbda;
+    --chart-4: #13bba6;
+    --chart-5: #5572cd;
+    --radius: 0.875rem;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #101b37;
+    --sidebar-primary: #255ff4;
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent: #1f1f1f;
-    --sidebar-accent-foreground: #f5f5f5;
-    --sidebar-border: rgba(255, 255, 255, 0.1);
-    --sidebar-ring: #3b82f6;
-  }
-
-  .dark {
-    --background: #111111;
-    --foreground: #f5f5f5;
-    --card: #1a1a1a;
-    --card-foreground: #f5f5f5;
-    --popover: #1a1a1a;
-    --popover-foreground: #f5f5f5;
-    --primary: #3b82f6;
-    --primary-foreground: #ffffff;
-    --secondary: #1f2937;
-    --secondary-foreground: #f5f5f5;
-    --muted: #1f1f1f;
-    --muted-foreground: #a3a3a3;
-    --accent: #3b82f6;
-    --accent-foreground: #ffffff;
-    --destructive: #ef4444;
-    --border: rgba(255, 255, 255, 0.1);
-    --input: rgba(255, 255, 255, 0.12);
-    --ring: #3b82f6;
-    --chart-1: #3b82f6;
-    --chart-2: #60a5fa;
-    --chart-3: #93c5fd;
-    --chart-4: #1d4ed8;
-    --chart-5: #1e40af;
-    --sidebar: #1a1a1a;
-    --sidebar-foreground: #f5f5f5;
-    --sidebar-primary: #3b82f6;
-    --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent: #1f1f1f;
-    --sidebar-accent-foreground: #f5f5f5;
-    --sidebar-border: rgba(255, 255, 255, 0.1);
-    --sidebar-ring: #3b82f6;
+    --sidebar-accent: #eef3fb;
+    --sidebar-accent-foreground: #101b37;
+    --sidebar-border: #dce5f3;
+    --sidebar-ring: #477bff;
   }
 
   * {
@@ -209,3 +174,6 @@
   border-radius: 9999px;
   background: color-mix(in oklch, var(--border) 70%, transparent);
 }
+/* P4.2 visual system: airy editorial layout, accessible indigo/blue accents */
+body { background: radial-gradient(ellipse 55% 32% at 95% 5%, #dce8ff 0%, transparent 100%), #f8fbff; }
+::selection { background: #d5e3ff; color: #152e75; }

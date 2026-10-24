@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -69,24 +69,24 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 shadow-[0_2px_18px_rgba(28,58,118,0.035)] backdrop-blur-xl">
       <a href="#main-content" className="sr-only absolute left-3 top-2 z-[100] rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground focus:not-sr-only">
         Skip to content
       </a>
-      <nav aria-label="Primary navigation" className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-3 sm:h-16 sm:px-6 lg:px-8">
+      <nav aria-label="Primary navigation" className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
         <Logo />
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {navPaths.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  "relative rounded-lg px-3 py-2 text-[13px] font-medium transition-colors",
                   pathname === link.href
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? "text-primary after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2px] after:rounded-full after:bg-primary"
+                    : "text-slate-600 hover:bg-blue-50 hover:text-primary"
                 )}
               >
                 {t(link.key)}
@@ -98,9 +98,9 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
 
-          <div className="hidden md:block">
+          <div className="hidden sm:block">
             <Button render={<Link href="/contact" />} size="sm">
-              {t("getInTouch")}
+              {t("getInTouch")} <ArrowUpRight className="ml-1 size-4" />
             </Button>
           </div>
 
@@ -109,7 +109,7 @@ export default function Navbar() {
             aria-controls="mobile-navigation"
             variant="ghost"
             size="icon"
-            className="shrink-0 md:hidden"
+            className="shrink-0 lg:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={mobileOpen}
@@ -137,7 +137,7 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="exit"
-            className="overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-md md:hidden"
+            className="overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-md lg:hidden"
           >
             <ul className="flex flex-col gap-1 px-4 py-4">
               {navPaths.map((link) => (
@@ -147,7 +147,7 @@ export default function Navbar() {
                     aria-current={pathname === link.href ? "page" : undefined}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
-                      "block rounded-lg px-3 py-3 text-sm font-medium transition-colors",
+                      "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
                       pathname === link.href
                         ? "bg-primary/10 text-primary"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"

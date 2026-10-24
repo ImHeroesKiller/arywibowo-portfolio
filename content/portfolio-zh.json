@@ -1,0 +1,239 @@
+{
+  "policy": {
+    "statuses": {
+      "production": "正式运营",
+      "uat": "用户验收测试",
+      "development": "开发中",
+      "prototype": "原型",
+      "concept": "概念"
+    },
+    "note": "状态基于现有证据，不能保证全部功能均已上线。"
+  },
+  "categories": {
+    "ai": "人工智能与智能系统",
+    "fintech": "金融科技与财务系统",
+    "enterprise": "企业与人力系统",
+    "logistics": "物流与车队",
+    "operations": "运营与自动化",
+    "business": "商业与企业",
+    "energy": "能源与可持续发展"
+  },
+  "products": [
+    {
+      "id": "ida-gen3",
+      "name": "IDA Gen3",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://ida.arywibowo.id",
+      "repository": "https://github.com/ImHeroesKiller/ida-gen3",
+      "description": "集成对话、研究、视觉与文档工具的 AI 工作空间。"
+    },
+    {
+      "id": "ida-labs",
+      "name": "IDA Labs",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://ida-labs-dashboard.vercel.app",
+      "repository": "https://github.com/ImHeroesKiller/ida-labs",
+      "description": "支持搜索、提取与信息整合的 AI 研究基础设施。"
+    },
+    {
+      "id": "ida-call-shield",
+      "name": "IDA Call Shield",
+      "category": "ai",
+      "status": "uat",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/ida-call-shield",
+      "description": "Android 来电筛查、号码模式分析与设备监测；AI 语音筛查尚未验证。"
+    },
+    {
+      "id": "proqpay-lite",
+      "name": "ProQPay Lite",
+      "category": "fintech",
+      "status": "uat",
+      "url": "https://proqpay.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-lite",
+      "description": "AI 薪资运营系统，具有审批与审计流程；支付集成仍在验证。"
+    },
+    {
+      "id": "proqpay-enterprise",
+      "name": "ProQPay Enterprise",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://proqpay.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-app",
+      "description": "企业薪资工作流方案；代码库独立，其单独线上部署尚未核实。"
+    },
+    {
+      "id": "proqpay-ess",
+      "name": "ProQPay ESS",
+      "category": "fintech",
+      "status": "uat",
+      "url": "https://proqpay-ess.arywibowo.workers.dev",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-ess",
+      "description": "员工自助门户，用于查看薪资状态与工资单。"
+    },
+    {
+      "id": "proqtrade",
+      "name": "ProQTrade",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://proqtrade.pages.dev",
+      "repository": "https://github.com/ImHeroesKiller/proqtrade",
+      "description": "开发中的交易平台，配备 AI、数据、行情、交易及通知服务。"
+    },
+    {
+      "id": "proqacc",
+      "name": "ProQAcc",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://proqacc.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqacc",
+      "description": "正在进行前端迁移的会计应用；端到端生产就绪性尚未验证。"
+    },
+    {
+      "id": "kawankas",
+      "name": "KawanKas",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://kawankas.arywibowo.id",
+      "repository": "https://github.com/ImHeroesKiller/kawankas",
+      "description": "朋友间借款往来记录工具，非贷款服务。"
+    },
+    {
+      "id": "proqtrack",
+      "name": "ProQTrack",
+      "category": "enterprise",
+      "status": "uat",
+      "url": "https://proqtrack.arywibowo.workers.dev",
+      "repository": "https://github.com/ImHeroesKiller/proqtrack",
+      "description": "分布式外勤团队监测与任务运营平台。"
+    },
+    {
+      "id": "pay-hr",
+      "name": "PAY HR",
+      "category": "enterprise",
+      "status": "uat",
+      "url": "https://hris.perada.net",
+      "repository": "https://github.com/ImHeroesKiller/hr-pay",
+      "description": "涵盖考勤、加班、预支、客户与薪资的人力资源系统。"
+    },
+    {
+      "id": "perada-recruitment",
+      "name": "PERADA Recruitment Portal",
+      "category": "enterprise",
+      "status": "prototype",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/perdana-portal",
+      "description": "招聘原型与模拟 AI 面试，使用浏览器本地存储。"
+    },
+    {
+      "id": "freejobid",
+      "name": "FreeJobID",
+      "category": "enterprise",
+      "status": "development",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/FreeJobID",
+      "description": "双语兼职及自由职业职位发现平台。"
+    },
+    {
+      "id": "arah-fleet",
+      "name": "ARAH Fleet",
+      "category": "logistics",
+      "status": "uat",
+      "url": "https://arah-app-delta.vercel.app",
+      "repository": "https://github.com/ImHeroesKiller/arah-app",
+      "description": "车队可视化、路线管理与现场协调平台。"
+    },
+    {
+      "id": "oms-perada",
+      "name": "OMS PERADA",
+      "category": "logistics",
+      "status": "uat",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/oms-perkasa",
+      "description": "面向货运物流的订单、开票及应收账款系统。"
+    },
+    {
+      "id": "notagen",
+      "name": "NotaGen / PERADA Tools",
+      "category": "operations",
+      "status": "uat",
+      "url": "https://nota-gen-two.vercel.app",
+      "repository": "https://github.com/ImHeroesKiller/nota-gen",
+      "description": "面向运营团队的效率工具与可打印文档生成。"
+    },
+    {
+      "id": "saleguard",
+      "name": "SaleGuard",
+      "category": "operations",
+      "status": "development",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/SaleGuard",
+      "description": "销售及经销商活动监测、报表与异常提示。"
+    },
+    {
+      "id": "onework",
+      "name": "OneWork",
+      "category": "operations",
+      "status": "prototype",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/OneWork",
+      "description": "免编程桌面图形界面自动化实验项目。"
+    },
+    {
+      "id": "msg",
+      "name": "MSG Corporate",
+      "category": "business",
+      "status": "production",
+      "url": "https://www.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-website",
+      "description": "面向人力解决方案、咨询及业务转型的企业网站。"
+    },
+    {
+      "id": "perada-group",
+      "name": "PERADA Group",
+      "category": "business",
+      "status": "production",
+      "url": "https://perada.net",
+      "repository": "https://github.com/ImHeroesKiller/PeradaGroup.web",
+      "description": "展示物流及人力资源服务的企业网站。"
+    },
+    {
+      "id": "danawangsa",
+      "name": "Danawangsa Capital",
+      "category": "business",
+      "status": "production",
+      "url": "https://danawangsa.arywibowo.id",
+      "repository": "https://github.com/ImHeroesKiller/danawangsa-site",
+      "description": "商业与财务战略咨询网站，不代表受监管金融服务声明。"
+    },
+    {
+      "id": "mkb",
+      "name": "MKB Corporate & JUPITER",
+      "category": "business",
+      "status": "development",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/mkb-website",
+      "description": "人力与品牌推广企业网站，包含外勤报告技术概念。"
+    },
+    {
+      "id": "qjob-concept",
+      "name": "Qjob Website Concept",
+      "category": "business",
+      "status": "concept",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/outsourcing-management-system",
+      "description": "静态企业网站改版概念，并非正式上线产品。"
+    },
+    {
+      "id": "bespoke-solar",
+      "name": "Bespoke Solar & EV Collaboration",
+      "category": "energy",
+      "status": "concept",
+      "url": "https://bespokesolar.com.au",
+      "repository": null,
+      "description": "太阳能、储能及电动出行的战略合作构想。"
+    }
+  ]
+}

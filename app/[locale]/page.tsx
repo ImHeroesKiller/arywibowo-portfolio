@@ -5,7 +5,7 @@ import { About } from "@/components/about";
 import Hero from "@/components/Hero";
 import { LighthouseWidget } from "@/components/lighthouse-widget";
 import { PageTransition } from "@/components/page-transition";
-import { Projects } from "@/components/projects";
+import { PortfolioShowcase } from "@/components/portfolio-showcase";
 import { Services } from "@/components/services";
 import { type Locale, routing } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
@@ -43,7 +43,7 @@ export default async function HomePage({ params }: PageProps) {
     <PageTransition>
       <Hero />
       <Services />
-      <Projects />
+      <PortfolioShowcase locale={locale} featured />
       <About />
       <LighthouseWidget />
     </PageTransition>
