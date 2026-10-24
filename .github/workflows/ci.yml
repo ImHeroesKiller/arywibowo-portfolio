@@ -63,3 +63,6 @@ jobs:
 
       - name: IDA four-step consultation card regression
         run: node scripts/ida-flow-regression.mjs
+
+      - name: IDA mini context-aware consultation question contract
+        run: node scripts/ida-dynamic-question-regression.mjs
