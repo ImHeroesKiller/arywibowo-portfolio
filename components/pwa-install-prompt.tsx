@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Download, X } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 
 import { Button } from "@/components/ui/button";
 
@@ -15,6 +16,8 @@ const DISMISS_KEY = "pwa-install-dismissed";
 
 export function PwaInstallPrompt() {
   const t = useTranslations("pwa");
+  const pathname = usePathname();
+  const suppressOnPortfolio = pathname === "/projects" || pathname.startsWith("/projects/");
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null);
   const [visible, setVisible] = useState(false);
@@ -64,7 +67,8 @@ export function PwaInstallPrompt() {
     setDeferredPrompt(null);
   }
 
-  if (!visible) return null;
+  // Portfolio visitors should be able to browse products without an install overlay.
+  if (!visible || suppressOnPortfolio) return null;
 
   return (
     <div
