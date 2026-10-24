@@ -1,0 +1,239 @@
+{
+  "policy": {
+    "statuses": {
+      "production": "Production",
+      "uat": "UAT / Validation",
+      "development": "Development",
+      "prototype": "Prototype",
+      "concept": "Concept"
+    },
+    "note": "Status describes product maturity based on available evidence, not a guarantee that every feature is operational."
+  },
+  "categories": {
+    "ai": "AI & Intelligent Systems",
+    "fintech": "Fintech & Financial Systems",
+    "enterprise": "Enterprise & Workforce",
+    "logistics": "Logistics & Fleet",
+    "operations": "Operations & Automation",
+    "business": "Business & Corporate",
+    "energy": "Energy & Sustainability"
+  },
+  "products": [
+    {
+      "id": "ida-gen3",
+      "name": "IDA Gen3",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://ida.arywibowo.id",
+      "repository": "https://github.com/ImHeroesKiller/ida-gen3",
+      "description": "AI workspace with chat, research, vision, and document tools."
+    },
+    {
+      "id": "ida-labs",
+      "name": "IDA Labs",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://ida-labs-dashboard.vercel.app",
+      "repository": "https://github.com/ImHeroesKiller/ida-labs",
+      "description": "Research infrastructure and AI gateway for search, extraction, and synthesis."
+    },
+    {
+      "id": "ida-call-shield",
+      "name": "IDA Call Shield",
+      "category": "ai",
+      "status": "uat",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/ida-call-shield",
+      "description": "Native Android call screening, reputation heuristics, and device monitoring; AI voice screening is not verified."
+    },
+    {
+      "id": "proqpay-lite",
+      "name": "ProQPay Lite",
+      "category": "fintech",
+      "status": "uat",
+      "url": "https://proqpay.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-lite",
+      "description": "AI payroll operating system with approval workflows, audit trails, and payment integrations under validation."
+    },
+    {
+      "id": "proqpay-enterprise",
+      "name": "ProQPay Enterprise",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://proqpay.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-app",
+      "description": "Enterprise payroll workflow implementation; distinct codebase from ProQPay Lite, current live deployment not independently established."
+    },
+    {
+      "id": "proqpay-ess",
+      "name": "ProQPay ESS",
+      "category": "fintech",
+      "status": "uat",
+      "url": "https://proqpay-ess.arywibowo.workers.dev",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-ess",
+      "description": "Employee self-service portal for payroll status and payslips."
+    },
+    {
+      "id": "proqtrade",
+      "name": "ProQTrade",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://proqtrade.pages.dev",
+      "repository": "https://github.com/ImHeroesKiller/proqtrade",
+      "description": "Trading platform prototype with separate AI, data, market, trading, and notification Workers."
+    },
+    {
+      "id": "proqacc",
+      "name": "ProQAcc",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://proqacc.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqacc",
+      "description": "Accounting application in frontend migration; end-to-end production readiness not verified."
+    },
+    {
+      "id": "kawankas",
+      "name": "KawanKas",
+      "category": "fintech",
+      "status": "development",
+      "url": "https://kawankas.arywibowo.id",
+      "repository": "https://github.com/ImHeroesKiller/kawankas",
+      "description": "Personal recordkeeping for informal lending between friends; not a lending service."
+    },
+    {
+      "id": "proqtrack",
+      "name": "ProQTrack",
+      "category": "enterprise",
+      "status": "uat",
+      "url": "https://proqtrack.arywibowo.workers.dev",
+      "repository": "https://github.com/ImHeroesKiller/proqtrack",
+      "description": "Field-force monitoring and task operations for distributed teams."
+    },
+    {
+      "id": "pay-hr",
+      "name": "PAY HR",
+      "category": "enterprise",
+      "status": "uat",
+      "url": "https://hris.perada.net",
+      "repository": "https://github.com/ImHeroesKiller/hr-pay",
+      "description": "HR information system for attendance, overtime, advances, clients, and payroll."
+    },
+    {
+      "id": "perada-recruitment",
+      "name": "PERADA Recruitment Portal",
+      "category": "enterprise",
+      "status": "prototype",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/perdana-portal",
+      "description": "Recruitment prototype with applicant workflows and a simulated AI interview; localStorage-based demo."
+    },
+    {
+      "id": "freejobid",
+      "name": "FreeJobID",
+      "category": "enterprise",
+      "status": "development",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/FreeJobID",
+      "description": "Bilingual job discovery concept focused on freelance and part-time roles."
+    },
+    {
+      "id": "arah-fleet",
+      "name": "ARAH Fleet",
+      "category": "logistics",
+      "status": "uat",
+      "url": "https://arah-app-delta.vercel.app",
+      "repository": "https://github.com/ImHeroesKiller/arah-app",
+      "description": "Fleet visibility and operations console with routing and field coordination."
+    },
+    {
+      "id": "oms-perada",
+      "name": "OMS PERADA",
+      "category": "logistics",
+      "status": "uat",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/oms-perkasa",
+      "description": "Order, billing, and accounts-receivable system for trucking and logistics."
+    },
+    {
+      "id": "notagen",
+      "name": "NotaGen / PERADA Tools",
+      "category": "operations",
+      "status": "uat",
+      "url": "https://nota-gen-two.vercel.app",
+      "repository": "https://github.com/ImHeroesKiller/nota-gen",
+      "description": "Productivity tools and printable document generation for operational teams."
+    },
+    {
+      "id": "saleguard",
+      "name": "SaleGuard",
+      "category": "operations",
+      "status": "development",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/SaleGuard",
+      "description": "Sales and distributor activity monitoring with reporting and exception alerts."
+    },
+    {
+      "id": "onework",
+      "name": "OneWork",
+      "category": "operations",
+      "status": "prototype",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/OneWork",
+      "description": "Experimental desktop GUI automation without code."
+    },
+    {
+      "id": "msg",
+      "name": "MSG Corporate",
+      "category": "business",
+      "status": "production",
+      "url": "https://www.msg-os.com",
+      "repository": "https://github.com/ImHeroesKiller/proqpay-website",
+      "description": "Corporate website for workforce solutions, advisory, and business transformation."
+    },
+    {
+      "id": "perada-group",
+      "name": "PERADA Group",
+      "category": "business",
+      "status": "production",
+      "url": "https://perada.net",
+      "repository": "https://github.com/ImHeroesKiller/PeradaGroup.web",
+      "description": "Corporate website presenting logistics and workforce services."
+    },
+    {
+      "id": "danawangsa",
+      "name": "Danawangsa Capital",
+      "category": "business",
+      "status": "production",
+      "url": "https://danawangsa.arywibowo.id",
+      "repository": "https://github.com/ImHeroesKiller/danawangsa-site",
+      "description": "Strategic business and financial advisory website; not a claim of regulated financial services."
+    },
+    {
+      "id": "mkb",
+      "name": "MKB Corporate & JUPITER",
+      "category": "business",
+      "status": "development",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/mkb-website",
+      "description": "Workforce and brand-activation website with a field-reporting technology concept."
+    },
+    {
+      "id": "qjob-concept",
+      "name": "Qjob Website Concept",
+      "category": "business",
+      "status": "concept",
+      "url": null,
+      "repository": "https://github.com/ImHeroesKiller/outsourcing-management-system",
+      "description": "Static corporate website redesign concept, not an official deployed product claim."
+    },
+    {
+      "id": "bespoke-solar",
+      "name": "Bespoke Solar & EV Collaboration",
+      "category": "energy",
+      "status": "concept",
+      "url": "https://bespokesolar.com.au",
+      "repository": null,
+      "description": "Strategic business collaboration concept for solar, battery storage, and electric mobility."
+    }
+  ]
+}
