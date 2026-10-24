@@ -6,7 +6,7 @@ Documentation: https://dash-ida.arywibowo.id/docs
 
 The portfolio browser sends messages to its own `POST /api/chat` route. Only the Next.js server calls `POST https://api-ida.arywibowo.id/api/v1/chat/completions`. Authentication is server-side `Authorization: Bearer ${IDA_API_KEY}`. **Never expose the key through `NEXT_PUBLIC_*` or client scripts**.
 
-- Model: `ida-chat-fast` (IDA mini); `max_tokens: 220`; `stream: false`.
+- Model: `ida-chat-fast` (IDA mini), with one fallback to `ida-chat` only for HTTP 502/503/504 provider errors; both capped at `max_tokens: 220`; `stream: false`.
 - Web search: `ida.web_search: false` for the portfolio to avoid requiring a search scope or incurring web-search credit costs.
 - System context: compact published-product matches (up to three) and truncated matching knowledge snippets. Unpublished products are excluded. Recent conversation limited to four turns, 1,800 characters in history; latest user question <=750 characters. Common greetings, thanks, contact keywords, and clearly out-of-scope questions use static local replies without provider calls.
 - Validated role and message limits, origin checks, request size limit, per-instance throttling remain active.

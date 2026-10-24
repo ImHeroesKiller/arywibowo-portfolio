@@ -68,44 +68,45 @@ async function callIda(messages: ChatMessage[]) {
     ida: { web_search: false },
   };
 
-  let response: Response;
-  try {
-    response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(body),
-      cache: "no-store",
-      signal: AbortSignal.timeout(170_000),
-    });
-  } catch {
-    throw new ApiRequestError(504, "AI_UNAVAILABLE");
+  async function requestCompletion(model: string): Promise<{response: Response; result: Completion | null; providerCode: string}> {
+    let response: Response;
+    try {
+      response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({...body, model}),
+        cache: "no-store",
+        signal: AbortSignal.timeout(35_000),
+      });
+    } catch {
+      throw new ApiRequestError(504, "AI_UNAVAILABLE");
+    }
+    let data: unknown = null;
+    try { data = await response.json(); } catch { /* provider sometimes returns an empty error body */ }
+    const parsed = data && typeof data === "object" ? data as {error?: {code?: unknown}} : {};
+    const rawCode = parsed.error?.code;
+    const providerCode = typeof rawCode === "string" && /^[A-Z_]{2,50}$/.test(rawCode) ? rawCode : "UNKNOWN";
+    return {response, result: response.ok ? data as Completion : null, providerCode};
   }
 
-  // Never forward provider details/headers to anonymous visitors or log credentials.
+  let {response, result, providerCode} = await requestCompletion(IDA_MODEL);
+  // One controlled fallback only when mini provider is temporarily unavailable.
+  if (!response.ok && [502,503,504].includes(response.status)) {
+    console.warn("IDA mini temporarily unavailable; attempting balanced model fallback", {status:response.status,code:providerCode});
+    ({response,result,providerCode} = await requestCompletion("ida-chat"));
+  }
   if (!response.ok) {
-    // Log only the upstream HTTP status and bounded error code. Never log key or provider response text.
-    let providerCode = "UNKNOWN";
-    try {
-      const failure = await response.json() as {error?: {code?: unknown}};
-      if (typeof failure?.error?.code === "string" && /^[A-Z_]{2,50}$/.test(failure.error.code)) providerCode = failure.error.code;
-    } catch { /* ignore malformed upstream error */ }
-    console.warn("IDA upstream rejected request", {status: response.status, code: providerCode});
-    if (process.env.VERCEL_ENV === "preview") throw new ApiRequestError(502, `IDA_UPSTREAM_${response.status}_${providerCode}`);
-    if (response.status === 429) throw new ApiRequestError(429, "RATE_LIMITED");
-    if (response.status === 401 || response.status === 403) throw new ApiRequestError(503, "NOT_CONFIGURED");
-    if (response.status === 402) throw new ApiRequestError(503, "AI_UNAVAILABLE");
-    throw new ApiRequestError(502, "AI_UNAVAILABLE");
+    console.warn("IDA upstream request failed", {status:response.status,code:providerCode});
+    if (response.status === 429) throw new ApiRequestError(429,"RATE_LIMITED");
+    if (response.status === 401 || response.status === 403) throw new ApiRequestError(503,"NOT_CONFIGURED");
+    if (response.status === 402) throw new ApiRequestError(503,"AI_UNAVAILABLE");
+    throw new ApiRequestError(502,"AI_UNAVAILABLE");
   }
-  let result: Completion;
-  try {
-    result = (await response.json()) as Completion;
-  } catch {
-    throw new ApiRequestError(502, "AI_UNAVAILABLE");
-  }
+  if (!result) throw new ApiRequestError(502,"AI_UNAVAILABLE");
   const message = result.choices?.[0]?.message?.content;
   if (typeof message !== "string" || !message.trim()) throw new ApiRequestError(502, "EMPTY_RESPONSE");
   const normalized = normalizeIdaResponse(message);
