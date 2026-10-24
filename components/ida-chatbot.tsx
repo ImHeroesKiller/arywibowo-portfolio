@@ -10,6 +10,7 @@ import { IdaAvatar } from "@/components/ida-avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { consultationIntent, visitorConsultationSummary } from "@/lib/ida-consultation-intent";
+import { consultationLanguage, consultationPrompts, consultationSummary, isConsultationStart, type ConsultationLocale } from "@/lib/ida-consultation-flow";
 
 type ChatMessage = {
   id: string;
@@ -37,7 +38,9 @@ function TypingIndicator({ label }: { label: string }) {
 export function IdaChatbot() {
   const t = useTranslations("ida");
   const [open, setOpen] = useState(false);
-  const [consulting,setConsulting]=useState(false);
+  const [consultStage,setConsultStage]=useState<"questions"|"summary"|"form"|null>(null);
+  const [consultAnswers,setConsultAnswers]=useState<string[]>([]);
+  const [consultLocale,setConsultLocale]=useState<ConsultationLocale>("id");
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -75,6 +78,15 @@ export function IdaChatbot() {
     return () => window.removeEventListener("keydown", onEscape);
   }, [open]);
 
+  function startConsultation(firstMessage?:string) {
+    const loc=consultationLanguage(firstMessage || messages.filter(m=>m.role==="user").at(-1)?.content || "", "id");
+    setConsultLocale(loc);
+    setConsultAnswers([]);
+    setConsultStage("questions");
+    setError(null);
+    setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:consultationPrompts[loc][0]}]);
+  }
+
   async function handleSend(suggested?: string) {
     const trimmed = (suggested ?? input).trim();
     if (!trimmed || loading || trimmed.length > 750) return;
@@ -89,13 +101,37 @@ export function IdaChatbot() {
     setMessages(nextMessages);
     setInput("");
     setError(null);
+    if (consultStage === "questions") {
+      const updated=[...consultAnswers,trimmed];
+      setConsultAnswers(updated);
+      if (updated.length >= 4) {
+        setConsultStage("summary");
+        setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:consultLocale==="id"?"Terima kasih. Saya sudah menyiapkan ringkasan kebutuhan Anda. Silakan periksa, koreksi jika perlu, lalu lanjutkan ke formulir konsultasi.":consultLocale==="zh"?"感谢您提供信息。请查看并确认需求摘要，然后继续填写咨询表单。":"Thanks. Here is your consultation summary. Please review it before opening the consultation form."}]);
+      } else {
+        setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:consultationPrompts[consultLocale][updated.length]}]);
+      }
+      return;
+    }
+    if (consultStage === "summary") {
+      if (/^(?:ubah|edit|koreksi|change|revise|修改)/i.test(trimmed)) {
+        setConsultStage("questions");setConsultAnswers([]);
+        setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:consultationPrompts[consultLocale][0]}]);
+        return;
+      }
+      if (consultationIntent(trimmed)==="open-form" || /^(?:lanjut|iya|ya|yes|continue|next|submit|send|kirim|继续|下一步)/i.test(trimmed)) {
+        setConsultStage("form");return;
+      }
+    }
+    if (!consultStage && isConsultationStart(trimmed)) {
+      startConsultation(trimmed);return;
+    }
     const lastAssistant = [...messages].reverse().find(message => message.role === "assistant")?.content ?? "";
     const confirmedHandoff = /^(?:iya|ya|yes|oke|ok|boleh|baik|sure)(?:[.,! ]|$)/i.test(trimmed)
       && /(?:jadwalkan konsultasi|kirim formulir|request consultation|schedule a consultation|consultation form)/i.test(lastAssistant);
     const intent = confirmedHandoff ? "open-form" : consultationIntent(trimmed);
     if (intent === "open-form") {
       setMessages((prev)=>[...prev,{id:createId(),role:"assistant",content:t("formHandoff")}]);
-      setConsulting(true);
+      startConsultation(trimmed);
       return;
     }
     if (intent === "show-summary") {
@@ -191,7 +227,7 @@ export function IdaChatbot() {
             </button>
           </header>
 
-          {consulting ? <IdaConsultationForm onBack={()=>setConsulting(false)} conversation={messages.map(({role,content})=>({role,content}))}/> : <div
+          <div
             className="ida-chat-scroll min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain px-4 py-5 sm:px-5"
           >
             {messages.map((message) => (
@@ -208,7 +244,7 @@ export function IdaChatbot() {
                   <button
                     type="button"
                     key={key}
-                    onClick={() => key === "suggestedConsultation" ? (setConsulting(true)) : void handleSend(t(key))}
+                    onClick={() => key === "suggestedConsultation" ? startConsultation(t(key)) : void handleSend(t(key))}
                     className="rounded-full border border-primary/20 bg-primary/5 px-3 py-2 text-left text-xs font-medium leading-5 text-primary transition-colors hover:border-primary/50 hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {t(key)}
@@ -216,6 +252,23 @@ export function IdaChatbot() {
                 ))}
               </div>
             )}
+
+            {consultStage === "questions" && (
+              <div className="rounded-xl border border-primary/20 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700" role="status">
+                {consultLocale==="id"?`Konsultasi · Pertanyaan ${consultAnswers.length+1} dari 4`:consultLocale==="zh"?`咨询 · 第 ${consultAnswers.length+1} / 4 个问题`:`Consultation · Question ${consultAnswers.length+1} of 4`}
+              </div>
+            )}
+            {consultStage === "summary" && (
+              <section className="rounded-2xl border border-primary/25 bg-white p-4 shadow-sm" data-testid="ida-consult-summary">
+                <h3 className="font-semibold">{consultLocale==="id"?"Ringkasan konsultasi":consultLocale==="zh"?"咨询摘要":"Consultation summary"}</h3>
+                <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-7 text-slate-700">{consultationSummary(consultAnswers,consultLocale)}</p>
+                <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                  <button type="button" onClick={()=>{setConsultStage("questions");setConsultAnswers([]);setMessages(prev=>[...prev,{id:createId(),role:"assistant",content:consultationPrompts[consultLocale][0]}]);}} className="rounded-xl border border-border px-3 py-3 text-sm font-medium">{consultLocale==="id"?"Ulangi / koreksi":consultLocale==="zh"?"修改摘要":"Edit answers"}</button>
+                  <button type="button" onClick={()=>setConsultStage("form")} className="rounded-xl bg-primary px-3 py-3 text-sm font-semibold text-primary-foreground">{consultLocale==="id"?"Lanjut ke formulir":consultLocale==="zh"?"填写咨询表单":"Continue to form"}</button>
+                </div>
+              </section>
+            )}
+            {consultStage === "form" && <IdaConsultationForm onBack={()=>setConsultStage("summary")} initialSummary={consultationSummary(consultAnswers,consultLocale)} conversation={messages.map(({role,content})=>({role,content}))}/>}
 
             {loading && (
               <div className="flex justify-start animate-in fade-in duration-200">
@@ -232,9 +285,9 @@ export function IdaChatbot() {
             )}
 
             <div ref={messagesEndRef} />
-          </div>}
+          </div>
 
-          {!consulting && <footer className="shrink-0 border-t border-border/60 bg-card px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 sm:p-4">
+          {consultStage !== "form" && consultStage !== "summary" && <footer className="shrink-0 border-t border-border/60 bg-card px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 sm:p-4">
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
@@ -264,7 +317,7 @@ export function IdaChatbot() {
               </Button>
             </div>
             <div className="mt-2 flex items-center justify-between gap-2">
-              <button type="button" onClick={()=>setConsulting(true)} className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"><Mail className="size-3.5" />{t("consultationLink")}</button>
+              <button type="button" onClick={()=>startConsultation()} className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"><Mail className="size-3.5" />{t("consultationLink")}</button>
               <span className="text-[11px] tabular-nums text-muted-foreground">{input.length}/750</span>
             </div>
           </footer>}

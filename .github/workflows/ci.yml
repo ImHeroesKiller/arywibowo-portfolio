@@ -60,3 +60,6 @@ jobs:
 
       - name: IDA contextual consultation handoff regression
         run: node scripts/ida-handoff-regression.mjs
+
+      - name: IDA four-step consultation card regression
+        run: node scripts/ida-flow-regression.mjs

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import ts from 'typescript';
+import {readFile} from 'node:fs/promises';
+const source=await readFile('lib/ida-consultation-flow.ts','utf8');
+const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+const {consultationPrompts,consultationSummary,consultationLanguage,isConsultationStart}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
+for(const text of ['Saya mau konsultasi','Saya ingin membuat AI untuk contact center, coba buat rancangan dan ajukan dalam sesi konsultasi','I would like a business consultation','Please send a consultation request','预约咨询']) assert.ok(isConsultationStart(text),text);
+for(const text of ['Bagian payroll','Belum ada, bisa beri saran?','Bagaimana sistem ticketing berfungsi?']) assert.ok(!isConsultationStart(text),text);
+for(const lang of ['id','en','zh'])assert.equal(consultationPrompts[lang].length,4);
+assert.equal(consultationLanguage('Saya ingin membuat AI'),'id');
+assert.equal(consultationLanguage('I would like a consultation'),'en');
+assert.equal(consultationLanguage('我想咨询'),'zh');
+const summary=consultationSummary(['Inbound ticketing AI','Proses manual tanpa ticketing','Respons cepat dan tiket otomatis','Mulai kuartal depan'],'id');
+assert.ok(summary.includes('Inbound ticketing AI') && summary.includes('Respons cepat'));
+console.log('IDA 4-step consultation flow PASS: intent classification, ID/EN/ZH questions and prepared summary');

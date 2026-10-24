@@ -5,15 +5,15 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { visitorConsultationSummary, serviceFromConversation } from "@/lib/ida-consultation-intent";
 
-type Props={ onBack:()=>void; conversation: Array<{role:"user"|"assistant";content:string}> };
+type Props={ onBack:()=>void; conversation: Array<{role:"user"|"assistant";content:string}>; initialSummary?:string };
 const newKey=()=>`${Date.now()}-${Math.random().toString(36).slice(2,12)}`;
 
-export function IdaConsultationForm({onBack,conversation}:Props){
+export function IdaConsultationForm({onBack,conversation,initialSummary}:Props){
  const t=useTranslations("consultation");
  const [name,setName]=useState("");const [email,setEmail]=useState("");const [organization,setOrganization]=useState("");
- const initialSummary=visitorConsultationSummary(conversation);
- const [service,setService]=useState(serviceFromConversation(initialSummary));
- const [summary,setSummary]=useState(initialSummary);
+ const preparedSummary=initialSummary || visitorConsultationSummary(conversation);
+ const [service,setService]=useState(serviceFromConversation(preparedSummary));
+ const [summary,setSummary]=useState(preparedSummary);
  const [includeExcerpt,setIncludeExcerpt]=useState(false);
  const [consent,setConsent]=useState(false);
  const [review,setReview]=useState(false);
@@ -33,8 +33,8 @@ export function IdaConsultationForm({onBack,conversation}:Props){
   }catch(err){setError(t("sendError")+" ("+(err instanceof Error?err.message:"SEND_FAILED")+")");}
   finally{setBusy(false);}
  }
- if(reference)return <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center" role="status"><CheckCircle2 className="size-12 text-emerald-600"/><h2 className="text-lg font-semibold">{t("success")}</h2><p className="text-sm text-muted-foreground">{t("reference")}</p><code className="rounded-lg bg-muted px-3 py-2 text-sm font-semibold">{reference}</code><p className="text-sm text-muted-foreground">{t("successDescription")}</p><Button type="button" variant="outline" onClick={onBack}>{t("backChat")}</Button></div>;
- return <div className="ida-chat-scroll min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-5" data-testid="ida-consultation-form">
+ if(reference)return <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-emerald-200 bg-white p-6 text-center" role="status"><CheckCircle2 className="size-12 text-emerald-600"/><h2 className="text-lg font-semibold">{t("success")}</h2><p className="text-sm text-muted-foreground">{t("reference")}</p><code className="rounded-lg bg-muted px-3 py-2 text-sm font-semibold">{reference}</code><p className="text-sm text-muted-foreground">{t("successDescription")}</p><Button type="button" variant="outline" onClick={onBack}>{t("backChat")}</Button></div>;
+ return <div className="rounded-2xl border border-primary/20 bg-white p-4 shadow-sm" data-testid="ida-consultation-form">
   <button type="button" onClick={()=>{setReview(false);onBack();}} className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-primary"><ArrowLeft className="size-4"/>{t("backChat")}</button>
   <h2 className="text-xl font-semibold tracking-tight">{review?t("reviewTitle"):t("title")}</h2>
   <p className="mb-5 mt-2 text-sm leading-6 text-muted-foreground">{review?t("reviewDescription"):t("description")}</p>
