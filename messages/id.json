@@ -1,20 +1,20 @@
 {
   "metadata": {
     "site": {
-      "title": "Profesional Consultant",
+      "title": "Business & Technology Strategist",
       "description": "Strategi bisnis, pengembangan produk AI, fintech, workforce, logistik, dan transformasi digital oleh Ary Wibowo."
     },
     "home": {
-      "title": "Ary Wibowo | Profesional Consultant",
+      "title": "Ary Wibowo | Business & Technology Strategist",
       "description": "Ary Wibowo menghubungkan strategi bisnis, teknologi AI, dan operasional melalui portofolio produk nyata dengan status implementasi transparan."
     },
     "about": {
-      "title": "Tentang Saya",
-      "description": "Kenali bagaimana Ary Wibowo memadukan business development, teknologi, dan operasional dalam konsultasi terintegrasi — 10+ tahun berdampak di energi, telekomunikasi, dan sektor korporat."
+      "title": "Strategi, Teknologi & Eksekusi",
+      "description": "Strategi bisnis, AI, pengembangan produk digital, dan operasional"
     },
     "services": {
-      "title": "Layanan Konsultasi",
-      "description": "Enam layanan konsultasi terintegrasi — renewable energy, pertumbuhan bisnis, transformasi digital, SDM, manajemen proyek, dan solusi keuangan. Dari strategi hingga eksekusi dengan hasil terukur."
+      "title": "Strategi Bisnis & Transformasi Digital",
+      "description": "Strategi bisnis, produk AI, teknologi enterprise, dan transformasi operasional."
     },
     "contact": {
       "title": "Hubungi Saya",
@@ -33,7 +33,10 @@
     "contact": "Kontak",
     "getInTouch": "Hubungi Saya",
     "openMenu": "Buka menu",
-    "closeMenu": "Tutup menu"
+    "closeMenu": "Tutup menu",
+    "skipToMain": "Lewati ke konten utama",
+    "primaryNavigation": "Navigasi utama",
+    "mobileNavigation": "Navigasi seluler"
   },
   "hero": {
     "name": "Ary Wibowo",
@@ -41,12 +44,12 @@
     "tagline": "Menghubungkan <highlight>strategi bisnis</highlight>, <highlight>AI & teknologi</highlight>, dan <highlight>operasional</highlight> — dari peluang komersial hingga pengembangan produk digital yang dapat diuji dan ditingkatkan.",
     "contact": "Hubungi",
     "services": "Layanan",
-    "imageAlt": "Foto Ary Wibowo, Profesional Consultant berbasis di Jakarta, Indonesia"
+    "imageAlt": "Ary Wibowo — Business & Technology Strategist"
   },
   "about": {
     "eyebrow": "Tentang",
-    "title": "Profil Profesional",
-    "summary": "Kombinasi pengalaman <highlight>Business Development</highlight>, <highlight>hubungan klien</highlight>, dan <highlight>keahlian teknologi</highlight> untuk solusi bisnis yang berdampak.",
+    "title": "Strategi, Teknologi & Eksekusi",
+    "summary": "Menghubungkan <highlight>strategi bisnis</highlight>, <highlight>teknologi AI</highlight>, dan <highlight>operasional</highlight> untuk membangun solusi yang dapat diuji dan dikembangkan.",
     "bio": [
       "Profesional konsultan dengan pengalaman lebih dari 10 tahun di bidang <highlight>bisnis</highlight>, <highlight>SDM</highlight>, dan <highlight>IT</highlight> — mencakup <highlight>Business Development</highlight>, <highlight>hubungan klien</highlight>, <highlight>energi terbarukan</highlight>, dan <highlight>transformasi digital</highlight>. Latar belakang teknik komputer memperkuat pendekatan analitis dalam merancang <highlight>solusi bisnis terukur</highlight> — dari <highlight>strategi pertumbuhan pasar</highlight> hingga <highlight>implementasi sistem digital</highlight>.",
       "Berpengalaman memimpin proyek lintas industri telekomunikasi dan energi, mengkoordinasikan <highlight>tim multidisiplin</highlight>, serta mengembangkan <highlight>platform digital</highlight> untuk otomasi operasi bisnis. Menggabungkan keahlian di pengembangan bisnis, SDM, penjualan, manajemen proyek, IT, dan keuangan untuk menghadirkan <highlight>konsultasi terintegrasi</highlight> yang memberikan dampak nyata bagi organisasi."
@@ -67,11 +70,11 @@
   "services": {
     "eyebrow": "Layanan",
     "title": "Keahlian Konsultasi Terintegrasi",
-    "description": "<highlight>Konsultasi profesional</highlight> di bidang renewable energy, pertumbuhan bisnis, transformasi digital, SDM, manajemen proyek, dan solusi keuangan.",
+    "description": "Dari <highlight>strategi bisnis</highlight> dan pengembangan produk digital hingga <highlight>transformasi operasional</highlight>, didukung pengalaman lintas industri.",
     "descriptionFull": "Enam area keahlian inti yang menghadirkan <highlight>dampak terukur</highlight> — dari strategi dan desain hingga eksekusi dan skala.",
     "seeMoreRich": "Lihat detail lengkap di halaman <link>Layanan</link>.",
     "contactCtaRich": "Tertarik berkolaborasi? <contact>Hubungi saya</contact> atau jelajahi <projects>studi kasus</projects>.",
-    "pageTitle": "Layanan Konsultasi",
+    "pageTitle": "Strategi Bisnis & Transformasi Digital",
     "pageDescription": "Konsultasi menyeluruh di <highlight>enam area keahlian inti</highlight> — dirancang untuk membantu organisasi tumbuh, bertransformasi, dan beroperasi lebih efisien.",
     "positioningEyebrow": "Pendekatan",
     "positioningTitle": "Dari Strategi hingga Eksekusi",
