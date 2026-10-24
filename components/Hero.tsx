@@ -22,19 +22,13 @@ export default function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative overflow-hidden bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-transparent px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="pointer-events-none absolute -left-20 top-1/4 size-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-1/4 size-72 rounded-full bg-primary/10 blur-3xl" />
 
       <div
         className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl sm:rounded-3xl"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(59,130,246,0.18) 0%, rgba(26,26,26,0.75) 45%, rgba(17,17,17,0.9) 100%)",
-          border: "1px solid rgba(59, 130, 246, 0.2)",
-          boxShadow:
-            "0 0 60px rgba(59,130,246,0.1), inset 0 1px 0 rgba(255,255,255,0.05)",
-        }}
+        style={{background:"linear-gradient(120deg, #ffffff 8%, #edf4ff 60%, #dfe9ff 100%)",border:"1px solid #dce5f3",boxShadow:"0 24px 70px rgba(48,89,165,.10)"}}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[420px]">
           <div className="relative order-1 flex justify-center px-4 pt-8 lg:order-2 lg:justify-end lg:px-0 lg:pt-0 lg:pr-8">
@@ -53,7 +47,7 @@ export default function Hero() {
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to top, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0.38) 20%, rgba(59,130,246,0.22) 45%, rgba(59,130,246,0.08) 70%, transparent 90%)",
+                    "linear-gradient(to top, rgba(89,127,249,0.23) 0%, rgba(89,127,249,0.16) 20%, rgba(89,127,249,0.10) 45%, rgba(59,130,246,0.08) 70%, transparent 90%)",
                 }}
               />
 
@@ -61,7 +55,7 @@ export default function Hero() {
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to right, rgba(17,17,17,0.7) 0%, transparent 35%)",
+                    "linear-gradient(to right, rgba(255,255,255,0.55) 0%, transparent 35%)",
                 }}
               />
             </div>
