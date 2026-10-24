@@ -94,9 +94,14 @@ async function callIda(messages: ChatMessage[]) {
   }
 
   let {response, result, providerCode} = await requestCompletion(IDA_MODEL);
-  // One controlled fallback only when mini provider is temporarily unavailable.
-  if (!response.ok && [502,503,504].includes(response.status)) {
-    console.warn("IDA mini temporarily unavailable; attempting balanced model fallback", {status:response.status,code:providerCode});
+  const extractAnswer = (value: Completion | null): string => {
+    const raw = value?.choices?.[0]?.message?.content;
+    return typeof raw === "string" ? normalizeIdaResponse(raw) : "";
+  };
+  // One retry on recoverable errors or an empty/invalid 200 response from mini.
+  // No retry for authentication, payment or rate-limit failures.
+  if ((!response.ok && [502,503,504].includes(response.status)) || (response.ok && !extractAnswer(result))) {
+    console.warn("IDA mini unavailable or returned empty content; trying balanced model", {status:response.status,code:providerCode});
     ({response,result,providerCode} = await requestCompletion("ida-chat"));
   }
   if (!response.ok) {
@@ -106,11 +111,8 @@ async function callIda(messages: ChatMessage[]) {
     if (response.status === 402) throw new ApiRequestError(503,"AI_UNAVAILABLE");
     throw new ApiRequestError(502,"AI_UNAVAILABLE");
   }
-  if (!result) throw new ApiRequestError(502,"AI_UNAVAILABLE");
-  const message = result.choices?.[0]?.message?.content;
-  if (typeof message !== "string" || !message.trim()) throw new ApiRequestError(502, "EMPTY_RESPONSE");
-  const normalized = normalizeIdaResponse(message);
-  if (!normalized) throw new ApiRequestError(502, "EMPTY_RESPONSE");
+  const normalized=extractAnswer(result);
+  if (!normalized) throw new ApiRequestError(502,"EMPTY_RESPONSE");
   return normalized;
 }
 
@@ -127,7 +129,7 @@ export async function POST(request: Request) {
       const message = await callIda(messages);
       return NextResponse.json({message}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"model"}});
     } catch (failure) {
-      if (failure instanceof ApiRequestError && failure.code === "AI_UNAVAILABLE") {
+      if (failure instanceof ApiRequestError && ["AI_UNAVAILABLE","EMPTY_RESPONSE"].includes(failure.code)) {
         return NextResponse.json({message:outageFallback(last),degraded:true}, {headers:{"Cache-Control":"no-store","X-IDA-Route":"degraded"}});
       }
       throw failure;
