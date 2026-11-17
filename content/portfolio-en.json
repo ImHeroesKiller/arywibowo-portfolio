@@ -29,6 +29,51 @@
       "description": "AI workspace with chat, research, vision, and document tools."
     },
     {
+      "id": "ida-mcp-agent",
+      "name": "IDA MCP Agent",
+      "category": "ai",
+      "status": "development",
+      "url": null,
+      "repository": null,
+      "description": "AI tool-orchestration design for authorized service access, with scoped permissions and approval gates before execution."
+    },
+    {
+      "id": "ida-4b",
+      "name": "IDA 4B — Open Model",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://huggingface.co/idalabs/IDA-4B-v1.0.2-P4.9-GGUF",
+      "repository": null,
+      "description": "Experimental 4B language model based on Qwen3, with a public GGUF release for evaluation and local use within its documented limitations."
+    },
+    {
+      "id": "ida-api",
+      "name": "IDA API & Research Engine",
+      "category": "ai",
+      "status": "uat",
+      "url": null,
+      "repository": null,
+      "description": "OpenAI-compatible AI API and research pipelines for application integration, with API-key access and ongoing validation."
+    },
+    {
+      "id": "ida-words",
+      "name": "IDA Words",
+      "category": "ai",
+      "status": "development",
+      "url": null,
+      "repository": null,
+      "description": "AI-assisted document workspace; integration with the IDA account and unified authentication is still being implemented."
+    },
+    {
+      "id": "ida-search",
+      "name": "IDA Search",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://search.ida-labs.workers.dev",
+      "repository": null,
+      "description": "AI-powered search and research for discovering sources, assessing relevance, and synthesizing information; some features require sign-in."
+    },
+    {
       "id": "ida-labs",
       "name": "IDA Labs",
       "category": "ai",
@@ -119,6 +164,15 @@
       "description": "HR information system for attendance, overtime, advances, clients, and payroll."
     },
     {
+      "id": "hr-pay-manual",
+      "name": "HR Pay — Payroll Operations",
+      "category": "enterprise",
+      "status": "uat",
+      "url": "https://hr-pay-two.vercel.app",
+      "repository": null,
+      "description": "HR and payroll operations with attendance, overtime, salary advances, multi-step approvals, and manual bank-transfer recording."
+    },
+    {
       "id": "perada-recruitment",
       "name": "PERADA Recruitment Portal",
       "category": "enterprise",
@@ -146,6 +200,15 @@
       "description": "Order, billing, and accounts-receivable system for trucking and logistics."
     },
     {
+      "id": "nusadata",
+      "name": "NusaData — Indonesia Data Portal",
+      "category": "operations",
+      "status": "production",
+      "url": "https://imheroeskiller.github.io/indonesia-gov-api-hub/",
+      "repository": null,
+      "description": "Indonesian public-data and API discovery portal that helps users locate open-data references; source availability depends on upstream providers."
+    },
+    {
       "id": "msg",
       "name": "MSG Corporate",
       "category": "business",
@@ -171,6 +234,15 @@
       "url": "https://danawangsa.arywibowo.id",
       "repository": null,
       "description": "Strategic business and financial advisory website; not a claim of regulated financial services."
+    },
+    {
+      "id": "selarastech",
+      "name": "SelarasTech — IT & Business Solutions",
+      "category": "business",
+      "status": "production",
+      "url": "https://selarastech.com",
+      "repository": null,
+      "description": "Technology and business solutions by PT Solusi Mitracipta Selaras: digital platforms, people solutions, IT infrastructure and operational transformation."
     },
     {
       "id": "mkb",

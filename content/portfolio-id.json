@@ -29,6 +29,51 @@
       "description": "Workspace AI untuk percakapan, riset, analisis gambar, dan dokumen."
     },
     {
+      "id": "ida-mcp-agent",
+      "name": "IDA MCP Agent",
+      "category": "ai",
+      "status": "development",
+      "url": null,
+      "repository": null,
+      "description": "Rancangan orkestrasi tool AI untuk akses layanan terotorisasi, dengan pembatasan izin dan alur persetujuan sebelum eksekusi."
+    },
+    {
+      "id": "ida-4b",
+      "name": "IDA 4B — Open Model",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://huggingface.co/idalabs/IDA-4B-v1.0.2-P4.9-GGUF",
+      "repository": null,
+      "description": "Eksperimen model bahasa 4B berbasis Qwen3 dengan distribusi GGUF publik untuk evaluasi dan penggunaan lokal sesuai batas kemampuan model."
+    },
+    {
+      "id": "ida-api",
+      "name": "IDA API & Research Engine",
+      "category": "ai",
+      "status": "uat",
+      "url": null,
+      "repository": null,
+      "description": "Layanan API AI bergaya OpenAI-compatible dan pipeline riset untuk integrasi aplikasi, dengan akses berbasis API key dan pengujian berkelanjutan."
+    },
+    {
+      "id": "ida-words",
+      "name": "IDA Words",
+      "category": "ai",
+      "status": "development",
+      "url": null,
+      "repository": null,
+      "description": "Workspace pengolahan dokumen berbantuan AI; integrasi akun IDA dan autentikasi terpadu masih tahap implementasi."
+    },
+    {
+      "id": "ida-search",
+      "name": "IDA Search",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://search.ida-labs.workers.dev",
+      "repository": null,
+      "description": "Mesin pencarian dan riset berbasis AI untuk menemukan, mengevaluasi sumber, dan merangkum informasi; fitur tertentu memerlukan login."
+    },
+    {
       "id": "ida-labs",
       "name": "IDA Labs",
       "category": "ai",
@@ -119,6 +164,15 @@
       "description": "HRIS untuk absensi, lembur, panjar, data klien, dan payroll."
     },
     {
+      "id": "hr-pay-manual",
+      "name": "HR Pay — Payroll Operations",
+      "category": "enterprise",
+      "status": "uat",
+      "url": "https://hr-pay-two.vercel.app",
+      "repository": null,
+      "description": "Aplikasi payroll dan operasional SDM dengan absensi, lembur, panjar, persetujuan berjenjang, serta pencatatan pembayaran transfer manual."
+    },
+    {
       "id": "perada-recruitment",
       "name": "PERADA Recruitment Portal",
       "category": "enterprise",
@@ -146,6 +200,15 @@
       "description": "Sistem order, penagihan, invoice, dan piutang untuk logistik/trucking."
     },
     {
+      "id": "nusadata",
+      "name": "NusaData — Indonesia Data Portal",
+      "category": "operations",
+      "status": "production",
+      "url": "https://imheroeskiller.github.io/indonesia-gov-api-hub/",
+      "repository": null,
+      "description": "Portal eksplorasi data dan API publik Indonesia untuk memudahkan penemuan referensi data terbuka; ketersediaan sumber bergantung pada penyedia."
+    },
+    {
       "id": "msg",
       "name": "MSG Corporate",
       "category": "business",
@@ -171,6 +234,15 @@
       "url": "https://danawangsa.arywibowo.id",
       "repository": null,
       "description": "Website konsultasi strategi bisnis dan keuangan; bukan klaim layanan keuangan berizin."
+    },
+    {
+      "id": "selarastech",
+      "name": "SelarasTech — IT & Business Solutions",
+      "category": "business",
+      "status": "production",
+      "url": "https://selarastech.com",
+      "repository": null,
+      "description": "Portofolio solusi teknologi dan bisnis PT Solusi Mitracipta Selaras: platform digital, people solution, infrastruktur IT, dan transformasi operasional."
     },
     {
       "id": "mkb",

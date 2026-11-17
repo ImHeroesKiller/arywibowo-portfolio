@@ -282,6 +282,137 @@
       "stack": [],
       "role": "Business development collaboration concept",
       "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
+    },
+    "ida-search": {
+      "challenge": "Riset membutuhkan penemuan sumber yang relevan tanpa berulang kali berpindah platform.",
+      "approach": "Menggabungkan pencarian web, ekstraksi sumber, dan tampilan hasil riset yang mudah dipahami.",
+      "features": [
+        "Pencarian dan rangkuman berbasis sumber",
+        "Antarmuka riset web dan pengelompokan hasil",
+        "Akses Free dan fitur autentikasi yang dikembangkan bertahap"
+      ],
+      "role": "Perancangan produk AI Search dan integrasi mesin riset.",
+      "verification": "Halaman publik dan sebagian gerbang keamanan pernah diuji; akurasi semua hasil pencarian dan akses sumber tidak dijamin.",
+      "stack": [
+        "Cloudflare Workers",
+        "Python",
+        "Web Search"
+      ]
+    },
+    "ida-words": {
+      "challenge": "Pekerjaan penulisan dan review dokumen membutuhkan bantuan AI dalam alur kerja yang sama.",
+      "approach": "Mengembangkan lingkungan dokumen dengan asistensi AI dan rencana single sign-on melalui identitas IDA.",
+      "features": [
+        "Pengolahan dan penyuntingan dokumen",
+        "Rancangan asistensi AI untuk pekerjaan dokumen",
+        "Klien SSO IDA masih berupa draf, belum aktif"
+      ],
+      "role": "Desain pengalaman pengguna, integrasi AI dan rancangan otentikasi.",
+      "verification": "Produk dalam pengembangan; SSO, domain publik, dan alur login end-to-end belum dinyatakan live.",
+      "stack": [
+        "Document Editor",
+        "Supabase Auth",
+        "AI Integration"
+      ]
+    },
+    "ida-api": {
+      "challenge": "Aplikasi memerlukan kemampuan AI dan riset yang dapat digunakan ulang secara terkontrol.",
+      "approach": "Menyediakan antarmuka chat completion dan engine riset dengan autentikasi serta pengujian kontrak API.",
+      "features": [
+        "Endpoint chat completions kompatibel secara konsep",
+        "Kontrol akses berbasis API key",
+        "Riset, pencarian, dan sintesis dengan batas sumber daya"
+      ],
+      "role": "Arsitektur layanan AI, desain API, dan integrasi backend.",
+      "verification": "Smoke test endpoint telah dilaporkan; bukan bukti seluruh integrasi atau panjang dokumen besar sudah stabil. API tidak dibuka sebagai demo tanpa autentikasi.",
+      "stack": [
+        "FastAPI",
+        "Python",
+        "Docker",
+        "Ubuntu",
+        "OpenAI-Compatible API"
+      ]
+    },
+    "ida-4b": {
+      "challenge": "Eksplorasi AI lokal membutuhkan model yang bisa dievaluasi tanpa seluruh beban layanan cloud.",
+      "approach": "Melakukan fine-tuning terkontrol, pengujian independen, dan distribusi format GGUF untuk inference lokal.",
+      "features": [
+        "Basis model Qwen3-4B dengan eksperimen adaptasi",
+        "Distribusi GGUF untuk pengujian lokal",
+        "Evaluasi respons dan konsistensi perilaku yang masih berjalan"
+      ],
+      "role": "Kurasi dataset, koordinasi pelatihan dan pengujian model.",
+      "verification": "Model yang dapat diunduh bukan jaminan kecocokan produksi. Perilaku dan kualitas tiap skenario tetap perlu dievaluasi; atribusi model dasar harus dipertahankan.",
+      "stack": [
+        "Qwen3-4B",
+        "QLoRA",
+        "GGUF",
+        "Hugging Face"
+      ]
+    },
+    "ida-mcp-agent": {
+      "challenge": "Agent AI perlu berinteraksi dengan sistem eksternal tanpa melewati kontrol izin pengguna.",
+      "approach": "Mendesain routing MCP, tingkat izin, dan persetujuan tindakan untuk koneksi layanan.",
+      "features": [
+        "Rancangan orkestrasi tool MCP",
+        "Perizinan dan persetujuan sebelum tindakan",
+        "Pemisahan akses baca dan mutasi"
+      ],
+      "role": "Desain arsitektur agen dan tata kelola izin.",
+      "verification": "Masih pengembangan; koneksi end-to-end dan aksi lintas sistem belum dinyatakan siap produksi.",
+      "stack": [
+        "MCP",
+        "API Gateway",
+        "Permissions"
+      ]
+    },
+    "hr-pay-manual": {
+      "challenge": "Pembayaran payroll manual dan rekonsiliasi membutuhkan jejak pemeriksaan yang tertib.",
+      "approach": "Menyatukan perhitungan gaji, pengecualian bulanan, approval, dan bukti pembayaran dalam satu aplikasi.",
+      "features": [
+        "Absensi, lembur, panjar dan pemotongan",
+        "Maker, checker dan approver untuk payroll",
+        "Pencatatan transfer manual dan bukti pembayaran"
+      ],
+      "role": "Desain workflow HR/payroll dan pengembangan aplikasi operasional.",
+      "verification": "Aplikasi masih UAT; pencatatan transfer tidak berarti aplikasi melakukan disbursement otomatis.",
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL"
+      ]
+    },
+    "nusadata": {
+      "challenge": "Sumber data publik Indonesia tersebar dan sulit ditemukan dalam satu tempat.",
+      "approach": "Membangun katalog dan antarmuka penelusuran referensi API/data pemerintah.",
+      "features": [
+        "Penjelajahan referensi data publik",
+        "Katalog sumber dan endpoint API",
+        "Situs dokumentasi yang dapat diakses publik"
+      ],
+      "role": "Konsep portal data dan pengembangan antarmuka publik.",
+      "verification": "Situs statis dipublikasikan; akurasi, uptime, dan hak pakai setiap API pihak ketiga tidak dijamin.",
+      "stack": [
+        "GitHub Pages",
+        "Static Web",
+        "Public Data APIs"
+      ]
+    },
+    "selarastech": {
+      "challenge": "Organisasi membutuhkan mitra implementasi yang menghubungkan proses, sumber daya manusia, dan platform teknologi.",
+      "approach": "Mengembangkan portofolio layanan terintegrasi untuk kebutuhan teknologi dan operasional bisnis.",
+      "features": [
+        "Platform dan transformasi digital",
+        "People solutions dan dukungan operasional",
+        "Solusi perangkat, perangkat lunak dan infrastruktur IT"
+      ],
+      "role": "Pengembangan bisnis dan solusi teknologi terintegrasi.",
+      "verification": "Situs korporat publik tersedia; halaman ini tidak menyiratkan kepemilikan atau pelaksanaan seluruh proyek klien yang tercantum di website perusahaan.",
+      "stack": [
+        "Digital Transformation",
+        "Managed Services",
+        "Systems Integration"
+      ]
     }
   }
 }

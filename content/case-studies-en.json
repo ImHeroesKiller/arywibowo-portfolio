@@ -282,6 +282,137 @@
       "stack": [],
       "role": "Business development collaboration concept",
       "verification": "Public page and repository documentation; authenticated features not independently audited."
+    },
+    "ida-search": {
+      "challenge": "Research workflows require finding relevant sources across multiple tools.",
+      "approach": "Combines web discovery, source extraction, and a readable research experience.",
+      "features": [
+        "Source-oriented AI search and summaries",
+        "Research UI with organized results",
+        "Free access and authentication pathways developed in stages"
+      ],
+      "role": "AI search product design and research-engine integration.",
+      "verification": "Public experience and selected security checks have been tested; full source access and result accuracy are not guaranteed.",
+      "stack": [
+        "Cloudflare Workers",
+        "Python",
+        "Web Search"
+      ]
+    },
+    "ida-words": {
+      "challenge": "Document writing and review need AI assistance within a coherent workflow.",
+      "approach": "Developing a document workspace with AI assistance and planned IDA single sign-on.",
+      "features": [
+        "Document creation and editing workflows",
+        "AI-assistance design for documents",
+        "IDA SSO client remains a draft, not live"
+      ],
+      "role": "UX, AI integration and authentication architecture.",
+      "verification": "Development stage; public domain, SSO and end-to-end sign-in have not been confirmed live.",
+      "stack": [
+        "Document Editor",
+        "Supabase Auth",
+        "AI Integration"
+      ]
+    },
+    "ida-api": {
+      "challenge": "Applications need reusable AI and research capabilities under controlled access.",
+      "approach": "Provides chat-completion interfaces and a research engine with authentication and API contract checks.",
+      "features": [
+        "Chat-completions style interface",
+        "API-key based access",
+        "Research, search and synthesis with resource limits"
+      ],
+      "role": "AI service architecture, API design and backend integration.",
+      "verification": "Endpoint smoke testing has been reported; not proof that all integrations or long-document workflows are stable. No unauthenticated public demo.",
+      "stack": [
+        "FastAPI",
+        "Python",
+        "Docker",
+        "Ubuntu",
+        "OpenAI-Compatible API"
+      ]
+    },
+    "ida-4b": {
+      "challenge": "Local AI experimentation benefits from downloadable models with a transparent evaluation path.",
+      "approach": "Controlled fine-tuning, independent tests and GGUF distribution for local inference.",
+      "features": [
+        "Qwen3-4B base with experimental adaptation",
+        "GGUF distribution for local tests",
+        "Ongoing response quality and consistency evaluation"
+      ],
+      "role": "Dataset curation, model-training coordination and evaluation.",
+      "verification": "A downloadable model is not a production-readiness guarantee. Responses and quality require evaluation; base-model attribution applies.",
+      "stack": [
+        "Qwen3-4B",
+        "QLoRA",
+        "GGUF",
+        "Hugging Face"
+      ]
+    },
+    "ida-mcp-agent": {
+      "challenge": "AI agents need controlled external-system access.",
+      "approach": "Designing MCP routing, permission scopes and explicit approval for actions.",
+      "features": [
+        "MCP tool orchestration design",
+        "Action permission and approval gates",
+        "Read versus write access separation"
+      ],
+      "role": "Agent architecture and permission governance design.",
+      "verification": "Development stage; end-to-end connections and external actions are not represented as production-ready.",
+      "stack": [
+        "MCP",
+        "API Gateway",
+        "Permissions"
+      ]
+    },
+    "hr-pay-manual": {
+      "challenge": "Manual payroll execution needs traceable calculation, review and reconciliation.",
+      "approach": "Combines payroll calculations, monthly exceptions, approvals and payment evidence in one workflow.",
+      "features": [
+        "Attendance, overtime, advances and deductions",
+        "Maker, checker and approver roles",
+        "Manual transfer records and proof of payment"
+      ],
+      "role": "HR/payroll workflow design and application engineering.",
+      "verification": "UAT-stage application; recording a transfer does not mean it initiates automatic bank disbursement.",
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL"
+      ]
+    },
+    "nusadata": {
+      "challenge": "Public Indonesian data sources are dispersed across many portals.",
+      "approach": "Building a reference catalog and browsing interface for government/open-data APIs.",
+      "features": [
+        "Public-data discovery",
+        "API endpoints and source references",
+        "Publicly hosted documentation portal"
+      ],
+      "role": "Data-portal concept and public interface development.",
+      "verification": "The public site is deployed; availability, accuracy and permitted use of third-party sources remain outside its control.",
+      "stack": [
+        "GitHub Pages",
+        "Static Web",
+        "Public Data APIs"
+      ]
+    },
+    "selarastech": {
+      "challenge": "Businesses need implementation partners connecting people, process and technology.",
+      "approach": "Developing a portfolio of integrated technology and operational services.",
+      "features": [
+        "Digital platform and transformation solutions",
+        "People solutions and operational support",
+        "IT hardware, software and infrastructure"
+      ],
+      "role": "Integrated technology and business-solution development.",
+      "verification": "Public corporate site is available; this case study does not claim personal ownership or delivery of every client project referenced there.",
+      "stack": [
+        "Digital Transformation",
+        "Managed Services",
+        "Systems Integration"
+      ]
     }
   }
 }

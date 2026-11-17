@@ -37,7 +37,7 @@ try{
  }
  const {r:sitemapRes,html:xml}=await read('/sitemap.xml');
  check(sitemapRes.status===200,'sitemap HTTP');
- check((xml.match(/<loc>/g)||[]).length===products.length+5,'sitemap should contain 29 canonical routes');
+ check((xml.match(/<loc>/g)||[]).length===products.length+5,'sitemap should contain a canonical route for each product and main page');
  for(const product of products){
   check(xml.includes(`https://arywibowo.id/projects/${product.id}`),`missing sitemap product ${product.id}`);
   check(xml.includes(`https://arywibowo.id/en/projects/${product.id}`),`missing EN alternate ${product.id}`);
@@ -46,7 +46,10 @@ try{
  const {r:unknown}=await read('/projects/not-a-product');
  check(unknown.status===404,'invalid case study must 404');
  const removed = ['freejobid','notagen','saleguard','onework'];
- check(products.length===20,'public product catalog has 20 products');
+ const newProducts = ['ida-search','ida-words','ida-api','ida-4b','ida-mcp-agent','hr-pay-manual','nusadata','selarastech'];
+check(products.length===28,'public product catalog has 28 products');
+check(new Set(products.map(product=>product.id)).size===products.length,'product IDs must be unique');
+for(const slug of newProducts){check(products.some(product=>product.id===slug),`missing new portfolio product ${slug}`);}
  for(const locale of languages){
   const prefix=locale==='id'?'':`/${locale}`;
   for(const slug of removed){
