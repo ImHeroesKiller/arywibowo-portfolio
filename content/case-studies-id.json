@@ -383,19 +383,19 @@
       ]
     },
     "nusadata": {
-      "challenge": "Sumber data publik Indonesia tersebar dan sulit ditemukan dalam satu tempat.",
-      "approach": "Membangun katalog dan antarmuka penelusuran referensi API/data pemerintah.",
+      "challenge": "Estimasi biaya tenaga kerja, pajak, dan biaya usaha sering tersebar di banyak tabel.",
+      "approach": "Menampilkan kalkulator biaya bisnis dan ringkasan komponen biaya dengan skenario yang mudah dibandingkan.",
       "features": [
-        "Penjelajahan referensi data publik",
-        "Katalog sumber dan endpoint API",
-        "Situs dokumentasi yang dapat diakses publik"
+        "Simulasi employer cost dan komponen tenaga kerja",
+        "Eksplorasi estimasi pajak dan biaya usaha",
+        "Dashboard ringkasan skenario biaya tahun berjalan"
       ],
-      "role": "Konsep portal data dan pengembangan antarmuka publik.",
-      "verification": "Situs statis dipublikasikan; akurasi, uptime, dan hak pakai setiap API pihak ketiga tidak dijamin.",
+      "role": "Pengembangan konsep dan antarmuka analisis biaya serta kepatuhan bisnis.",
+      "verification": "Perhitungan bersifat indikatif, bukan nasihat pajak atau hukum. Parameter dan regulasi perlu diverifikasi sebelum dipakai mengambil keputusan.",
       "stack": [
-        "GitHub Pages",
         "Static Web",
-        "Public Data APIs"
+        "Interactive Calculator",
+        "Responsive Design"
       ]
     },
     "selarastech": {

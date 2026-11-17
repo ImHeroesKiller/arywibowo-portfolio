@@ -9,10 +9,11 @@
       "type": "mobile viewport",
       "width": 430,
       "height": 900,
-      "size": 12546,
-      "sha256": "f4846fd6f41075cb41098e17c8d42aa6f2d760c71253ef0d47c4d11abf55e5f0",
-      "approval": "Public page capture; no authenticated business data",
-      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+      "size": 11576,
+      "sha256": "5722c689feded4a198356524a143b44f295ef0ee343ece6a1e6518cf73686a13",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
     },
     {
       "product": "labs",
@@ -33,10 +34,11 @@
       "type": "mobile viewport",
       "width": 430,
       "height": 900,
-      "size": 16894,
-      "sha256": "4866df09ce7655d93b72d3e462e56742d8f74c6fcdb2fdd97151385a1d29d520",
-      "approval": "Public page capture; no authenticated business data",
-      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+      "size": 16278,
+      "sha256": "3868e3791695a62832ee5fad57df984d0dda403b4f1c8e8dd0054d5f68eb9750",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
     },
     {
       "product": "proqtrack",
@@ -45,10 +47,11 @@
       "type": "mobile viewport",
       "width": 430,
       "height": 900,
-      "size": 15632,
-      "sha256": "8fcfa153799047bf6f0107aa69c0d66fe53381f34420d06bec5e42c79a386b10",
-      "approval": "Public page capture; no authenticated business data",
-      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+      "size": 15018,
+      "sha256": "4b3df7e60ca7321335f4336b07824584530112a3ada0a8e04017e8399a888387",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
     },
     {
       "product": "arah",
@@ -57,10 +60,11 @@
       "type": "mobile viewport",
       "width": 430,
       "height": 900,
-      "size": 12664,
-      "sha256": "c675dcfce33df7949399195ea29c5d10056cd12f7377a96e49c45365cd7279ac",
-      "approval": "Public page capture; no authenticated business data",
-      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+      "size": 12146,
+      "sha256": "86c2e9cdbdb56e993f6d7da5b4846640aaa13903c6d2fac455c2217baff83988",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
     },
     {
       "product": "notagen",
@@ -81,10 +85,11 @@
       "type": "mobile viewport",
       "width": 430,
       "height": 900,
-      "size": 42178,
-      "sha256": "59da3169d0fe55053741fbee144d8101a1bc93d5ac52a958bcefc88398af3e45",
-      "approval": "Public page capture; no authenticated business data",
-      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+      "size": 40656,
+      "sha256": "d03b24e48fda20bb29529481d4f93db3435507679807cea83df81e937e58569d",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
     },
     {
       "product": "perada",
@@ -93,10 +98,11 @@
       "type": "mobile viewport",
       "width": 430,
       "height": 900,
-      "size": 36062,
-      "sha256": "901518d29c1578c6ad84c246676710bd9ff681831f79c0632718d8c66ec21ba5",
-      "approval": "Public page capture; no authenticated business data",
-      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+      "size": 34750,
+      "sha256": "ff1549c5549dc6cfe6564f33ef548ac44fc81717b74a351930bd93e75eedb1aa",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
     },
     {
       "product": "danawangsa",
@@ -105,10 +111,360 @@
       "type": "mobile viewport",
       "width": 430,
       "height": 900,
-      "size": 33448,
-      "sha256": "9df7d863f88f1eddadfc04a5133de49ddbe4c49a70a132e0b217260f92e8c9eb",
-      "approval": "Public page capture; no authenticated business data",
-      "limitation": "Login or landing screen is not evidence of logged-in functionality"
+      "size": 32472,
+      "sha256": "7364702092a270be51be67d82ad74fe4e9b1be7238bc6c7ebb4980d66e61df08",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "ida-search",
+      "file": "ida-search-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 25802,
+      "sha256": "7717bf5e8d097a407adf53816deef746c88b1a9176624b7d7524a848b78b59f2",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "ida-search",
+      "file": "ida-search-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 16502,
+      "sha256": "d27b18b751c5dfc239feedf0ab6f67219c60267f6b16f2a1147e56e221c546a9",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "ida-4b",
+      "file": "ida-4b-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 67976,
+      "sha256": "39757aecde0609af4ce021289eba92e6c6061a055798c047817dacb188c64a80",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "ida-4b",
+      "file": "ida-4b-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 26722,
+      "sha256": "3d7b948e8dcd7a18ab49a3ac91b74cc8a2d283571e62c1d810230cc06e6ebea6",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "hr-pay",
+      "file": "hr-pay-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 20934,
+      "sha256": "fd3b54a7caeda1be3a7c1ff4da2effa956cff36d4930e0064ce06f925a1cdc98",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "hr-pay",
+      "file": "hr-pay-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 18392,
+      "sha256": "59f6a7078754d652a2b634e3a3c4e8c22eb817391b7f0b7c12ec29fe2dcc96fb",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "pay-hr",
+      "file": "pay-hr-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 20934,
+      "sha256": "fd3b54a7caeda1be3a7c1ff4da2effa956cff36d4930e0064ce06f925a1cdc98",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "pay-hr",
+      "file": "pay-hr-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 18392,
+      "sha256": "59f6a7078754d652a2b634e3a3c4e8c22eb817391b7f0b7c12ec29fe2dcc96fb",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "nusadata",
+      "file": "nusadata-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 45736,
+      "sha256": "c4df57b1bbd1089f69a1fec1cb93fdde6cfd0c45ab02aa4f7f1476323680818d",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "nusadata",
+      "file": "nusadata-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 23962,
+      "sha256": "2f10ad76bc3a671d85f51eb0c586ba1600acf1908c8540206dc8b84e2adaedb8",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "proqpay-ess",
+      "file": "proqpay-ess-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 15044,
+      "sha256": "0a818fa5a4b9eac082b0bdbf67488316f58597f3dde64eeb60476af450e29293",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "proqpay-ess",
+      "file": "proqpay-ess-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 13652,
+      "sha256": "b37ccb91cda13060bce4db8093a189e8de1db6eb6ddc6430400f8c507296854b",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "proqacc",
+      "file": "proqacc-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 16198,
+      "sha256": "de2eccbe2680be6d18970773b841048e43d7c45ed37b04365523ec92f18822c0",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "proqacc",
+      "file": "proqacc-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 12408,
+      "sha256": "8b4a4160f76244bc43b449649479199cf05e00c569db54e88e3e9f83dfa73e7c",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "kawankas",
+      "file": "kawankas-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 17226,
+      "sha256": "080a32db357c06b969224c2f55517d8f0b535bedf02dc0c9d360a66613f24eb2",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "kawankas",
+      "file": "kawankas-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 14380,
+      "sha256": "3333756797e2ff0f48c6083327419502fda2e8d1acaaae6a06d9c1cf8bd05d0a",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "bespoke-solar",
+      "file": "bespoke-solar-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 86936,
+      "sha256": "799cca132211d869dfdf22303ef16e3b3920fe831006d882a7e5f78a420f68c9",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "bespoke-solar",
+      "file": "bespoke-solar-mobile-public.webp",
+      "source": "unauthenticated public page",
+      "type": "mobile viewport",
+      "width": 430,
+      "height": 900,
+      "size": 39820,
+      "sha256": "0ebed90f5b50a0e231e7f46d2c0963e684b6b816fff577458750c028a93d6853",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "ida",
+      "file": "ida-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 21476,
+      "sha256": "387da6e770e972ebbbbc52f44578b708725a920aabede1aa08a2bfcedb394198",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "proqpay",
+      "file": "proqpay-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 50116,
+      "sha256": "dd488541c804f8784c4effc09053286030f322266ae59f2f3d1254370cf7d885",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "proqtrack",
+      "file": "proqtrack-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 57320,
+      "sha256": "54c312823f413ce53cdbd6c194b1667086a4cf6a269762a3e28e3bf32545dc64",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "arah",
+      "file": "arah-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 31328,
+      "sha256": "019987c6347f297a562d33a36dabc87c5eb25d6ff9d73cd791e63102a00971f7",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "msg",
+      "file": "msg-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 68488,
+      "sha256": "8d69bd4a7c68b54825fdd89521982452813f26f756c66dceae6cafe546f6c1e4",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "perada",
+      "file": "perada-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 55244,
+      "sha256": "6d4a8148efd7f2bc18c3a8fca78d8809153f5d7cd77f9d4a900f04ade5ee6411",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    },
+    {
+      "product": "danawangsa",
+      "file": "danawangsa-public-1440x810.webp",
+      "source": "unauthenticated public page",
+      "type": "desktop viewport",
+      "width": 1440,
+      "height": 810,
+      "size": 44786,
+      "sha256": "50ec43dc060253b00e9b3230bd29e013915485027fc75d25303101a0309a51c3",
+      "approval": "Public page capture; no authenticated or private business data",
+      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
+      "captured_at": "2026-11-18"
+    }
+  ],
+  "last_updated": "2026-11-18",
+  "capture_method": "Unauthenticated Google Chrome 152 headless in a fresh, isolated profile on Ubuntu; public landing/login only",
+  "capture_exceptions": [
+    {
+      "product": "ida-labs",
+      "reason": "Recapture blank; retained previously recorded public screenshot"
+    },
+    {
+      "product": "selarastech",
+      "reason": "Site returned HTTP 403/timeouts from isolated capture; icon fallback"
+    },
+    {
+      "product": "proqtrade",
+      "reason": "Public capture rendered a dim loading/login screen; not approved for publication"
+    },
+    {
+      "product": "proqpay-enterprise",
+      "reason": "Public link duplicates ProQPay Lite, standalone deployment not verified; icon fallback"
+    },
+    {
+      "product": "ida-words, ida-api, ida-mcp-agent, ida-call-shield, perada-recruitment, oms-perada, mkb, qjob-concept",
+      "reason": "No verified public capture URL; icon fallback"
     }
   ]
 }

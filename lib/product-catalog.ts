@@ -14,4 +14,14 @@ export const images: Record<string,string> = {
   "ida-gen3":"ida", "ida-labs":"labs", "proqpay-lite":"proqpay",
   "proqtrack":"proqtrack", "arah-fleet":"arah",
   "msg":"msg", "perada-group":"perada", "danawangsa":"danawangsa",
+  "ida-search":"ida-search",
+  "ida-4b":"ida-4b",
+  "hr-pay-manual":"hr-pay",
+  "pay-hr":"pay-hr",
+  "nusadata":"nusadata",
+  "proqpay-ess":"proqpay-ess",
+  "proqacc":"proqacc",
+  "kawankas":"kawankas",
+  "bespoke-solar":"bespoke-solar",
+
 };

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Search, X,  BrainCircuit, ShieldCheck, UsersRound, Truck, Wallet, LineChart, Building2, Smartphone, BriefcaseBusiness, Boxes } from "lucide-react";
+import { ArrowUpRight, Search, X,  BrainCircuit, ShieldCheck, UsersRound, Truck, Wallet, LineChart, Building2, Smartphone, BriefcaseBusiness, Boxes, FileText } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 import catalogId from "@/content/portfolio-id.json";
@@ -27,6 +27,16 @@ const imageKeys: Record<string, string> = {
   "ida-gen3": "ida", "ida-labs": "labs", "proqpay-lite": "proqpay",
   "proqtrack": "proqtrack", "arah-fleet": "arah", "notagen": "notagen",
   "msg": "msg", "perada-group": "perada", "danawangsa": "danawangsa",
+  "ida-search": "ida-search",
+  "ida-4b": "ida-4b",
+  "hr-pay-manual": "hr-pay",
+  "pay-hr": "pay-hr",
+  "nusadata": "nusadata",
+  "proqpay-ess": "proqpay-ess",
+  "proqacc": "proqacc",
+  "kawankas": "kawankas",
+  "bespoke-solar": "bespoke-solar",
+
 };
 const catalogs = { id: catalogId, en: catalogEn, zh: catalogZh };
 const items: Item[] = catalogId.products.map((product, index) => ({
@@ -46,6 +56,8 @@ const items: Item[] = catalogId.products.map((product, index) => ({
   
 }));
 const productIcons: Record<string, typeof BrainCircuit> = {
+  "ida-search":Search, "ida-4b":BrainCircuit, "ida-words":FileText, "ida-api":BrainCircuit, "ida-mcp-agent":ShieldCheck,
+  "hr-pay-manual":Wallet, "nusadata":LineChart, "selarastech":Building2,
   "ida-gen3":BrainCircuit,"ida-labs":BrainCircuit,"ida-call-shield":ShieldCheck,
   "proqpay-lite":Wallet,"proqpay-enterprise":Wallet,"proqpay-ess":UsersRound,
   "proqtrade":LineChart,"proqacc":Wallet,"kawankas":Wallet,"proqtrack":UsersRound,

@@ -383,19 +383,19 @@
       ]
     },
     "nusadata": {
-      "challenge": "Public Indonesian data sources are dispersed across many portals.",
-      "approach": "Building a reference catalog and browsing interface for government/open-data APIs.",
+      "challenge": "Employers often calculate workforce, tax and operating costs across disconnected spreadsheets.",
+      "approach": "A cost calculator and dashboard for reviewing business cost components and scenarios.",
       "features": [
-        "Public-data discovery",
-        "API endpoints and source references",
-        "Publicly hosted documentation portal"
+        "Employer cost and workforce cost simulations",
+        "Estimated tax exposure and business cost exploration",
+        "Dashboard for comparing current-year cost scenarios"
       ],
-      "role": "Data-portal concept and public interface development.",
-      "verification": "The public site is deployed; availability, accuracy and permitted use of third-party sources remain outside its control.",
+      "role": "Business cost analysis product concept and interface design.",
+      "verification": "Estimates only, not tax or legal advice. Assumptions and current regulations should be verified before use.",
       "stack": [
-        "GitHub Pages",
         "Static Web",
-        "Public Data APIs"
+        "Interactive Calculator",
+        "Responsive Design"
       ]
     },
     "selarastech": {
