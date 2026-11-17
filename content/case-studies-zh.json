@@ -383,19 +383,19 @@
       ]
     },
     "nusadata": {
-      "challenge": "印尼公共数据来源分散在多个门户。",
-      "approach": "构建政府和开放数据 API 的参考目录及浏览界面。",
+      "challenge": "企业往往在多个表格中分散计算人工、税务和运营成本。",
+      "approach": "通过成本计算器和看板对不同企业成本构成与情景进行比较。",
       "features": [
-        "公共数据资源发现",
-        "API 接口与来源目录",
-        "公开托管的文档门户"
+        "雇主成本与人力成本模拟",
+        "税费及经营成本估算探索",
+        "年度成本情景汇总看板"
       ],
-      "role": "数据门户构思与公开界面开发。",
-      "verification": "静态站点已发布；第三方接口的准确性、可用性与使用许可不作保证。",
+      "role": "企业成本分析产品构思与界面设计。",
+      "verification": "计算仅为估算，不构成税务或法律建议。使用前应核实假设及现行法规。",
       "stack": [
-        "GitHub Pages",
         "Static Web",
-        "Public Data APIs"
+        "Interactive Calculator",
+        "Responsive Design"
       ]
     },
     "selarastech": {
