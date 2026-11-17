@@ -282,6 +282,137 @@
       "stack": [],
       "role": "Business development collaboration concept",
       "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
+    },
+    "ida-search": {
+      "challenge": "研究工作常需在多个工具间寻找相关信息来源。",
+      "approach": "整合网络搜索、信息提取与清晰的研究结果界面。",
+      "features": [
+        "基于来源的 AI 搜索与摘要",
+        "有组织的研究结果界面",
+        "分阶段建设的免费访问和登录功能"
+      ],
+      "role": "AI 搜索产品设计及研究引擎集成。",
+      "verification": "公开界面和部分安全检查已有测试；不保证所有数据源与结果准确性。",
+      "stack": [
+        "Cloudflare Workers",
+        "Python",
+        "Web Search"
+      ]
+    },
+    "ida-words": {
+      "challenge": "文档撰写和审核需要整合到同一工作流的 AI 辅助。",
+      "approach": "打造文档工作空间，规划通过 IDA 身份实现单点登录。",
+      "features": [
+        "文档创建与编辑流程",
+        "文档 AI 辅助设计",
+        "IDA SSO 客户端尚为草案，未上线"
+      ],
+      "role": "用户体验、AI 集成和身份验证设计。",
+      "verification": "仍在开发中；公开域名、SSO 及端到端登录尚未确认上线。",
+      "stack": [
+        "Document Editor",
+        "Supabase Auth",
+        "AI Integration"
+      ]
+    },
+    "ida-api": {
+      "challenge": "应用需要可复用且受控的 AI 与研究能力。",
+      "approach": "提供具身份验证与接口契约测试的聊天补全接口及研究引擎。",
+      "features": [
+        "聊天补全式接口",
+        "基于 API 密钥的访问控制",
+        "带资源限制的研究、搜索与综合"
+      ],
+      "role": "AI 服务架构、API 设计及后端集成。",
+      "verification": "已有接口冒烟测试记录；不代表所有集成或长文档处理均稳定。无免登录公开演示。",
+      "stack": [
+        "FastAPI",
+        "Python",
+        "Docker",
+        "Ubuntu",
+        "OpenAI-Compatible API"
+      ]
+    },
+    "ida-4b": {
+      "challenge": "本地 AI 实验需要可下载且可评估的模型。",
+      "approach": "通过受控微调、独立测试及 GGUF 格式进行本地推理实验。",
+      "features": [
+        "以 Qwen3-4B 为基础的实验适配",
+        "GGUF 本地测试发布",
+        "持续评估回答质量与一致性"
+      ],
+      "role": "数据集策划、训练协调与模型评估。",
+      "verification": "可下载不代表具备生产就绪性。仍需持续测试回答质量并保留基础模型署名。",
+      "stack": [
+        "Qwen3-4B",
+        "QLoRA",
+        "GGUF",
+        "Hugging Face"
+      ]
+    },
+    "ida-mcp-agent": {
+      "challenge": "AI 代理访问外部系统需要明确的权限控制。",
+      "approach": "设计 MCP 路由、权限范围及操作前审批。",
+      "features": [
+        "MCP 工具编排设计",
+        "操作权限与审批关卡",
+        "区分读取和写入权限"
+      ],
+      "role": "代理架构和权限治理设计。",
+      "verification": "仍在开发中；跨系统操作及端到端连接未宣称已可投入生产。",
+      "stack": [
+        "MCP",
+        "API Gateway",
+        "Permissions"
+      ]
+    },
+    "hr-pay-manual": {
+      "challenge": "手动薪资发放需要可追踪的计算、审核和对账流程。",
+      "approach": "将薪资计算、月度调整、审批和付款凭证统一在一个工作流。",
+      "features": [
+        "考勤、加班、预支及扣款",
+        "制单、复核和审批角色",
+        "手动转账记录和付款凭证"
+      ],
+      "role": "人事薪资工作流设计及应用开发。",
+      "verification": "应用仍处于验收测试阶段；记录转账不代表自动发起银行付款。",
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL"
+      ]
+    },
+    "nusadata": {
+      "challenge": "印尼公共数据来源分散在多个门户。",
+      "approach": "构建政府和开放数据 API 的参考目录及浏览界面。",
+      "features": [
+        "公共数据资源发现",
+        "API 接口与来源目录",
+        "公开托管的文档门户"
+      ],
+      "role": "数据门户构思与公开界面开发。",
+      "verification": "静态站点已发布；第三方接口的准确性、可用性与使用许可不作保证。",
+      "stack": [
+        "GitHub Pages",
+        "Static Web",
+        "Public Data APIs"
+      ]
+    },
+    "selarastech": {
+      "challenge": "企业需要兼顾人才、流程与技术的实施伙伴。",
+      "approach": "构建综合技术与运营服务组合。",
+      "features": [
+        "数字平台与转型方案",
+        "人力资源与运营支持",
+        "IT 硬件、软件和基础设施"
+      ],
+      "role": "综合技术与业务解决方案开发。",
+      "verification": "企业网站公开可访问；此案例不代表个人拥有或参与该网站列出的所有客户项目。",
+      "stack": [
+        "Digital Transformation",
+        "Managed Services",
+        "Systems Integration"
+      ]
     }
   }
 }

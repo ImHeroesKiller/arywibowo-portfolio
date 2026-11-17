@@ -29,6 +29,51 @@
       "description": "集成对话、研究、视觉与文档工具的 AI 工作空间。"
     },
     {
+      "id": "ida-mcp-agent",
+      "name": "IDA MCP Agent",
+      "category": "ai",
+      "status": "development",
+      "url": null,
+      "repository": null,
+      "description": "用于授权服务访问的 AI 工具编排设计，在执行前设置权限范围与审批机制。"
+    },
+    {
+      "id": "ida-4b",
+      "name": "IDA 4B — Open Model",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://huggingface.co/idalabs/IDA-4B-v1.0.2-P4.9-GGUF",
+      "repository": null,
+      "description": "基于 Qwen3 的实验性 4B 语言模型，发布公开 GGUF 版本以便评估和本地试用。"
+    },
+    {
+      "id": "ida-api",
+      "name": "IDA API & Research Engine",
+      "category": "ai",
+      "status": "uat",
+      "url": null,
+      "repository": null,
+      "description": "用于应用集成的 OpenAI 兼容 AI API 与研究流水线，使用 API 密钥控制访问并持续验证。"
+    },
+    {
+      "id": "ida-words",
+      "name": "IDA Words",
+      "category": "ai",
+      "status": "development",
+      "url": null,
+      "repository": null,
+      "description": "AI 辅助文档工作空间；IDA 账号整合及统一身份验证仍在开发中。"
+    },
+    {
+      "id": "ida-search",
+      "name": "IDA Search",
+      "category": "ai",
+      "status": "uat",
+      "url": "https://search.ida-labs.workers.dev",
+      "repository": null,
+      "description": "AI 搜索与研究工具，支持发现资料来源、评估相关性及整理信息；部分功能需登录。"
+    },
+    {
       "id": "ida-labs",
       "name": "IDA Labs",
       "category": "ai",
@@ -119,6 +164,15 @@
       "description": "涵盖考勤、加班、预支、客户与薪资的人力资源系统。"
     },
     {
+      "id": "hr-pay-manual",
+      "name": "HR Pay — Payroll Operations",
+      "category": "enterprise",
+      "status": "uat",
+      "url": "https://hr-pay-two.vercel.app",
+      "repository": null,
+      "description": "人事与薪资运营系统，包含考勤、加班、预支、分级审批及手动转账记录。"
+    },
+    {
       "id": "perada-recruitment",
       "name": "PERADA Recruitment Portal",
       "category": "enterprise",
@@ -146,6 +200,15 @@
       "description": "面向货运物流的订单、开票及应收账款系统。"
     },
     {
+      "id": "nusadata",
+      "name": "NusaData — Indonesia Data Portal",
+      "category": "operations",
+      "status": "production",
+      "url": "https://imheroeskiller.github.io/indonesia-gov-api-hub/",
+      "repository": null,
+      "description": "印尼公共数据与 API 探索门户，帮助查找开放数据来源；可用性取决于上游提供方。"
+    },
+    {
       "id": "msg",
       "name": "MSG Corporate",
       "category": "business",
@@ -171,6 +234,15 @@
       "url": "https://danawangsa.arywibowo.id",
       "repository": null,
       "description": "商业与财务战略咨询网站，不代表受监管金融服务声明。"
+    },
+    {
+      "id": "selarastech",
+      "name": "SelarasTech — IT & Business Solutions",
+      "category": "business",
+      "status": "production",
+      "url": "https://selarastech.com",
+      "repository": null,
+      "description": "PT Solusi Mitracipta Selaras 的技术与商业解决方案，涵盖数字平台、人力服务、IT 基础设施及运营转型。"
     },
     {
       "id": "mkb",
