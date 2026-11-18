@@ -397,22 +397,6 @@
         "Interactive Calculator",
         "Responsive Design"
       ]
-    },
-    "selarastech": {
-      "challenge": "企业需要兼顾人才、流程与技术的实施伙伴。",
-      "approach": "构建综合技术与运营服务组合。",
-      "features": [
-        "数字平台与转型方案",
-        "人力资源与运营支持",
-        "IT 硬件、软件和基础设施"
-      ],
-      "role": "综合技术与业务解决方案开发。",
-      "verification": "企业网站公开可访问；此案例不代表个人拥有或参与该网站列出的所有客户项目。",
-      "stack": [
-        "Digital Transformation",
-        "Managed Services",
-        "Systems Integration"
-      ]
     }
   }
 }

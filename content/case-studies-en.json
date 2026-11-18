@@ -397,22 +397,6 @@
         "Interactive Calculator",
         "Responsive Design"
       ]
-    },
-    "selarastech": {
-      "challenge": "Businesses need implementation partners connecting people, process and technology.",
-      "approach": "Developing a portfolio of integrated technology and operational services.",
-      "features": [
-        "Digital platform and transformation solutions",
-        "People solutions and operational support",
-        "IT hardware, software and infrastructure"
-      ],
-      "role": "Integrated technology and business-solution development.",
-      "verification": "Public corporate site is available; this case study does not claim personal ownership or delivery of every client project referenced there.",
-      "stack": [
-        "Digital Transformation",
-        "Managed Services",
-        "Systems Integration"
-      ]
     }
   }
 }
