@@ -60,7 +60,7 @@
       "name": "IDA Words",
       "category": "ai",
       "status": "development",
-      "url": null,
+      "url": "https://words.arywibowo.id",
       "repository": null,
       "description": "AI-assisted document workspace; integration with the IDA account and unified authentication is still being implemented."
     },
@@ -99,15 +99,6 @@
       "url": "https://proqpay.msg-os.com",
       "repository": null,
       "description": "AI payroll operating system with approval workflows, audit trails, and payment integrations under validation."
-    },
-    {
-      "id": "proqpay-enterprise",
-      "name": "ProQPay Enterprise",
-      "category": "fintech",
-      "status": "development",
-      "url": "https://proqpay.msg-os.com",
-      "repository": null,
-      "description": "Enterprise payroll workflow implementation; distinct codebase from ProQPay Lite, current live deployment not independently established."
     },
     {
       "id": "proqpay-ess",
@@ -252,15 +243,6 @@
       "url": null,
       "repository": null,
       "description": "Static corporate website redesign concept, not an official deployed product claim."
-    },
-    {
-      "id": "bespoke-solar",
-      "name": "Bespoke Solar & EV Collaboration",
-      "category": "energy",
-      "status": "concept",
-      "url": "https://bespokesolar.com.au",
-      "repository": null,
-      "description": "Strategic business collaboration concept for solar, battery storage, and electric mobility."
     }
   ]
 }

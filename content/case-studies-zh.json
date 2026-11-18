@@ -78,17 +78,6 @@
       "role": "Payroll workflow and product architecture; payment integration pending validation",
       "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
     },
-    "proqpay-enterprise": {
-      "challenge": "需要简化 proqpay enterprise 相关的工作流程。",
-      "approach": "根据现有文档开发与验证 proqpay enterprise 方案。",
-      "features": [
-        "薪资流程规划",
-        "企业集成设计"
-      ],
-      "stack": [],
-      "role": "Product design and enterprise integration; standalone deployment unverified",
-      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
-    },
     "proqpay-ess": {
       "challenge": "需要简化 proqpay ess 相关的工作流程。",
       "approach": "根据现有文档开发与验证 proqpay ess 方案。",
@@ -269,18 +258,6 @@
       ],
       "stack": [],
       "role": "Exploratory UX concept; not an official release",
-      "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
-    },
-    "bespoke-solar": {
-      "challenge": "需要简化 bespoke solar 相关的工作流程。",
-      "approach": "根据现有文档开发与验证 bespoke solar 方案。",
-      "features": [
-        "太阳能集成概念",
-        "电池储能概念",
-        "电动汽车生态规划"
-      ],
-      "stack": [],
-      "role": "Business development collaboration concept",
       "verification": "基于公开页面和代码仓库文档；登录后功能未独立审计。"
     },
     "ida-search": {

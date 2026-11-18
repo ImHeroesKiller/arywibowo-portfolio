@@ -35,7 +35,6 @@ const imageKeys: Record<string, string> = {
   "proqpay-ess": "proqpay-ess",
   "proqacc": "proqacc",
   "kawankas": "kawankas",
-  "bespoke-solar": "bespoke-solar",
 
 };
 const catalogs = { id: catalogId, en: catalogEn, zh: catalogZh };
@@ -59,13 +58,12 @@ const productIcons: Record<string, typeof BrainCircuit> = {
   "ida-search":Search, "ida-4b":BrainCircuit, "ida-words":FileText, "ida-api":BrainCircuit, "ida-mcp-agent":ShieldCheck,
   "hr-pay-manual":Wallet, "nusadata":LineChart,
   "ida-gen3":BrainCircuit,"ida-labs":BrainCircuit,"ida-call-shield":ShieldCheck,
-  "proqpay-lite":Wallet,"proqpay-enterprise":Wallet,"proqpay-ess":UsersRound,
+  "proqpay-lite":Wallet,"proqpay-ess":UsersRound,
   "proqtrade":LineChart,"proqacc":Wallet,"kawankas":Wallet,"proqtrack":UsersRound,
   "pay-hr":UsersRound,"perada-recruitment":UsersRound,
   "arah-fleet":Truck,"oms-perada":Boxes,
   "msg":Building2,"perada-group":Building2,
   "danawangsa":BriefcaseBusiness,"mkb":Building2,"qjob-concept":BriefcaseBusiness,
-  "bespoke-solar":Boxes,
 };
 const FEATURED_ORDER = ["ida-search","ida-words","ida-4b","ida-api","ida-gen3","proqpay-lite","proqtrack","hr-pay-manual","nusadata","ida-labs","ida-mcp-agent"];
 const copy={id:{eyebrow:"PORTFOLIO PRODUK",title:"Produk digital, AI & solusi bisnis terbaru",desc:"Jelajahi inovasi terbaru dan implementasi terpilih—dari riset AI, payroll, otomasi lapangan hingga layanan bisnis. Status pengembangan dijelaskan secara transparan.",all:"Semua",search:"Cari produk...",view:"Buka produk",more:"Lihat semua proyek",preview:"Tangkapan layar halaman publik · bukan bukti fitur setelah login",no:"Tidak ada produk yang cocok."},en:{eyebrow:"PRODUCT PORTFOLIO",title:"Latest AI, digital & business solutions",desc:"Explore recent innovations and selected implementations—from AI research and payroll to field operations and enterprise solutions. Maturity is stated transparently.",all:"All",search:"Search products...",view:"Visit product",more:"Explore all projects",preview:"Public-page screenshot · not evidence of authenticated features",no:"No matching products."},zh:{eyebrow:"产品作品集",title:"最新 AI、数字与商业解决方案",desc:"探索最新创新及精选实施案例，涵盖 AI 研究、薪资管理、现场运营与企业服务，并透明展示成熟度。",all:"全部",search:"搜索产品...",view:"访问产品",more:"查看所有项目",preview:"公开页面截图 · 不代表已验证登录后功能",no:"没有匹配的产品。"}};

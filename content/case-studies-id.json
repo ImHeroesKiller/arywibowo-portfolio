@@ -78,17 +78,6 @@
       "role": "Payroll workflow and product architecture; payment integration pending validation",
       "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
     },
-    "proqpay-enterprise": {
-      "challenge": "Kebutuhan untuk menyederhanakan proses proqpay enterprise yang masih tersebar atau manual.",
-      "approach": "Pengembangan solusi proqpay enterprise sesuai ruang lingkup yang terdokumentasi.",
-      "features": [
-        "Perancangan alur payroll",
-        "Perancangan integrasi enterprise"
-      ],
-      "stack": [],
-      "role": "Product design and enterprise integration; standalone deployment unverified",
-      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
-    },
     "proqpay-ess": {
       "challenge": "Kebutuhan untuk menyederhanakan proses proqpay ess yang masih tersebar atau manual.",
       "approach": "Pengembangan solusi proqpay ess sesuai ruang lingkup yang terdokumentasi.",
@@ -269,18 +258,6 @@
       ],
       "stack": [],
       "role": "Exploratory UX concept; not an official release",
-      "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
-    },
-    "bespoke-solar": {
-      "challenge": "Kebutuhan untuk menyederhanakan proses bespoke solar yang masih tersebar atau manual.",
-      "approach": "Pengembangan solusi bespoke solar sesuai ruang lingkup yang terdokumentasi.",
-      "features": [
-        "Konsep integrasi solar",
-        "Konsep penyimpanan baterai",
-        "Perencanaan ekosistem EV"
-      ],
-      "stack": [],
-      "role": "Business development collaboration concept",
       "verification": "Berdasarkan halaman publik dan dokumentasi repository; fitur setelah login belum diaudit mandiri."
     },
     "ida-search": {
