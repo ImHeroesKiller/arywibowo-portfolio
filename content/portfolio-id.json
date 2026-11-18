@@ -60,7 +60,7 @@
       "name": "IDA Words",
       "category": "ai",
       "status": "development",
-      "url": null,
+      "url": "https://words.arywibowo.id",
       "repository": null,
       "description": "Workspace pengolahan dokumen berbantuan AI; integrasi akun IDA dan autentikasi terpadu masih tahap implementasi."
     },
@@ -99,15 +99,6 @@
       "url": "https://proqpay.msg-os.com",
       "repository": null,
       "description": "Sistem payroll berbasis AI, approval bertingkat, audit trail, dan integrasi pembayaran yang masih divalidasi."
-    },
-    {
-      "id": "proqpay-enterprise",
-      "name": "ProQPay Enterprise",
-      "category": "fintech",
-      "status": "development",
-      "url": "https://proqpay.msg-os.com",
-      "repository": null,
-      "description": "Implementasi workflow payroll enterprise dengan codebase terpisah; deployment langsungnya belum terverifikasi terpisah."
     },
     {
       "id": "proqpay-ess",
@@ -252,15 +243,6 @@
       "url": null,
       "repository": null,
       "description": "Konsep desain ulang website korporat statis; bukan klaim produk resmi yang telah diluncurkan."
-    },
-    {
-      "id": "bespoke-solar",
-      "name": "Bespoke Solar & EV Collaboration",
-      "category": "energy",
-      "status": "concept",
-      "url": "https://bespokesolar.com.au",
-      "repository": null,
-      "description": "Konsep kolaborasi strategis solar, penyimpanan baterai, dan mobilitas listrik."
     }
   ]
 }

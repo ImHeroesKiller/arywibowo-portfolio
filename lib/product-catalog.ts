@@ -22,6 +22,5 @@ export const images: Record<string,string> = {
   "proqpay-ess":"proqpay-ess",
   "proqacc":"proqacc",
   "kawankas":"kawankas",
-  "bespoke-solar":"bespoke-solar",
 
 };

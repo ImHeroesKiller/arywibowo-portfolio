@@ -60,7 +60,7 @@
       "name": "IDA Words",
       "category": "ai",
       "status": "development",
-      "url": null,
+      "url": "https://words.arywibowo.id",
       "repository": null,
       "description": "AI 辅助文档工作空间；IDA 账号整合及统一身份验证仍在开发中。"
     },
@@ -99,15 +99,6 @@
       "url": "https://proqpay.msg-os.com",
       "repository": null,
       "description": "AI 薪资运营系统，具有审批与审计流程；支付集成仍在验证。"
-    },
-    {
-      "id": "proqpay-enterprise",
-      "name": "ProQPay Enterprise",
-      "category": "fintech",
-      "status": "development",
-      "url": "https://proqpay.msg-os.com",
-      "repository": null,
-      "description": "企业薪资工作流方案；代码库独立，其单独线上部署尚未核实。"
     },
     {
       "id": "proqpay-ess",
@@ -252,15 +243,6 @@
       "url": null,
       "repository": null,
       "description": "静态企业网站改版概念，并非正式上线产品。"
-    },
-    {
-      "id": "bespoke-solar",
-      "name": "Bespoke Solar & EV Collaboration",
-      "category": "energy",
-      "status": "concept",
-      "url": "https://bespokesolar.com.au",
-      "repository": null,
-      "description": "太阳能、储能及电动出行的战略合作构想。"
     }
   ]
 }

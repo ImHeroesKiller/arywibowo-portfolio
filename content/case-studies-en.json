@@ -78,17 +78,6 @@
       "role": "Payroll workflow and product architecture; payment integration pending validation",
       "verification": "Public page and repository documentation; authenticated features not independently audited."
     },
-    "proqpay-enterprise": {
-      "challenge": "Enterprise payroll needs structured orchestration",
-      "approach": "Separate enterprise payroll implementation under development",
-      "features": [
-        "Payroll workflow planning",
-        "Enterprise integration design"
-      ],
-      "stack": [],
-      "role": "Product design and enterprise integration; standalone deployment unverified",
-      "verification": "Public page and repository documentation; authenticated features not independently audited."
-    },
     "proqpay-ess": {
       "challenge": "Employees need independent access to payroll records",
       "approach": "Employee self-service payroll view",
@@ -269,18 +258,6 @@
       ],
       "stack": [],
       "role": "Exploratory UX concept; not an official release",
-      "verification": "Public page and repository documentation; authenticated features not independently audited."
-    },
-    "bespoke-solar": {
-      "challenge": "Clean energy partnerships need cross-sector planning",
-      "approach": "Strategic collaboration concept for solar, battery and EV",
-      "features": [
-        "Solar integration concept",
-        "Battery storage concept",
-        "EV ecosystem planning"
-      ],
-      "stack": [],
-      "role": "Business development collaboration concept",
       "verification": "Public page and repository documentation; authenticated features not independently audited."
     },
     "ida-search": {

@@ -326,32 +326,6 @@
       "captured_at": "2026-11-18"
     },
     {
-      "product": "bespoke-solar",
-      "file": "bespoke-solar-public-1440x810.webp",
-      "source": "unauthenticated public page",
-      "type": "desktop viewport",
-      "width": 1440,
-      "height": 810,
-      "size": 86936,
-      "sha256": "799cca132211d869dfdf22303ef16e3b3920fe831006d882a7e5f78a420f68c9",
-      "approval": "Public page capture; no authenticated or private business data",
-      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
-      "captured_at": "2026-11-18"
-    },
-    {
-      "product": "bespoke-solar",
-      "file": "bespoke-solar-mobile-public.webp",
-      "source": "unauthenticated public page",
-      "type": "mobile viewport",
-      "width": 430,
-      "height": 900,
-      "size": 39820,
-      "sha256": "0ebed90f5b50a0e231e7f46d2c0963e684b6b816fff577458750c028a93d6853",
-      "approval": "Public page capture; no authenticated or private business data",
-      "limitation": "Public landing/login screenshot only; not evidence of functions after login",
-      "captured_at": "2026-11-18"
-    },
-    {
       "product": "ida",
       "file": "ida-public-1440x810.webp",
       "source": "unauthenticated public page",
@@ -453,10 +427,6 @@
     {
       "product": "proqtrade",
       "reason": "Public capture rendered a dim loading/login screen; not approved for publication"
-    },
-    {
-      "product": "proqpay-enterprise",
-      "reason": "Public link duplicates ProQPay Lite, standalone deployment not verified; icon fallback"
     },
     {
       "product": "ida-words, ida-api, ida-mcp-agent, ida-call-shield, perada-recruitment, oms-perada, mkb, qjob-concept",
