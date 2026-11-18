@@ -236,15 +236,6 @@
       "description": "商业与财务战略咨询网站，不代表受监管金融服务声明。"
     },
     {
-      "id": "selarastech",
-      "name": "SelarasTech — IT & Business Solutions",
-      "category": "business",
-      "status": "production",
-      "url": "https://selarastech.com",
-      "repository": null,
-      "description": "PT Solusi Mitracipta Selaras 的技术与商业解决方案，涵盖数字平台、人力服务、IT 基础设施及运营转型。"
-    },
-    {
       "id": "mkb",
       "name": "MKB Corporate & JUPITER",
       "category": "business",

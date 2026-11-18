@@ -451,10 +451,6 @@
       "reason": "Recapture blank; retained previously recorded public screenshot"
     },
     {
-      "product": "selarastech",
-      "reason": "Site returned HTTP 403/timeouts from isolated capture; icon fallback"
-    },
-    {
       "product": "proqtrade",
       "reason": "Public capture rendered a dim loading/login screen; not approved for publication"
     },

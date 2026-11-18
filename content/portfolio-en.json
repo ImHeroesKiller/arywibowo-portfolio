@@ -236,15 +236,6 @@
       "description": "Strategic business and financial advisory website; not a claim of regulated financial services."
     },
     {
-      "id": "selarastech",
-      "name": "SelarasTech — IT & Business Solutions",
-      "category": "business",
-      "status": "production",
-      "url": "https://selarastech.com",
-      "repository": null,
-      "description": "Technology and business solutions by PT Solusi Mitracipta Selaras: digital platforms, people solutions, IT infrastructure and operational transformation."
-    },
-    {
       "id": "mkb",
       "name": "MKB Corporate & JUPITER",
       "category": "business",

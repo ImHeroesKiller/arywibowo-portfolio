@@ -236,15 +236,6 @@
       "description": "Website konsultasi strategi bisnis dan keuangan; bukan klaim layanan keuangan berizin."
     },
     {
-      "id": "selarastech",
-      "name": "SelarasTech — IT & Business Solutions",
-      "category": "business",
-      "status": "production",
-      "url": "https://selarastech.com",
-      "repository": null,
-      "description": "Portofolio solusi teknologi dan bisnis PT Solusi Mitracipta Selaras: platform digital, people solution, infrastruktur IT, dan transformasi operasional."
-    },
-    {
       "id": "mkb",
       "name": "MKB Corporate & JUPITER",
       "category": "business",

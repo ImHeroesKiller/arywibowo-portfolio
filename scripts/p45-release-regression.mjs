@@ -45,9 +45,9 @@ try{
  }
  const {r:unknown}=await read('/projects/not-a-product');
  check(unknown.status===404,'invalid case study must 404');
- const removed = ['freejobid','notagen','saleguard','onework'];
- const newProducts = ['ida-search','ida-words','ida-api','ida-4b','ida-mcp-agent','hr-pay-manual','nusadata','selarastech'];
-check(products.length===28,'public product catalog has 28 products');
+ const removed = ['freejobid','notagen','saleguard','onework','selarastech'];
+ const newProducts = ['ida-search','ida-words','ida-api','ida-4b','ida-mcp-agent','hr-pay-manual','nusadata'];
+check(products.length===27,'public product catalog has 27 products');
 check(new Set(products.map(product=>product.id)).size===products.length,'product IDs must be unique');
 for(const slug of newProducts){check(products.some(product=>product.id===slug),`missing new portfolio product ${slug}`);}
  for(const locale of languages){
